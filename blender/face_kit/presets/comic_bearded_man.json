@@ -1,0 +1,230 @@
+{
+ "id": "fk_comic_man",
+ "name": "Comic bearded man (face_kit)",
+ "human": {
+  "sex": "male",
+  "body": {
+   "age": 40,
+   "muscle": 0.72,
+   "weight": 0.55,
+   "height": 0.6,
+   "proportions": 0.8,
+   "race": {
+    "caucasian": 1.0
+   }
+  },
+  "faceStyle": "male_strong",
+  "skin": {
+   "texture": "auto",
+   "smooth": 1.0
+  },
+  "eyes": {
+   "color": "green"
+  },
+  "hair": {
+   "style": "long01",
+   "color": "chestnut",
+   "physics": true
+  },
+  "teeth": "none",
+  "outfit": {
+   "clothes": [
+    "male_casualsuit02"
+   ],
+   "shoes": "shoes05",
+   "costumes": []
+  },
+  "stylization": 0.0,
+  "face": {
+   "head-oval": 0.45,
+   "head-square": 0.2,
+   "chin-height": 0.3,
+   "chin-width": -0.1,
+   "cheek-volume": -0.5,
+   "cheek-bones": 0.55,
+   "cheek-inner": -0.3,
+   "nose-scale-vert": 0.35,
+   "nose-hump": 0.15,
+   "nose-point": 0.2,
+   "eye-scale": 0.12,
+   "eyebrows-trans": -0.3,
+   "mouth-scale-horiz": -0.1,
+   "neck-scale-horiz": 0.2
+  }
+ },
+ "face": {
+  "skin": "#e2b08e",
+  "skinShade": "#b07a66",
+  "flush": "#cf7462",
+  "flushAlpha": 0.2,
+  "lip": "#c07f6c",
+  "line": "#351d17",
+  "hair": "#3e2419",
+  "brow": {
+   "color": "#33190f",
+   "inner": [
+    0.08,
+    1.07
+   ],
+   "peak": [
+    0.55,
+    1.29
+   ],
+   "outer": [
+    0.97,
+    1.27
+   ],
+   "w": [
+    0.14,
+    0.1,
+    0.025
+   ],
+   "scowl": 0.04,
+   "jag": 0.1
+  },
+  "lids": {
+   "upper": 0.022,
+   "lower": 0.018,
+   "crease": 0.35,
+   "bag": 0.5,
+   "wing": 0.1,
+   "lift": -0.001
+  },
+  "folds": {
+   "naso": 1.0,
+   "furrow": 1.0,
+   "cheek": 0.9,
+   "crow": 0.7,
+   "forehead": 0.0
+  },
+  "socket": 0.6,
+  "stubble": {
+   "color": "#9a6650",
+   "alpha": 0.0
+  },
+  "beard": {
+   "color": "#4a2c1c",
+   "light": "#6e4632",
+   "dark": "#26140c",
+   "length": 0.22,
+   "jag": 0.06,
+   "jagLow": 0.1,
+   "clumps": 11,
+   "thick": 0.007,
+   "fringe": 0.07,
+   "cheek": 0.0,
+   "strands": 60,
+   "width": 2.05
+  },
+  "scars": [
+   {
+    "pts": [
+     [
+      -0.22,
+      1.78
+     ],
+     [
+      -0.25,
+      1.45
+     ],
+     [
+      -0.29,
+      1.12
+     ]
+    ],
+    "w": 0.016
+   },
+   {
+    "pts": [
+     [
+      -0.47,
+      1.52
+     ],
+     [
+      -0.25,
+      1.55
+     ],
+     [
+      -0.02,
+      1.53
+     ]
+    ],
+    "w": 0.012
+   },
+   {
+    "pts": [
+     [
+      0.35,
+      1.34
+     ],
+     [
+      0.4,
+      0.78
+     ],
+     [
+      0.49,
+      0.25
+     ]
+    ],
+    "w": 0.016
+   }
+  ],
+  "patch": {
+   "side": -1,
+   "rx": 0.31,
+   "ry": 0.3,
+   "rot": 0.15,
+   "dy": -0.1,
+   "thick": 0.004,
+   "color": "#121214",
+   "strap": [
+    [
+     -0.2,
+     1.16
+    ],
+    [
+     0.3,
+     1.62
+    ],
+    [
+     1.05,
+     2.05
+    ]
+   ],
+   "strapW": 0.04,
+   "dome": 0.007,
+   "roughness": 0.6,
+   "shield": 0.8
+  },
+  "eyes": {
+   "iris": "#3f9a3a",
+   "inner": "#e0c535",
+   "ring": "#18241a",
+   "pupil": 0.3,
+   "size": 1.0,
+   "white": "#f3eee6"
+  },
+  "shadeShift": -0.1
+ },
+ "hair": {
+  "style": "long_wavy_male",
+  "base": [
+   0.36,
+   0.21,
+   0.13
+  ],
+  "seed": 7
+ },
+ "normals": {
+  "iters": 40,
+  "proxy": 0.2
+ },
+ "profile": {
+  "look": {
+   "shadowTint": "#d0aaa4"
+  }
+ },
+ "tint": {
+  "Outfit_male": "#3a3a40"
+ }
+}

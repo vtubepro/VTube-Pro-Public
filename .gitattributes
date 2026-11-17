@@ -1,0 +1,23 @@
+# Line endings for the launcher scripts (they must work straight from "Download ZIP" too)
+*.bat  text eol=crlf
+*.cmd  text eol=crlf
+*.ps1  text eol=crlf
+*.sh   text eol=lf
+*.command text eol=lf
+*.sh.in text eol=lf
+
+# Binary assets: never diff / convert
+*.glb    binary
+*.vrm    binary
+*.vrma   binary
+*.task   binary
+*.tflite binary
+*.onnx   binary
+*.wasm   binary
+*.hdr    binary
+*.png    binary
+*.jpg    binary
+*.webp   binary
+*.ogg    binary
+*.bin    binary
+*.zip    binary

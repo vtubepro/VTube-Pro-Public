@@ -1,0 +1,7 @@
+{
+  "id": "frontier",
+  "name": "The Frontier Trail",
+  "deck": "deck.json",
+  "personal": false,
+  "note": "Neutral sample theme (ships with the engine)."
+}

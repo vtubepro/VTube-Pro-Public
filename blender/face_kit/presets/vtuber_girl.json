@@ -1,0 +1,84 @@
+{
+ "id": "fk_vtuber_girl",
+ "name": "VTuber girl (face_kit)",
+ "creator": {
+  "base": "hairsample_female",
+  "hair": {
+   "style": "hairsample_female"
+  },
+  "colors": {
+   "hair": "#f7c9dc",
+   "hairTip": "#fff2f7",
+   "hairTipRange": [
+    0.6,
+    1.0
+   ],
+   "eyes": "#e0558c",
+   "brows": "#c98aa4",
+   "skin": "#ffdfd0"
+  },
+  "face": {
+   "eyeSize": 1.18,
+   "eyeHeight": -0.15,
+   "chin": -0.3
+  }
+ },
+ "face": {
+  "skin": {
+   "blush": "#ff7f95",
+   "blushAlpha": 0.36,
+   "blushHatch": 3,
+   "nose": "dot",
+   "noseSize": 0.8,
+   "crease": 0.55,
+   "creaseAlpha": 0.4,
+   "lowerLash": 0.45,
+   "mouthLine": "#b85a60"
+  },
+  "eye": {
+   "line": "#3a1a2a",
+   "line2": "#8a4060",
+   "lineIn": 0.06,
+   "lineMax": 0.26,
+   "lineOverlap": 0.12,
+   "wing": 0.22,
+   "wingDrop": -0.02,
+   "spikes": 2,
+   "spikeLen": 0.42,
+   "whiteShadow": "#d9c6dc"
+  },
+  "iris": {
+   "color": "#e0558c",
+   "top": "#5a1034",
+   "bottom": "#ffc2a8",
+   "glow": "#ffd88a",
+   "glowAlpha": 0.55,
+   "ring": "#3a0f24",
+   "streaks": 0.06,
+   "pupil": 0.3,
+   "pupilColor": "#4a0c28",
+   "topBand": 0.3
+  },
+  "hl": {
+   "main": [
+    0.3,
+    0.4,
+    0.34,
+    0.28
+   ],
+   "mainRot": -0.3,
+   "dot": [
+    -0.32,
+    -0.46,
+    0.13
+   ],
+   "sparkles": 1
+  },
+  "brow": {
+   "height": 2.2,
+   "arch": 0.3,
+   "width": 0.11
+  }
+ },
+ "proxy": 1.0
+}

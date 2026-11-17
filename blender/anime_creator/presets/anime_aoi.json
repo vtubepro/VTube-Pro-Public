@@ -1,0 +1,7 @@
+{"id":"anime_aoi","name":"Aoi","prompt":"sweet summer girl: glossy navy bob with teal ends, golden eyes, airy sky-blue dress with a ribbon belt, white sneakers",
+ "base":"hairsample_female",
+ "hair":{"style":"shibu"},
+ "colors":{"hair":"#1f2a4a","hairTip":"#2fb8b0","hairTipRange":[0.55,1.0],"eyes":"#e8b43a","brows":"#27304a"},
+ "face":{"eyeSize":1.03},
+ "outfit":{"tops":{"color":"#8fc6ef"}}
+}

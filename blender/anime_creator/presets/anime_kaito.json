@@ -1,0 +1,8 @@
+{"id":"anime_kaito","name":"Kaito","prompt":"cool street-style boy: spiky jet-black hair with electric-cyan tips, crimson eyes, charcoal oversized hoodie, black slim pants",
+ "base":"hairsample_male",
+ "hair":{"style":"hairsample_male","scale":1.02},
+ "colors":{"hair":"#1d1f2e","hairTip":"#3fd6e8","hairTipRange":[0.6,1.0],"eyes":"#d8283c","brows":"#1b1b22"},
+ "body":{"height":1.05,"legs":1.04,"shoulders":1.04},
+ "face":{"eyeSize":0.98,"eyeTilt":2},
+ "outfit":{"tops":{"color":"#3a3d48"},"bottoms":{"color":"#1c1d22"},"shoes":{"color":"#e8e8ec"}}
+}

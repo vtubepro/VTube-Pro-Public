@@ -1,0 +1,300 @@
+{
+ "fps": 30,
+ "hips": 0.9167,
+ "clips": [
+  {
+   "id": "idle",
+   "label": "Idle",
+   "file": "idle.vrma",
+   "dur": 2.5,
+   "loop": true,
+   "source": "Quaternius Universal Animation Library: Idle_Loop (CC0)",
+   "stride": 0.0,
+   "hips": 0.9167
+  },
+  {
+   "id": "talk",
+   "label": "Idle (talking hands)",
+   "file": "talk.vrma",
+   "dur": 2.9333,
+   "loop": true,
+   "source": "Quaternius Universal Animation Library: Idle_Talking_Loop (CC0)",
+   "stride": 0.0,
+   "hips": 0.9167
+  },
+  {
+   "id": "walk",
+   "label": "Walk",
+   "file": "walk.vrma",
+   "dur": 1.3333,
+   "loop": true,
+   "source": "Quaternius Universal Animation Library: Walk_Loop (CC0)",
+   "stride": 1.3,
+   "hips": 0.9167,
+   "phase": 0.0,
+   "speed": 0.975
+  },
+  {
+   "id": "jog",
+   "label": "Jog / run",
+   "file": "jog.vrma",
+   "dur": 0.9333,
+   "loop": true,
+   "source": "Quaternius Universal Animation Library: Jog_Fwd_Loop (CC0)",
+   "stride": 5.0,
+   "hips": 0.9167,
+   "phase": 0.9643,
+   "speed": 5.3571
+  },
+  {
+   "id": "sprint",
+   "label": "Sprint",
+   "file": "sprint.vrma",
+   "dur": 0.6667,
+   "loop": true,
+   "source": "Quaternius Universal Animation Library: Sprint_Loop (CC0)",
+   "stride": 5.5,
+   "hips": 0.9167,
+   "phase": 0.85,
+   "speed": 8.25
+  },
+  {
+   "id": "jump_start",
+   "label": "Jump (take-off)",
+   "file": "jump_start.vrma",
+   "dur": 1.3333,
+   "loop": false,
+   "source": "Quaternius Universal Animation Library: Jump_Start (CC0)",
+   "stride": 0.0,
+   "hips": 0.9167
+  },
+  {
+   "id": "jump_air",
+   "label": "Jump (in the air / falling)",
+   "file": "jump_air.vrma",
+   "dur": 2.5,
+   "loop": true,
+   "source": "Quaternius Universal Animation Library: Jump_Loop (CC0)",
+   "stride": 0.0,
+   "hips": 0.9167
+  },
+  {
+   "id": "jump_land",
+   "label": "Jump (landing)",
+   "file": "jump_land.vrma",
+   "dur": 1.2667,
+   "loop": false,
+   "source": "Quaternius Universal Animation Library: Jump_Land (CC0)",
+   "stride": 0.0,
+   "hips": 0.9167
+  },
+  {
+   "id": "carry",
+   "label": "Carry walk (arms holding)",
+   "file": "carry.vrma",
+   "dur": 2.0,
+   "loop": true,
+   "source": "Quaternius Universal Animation Library: Walk_Carry_Loop (CC0)",
+   "stride": 1.3,
+   "hips": 0.9167,
+   "phase": 0.0,
+   "speed": 0.65
+  },
+  {
+   "id": "crouch_walk",
+   "label": "Crouched walk (heavy strain legs)",
+   "file": "crouch_walk.vrma",
+   "dur": 2.0,
+   "loop": true,
+   "source": "Quaternius Universal Animation Library: Crouch_Fwd_Loop (CC0)",
+   "stride": 1.5,
+   "hips": 0.9167,
+   "phase": 0.0,
+   "speed": 0.75
+  },
+  {
+   "id": "crouch_idle",
+   "label": "Crouched idle (heavy strain legs)",
+   "file": "crouch_idle.vrma",
+   "dur": 2.9333,
+   "loop": true,
+   "source": "Quaternius Universal Animation Library: Crouch_Idle_Loop (CC0)",
+   "stride": 0.0,
+   "hips": 0.9167
+  },
+  {
+   "id": "pickup",
+   "label": "Heavy lift",
+   "file": "pickup.vrma",
+   "dur": 0.8333,
+   "loop": false,
+   "source": "Quaternius Universal Animation Library: PickUp_Table (CC0)",
+   "stride": 0.0,
+   "hips": 0.9167
+  },
+  {
+   "id": "push",
+   "label": "Push (leaning into the wagon)",
+   "file": "push.vrma",
+   "dur": 2.6667,
+   "loop": true,
+   "source": "Quaternius Universal Animation Library: Push_Loop (CC0)",
+   "stride": 0.8,
+   "hips": 0.9167,
+   "phase": 0.8875,
+   "speed": 0.3
+  },
+  {
+   "id": "climb",
+   "label": "Climb up 1 m",
+   "file": "climb.vrma",
+   "dur": 0.6667,
+   "loop": false,
+   "source": "Quaternius Universal Animation Library: ClimbUp_1m (CC0)",
+   "stride": 1.6764,
+   "hips": 0.9167
+  },
+  {
+   "id": "swim",
+   "label": "Swim",
+   "file": "swim.vrma",
+   "dur": 1.3333,
+   "loop": true,
+   "source": "Quaternius Universal Animation Library: Swim_Fwd_Loop (CC0)",
+   "stride": 2.9,
+   "hips": 0.9167,
+   "phase": 0.85,
+   "speed": 2.175
+  },
+  {
+   "id": "swim_idle",
+   "label": "Tread water",
+   "file": "swim_idle.vrma",
+   "dur": 3.3333,
+   "loop": true,
+   "source": "Quaternius Universal Animation Library: Swim_Idle_Loop (CC0)",
+   "stride": 0.0,
+   "hips": 0.9167
+  },
+  {
+   "id": "sit",
+   "label": "Sit (seat)",
+   "file": "sit.vrma",
+   "dur": 1.6667,
+   "loop": true,
+   "source": "Quaternius Universal Animation Library: Sitting_Idle_Loop (CC0)",
+   "stride": 0.0,
+   "hips": 0.9167
+  },
+  {
+   "id": "sit_talk",
+   "label": "Sit (talking)",
+   "file": "sit_talk.vrma",
+   "dur": 2.9333,
+   "loop": true,
+   "source": "Quaternius Universal Animation Library: Sitting_Talking_Loop (CC0)",
+   "stride": 0.0,
+   "hips": 0.9167
+  },
+  {
+   "id": "drive",
+   "label": "Drive (reins)",
+   "file": "drive.vrma",
+   "dur": 1.6667,
+   "loop": true,
+   "source": "Quaternius Universal Animation Library: Driving_Loop (CC0)",
+   "stride": 0.0,
+   "hips": 0.9167
+  },
+  {
+   "id": "getup",
+   "label": "Get up (after a ragdoll)",
+   "file": "getup.vrma",
+   "dur": 1.5333,
+   "loop": false,
+   "source": "Quaternius Universal Animation Library: LayToIdle (CC0)",
+   "stride": 0.0,
+   "hips": 0.9167
+  },
+  {
+   "id": "dance",
+   "label": "Dance",
+   "file": "dance.vrma",
+   "dur": 1.0,
+   "loop": true,
+   "source": "Quaternius Universal Animation Library: Dance_Loop (CC0)",
+   "stride": 0.0,
+   "hips": 0.9167
+  },
+  {
+   "id": "call",
+   "label": "Call out (soundbite)",
+   "file": "call.vrma",
+   "dur": 2.5,
+   "loop": false,
+   "source": "Quaternius Universal Animation Library: Idle_Rail_Call (CC0)",
+   "stride": 0.0,
+   "hips": 0.9167
+  },
+  {
+   "id": "wave",
+   "label": "Wave",
+   "file": "wave.vrma",
+   "dur": 2.6,
+   "loop": false,
+   "source": "VTube Pro trailbodies (keyframed over Quaternius UAL Idle_Loop, CC0)",
+   "stride": 0.0,
+   "hips": 0.9167
+  },
+  {
+   "id": "point",
+   "label": "Point",
+   "file": "point.vrma",
+   "dur": 2.2,
+   "loop": false,
+   "source": "VTube Pro trailbodies (keyframed over Quaternius UAL Idle_Loop, CC0)",
+   "stride": 0.0,
+   "hips": 0.9167
+  },
+  {
+   "id": "facepalm",
+   "label": "Facepalm",
+   "file": "facepalm.vrma",
+   "dur": 2.8,
+   "loop": false,
+   "source": "VTube Pro trailbodies (keyframed over Quaternius UAL Idle_Loop, CC0)",
+   "stride": 0.0,
+   "hips": 0.9167
+  },
+  {
+   "id": "cheer",
+   "label": "Cheer",
+   "file": "cheer.vrma",
+   "dur": 2.4,
+   "loop": false,
+   "source": "VTube Pro trailbodies (keyframed over Quaternius UAL Idle_Loop, CC0)",
+   "stride": 0.0,
+   "hips": 0.9167
+  },
+  {
+   "id": "laugh",
+   "label": "Laugh",
+   "file": "laugh.vrma",
+   "dur": 2.6,
+   "loop": false,
+   "source": "VTube Pro trailbodies (keyframed over Quaternius UAL Idle_Loop, CC0)",
+   "stride": 0.0,
+   "hips": 0.9167
+  },
+  {
+   "id": "sit_ground",
+   "label": "Sit on the ground",
+   "file": "sit_ground.vrma",
+   "dur": 2.5,
+   "loop": true,
+   "source": "VTube Pro trailbodies (keyframed over Quaternius UAL Idle_Loop, CC0)",
+   "stride": 0.0,
+   "hips": 0.9167
+  }
+ ]
+}

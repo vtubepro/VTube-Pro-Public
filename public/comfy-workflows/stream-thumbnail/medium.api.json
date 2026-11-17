@@ -1,0 +1,241 @@
+{
+ "1": {
+  "class_type": "LoadImage",
+  "inputs": {
+   "image": "vtp_avatar.png"
+  },
+  "_meta": {
+   "title": "Your avatar (a studio picture)"
+  }
+ },
+ "2": {
+  "class_type": "UNETLoader",
+  "inputs": {
+   "unet_name": "z_image_turbo_bf16.safetensors",
+   "weight_dtype": "default"
+  },
+  "_meta": {
+   "title": "Load Diffusion Model"
+  }
+ },
+ "3": {
+  "class_type": "CLIPLoader",
+  "inputs": {
+   "clip_name": "qwen_3_4b.safetensors",
+   "type": "lumina2",
+   "device": "default"
+  },
+  "_meta": {
+   "title": "Load CLIP"
+  }
+ },
+ "4": {
+  "class_type": "VAELoader",
+  "inputs": {
+   "vae_name": "ae.safetensors"
+  },
+  "_meta": {
+   "title": "Load VAE"
+  }
+ },
+ "5": {
+  "class_type": "ModelSamplingAuraFlow",
+  "inputs": {
+   "model": [
+    "2",
+    0
+   ],
+   "shift": 3
+  },
+  "_meta": {
+   "title": "ModelSamplingAuraFlow"
+  }
+ },
+ "6": {
+  "class_type": "CLIPTextEncode",
+  "inputs": {
+   "text": "YouTube thumbnail background: a cozy neon arcade at night, vibrant colours, high contrast. Big bold title text \"LATE NIGHT GAMES\" on the left side.",
+   "clip": [
+    "3",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "Your prompt: describe the picture"
+  }
+ },
+ "7": {
+  "class_type": "ConditioningZeroOut",
+  "inputs": {
+   "conditioning": [
+    "6",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "ConditioningZeroOut"
+  }
+ },
+ "8": {
+  "class_type": "EmptySD3LatentImage",
+  "inputs": {
+   "width": 1280,
+   "height": 720,
+   "batch_size": 1
+  },
+  "_meta": {
+   "title": "Picture size 1280x720"
+  }
+ },
+ "9": {
+  "class_type": "KSampler",
+  "inputs": {
+   "model": [
+    "5",
+    0
+   ],
+   "seed": 20261001,
+   "steps": 8,
+   "cfg": 1,
+   "sampler_name": "res_multistep",
+   "scheduler": "simple",
+   "positive": [
+    "6",
+    0
+   ],
+   "negative": [
+    "7",
+    0
+   ],
+   "latent_image": [
+    "8",
+    0
+   ],
+   "denoise": 1
+  },
+  "_meta": {
+   "title": "KSampler"
+  }
+ },
+ "10": {
+  "class_type": "VAEDecode",
+  "inputs": {
+   "samples": [
+    "9",
+    0
+   ],
+   "vae": [
+    "4",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "VAE Decode"
+  }
+ },
+ "11": {
+  "class_type": "ImageScale",
+  "inputs": {
+   "image": [
+    "1",
+    0
+   ],
+   "upscale_method": "lanczos",
+   "width": 0,
+   "height": 690,
+   "crop": "disabled"
+  },
+  "_meta": {
+   "title": "Avatar height"
+  }
+ },
+ "12": {
+  "class_type": "LoadBackgroundRemovalModel",
+  "inputs": {
+   "bg_removal_name": "birefnet.safetensors"
+  },
+  "_meta": {
+   "title": "Background remover (BiRefNet, MIT)"
+  }
+ },
+ "13": {
+  "class_type": "RemoveBackground",
+  "inputs": {
+   "image": [
+    "11",
+    0
+   ],
+   "bg_removal_model": [
+    "12",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "Remove Background"
+  }
+ },
+ "14": {
+  "class_type": "InvertMask",
+  "inputs": {
+   "mask": [
+    "13",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "Invert Mask"
+  }
+ },
+ "15": {
+  "class_type": "JoinImageWithAlpha",
+  "inputs": {
+   "image": [
+    "11",
+    0
+   ],
+   "alpha": [
+    "14",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "Transparent background"
+  }
+ },
+ "16": {
+  "class_type": "ImageCompositeMasked",
+  "inputs": {
+   "destination": [
+    "10",
+    0
+   ],
+   "source": [
+    "11",
+    0
+   ],
+   "x": 720,
+   "y": 30,
+   "resize_source": false,
+   "mask": [
+    "13",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "Place your avatar (x, y)"
+  }
+ },
+ "17": {
+  "class_type": "SaveImage",
+  "inputs": {
+   "images": [
+    "16",
+    0
+   ],
+   "filename_prefix": "VTubePro/thumbnail"
+  },
+  "_meta": {
+   "title": "Save the picture"
+  }
+ }
+}

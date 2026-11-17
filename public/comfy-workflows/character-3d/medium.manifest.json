@@ -1,0 +1,101 @@
+{
+ "schema": "vtubepro.comfy-workflow/1",
+ "id": "character-3d",
+ "tier": "medium",
+ "key": "character-3d/medium",
+ "title": "Character 3D: turn a picture into a 3D model",
+ "short": "Character 3D",
+ "task": "character-3d",
+ "version": "2026.10.01",
+ "checked": "2026-10-01",
+ "vram": {
+  "minGB": 12,
+  "recommendedGB": 16,
+  "label": "16 GB"
+ },
+ "comfyui": {
+  "tested": "0.22.3",
+  "note": "Uses only built-in ComfyUI nodes (plus the custom node listed, if any). Update ComfyUI if a node shows red."
+ },
+ "models": [
+  {
+   "id": "birefnet",
+   "name": "BiRefNet (background remover)",
+   "file": "birefnet.safetensors",
+   "folder": "background_removal",
+   "bytes": 444473596,
+   "sha256": "9ab37426bf4de0567af6b5d21b16151357149139362e6e8992021b8ce356a154",
+   "url": "https://huggingface.co/Comfy-Org/BiRefNet/resolve/25511f8787e51912e1480706b4e47b8f467fbf72/background_removal/birefnet.safetensors",
+   "page": "https://huggingface.co/Comfy-Org/BiRefNet",
+   "repo": "Comfy-Org/BiRefNet",
+   "revision": "25511f8787e51912e1480706b4e47b8f467fbf72",
+   "licence": "MIT",
+   "licenceUrl": "https://huggingface.co/ZhengPeng7/BiRefNet",
+   "upstream": "ZhengPeng7/BiRefNet (same SHA-256 as its model.safetensors)"
+  },
+  {
+   "id": "hunyuan3d-21",
+   "name": "Hunyuan3D 2.1 shape model",
+   "file": "hunyuan_3d_v2.1.safetensors",
+   "folder": "checkpoints",
+   "bytes": 7365943290,
+   "sha256": "5f21e98a6cb99b13b5e224abaee33929570fff7af2b6a0060001559a04ba9d72",
+   "url": "https://huggingface.co/Comfy-Org/hunyuan3D_2.1_repackaged/resolve/606def5076d38b387b005caf93b5336c56ca99f9/hunyuan_3d_v2.1.safetensors",
+   "page": "https://huggingface.co/Comfy-Org/hunyuan3D_2.1_repackaged",
+   "repo": "Comfy-Org/hunyuan3D_2.1_repackaged",
+   "revision": "606def5076d38b387b005caf93b5336c56ca99f9",
+   "licence": "Tencent Hunyuan 3D 2.1 Community (not for use in the EU, UK or South Korea)",
+   "licenceUrl": "https://github.com/Tencent-Hunyuan/Hunyuan3D-2.1/blob/main/LICENSE",
+   "upstream": "tencent/Hunyuan3D-2.1 (Comfy-Org repackage of the same weights)",
+   "restricted": {
+    "text": "Licence: Tencent Hunyuan 3D Community. It does not cover the EU, the UK or South Korea. If you live there, don't download it. A company with over 1 million monthly users needs Tencent's OK first.",
+    "excluded": [
+     "EU",
+     "UK",
+     "South Korea"
+    ]
+   }
+  }
+ ],
+ "customNodes": [],
+ "downloadBytes": 7810416886,
+ "inputs": [
+  {
+   "node": "1",
+   "kind": "image",
+   "what": "Your character picture (whole body, front view)",
+   "default": "vtp_character.png"
+  }
+ ],
+ "outputs": [
+  {
+   "node": "18",
+   "what": "3D character (grey)",
+   "size": "about 100k triangles",
+   "format": "GLB"
+  }
+ ],
+ "settings": "Hunyuan3D 2.1: 30 steps, CFG 5, shape detail 256. Cuts the character out and puts it on white first.",
+ "forWhat": "A picture of your character (whole body, facing front) turned into a 3D model on your own computer. The model is plain grey: it has the shape, not the colours.",
+ "output": "A .glb 3D model in ComfyUI's output/VTubePro folder.",
+ "vtp": "The Create tab's \"Create my character\" runs this for you. Or add the .glb with \"Add my model\", then paint it (Create tab, \"Paint with AI\") or finish it in Blender. VTube Pro adds the eyes and mouth.",
+ "ask": "Set up the VTube Pro character 3D workflow in ComfyUI",
+ "steps": [
+  "Load a picture of your character in \"Your character picture\": whole body, facing the front, one character.",
+  "Press Run. It takes a few minutes, so do it when you are not live."
+ ],
+ "tips": [
+  "Original characters only: no existing characters, logos or game art.",
+  "A plain background and even light give the cleanest shape.",
+  "The Hunyuan3D licence does not cover the EU, the UK or South Korea: if you live there, use another way to make your character."
+ ],
+ "licenceSummary": "Check the licence first. Licence: Tencent Hunyuan 3D Community. It does not cover the EU, the UK or South Korea. If you live there, don't download it. A company with over 1 million monthly users needs Tencent's OK first. The other models: commercial use OK by default: MIT.",
+ "notices": [
+  "Licence: Tencent Hunyuan 3D Community. It does not cover the EU, the UK or South Korea. If you live there, don't download it. A company with over 1 million monthly users needs Tencent's OK first."
+ ],
+ "files": {
+  "api": "character-3d/medium.api.json",
+  "ui": "character-3d/medium.workflow.json",
+  "manifest": "character-3d/medium.manifest.json"
+ }
+}

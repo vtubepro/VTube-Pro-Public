@@ -1,0 +1,221 @@
+{
+  "id": "vtubepro_studio",
+  "name": "VTube Pro Studio",
+  "world": "VTube Pro",
+  "model": "scene.glb",
+  "preview": "preview.png",
+  "thumbnail": "thumb.png",
+  "modes": [
+    "talk",
+    "react",
+    "gaming"
+  ],
+  "defaultCamera": "CAM_WIDE",
+  "reactCamera": "CAM_REACT",
+  "avatarHeight": 1.5,
+  "spots": 12,
+  "hostSpot": "SPOT_01",
+  "ambience": {
+    "fog": "#0b0d12",
+    "fogNear": 18,
+    "fogFar": 44,
+    "background": "#0b0d12",
+    "exposure": 1.0
+  },
+  "lights": {
+    "programs": [
+      "show",
+      "steady",
+      "beatPulse",
+      "party",
+      "strobe"
+    ],
+    "groups": {
+      "led": "#7bd88f",
+      "led2": "#6cc7f5",
+      "sign": "#ffffff",
+      "art": "#ffffff",
+      "onair": "#ffffff",
+      "spots": "#ffe8cc",
+      "lamps": "#ffd49a",
+      "screens": "#9fd8ff"
+    }
+  },
+  "screenSkin": "studio",
+  "stage": {
+    "palette": "lounge",
+    "note": "desk seats SPOT_01-04 (host centre-left), gaming chair SPOT_05, interview nook SPOT_06-08, standing SPOT_09-12"
+  },
+  "interview": {
+    "theme": "studio",
+    "host": "SPOT_06",
+    "desk": "none",
+    "guests": [
+      "SPOT_07",
+      "SPOT_08"
+    ],
+    "monitor": {
+      "style": "tv",
+      "width": 1.3
+    },
+    "cutaways": [
+      "CAM_WIDE",
+      "CAM_DESK"
+    ]
+  },
+  "projectorScreens": [
+    {
+      "position": [
+        6.3,
+        2.05,
+        -3.3
+      ],
+      "yaw": -22,
+      "width": 1.7
+    },
+    {
+      "position": [
+        -6.0,
+        2.05,
+        -3.4
+      ],
+      "yaw": 25,
+      "width": 1.7
+    }
+  ],
+  "gfx": {
+    "threshold": 1.4,
+    "note": "bloom threshold above the performers' lit whites (1.05 default bloomed white shirts / skin on High + Ultra: 38% vs 14% clipped torso pixels)",
+    "hdri": {
+      "name": "empty_warehouse_01",
+      "intensity": 0.35
+    },
+    "reflect": {
+      "strength": 0.18,
+      "y": 0.0
+    }
+  },
+  "release": {
+    "sample": true,
+    "note": "100% original: scripted in Blender (blender/vs_room.py), atlas painted by blender/vs_paint.py; no game IP, no personal branding"
+  },
+  "cams": {
+    "CAM_WIDE": {
+      "pos": [
+        0,
+        2.4,
+        6.75
+      ],
+      "target": [
+        0,
+        1.45,
+        -1.2
+      ],
+      "fov": 57
+    },
+    "CAM_REACT": {
+      "pos": [
+        0,
+        2.45,
+        6.2
+      ],
+      "target": [
+        0,
+        2.75,
+        -4.37
+      ],
+      "fov": 19.4
+    },
+    "CAM_DESK": {
+      "pos": [
+        0,
+        1.55,
+        3.4
+      ],
+      "target": [
+        0,
+        1.22,
+        -0.9
+      ],
+      "fov": 38
+    },
+    "CAM_GAMING": {
+      "pos": [
+        -3.4,
+        1.7,
+        1.9
+      ],
+      "target": [
+        -6.6,
+        1.0,
+        -1.9
+      ],
+      "fov": 44
+    },
+    "CAM_INTERVIEW": {
+      "pos": [
+        2.3,
+        1.65,
+        2.9
+      ],
+      "target": [
+        5.7,
+        1.0,
+        -0.4
+      ],
+      "fov": 44
+    },
+    "CAM_DOOR": {
+      "pos": [
+        5.0,
+        1.8,
+        0.3
+      ],
+      "target": [
+        8.0,
+        1.2,
+        4.2
+      ],
+      "fov": 50
+    },
+    "CAM_CRANE": {
+      "pos": [
+        0,
+        4.1,
+        5.8
+      ],
+      "target": [
+        0,
+        1.1,
+        -1.4
+      ],
+      "fov": 48
+    },
+    "CAM_LEFT": {
+      "pos": [
+        -5.6,
+        2.0,
+        5.4
+      ],
+      "target": [
+        0.4,
+        1.3,
+        -1.6
+      ],
+      "fov": 46
+    },
+    "CAM_RIGHT": {
+      "pos": [
+        5.6,
+        2.0,
+        5.4
+      ],
+      "target": [
+        -0.4,
+        1.3,
+        -1.6
+      ],
+      "fov": 46
+    }
+  }
+}

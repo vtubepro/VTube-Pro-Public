@@ -1,0 +1,7 @@
+{"id":"anime_luna","name":"Luna","prompt":"gothic cat-girl: silver-lavender twintails with cat ears, ruby eyes, dark floral gothic dress with puffed sleeves, platform strap shoes",
+ "base":"darkness_shibu",
+ "hair":{"style":"hairsample_female"},
+ "colors":{"hair":"#d8d0ec","hairTip":"#9d7fe0","hairTipRange":[0.55,1.0],"eyes":"#e0304a","brows":"#8a7aa8"},
+ "face":{"eyeSize":1.02},
+ "body":{"bust":1.05}
+}

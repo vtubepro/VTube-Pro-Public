@@ -1,0 +1,78 @@
+{
+ "id": "fk_gacha_girl",
+ "name": "Gacha girl (face_kit)",
+ "creator": {
+  "base": "shino",
+  "hair": {
+   "style": "shino"
+  },
+  "colors": {
+   "hair": "#eceaf6",
+   "eyes": "#4e63e0",
+   "brows": "#a89ac4",
+   "skin": "#ffdccb",
+   "hairContrast": 0.45,
+   "hairTip": "#ffffff",
+   "hairTipRange": [
+    0.35,
+    1.0
+   ]
+  },
+  "face": {
+   "eyeSize": 1.2,
+   "eyeHeight": -0.15,
+   "chin": -0.25
+  }
+ },
+ "face": {
+  "skin": {
+   "blush": "#ff8f98",
+   "blushAlpha": 0.3,
+   "nose": "tick",
+   "noseSize": 0.6,
+   "crease": 0.62,
+   "creaseAlpha": 0.45,
+   "lowerLash": 0.6
+  },
+  "eye": {
+   "line": "#24162a",
+   "line2": "#5c3450",
+   "lineIn": 0.07,
+   "lineMax": 0.32,
+   "lineOverlap": 0.14,
+   "wing": 0.32,
+   "wingDrop": -0.06,
+   "spikes": 3,
+   "spikeLen": 0.5,
+   "whiteShadowH": 0.3
+  },
+  "iris": {
+   "color": "#4e63e0",
+   "top": "#101450",
+   "bottom": "#9fe6ff",
+   "glow": "#86f2ff",
+   "glowAlpha": 0.7,
+   "ring": "#141338",
+   "streaks": 0.2,
+   "pupil": 0.32,
+   "topBand": 0.34,
+   "scale": 1.06
+  },
+  "hl": {
+   "main": [
+    0.34,
+    0.42,
+    0.3,
+    0.24
+   ],
+   "sparkles": 2,
+   "bar": 0
+  },
+  "brow": {
+   "height": 2.3,
+   "arch": 0.35,
+   "width": 0.12
+  }
+ },
+ "proxy": 1.0
+}

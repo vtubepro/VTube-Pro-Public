@@ -1,0 +1,148 @@
+{
+ "1": {
+  "class_type": "CheckpointLoaderSimple",
+  "inputs": {
+   "ckpt_name": "sd_xl_base_1.0.safetensors"
+  },
+  "_meta": {
+   "title": "Load Checkpoint"
+  }
+ },
+ "2": {
+  "class_type": "CLIPTextEncode",
+  "inputs": {
+   "text": "cozy pixel art bedroom at night, soft fairy lights, rain on the window, calm empty centre, stream starting soon screen background",
+   "clip": [
+    "1",
+    1
+   ]
+  },
+  "_meta": {
+   "title": "Your prompt: describe the picture"
+  }
+ },
+ "3": {
+  "class_type": "CLIPTextEncode",
+  "inputs": {
+   "text": "lowres, blurry, jpeg artifacts, watermark, signature, text, logo, deformed, bad anatomy, extra fingers, cropped",
+   "clip": [
+    "1",
+    1
+   ]
+  },
+  "_meta": {
+   "title": "Things to avoid"
+  }
+ },
+ "4": {
+  "class_type": "EmptyLatentImage",
+  "inputs": {
+   "width": 1344,
+   "height": 768,
+   "batch_size": 1
+  },
+  "_meta": {
+   "title": "Picture size 1344x768"
+  }
+ },
+ "5": {
+  "class_type": "KSampler",
+  "inputs": {
+   "model": [
+    "1",
+    0
+   ],
+   "seed": 20261001,
+   "steps": 28,
+   "cfg": 6,
+   "sampler_name": "dpmpp_2m",
+   "scheduler": "karras",
+   "positive": [
+    "2",
+    0
+   ],
+   "negative": [
+    "3",
+    0
+   ],
+   "latent_image": [
+    "4",
+    0
+   ],
+   "denoise": 1
+  },
+  "_meta": {
+   "title": "KSampler"
+  }
+ },
+ "6": {
+  "class_type": "VAEDecode",
+  "inputs": {
+   "samples": [
+    "5",
+    0
+   ],
+   "vae": [
+    "1",
+    2
+   ]
+  },
+  "_meta": {
+   "title": "VAE Decode"
+  }
+ },
+ "7": {
+  "class_type": "UpscaleModelLoader",
+  "inputs": {
+   "model_name": "RealESRGAN_x4plus.safetensors"
+  },
+  "_meta": {
+   "title": "Load Upscale Model"
+  }
+ },
+ "8": {
+  "class_type": "ImageUpscaleWithModel",
+  "inputs": {
+   "upscale_model": [
+    "7",
+    0
+   ],
+   "image": [
+    "6",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "Upscale Image (using Model)"
+  }
+ },
+ "9": {
+  "class_type": "ImageScale",
+  "inputs": {
+   "image": [
+    "8",
+    0
+   ],
+   "upscale_method": "lanczos",
+   "width": 1920,
+   "height": 1080,
+   "crop": "center"
+  },
+  "_meta": {
+   "title": "Final size 1920x1080"
+  }
+ },
+ "10": {
+  "class_type": "SaveImage",
+  "inputs": {
+   "images": [
+    "9",
+    0
+   ],
+   "filename_prefix": "VTubePro/overlay"
+  },
+  "_meta": {
+   "title": "Save the picture"
+  }
+ }
+}

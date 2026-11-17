@@ -1,0 +1,43 @@
+{
+ "note": "Local CC0 asset library for future room building (not loaded by the app yet). See docs/ASSET_LIBRARY.md.",
+ "props": [
+  {
+   "kit": "polyhaven_harbour",
+   "name": "Poly Haven harbour props (1k)",
+   "count": 4,
+   "index": "props/polyhaven_harbour/index.json"
+  },
+  {
+   "kit": "quaternius_fantasy_props",
+   "name": "Fantasy Props MegaKit (Standard)",
+   "count": 94,
+   "index": "props/quaternius_fantasy_props/index.json"
+  },
+  {
+   "kit": "quaternius_scifi_megakit",
+   "name": "Modular Sci-Fi MegaKit (Standard)",
+   "count": 190,
+   "index": "props/quaternius_scifi_megakit/index.json"
+  },
+  {
+   "kit": "kaykit_dungeon",
+   "name": "KayKit Dungeon Remastered 1.1 (free)",
+   "count": 211,
+   "index": "props/kaykit_dungeon/index.json"
+  }
+ ],
+ "sounds": [
+  {
+   "pack": "kenney_impact",
+   "name": "Kenney Impact Sounds",
+   "count": 130,
+   "index": "sounds/kenney_impact/index.json"
+  },
+  {
+   "pack": "kenney_ui",
+   "name": "Kenney UI Audio",
+   "count": 51,
+   "index": "sounds/kenney_ui/index.json"
+  }
+ ]
+}

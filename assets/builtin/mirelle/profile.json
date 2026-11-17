@@ -1,0 +1,179 @@
+{
+ "version": 1,
+ "id": "mirelle",
+ "name": "Mirelle",
+ "modelFile": "mirelle.vrm",
+ "thumbnail": "thumb.png",
+ "source": "builtin",
+ "createdAt": "2026-09-28T22:59:45.000Z",
+ "prompt": "original anime streamer girl: sakura-pink twintails fading to lavender tips, mint-teal eyes, bright friendly smile",
+ "transform": {
+  "scale": 1,
+  "offset": [
+   0,
+   0,
+   0
+  ],
+  "yaw": 0
+ },
+ "eyes": {
+  "mode": "model",
+  "style": "anime",
+  "left": null,
+  "right": null,
+  "size": 0.02,
+  "protrusion": 0,
+  "scleraColor": "#ffffff",
+  "irisColor": "#1fb5a8",
+  "irisSize": 0.5,
+  "pupilSize": 0.4,
+  "lidColor": null,
+  "outline": false,
+  "gazeRange": 20,
+  "restOpen": 1,
+  "highlight": true
+ },
+ "mouth": {
+  "mode": "model",
+  "style": "toon",
+  "center": null,
+  "width": 0.02,
+  "openHeight": 0.015,
+  "influence": 0.04,
+  "lipColor": "#c46a6e",
+  "interiorColor": "#4a1c22",
+  "tongueColor": "#d77a7e",
+  "teethColor": "#ffffff",
+  "showTeeth": true,
+  "showTongue": true,
+  "lineWidth": 0.0015,
+  "restCurve": 0
+ },
+ "brows": {
+  "enabled": false,
+  "color": "#333333",
+  "thickness": 0.006
+ },
+ "look": {
+  "shading": "anime",
+  "rim": 0.2,
+  "shadowTint": "#c98f86",
+  "softness": 0.5,
+  "hairShine": 0,
+  "vrmExposure": 0.66
+ },
+ "blush": {
+  "enabled": false,
+  "color": "#e88a8a",
+  "rest": 0,
+  "hatch": false
+ },
+ "rig": {
+  "kind": "vrm"
+ },
+ "physics": {
+  "enabled": true,
+  "jiggle": [],
+  "chains": [],
+  "autoChains": false,
+  "wind": 0
+ },
+ "tracking": {
+  "expressiveness": 1.0,
+  "gains": {},
+  "smoothing": 0.4,
+  "headRotationScale": 1,
+  "bodyFollow": 0.6,
+  "mirror": true,
+  "trackHands": true,
+  "trackBody": true,
+  "audioLipSync": false,
+  "facialHair": 0,
+  "translate": [
+   1,
+   0.7,
+   1.2
+  ],
+  "armExaggeration": 1.0,
+  "armBounce": 0.25,
+  "gestureFx": true,
+  "gestureReactions": true,
+  "expressionBoost": 1,
+  "cartoon": 0.0,
+  "enunciation": 1.1
+ },
+ "costumes": [
+  {
+   "id": "mirelle_streamer",
+   "name": "Streamer hoodie",
+   "file": "costumes/mirelle_streamer.glb",
+   "thumbnail": "costumes/mirelle_streamer_thumb.png",
+   "hides": [
+    "Outfit_Tops",
+    "Outfit_Bottoms",
+    "Outfit_Shoes",
+    "Outfit_Accessory"
+   ],
+   "source": "builtin",
+   "prompt": "oversized lilac hoodie with a white hood, pleated navy skirt, loafers (wear with the headset)",
+   "kind": "outfit"
+  },
+  {
+   "id": "mirelle_idol",
+   "name": "Idol stage dress",
+   "file": "costumes/mirelle_idol.glb",
+   "thumbnail": "costumes/mirelle_idol_thumb.png",
+   "hides": [
+    "Outfit_Tops",
+    "Outfit_Bottoms",
+    "Outfit_Shoes",
+    "Outfit_Accessory"
+   ],
+   "source": "builtin",
+   "prompt": "pastel pink idol stage dress: white skirt panels, hot-pink waist band + bow, hem band with white frill, gold stars and pink hearts",
+   "kind": "outfit"
+  },
+  {
+   "id": "mirelle_fantasy",
+   "name": "Starlit sorceress",
+   "file": "costumes/mirelle_fantasy.glb",
+   "thumbnail": "costumes/mirelle_fantasy_thumb.png",
+   "hides": [
+    "Outfit_Tops",
+    "Outfit_Bottoms",
+    "Outfit_Shoes",
+    "Outfit_Accessory"
+   ],
+   "source": "builtin",
+   "prompt": "deep violet starlit gown: starfield of gold dots and sparkles, crisp gold waist and hem ornament lines, dark boots",
+   "kind": "outfit"
+  },
+  {
+   "id": "mirelle_street",
+   "name": "Street casual",
+   "file": "costumes/mirelle_street.glb",
+   "thumbnail": "costumes/mirelle_street_thumb.png",
+   "hides": [
+    "Outfit_Tops",
+    "Outfit_Bottoms",
+    "Outfit_Shoes",
+    "Outfit_Accessory"
+   ],
+   "source": "builtin",
+   "prompt": "cropped mint hoodie top, charcoal pleated skirt, dark sneakers",
+   "kind": "outfit"
+  },
+  {
+   "id": "mirelle_headset",
+   "name": "Streamer headset",
+   "file": "costumes/mirelle_headset.glb",
+   "thumbnail": "costumes/mirelle_headset_thumb.png",
+   "hides": [],
+   "source": "builtin",
+   "prompt": "white streaming headset with sakura-pink cushions, mint glow rings and a boom mic",
+   "kind": "accessory"
+  }
+ ],
+ "costume": null,
+ "accessories": []
+}

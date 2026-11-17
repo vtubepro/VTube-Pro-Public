@@ -1,0 +1,89 @@
+{
+ "schema": "vtubepro.comfy-workflow/1",
+ "id": "character-concept-sheet",
+ "tier": "small",
+ "key": "character-concept-sheet/small",
+ "title": "Character reference sheet (front, side, back)",
+ "short": "Character reference sheet",
+ "task": "concept-sheet",
+ "version": "2026.10.01",
+ "checked": "2026-10-01",
+ "vram": {
+  "minGB": 8,
+  "recommendedGB": 8,
+  "label": "8 GB"
+ },
+ "comfyui": {
+  "tested": "0.22.3",
+  "note": "Uses only built-in ComfyUI nodes (plus the custom node listed, if any). Update ComfyUI if a node shows red."
+ },
+ "models": [
+  {
+   "id": "animagine-xl-4",
+   "name": "Animagine XL 4.0 (opt)",
+   "file": "animagine-xl-4.0-opt.safetensors",
+   "folder": "checkpoints",
+   "bytes": 6938350040,
+   "sha256": "6327eca98bfb6538dd7a4edce22484a1bbc57a8cff6b11d075d40da1afb847ac",
+   "url": "https://huggingface.co/cagliostrolab/animagine-xl-4.0/resolve/2b7c1b397761bf5bd3cc42e5b39ec99314a75a96/animagine-xl-4.0-opt.safetensors",
+   "page": "https://huggingface.co/cagliostrolab/animagine-xl-4.0",
+   "repo": "cagliostrolab/animagine-xl-4.0",
+   "revision": "2b7c1b397761bf5bd3cc42e5b39ec99314a75a96",
+   "licence": "CreativeML Open RAIL++-M",
+   "licenceUrl": "https://huggingface.co/cagliostrolab/animagine-xl-4.0",
+   "upstream": "cagliostrolab/animagine-xl-4.0"
+  },
+  {
+   "id": "realesrgan-x4",
+   "name": "Real-ESRGAN x4plus (upscaler)",
+   "file": "RealESRGAN_x4plus.safetensors",
+   "folder": "upscale_models",
+   "bytes": 66857836,
+   "sha256": "37f9a931c215f040aa6d50f711f2cb115f713c46df1d0d6469a8bd7bfe9a60bb",
+   "url": "https://huggingface.co/Comfy-Org/Real-ESRGAN_repackaged/resolve/5fd49b7b278836f48af63ecd314d0f98ab336105/RealESRGAN_x4plus.safetensors",
+   "page": "https://huggingface.co/Comfy-Org/Real-ESRGAN_repackaged",
+   "repo": "Comfy-Org/Real-ESRGAN_repackaged",
+   "revision": "5fd49b7b278836f48af63ecd314d0f98ab336105",
+   "licence": "BSD-3-Clause",
+   "licenceUrl": "https://github.com/xinntao/Real-ESRGAN/blob/master/LICENSE",
+   "upstream": "xinntao/Real-ESRGAN"
+  }
+ ],
+ "customNodes": [],
+ "downloadBytes": 7005207876,
+ "inputs": [
+  {
+   "node": "2",
+   "kind": "text",
+   "what": "Your prompt: describe the picture",
+   "default": "character sheet, multiple views, front view, side view, back view, full body, a-pose, simple white background, 1girl, silver hair, teal eyes, oversized hoodie, sneakers, masterpiece, best quality"
+  }
+ ],
+ "outputs": [
+  {
+   "node": "10",
+   "what": "Reference sheet",
+   "size": "2048x1024",
+   "format": "PNG"
+  }
+ ],
+ "settings": "1536x768, 28 steps, CFG 5, then Real-ESRGAN to 2048x1024.",
+ "forWhat": "Front, side and back views of an original character, to model from or to paint textures with.",
+ "output": "One wide sheet, 2048x1024 PNG, plain background.",
+ "vtp": "Use it as the reference for the texture repaint workflow and for your model maker.",
+ "ask": "Set up the VTube Pro character sheet workflow in ComfyUI",
+ "steps": [
+  "Describe your character in \"Your prompt\": hair, eyes, outfit, colours.",
+  "Press Run a few times and keep the most consistent sheet."
+ ],
+ "tips": [
+  "Original designs only: no existing characters, logos or game outfits.",
+  "A neutral A-pose and even light make modelling easier."
+ ],
+ "licenceSummary": "Commercial use OK by default: CreativeML Open RAIL++-M, BSD-3-Clause.",
+ "files": {
+  "api": "character-concept-sheet/small.api.json",
+  "ui": "character-concept-sheet/small.workflow.json",
+  "manifest": "character-concept-sheet/small.manifest.json"
+ }
+}

@@ -1,0 +1,144 @@
+{
+ "schema": "vtubepro.comfy-workflow/1",
+ "id": "avatar-texture-repaint",
+ "tier": "small",
+ "key": "avatar-texture-repaint/small",
+ "title": "Repaint an avatar texture from a reference picture",
+ "short": "Avatar texture repaint",
+ "task": "avatar-texture",
+ "version": "2026.10.01",
+ "checked": "2026-10-01",
+ "vram": {
+  "minGB": 8,
+  "recommendedGB": 8,
+  "label": "8 GB"
+ },
+ "comfyui": {
+  "tested": "0.22.3",
+  "note": "Uses only built-in ComfyUI nodes (plus the custom node listed, if any). Update ComfyUI if a node shows red."
+ },
+ "models": [
+  {
+   "id": "animagine-xl-4",
+   "name": "Animagine XL 4.0 (opt)",
+   "file": "animagine-xl-4.0-opt.safetensors",
+   "folder": "checkpoints",
+   "bytes": 6938350040,
+   "sha256": "6327eca98bfb6538dd7a4edce22484a1bbc57a8cff6b11d075d40da1afb847ac",
+   "url": "https://huggingface.co/cagliostrolab/animagine-xl-4.0/resolve/2b7c1b397761bf5bd3cc42e5b39ec99314a75a96/animagine-xl-4.0-opt.safetensors",
+   "page": "https://huggingface.co/cagliostrolab/animagine-xl-4.0",
+   "repo": "cagliostrolab/animagine-xl-4.0",
+   "revision": "2b7c1b397761bf5bd3cc42e5b39ec99314a75a96",
+   "licence": "CreativeML Open RAIL++-M",
+   "licenceUrl": "https://huggingface.co/cagliostrolab/animagine-xl-4.0",
+   "upstream": "cagliostrolab/animagine-xl-4.0"
+  },
+  {
+   "id": "controlnet-union-sdxl",
+   "name": "ControlNet Union SDXL ProMax (xinsir)",
+   "file": "controlnet-union-sdxl-promax.safetensors",
+   "folder": "controlnet",
+   "bytes": 2513342408,
+   "sha256": "9fae2e50cb431bfcbe05822b59ec2228df545ef27f711dea8949e9f4ed9f7cdc",
+   "url": "https://huggingface.co/xinsir/controlnet-union-sdxl-1.0/resolve/801a4a3fa3d4c936f4feea95b98607bc6726f80c/diffusion_pytorch_model_promax.safetensors",
+   "page": "https://huggingface.co/xinsir/controlnet-union-sdxl-1.0",
+   "repo": "xinsir/controlnet-union-sdxl-1.0",
+   "revision": "801a4a3fa3d4c936f4feea95b98607bc6726f80c",
+   "licence": "Apache-2.0",
+   "licenceUrl": "https://huggingface.co/xinsir/controlnet-union-sdxl-1.0",
+   "upstream": "xinsir/controlnet-union-sdxl-1.0"
+  },
+  {
+   "id": "ipadapter-plus-sdxl",
+   "name": "IP-Adapter Plus SDXL (ViT-H)",
+   "file": "ip-adapter-plus_sdxl_vit-h.safetensors",
+   "folder": "ipadapter",
+   "bytes": 847517512,
+   "sha256": "3f5062b8400c94b7159665b21ba5c62acdcd7682262743d7f2aefedef00e6581",
+   "url": "https://huggingface.co/h94/IP-Adapter/resolve/018e402774aeeddd60609b4ecdb7e298259dc729/sdxl_models/ip-adapter-plus_sdxl_vit-h.safetensors",
+   "page": "https://huggingface.co/h94/IP-Adapter",
+   "repo": "h94/IP-Adapter",
+   "revision": "018e402774aeeddd60609b4ecdb7e298259dc729",
+   "licence": "Apache-2.0",
+   "licenceUrl": "https://huggingface.co/h94/IP-Adapter",
+   "upstream": "h94/IP-Adapter"
+  },
+  {
+   "id": "clip-vision-vit-h",
+   "name": "CLIP ViT-H-14 image encoder (for IP-Adapter)",
+   "file": "CLIP-ViT-H-14-laion2B-s32B-b79K.safetensors",
+   "folder": "clip_vision",
+   "bytes": 2528373448,
+   "sha256": "6ca9667da1ca9e0b0f75e46bb030f7e011f44f86cbfb8d5a36590fcd7507b030",
+   "url": "https://huggingface.co/h94/IP-Adapter/resolve/018e402774aeeddd60609b4ecdb7e298259dc729/models/image_encoder/model.safetensors",
+   "page": "https://huggingface.co/h94/IP-Adapter",
+   "repo": "h94/IP-Adapter",
+   "revision": "018e402774aeeddd60609b4ecdb7e298259dc729",
+   "licence": "Apache-2.0 (h94/IP-Adapter repo; the OpenCLIP ViT-H-14 weights are MIT)",
+   "licenceUrl": "https://huggingface.co/h94/IP-Adapter",
+   "upstream": "laion/CLIP-ViT-H-14-laion2B-s32B-b79K"
+  }
+ ],
+ "customNodes": [
+  {
+   "id": "ipadapter-plus",
+   "name": "ComfyUI_IPAdapter_plus",
+   "folder": "ComfyUI_IPAdapter_plus",
+   "repo": "https://github.com/cubiq/ComfyUI_IPAdapter_plus",
+   "commit": "a0f451a5113cf9becb0847b92884cb10cbdec0ef",
+   "licence": "GPL-3.0 (the node code; it runs inside your ComfyUI, VTube Pro does not ship it)",
+   "pip": [],
+   "managerSearch": "ComfyUI_IPAdapter_plus"
+  }
+ ],
+ "downloadBytes": 12827583408,
+ "inputs": [
+  {
+   "node": "1",
+   "kind": "image",
+   "what": "Your texture (from your model)",
+   "default": "vtp_texture.png"
+  },
+  {
+   "node": "2",
+   "kind": "image",
+   "what": "Your reference (character picture)",
+   "default": "vtp_reference.png"
+  },
+  {
+   "node": "8",
+   "kind": "text",
+   "what": "Your prompt: describe the picture",
+   "default": "game character texture sheet, flat colours, clean anime cel shading, same layout, same seams"
+  }
+ ],
+ "outputs": [
+  {
+   "node": "19",
+   "what": "Repainted texture",
+   "size": "same as your texture",
+   "format": "PNG"
+  }
+ ],
+ "settings": "28 steps, CFG 5, denoise 0.6, ControlNet 0.8, IP-Adapter 0.7 (style transfer).",
+ "forWhat": "Your model's texture sheet repainted in the colours and materials of a character picture. Every seam stays where it is.",
+ "output": "A PNG the same size as your texture. Save it as a new file; keep the original.",
+ "vtp": "Open your model in Blender (or the costume editor), swap the texture for the new PNG and check it from every side. For whole-model paint by camera views, VTube Pro's own painter (Create tab, \"Paint with AI\") does more.",
+ "ask": "Set up the VTube Pro avatar texture repaint workflow in ComfyUI",
+ "steps": [
+  "Load your texture sheet (the PNG from your model) in \"Your texture\".",
+  "Load a picture of the character in \"Your reference\".",
+  "Change the words if you like, then press Run."
+ ],
+ "tips": [
+  "Faces stay hand-drawn: repaint clothes and hair, then fix the face by hand.",
+  "If a seam moved, lower \"denoise\" (small) or say \"keep every line\" (medium, large).",
+  "Run it when you are not live."
+ ],
+ "licenceSummary": "Commercial use OK by default: CreativeML Open RAIL++-M, Apache-2.0. Custom node code: ComfyUI_IPAdapter_plus (GPL-3.0).",
+ "files": {
+  "api": "avatar-texture-repaint/small.api.json",
+  "ui": "avatar-texture-repaint/small.workflow.json",
+  "manifest": "avatar-texture-repaint/small.manifest.json"
+ }
+}

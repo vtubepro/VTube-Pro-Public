@@ -1,0 +1,8 @@
+{"id":"anime_ren","name":"Ren","prompt":"elegant long-haired bishounen: straight silver hair to the waist with an icy blue sheen, pale blue eyes, black knit vest over a white shirt with a silver tie, black slacks",
+ "base":"fumiriya",
+ "hair":{"style":"shino","scale":1.03},
+ "colors":{"hair":"#d9dde8","hairTip":"#8fb3e6","hairTipRange":[0.55,1.0],"eyes":"#7fc4ff","brows":"#8c93a6"},
+ "body":{"legs":1.03,"build":0.97},
+ "face":{"eyeSize":1.0,"eyeTilt":-1},
+ "outfit":{"tops":{"color":null},"accessory":{"color":"#aab4c8"},"bottoms":{"color":"#1e2029"}}
+}

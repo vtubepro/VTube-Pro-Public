@@ -1,0 +1,97 @@
+{
+ "schema": "vtubepro.comfy-workflow/1",
+ "id": "stream-thumbnail",
+ "tier": "small",
+ "key": "stream-thumbnail/small",
+ "title": "Stream and video thumbnails with your avatar",
+ "short": "Stream thumbnail",
+ "task": "thumbnail",
+ "version": "2026.10.01",
+ "checked": "2026-10-01",
+ "vram": {
+  "minGB": 8,
+  "recommendedGB": 8,
+  "label": "8 GB"
+ },
+ "comfyui": {
+  "tested": "0.22.3",
+  "note": "Uses only built-in ComfyUI nodes (plus the custom node listed, if any). Update ComfyUI if a node shows red."
+ },
+ "models": [
+  {
+   "id": "sdxl-base",
+   "name": "SDXL base 1.0",
+   "file": "sd_xl_base_1.0.safetensors",
+   "folder": "checkpoints",
+   "bytes": 6938078334,
+   "sha256": "31e35c80fc4829d14f90153f4c74cd59c90b779f6afe05a74cd6120b893f7e5b",
+   "url": "https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0/resolve/462165984030d82259a11f4367a4eed129e94a7b/sd_xl_base_1.0.safetensors",
+   "page": "https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0",
+   "repo": "stabilityai/stable-diffusion-xl-base-1.0",
+   "revision": "462165984030d82259a11f4367a4eed129e94a7b",
+   "licence": "CreativeML Open RAIL++-M",
+   "licenceUrl": "https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0/blob/main/LICENSE.md",
+   "upstream": "stabilityai/stable-diffusion-xl-base-1.0"
+  },
+  {
+   "id": "birefnet",
+   "name": "BiRefNet (background remover)",
+   "file": "birefnet.safetensors",
+   "folder": "background_removal",
+   "bytes": 444473596,
+   "sha256": "9ab37426bf4de0567af6b5d21b16151357149139362e6e8992021b8ce356a154",
+   "url": "https://huggingface.co/Comfy-Org/BiRefNet/resolve/25511f8787e51912e1480706b4e47b8f467fbf72/background_removal/birefnet.safetensors",
+   "page": "https://huggingface.co/Comfy-Org/BiRefNet",
+   "repo": "Comfy-Org/BiRefNet",
+   "revision": "25511f8787e51912e1480706b4e47b8f467fbf72",
+   "licence": "MIT",
+   "licenceUrl": "https://huggingface.co/ZhengPeng7/BiRefNet",
+   "upstream": "ZhengPeng7/BiRefNet (same SHA-256 as its model.safetensors)"
+  }
+ ],
+ "customNodes": [],
+ "downloadBytes": 7382551930,
+ "inputs": [
+  {
+   "node": "1",
+   "kind": "image",
+   "what": "Your avatar (a studio picture)",
+   "default": "vtp_avatar.png"
+  },
+  {
+   "node": "3",
+   "kind": "text",
+   "what": "Your prompt: describe the picture",
+   "default": "youtube thumbnail background, cozy neon arcade at night, vibrant colours, high contrast, empty space on the left for a title"
+  }
+ ],
+ "outputs": [
+  {
+   "node": "15",
+   "what": "Thumbnail",
+   "size": "1280x720",
+   "format": "PNG"
+  }
+ ],
+ "settings": "1344x768 background, 28 steps, CFG 6; avatar cut out with BiRefNet; add the title in any editor.",
+ "forWhat": "A 16:9 thumbnail: a generated background, a big title, and your avatar cut out on top.",
+ "output": "1280x720 PNG (YouTube and Twitch size).",
+ "vtp": "Take a picture of your avatar in the studio (a clean background helps), load it as \"Your avatar\", run, upload the result.",
+ "ask": "Set up the VTube Pro thumbnail workflow in ComfyUI",
+ "steps": [
+  "Load a picture of your avatar in \"Your avatar\".",
+  "Change the theme and the title words in \"Your prompt\".",
+  "Press Run. Your avatar is cut out and placed on the right."
+ ],
+ "tips": [
+  "3-4 big words at most. Strong contrast.",
+  "Your avatar's face should be large.",
+  "Don't use other creators' art or game key art."
+ ],
+ "licenceSummary": "Commercial use OK by default: CreativeML Open RAIL++-M, MIT.",
+ "files": {
+  "api": "stream-thumbnail/small.api.json",
+  "ui": "stream-thumbnail/small.workflow.json",
+  "manifest": "stream-thumbnail/small.manifest.json"
+ }
+}

@@ -1,0 +1,120 @@
+{
+ "version": 1,
+ "id": "robot",
+ "name": "Sprocket",
+ "modelFile": "robot.glb",
+ "thumbnail": "thumb.png",
+ "source": "builtin",
+ "createdAt": "2026-09-23T08:55:36.000Z",
+ "prompt": "chunky retro-futurist toy robot: boxy rounded cream head with a dark glossy LED face screen, hinged teal jaw with a glowing speaker-grille mouth, springy antenna with an orange ball, teal ear discs, barrel chest with a glowing chest light and SPR-07 serial band, bellows waist, dark ball joints, segmented arms with three-finger claw hands, sturdy legs with big feet, battery pack and wind-up key on the back, caution stripe on the hips",
+ "transform": {
+  "scale": 1,
+  "offset": [
+   0,
+   0,
+   0
+  ],
+  "yaw": 0
+ },
+ "eyes": {
+  "mode": "procedural",
+  "style": "led",
+  "left": {
+   "position": [
+    0.082,
+    1.25,
+    0.2216
+   ],
+   "normal": [
+    0.0624,
+    0.0269,
+    0.9977
+   ]
+  },
+  "right": {
+   "position": [
+    -0.082,
+    1.25,
+    0.2216
+   ],
+   "normal": [
+    -0.0624,
+    0.027,
+    0.9977
+   ]
+  },
+  "size": 0.046,
+  "protrusion": 0,
+  "scleraColor": "#0b1220",
+  "irisColor": "#5ff4ff",
+  "irisSize": 0.8,
+  "pupilSize": 0.4,
+  "lidColor": "#0b1220",
+  "outline": false,
+  "gazeRange": 25,
+  "restOpen": 1,
+  "highlight": true
+ },
+ "mouth": {
+  "mode": "model",
+  "style": "cavity",
+  "center": {
+   "position": [
+    0.0,
+    1.04,
+    0.2131
+   ],
+   "normal": [
+    0.0,
+    0.0,
+    1.0
+   ]
+  },
+  "width": 0.125,
+  "openHeight": 0.05,
+  "influence": 0.1,
+  "lipColor": "#15181e",
+  "interiorColor": "#0b0d12",
+  "tongueColor": "#2a2e36",
+  "teethColor": "#3a3f48",
+  "showTeeth": false,
+  "showTongue": false,
+  "lineWidth": 0.005,
+  "restCurve": 0,
+  "rig": {
+   "kind": "jaw",
+   "jawBone": "jaw",
+   "openAngle": 24,
+   "sideAngle": 0
+  }
+ },
+ "brows": {
+  "enabled": false,
+  "color": "#1a1a1a",
+  "thickness": 0.008
+ },
+ "rig": {
+  "kind": "humanoid",
+  "mechanical": true
+ },
+ "physics": {
+  "enabled": true,
+  "jiggle": [],
+  "chains": [],
+  "autoChains": true,
+  "wind": 0
+ },
+ "tracking": {
+  "expressiveness": 1.15,
+  "gains": {},
+  "smoothing": 0.35,
+  "headRotationScale": 1,
+  "bodyFollow": 0.6,
+  "mirror": true,
+  "trackHands": true,
+  "trackBody": true,
+  "audioLipSync": false
+ },
+ "costumes": [],
+ "costume": null
+}

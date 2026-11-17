@@ -1,0 +1,85 @@
+{
+  "$schema": "https://schemas.elgato.com/streamdeck/plugins/manifest.json",
+  "Name": "VTube Pro",
+  "Version": "1.1.0.0",
+  "Author": "VTube Pro",
+  "Description": "Control VTube Pro (lighting, stage modes, rooms, capture cover, Chat Hub, emotes …) and mirror the button layout you design in VTube Pro → Stream Deck & controllers, with live on / off state.",
+  "UUID": "com.vtubepro.deck",
+  "Icon": "imgs/plugin",
+  "Category": "VTube Pro",
+  "CategoryIcon": "imgs/category",
+  "CodePath": "bin/plugin.js",
+  "SDKVersion": 2,
+  "Software": {
+    "MinimumVersion": "7.1"
+  },
+  "OS": [
+    {
+      "Platform": "windows",
+      "MinimumVersion": "10"
+    },
+    {
+      "Platform": "mac",
+      "MinimumVersion": "12"
+    }
+  ],
+  "Nodejs": {
+    "Version": "20",
+    "Debug": "enabled"
+  },
+  "Actions": [
+    {
+      "Name": "VTube Pro Page key",
+      "UUID": "com.vtubepro.deck.key",
+      "Icon": "imgs/action-page",
+      "Tooltip": "Shows the key at this position of your VTube Pro layout (live state, pages). Put it on every key.",
+      "PropertyInspectorPath": "ui/key.html",
+      "Controllers": [
+        "Keypad"
+      ],
+      "SupportedInMultiActions": false,
+      "States": [
+        {
+          "Image": "imgs/key",
+          "TitleAlignment": "bottom",
+          "ShowTitle": false
+        }
+      ]
+    },
+    {
+      "Name": "VTube Pro action",
+      "UUID": "com.vtubepro.deck.action",
+      "Icon": "imgs/action-one",
+      "Tooltip": "One VTube Pro action (lighting, mode, room, cover, slap, Chat Hub …) picked from a list.",
+      "PropertyInspectorPath": "ui/action.html",
+      "Controllers": [
+        "Keypad"
+      ],
+      "SupportedInMultiActions": true,
+      "States": [
+        {
+          "Image": "imgs/key",
+          "TitleAlignment": "bottom",
+          "ShowTitle": false
+        }
+      ]
+    },
+    {
+      "Name": "VTube Pro Go Live",
+      "UUID": "com.vtubepro.deck.golive",
+      "Icon": "imgs/action-one",
+      "Tooltip": "Asks VTube Pro to go live. Nothing starts until you confirm on your screen within 10 seconds.",
+      "Controllers": [
+        "Keypad"
+      ],
+      "SupportedInMultiActions": false,
+      "States": [
+        {
+          "Image": "imgs/key",
+          "TitleAlignment": "bottom",
+          "ShowTitle": false
+        }
+      ]
+    }
+  ]
+}

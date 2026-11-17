@@ -1,0 +1,196 @@
+{
+ "1": {
+  "class_type": "UNETLoader",
+  "inputs": {
+   "unet_name": "qwen_image_2512_fp8_e4m3fn.safetensors",
+   "weight_dtype": "default"
+  },
+  "_meta": {
+   "title": "Load Diffusion Model"
+  }
+ },
+ "2": {
+  "class_type": "LoraLoaderModelOnly",
+  "inputs": {
+   "model": [
+    "1",
+    0
+   ],
+   "lora_name": "Qwen-Image-2512-Lightning-4steps-V1.0-bf16.safetensors",
+   "strength_model": 1
+  },
+  "_meta": {
+   "title": "Lightning LoRA (4 steps)"
+  }
+ },
+ "3": {
+  "class_type": "ModelSamplingAuraFlow",
+  "inputs": {
+   "model": [
+    "2",
+    0
+   ],
+   "shift": 3.1
+  },
+  "_meta": {
+   "title": "ModelSamplingAuraFlow"
+  }
+ },
+ "4": {
+  "class_type": "CLIPLoader",
+  "inputs": {
+   "clip_name": "qwen_2.5_vl_7b_fp8_scaled.safetensors",
+   "type": "qwen_image",
+   "device": "default"
+  },
+  "_meta": {
+   "title": "Load CLIP"
+  }
+ },
+ "5": {
+  "class_type": "VAELoader",
+  "inputs": {
+   "vae_name": "qwen_image_vae.safetensors"
+  },
+  "_meta": {
+   "title": "Load VAE"
+  }
+ },
+ "6": {
+  "class_type": "CLIPTextEncode",
+  "inputs": {
+   "text": "Cozy pixel-art bedroom at night with soft fairy lights and rain on the window. The words \"STARTING SOON\" in big friendly letters at the bottom.",
+   "clip": [
+    "4",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "Your prompt: describe the picture"
+  }
+ },
+ "7": {
+  "class_type": "CLIPTextEncode",
+  "inputs": {
+   "text": "blurry, low quality, distorted text, misspelled words, watermark, deformed",
+   "clip": [
+    "4",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "Things to avoid"
+  }
+ },
+ "8": {
+  "class_type": "EmptySD3LatentImage",
+  "inputs": {
+   "width": 1664,
+   "height": 928,
+   "batch_size": 1
+  },
+  "_meta": {
+   "title": "Picture size 1664x928"
+  }
+ },
+ "9": {
+  "class_type": "KSampler",
+  "inputs": {
+   "model": [
+    "3",
+    0
+   ],
+   "seed": 20261001,
+   "steps": 4,
+   "cfg": 1,
+   "sampler_name": "euler",
+   "scheduler": "simple",
+   "positive": [
+    "6",
+    0
+   ],
+   "negative": [
+    "7",
+    0
+   ],
+   "latent_image": [
+    "8",
+    0
+   ],
+   "denoise": 1
+  },
+  "_meta": {
+   "title": "KSampler"
+  }
+ },
+ "10": {
+  "class_type": "VAEDecode",
+  "inputs": {
+   "samples": [
+    "9",
+    0
+   ],
+   "vae": [
+    "5",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "VAE Decode"
+  }
+ },
+ "11": {
+  "class_type": "UpscaleModelLoader",
+  "inputs": {
+   "model_name": "RealESRGAN_x4plus.safetensors"
+  },
+  "_meta": {
+   "title": "Load Upscale Model"
+  }
+ },
+ "12": {
+  "class_type": "ImageUpscaleWithModel",
+  "inputs": {
+   "upscale_model": [
+    "11",
+    0
+   ],
+   "image": [
+    "10",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "Upscale Image (using Model)"
+  }
+ },
+ "13": {
+  "class_type": "ImageScale",
+  "inputs": {
+   "image": [
+    "12",
+    0
+   ],
+   "upscale_method": "lanczos",
+   "width": 1920,
+   "height": 1080,
+   "crop": "center"
+  },
+  "_meta": {
+   "title": "Final size 1920x1080"
+  }
+ },
+ "14": {
+  "class_type": "SaveImage",
+  "inputs": {
+   "images": [
+    "13",
+    0
+   ],
+   "filename_prefix": "VTubePro/overlay"
+  },
+  "_meta": {
+   "title": "Save the picture"
+  }
+ }
+}

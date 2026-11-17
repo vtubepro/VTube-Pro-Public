@@ -1,0 +1,8 @@
+{"id":"anime_haruto","name":"Haruto","prompt":"gentle idol-type high-school boy: soft layered chestnut hair with honey tips, warm amber eyes, navy knit vest over a white shirt with a burgundy tie, grey slacks",
+ "base":"fumiriya",
+ "hair":{"style":"fumiriya","scale":1.0},
+ "colors":{"hair":"#6b4630","hairTip":"#c89a62","hairInner":"#4a2e22","hairTipRange":[0.45,1.0],"eyes":"#d28a2e","brows":"#4a3024"},
+ "body":{"legs":1.02},
+ "face":{"eyeSize":1.03},
+ "outfit":{"tops":{"color":null},"accessory":{"color":"#7a1f33"},"bottoms":{"color":"#4b4f5c"}}
+}

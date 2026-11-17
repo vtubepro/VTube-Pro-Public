@@ -1,0 +1,131 @@
+{
+  "id": "gaming_lounge",
+  "name": "Gaming Lounge",
+  "model": "scene.glb",
+  "preview": "preview.png",
+  "thumbnail": "thumb.png",
+  "modes": [
+    "talk",
+    "react",
+    "gaming"
+  ],
+  "defaultCamera": "CAM_WIDE",
+  "reactCamera": "CAM_REACT",
+  "avatarHeight": 1.5,
+  "spots": 12,
+  "hostSpot": "SPOT_01",
+  "ambience": {
+    "fog": "#0c0a14",
+    "fogNear": 16,
+    "fogFar": 40,
+    "background": "#07060c",
+    "exposure": 1.0
+  },
+  "lights": {
+    "programs": [
+      "show",
+      "steady",
+      "beatPulse",
+      "party",
+      "strobe"
+    ],
+    "groups": {
+      "led": "#2fe6ff",
+      "led2": "#ff3fd2",
+      "hex": "#8a5cff",
+      "neon": "#ff4fa3",
+      "sign": "#39ff9c",
+      "rgb": "#4ad8ff",
+      "screens": "#c9e8ff",
+      "lamps": "#ffcf8a",
+      "glow": "#3a7bff",
+      "onair": "#ff2a3a"
+    }
+  },
+  "stage": {
+    "tileCams": "front",
+    "palette": "lounge",
+    "note": "Gaming mode room (src/scene/stage): SPOT_01 = the host (far left), then guests in join order"
+  },
+  "screenSkin": "studio",
+  "cams": {
+    "CAM_WIDE": {
+      "pos": [
+        0,
+        2.25,
+        5.6
+      ],
+      "target": [
+        0,
+        1.15,
+        -0.9
+      ],
+      "fov": 50
+    },
+    "CAM_REACT": {
+      "pos": [
+        0,
+        2.35,
+        5.4
+      ],
+      "target": [
+        0,
+        1.95,
+        -2.87
+      ],
+      "fov": 20.5
+    },
+    "CAM_LEFT": {
+      "pos": [
+        -3.6,
+        1.8,
+        4.6
+      ],
+      "target": [
+        0.4,
+        1.0,
+        -0.6
+      ],
+      "fov": 48
+    },
+    "CAM_RIGHT": {
+      "pos": [
+        3.6,
+        1.8,
+        4.6
+      ],
+      "target": [
+        -0.4,
+        1.0,
+        -0.6
+      ],
+      "fov": 48
+    },
+    "CAM_SOFA": {
+      "pos": [
+        -2.4,
+        1.55,
+        3.3
+      ],
+      "target": [
+        -6.2,
+        0.95,
+        3.1
+      ],
+      "fov": 48
+    },
+    "CAM_DOOR": {
+      "pos": [
+        2.6,
+        1.7,
+        1.6
+      ],
+      "target": [
+        6.8,
+        1.2,
+        4.45
+      ],
+      "fov": 50
+    }
+  }
+}

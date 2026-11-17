@@ -1,0 +1,10 @@
+{
+ "id": "human_marcus", "name": "Marcus (realistic)", "sex": "male",
+ "body": {"age": 34, "muscle": 0.68, "weight": 0.55, "height": 0.65, "proportions": 0.7,
+          "race": {"african": 1.0}},
+ "face": {"chin-width": 0.2, "head-square": 0.3},
+ "skin": {"texture": "young_african_male", "smooth": 0.15},
+ "eyes": {"color": "brown"},
+ "hair": {"style": "short04", "color": "black"},
+ "outfit": {"clothes": ["male_casualsuit04"], "shoes": "shoes02"}
+}

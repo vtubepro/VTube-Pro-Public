@@ -1,0 +1,392 @@
+{
+ "1": {
+  "class_type": "LoadImage",
+  "inputs": {
+   "image": "vtp_avatar.png"
+  },
+  "_meta": {
+   "title": "Your avatar (a face close-up)"
+  }
+ },
+ "2": {
+  "class_type": "UNETLoader",
+  "inputs": {
+   "unet_name": "qwen_image_edit_2511_fp8mixed.safetensors",
+   "weight_dtype": "default"
+  },
+  "_meta": {
+   "title": "Load Diffusion Model"
+  }
+ },
+ "3": {
+  "class_type": "ModelSamplingAuraFlow",
+  "inputs": {
+   "model": [
+    "2",
+    0
+   ],
+   "shift": 3.1
+  },
+  "_meta": {
+   "title": "ModelSamplingAuraFlow"
+  }
+ },
+ "4": {
+  "class_type": "CFGNorm",
+  "inputs": {
+   "model": [
+    "3",
+    0
+   ],
+   "strength": 1
+  },
+  "_meta": {
+   "title": "CFGNorm"
+  }
+ },
+ "5": {
+  "class_type": "LoraLoaderModelOnly",
+  "inputs": {
+   "model": [
+    "4",
+    0
+   ],
+   "lora_name": "Qwen-Image-Edit-2511-Lightning-4steps-V1.0-bf16.safetensors",
+   "strength_model": 1
+  },
+  "_meta": {
+   "title": "Lightning LoRA (4 steps)"
+  }
+ },
+ "6": {
+  "class_type": "CLIPLoader",
+  "inputs": {
+   "clip_name": "qwen_2.5_vl_7b_fp8_scaled.safetensors",
+   "type": "qwen_image",
+   "device": "default"
+  },
+  "_meta": {
+   "title": "Load CLIP"
+  }
+ },
+ "7": {
+  "class_type": "VAELoader",
+  "inputs": {
+   "vae_name": "qwen_image_vae.safetensors"
+  },
+  "_meta": {
+   "title": "Load VAE"
+  }
+ },
+ "8": {
+  "class_type": "FluxKontextImageScale",
+  "inputs": {
+   "image": [
+    "1",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "Fit image 1 to the model"
+  }
+ },
+ "9": {
+  "class_type": "TextEncodeQwenImageEditPlus",
+  "inputs": {
+   "clip": [
+    "6",
+    0
+   ],
+   "prompt": "Turn this character into a chibi chat emote: laughing with closed eyes and open mouth, thick outline, simple shading, head and shoulders, plain white background.",
+   "vae": [
+    "7",
+    0
+   ],
+   "image1": [
+    "8",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "Your edit: say what to change"
+  }
+ },
+ "10": {
+  "class_type": "TextEncodeQwenImageEditPlus",
+  "inputs": {
+   "clip": [
+    "6",
+    0
+   ],
+   "prompt": "",
+   "vae": [
+    "7",
+    0
+   ],
+   "image1": [
+    "8",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "Negative (leave empty)"
+  }
+ },
+ "11": {
+  "class_type": "FluxKontextMultiReferenceLatentMethod",
+  "inputs": {
+   "conditioning": [
+    "9",
+    0
+   ],
+   "reference_latents_method": "index_timestep_zero"
+  },
+  "_meta": {
+   "title": "Edit Model Reference Method"
+  }
+ },
+ "12": {
+  "class_type": "FluxKontextMultiReferenceLatentMethod",
+  "inputs": {
+   "conditioning": [
+    "10",
+    0
+   ],
+   "reference_latents_method": "index_timestep_zero"
+  },
+  "_meta": {
+   "title": "Edit Model Reference Method"
+  }
+ },
+ "13": {
+  "class_type": "VAEEncode",
+  "inputs": {
+   "pixels": [
+    "8",
+    0
+   ],
+   "vae": [
+    "7",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "VAE Encode"
+  }
+ },
+ "14": {
+  "class_type": "KSampler",
+  "inputs": {
+   "model": [
+    "5",
+    0
+   ],
+   "seed": 20261001,
+   "steps": 4,
+   "cfg": 1,
+   "sampler_name": "euler",
+   "scheduler": "simple",
+   "positive": [
+    "11",
+    0
+   ],
+   "negative": [
+    "12",
+    0
+   ],
+   "latent_image": [
+    "13",
+    0
+   ],
+   "denoise": 1
+  },
+  "_meta": {
+   "title": "KSampler"
+  }
+ },
+ "15": {
+  "class_type": "VAEDecode",
+  "inputs": {
+   "samples": [
+    "14",
+    0
+   ],
+   "vae": [
+    "7",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "VAE Decode"
+  }
+ },
+ "16": {
+  "class_type": "LoadBackgroundRemovalModel",
+  "inputs": {
+   "bg_removal_name": "birefnet.safetensors"
+  },
+  "_meta": {
+   "title": "Background remover (BiRefNet, MIT)"
+  }
+ },
+ "17": {
+  "class_type": "RemoveBackground",
+  "inputs": {
+   "image": [
+    "15",
+    0
+   ],
+   "bg_removal_model": [
+    "16",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "Remove Background"
+  }
+ },
+ "18": {
+  "class_type": "InvertMask",
+  "inputs": {
+   "mask": [
+    "17",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "Invert Mask"
+  }
+ },
+ "19": {
+  "class_type": "JoinImageWithAlpha",
+  "inputs": {
+   "image": [
+    "15",
+    0
+   ],
+   "alpha": [
+    "18",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "Transparent background"
+  }
+ },
+ "20": {
+  "class_type": "ImageScale",
+  "inputs": {
+   "image": [
+    "19",
+    0
+   ],
+   "upscale_method": "lanczos",
+   "width": 1024,
+   "height": 1024,
+   "crop": "center"
+  },
+  "_meta": {
+   "title": "Square 1024"
+  }
+ },
+ "21": {
+  "class_type": "SaveImage",
+  "inputs": {
+   "images": [
+    "20",
+    0
+   ],
+   "filename_prefix": "VTubePro/emote-1024"
+  },
+  "_meta": {
+   "title": "Save the master (1024)"
+  }
+ },
+ "22": {
+  "class_type": "ImageScale",
+  "inputs": {
+   "image": [
+    "20",
+    0
+   ],
+   "upscale_method": "area",
+   "width": 112,
+   "height": 112,
+   "crop": "disabled"
+  },
+  "_meta": {
+   "title": "112 px"
+  }
+ },
+ "23": {
+  "class_type": "SaveImage",
+  "inputs": {
+   "images": [
+    "22",
+    0
+   ],
+   "filename_prefix": "VTubePro/emote-112"
+  },
+  "_meta": {
+   "title": "Save 112 px"
+  }
+ },
+ "24": {
+  "class_type": "ImageScale",
+  "inputs": {
+   "image": [
+    "20",
+    0
+   ],
+   "upscale_method": "area",
+   "width": 56,
+   "height": 56,
+   "crop": "disabled"
+  },
+  "_meta": {
+   "title": "56 px"
+  }
+ },
+ "25": {
+  "class_type": "SaveImage",
+  "inputs": {
+   "images": [
+    "24",
+    0
+   ],
+   "filename_prefix": "VTubePro/emote-56"
+  },
+  "_meta": {
+   "title": "Save 56 px"
+  }
+ },
+ "26": {
+  "class_type": "ImageScale",
+  "inputs": {
+   "image": [
+    "20",
+    0
+   ],
+   "upscale_method": "area",
+   "width": 28,
+   "height": 28,
+   "crop": "disabled"
+  },
+  "_meta": {
+   "title": "28 px"
+  }
+ },
+ "27": {
+  "class_type": "SaveImage",
+  "inputs": {
+   "images": [
+    "26",
+    0
+   ],
+   "filename_prefix": "VTubePro/emote-28"
+  },
+  "_meta": {
+   "title": "Save 28 px"
+  }
+ }
+}

@@ -1,0 +1,790 @@
+{
+ "pack": "kenney_impact",
+ "name": "Kenney Impact Sounds",
+ "author": "Kenney",
+ "license": "CC0 1.0",
+ "url": "https://kenney.nl/assets/impact-sounds",
+ "for": "throwables / bonks / footsteps",
+ "items": [
+  {
+   "id": "footstep_carpet_000",
+   "file": "footstep_carpet_000.ogg",
+   "category": "footstep_carpet",
+   "bytes": 6353
+  },
+  {
+   "id": "footstep_carpet_001",
+   "file": "footstep_carpet_001.ogg",
+   "category": "footstep_carpet",
+   "bytes": 6411
+  },
+  {
+   "id": "footstep_carpet_002",
+   "file": "footstep_carpet_002.ogg",
+   "category": "footstep_carpet",
+   "bytes": 6411
+  },
+  {
+   "id": "footstep_carpet_003",
+   "file": "footstep_carpet_003.ogg",
+   "category": "footstep_carpet",
+   "bytes": 6301
+  },
+  {
+   "id": "footstep_carpet_004",
+   "file": "footstep_carpet_004.ogg",
+   "category": "footstep_carpet",
+   "bytes": 6301
+  },
+  {
+   "id": "footstep_concrete_000",
+   "file": "footstep_concrete_000.ogg",
+   "category": "footstep_concrete",
+   "bytes": 5808
+  },
+  {
+   "id": "footstep_concrete_001",
+   "file": "footstep_concrete_001.ogg",
+   "category": "footstep_concrete",
+   "bytes": 6308
+  },
+  {
+   "id": "footstep_concrete_002",
+   "file": "footstep_concrete_002.ogg",
+   "category": "footstep_concrete",
+   "bytes": 6255
+  },
+  {
+   "id": "footstep_concrete_003",
+   "file": "footstep_concrete_003.ogg",
+   "category": "footstep_concrete",
+   "bytes": 5805
+  },
+  {
+   "id": "footstep_concrete_004",
+   "file": "footstep_concrete_004.ogg",
+   "category": "footstep_concrete",
+   "bytes": 5912
+  },
+  {
+   "id": "footstep_grass_000",
+   "file": "footstep_grass_000.ogg",
+   "category": "footstep_grass",
+   "bytes": 8290
+  },
+  {
+   "id": "footstep_grass_001",
+   "file": "footstep_grass_001.ogg",
+   "category": "footstep_grass",
+   "bytes": 8313
+  },
+  {
+   "id": "footstep_grass_002",
+   "file": "footstep_grass_002.ogg",
+   "category": "footstep_grass",
+   "bytes": 8278
+  },
+  {
+   "id": "footstep_grass_003",
+   "file": "footstep_grass_003.ogg",
+   "category": "footstep_grass",
+   "bytes": 8129
+  },
+  {
+   "id": "footstep_grass_004",
+   "file": "footstep_grass_004.ogg",
+   "category": "footstep_grass",
+   "bytes": 7800
+  },
+  {
+   "id": "footstep_snow_000",
+   "file": "footstep_snow_000.ogg",
+   "category": "footstep_snow",
+   "bytes": 7880
+  },
+  {
+   "id": "footstep_snow_001",
+   "file": "footstep_snow_001.ogg",
+   "category": "footstep_snow",
+   "bytes": 7794
+  },
+  {
+   "id": "footstep_snow_002",
+   "file": "footstep_snow_002.ogg",
+   "category": "footstep_snow",
+   "bytes": 7694
+  },
+  {
+   "id": "footstep_snow_003",
+   "file": "footstep_snow_003.ogg",
+   "category": "footstep_snow",
+   "bytes": 7860
+  },
+  {
+   "id": "footstep_snow_004",
+   "file": "footstep_snow_004.ogg",
+   "category": "footstep_snow",
+   "bytes": 7630
+  },
+  {
+   "id": "footstep_wood_000",
+   "file": "footstep_wood_000.ogg",
+   "category": "footstep_wood",
+   "bytes": 5949
+  },
+  {
+   "id": "footstep_wood_001",
+   "file": "footstep_wood_001.ogg",
+   "category": "footstep_wood",
+   "bytes": 5929
+  },
+  {
+   "id": "footstep_wood_002",
+   "file": "footstep_wood_002.ogg",
+   "category": "footstep_wood",
+   "bytes": 5895
+  },
+  {
+   "id": "footstep_wood_003",
+   "file": "footstep_wood_003.ogg",
+   "category": "footstep_wood",
+   "bytes": 6207
+  },
+  {
+   "id": "footstep_wood_004",
+   "file": "footstep_wood_004.ogg",
+   "category": "footstep_wood",
+   "bytes": 5799
+  },
+  {
+   "id": "impactBell_heavy_000",
+   "file": "impactBell_heavy_000.ogg",
+   "category": "impactBell_heavy",
+   "bytes": 13915
+  },
+  {
+   "id": "impactBell_heavy_001",
+   "file": "impactBell_heavy_001.ogg",
+   "category": "impactBell_heavy",
+   "bytes": 15577
+  },
+  {
+   "id": "impactBell_heavy_002",
+   "file": "impactBell_heavy_002.ogg",
+   "category": "impactBell_heavy",
+   "bytes": 9252
+  },
+  {
+   "id": "impactBell_heavy_003",
+   "file": "impactBell_heavy_003.ogg",
+   "category": "impactBell_heavy",
+   "bytes": 9429
+  },
+  {
+   "id": "impactBell_heavy_004",
+   "file": "impactBell_heavy_004.ogg",
+   "category": "impactBell_heavy",
+   "bytes": 6529
+  },
+  {
+   "id": "impactGeneric_light_000",
+   "file": "impactGeneric_light_000.ogg",
+   "category": "impactGeneric_light",
+   "bytes": 5827
+  },
+  {
+   "id": "impactGeneric_light_001",
+   "file": "impactGeneric_light_001.ogg",
+   "category": "impactGeneric_light",
+   "bytes": 5636
+  },
+  {
+   "id": "impactGeneric_light_002",
+   "file": "impactGeneric_light_002.ogg",
+   "category": "impactGeneric_light",
+   "bytes": 5795
+  },
+  {
+   "id": "impactGeneric_light_003",
+   "file": "impactGeneric_light_003.ogg",
+   "category": "impactGeneric_light",
+   "bytes": 5792
+  },
+  {
+   "id": "impactGeneric_light_004",
+   "file": "impactGeneric_light_004.ogg",
+   "category": "impactGeneric_light",
+   "bytes": 5747
+  },
+  {
+   "id": "impactGlass_heavy_000",
+   "file": "impactGlass_heavy_000.ogg",
+   "category": "impactGlass_heavy",
+   "bytes": 7403
+  },
+  {
+   "id": "impactGlass_heavy_001",
+   "file": "impactGlass_heavy_001.ogg",
+   "category": "impactGlass_heavy",
+   "bytes": 8946
+  },
+  {
+   "id": "impactGlass_heavy_002",
+   "file": "impactGlass_heavy_002.ogg",
+   "category": "impactGlass_heavy",
+   "bytes": 7661
+  },
+  {
+   "id": "impactGlass_heavy_003",
+   "file": "impactGlass_heavy_003.ogg",
+   "category": "impactGlass_heavy",
+   "bytes": 6956
+  },
+  {
+   "id": "impactGlass_heavy_004",
+   "file": "impactGlass_heavy_004.ogg",
+   "category": "impactGlass_heavy",
+   "bytes": 8300
+  },
+  {
+   "id": "impactGlass_light_000",
+   "file": "impactGlass_light_000.ogg",
+   "category": "impactGlass_light",
+   "bytes": 6526
+  },
+  {
+   "id": "impactGlass_light_001",
+   "file": "impactGlass_light_001.ogg",
+   "category": "impactGlass_light",
+   "bytes": 6544
+  },
+  {
+   "id": "impactGlass_light_002",
+   "file": "impactGlass_light_002.ogg",
+   "category": "impactGlass_light",
+   "bytes": 6562
+  },
+  {
+   "id": "impactGlass_light_003",
+   "file": "impactGlass_light_003.ogg",
+   "category": "impactGlass_light",
+   "bytes": 6618
+  },
+  {
+   "id": "impactGlass_light_004",
+   "file": "impactGlass_light_004.ogg",
+   "category": "impactGlass_light",
+   "bytes": 6641
+  },
+  {
+   "id": "impactGlass_medium_000",
+   "file": "impactGlass_medium_000.ogg",
+   "category": "impactGlass_medium",
+   "bytes": 8400
+  },
+  {
+   "id": "impactGlass_medium_001",
+   "file": "impactGlass_medium_001.ogg",
+   "category": "impactGlass_medium",
+   "bytes": 8605
+  },
+  {
+   "id": "impactGlass_medium_002",
+   "file": "impactGlass_medium_002.ogg",
+   "category": "impactGlass_medium",
+   "bytes": 8341
+  },
+  {
+   "id": "impactGlass_medium_003",
+   "file": "impactGlass_medium_003.ogg",
+   "category": "impactGlass_medium",
+   "bytes": 8596
+  },
+  {
+   "id": "impactGlass_medium_004",
+   "file": "impactGlass_medium_004.ogg",
+   "category": "impactGlass_medium",
+   "bytes": 8397
+  },
+  {
+   "id": "impactMetal_heavy_000",
+   "file": "impactMetal_heavy_000.ogg",
+   "category": "impactMetal_heavy",
+   "bytes": 6110
+  },
+  {
+   "id": "impactMetal_heavy_001",
+   "file": "impactMetal_heavy_001.ogg",
+   "category": "impactMetal_heavy",
+   "bytes": 7279
+  },
+  {
+   "id": "impactMetal_heavy_002",
+   "file": "impactMetal_heavy_002.ogg",
+   "category": "impactMetal_heavy",
+   "bytes": 5634
+  },
+  {
+   "id": "impactMetal_heavy_003",
+   "file": "impactMetal_heavy_003.ogg",
+   "category": "impactMetal_heavy",
+   "bytes": 6209
+  },
+  {
+   "id": "impactMetal_heavy_004",
+   "file": "impactMetal_heavy_004.ogg",
+   "category": "impactMetal_heavy",
+   "bytes": 5788
+  },
+  {
+   "id": "impactMetal_light_000",
+   "file": "impactMetal_light_000.ogg",
+   "category": "impactMetal_light",
+   "bytes": 7651
+  },
+  {
+   "id": "impactMetal_light_001",
+   "file": "impactMetal_light_001.ogg",
+   "category": "impactMetal_light",
+   "bytes": 6967
+  },
+  {
+   "id": "impactMetal_light_002",
+   "file": "impactMetal_light_002.ogg",
+   "category": "impactMetal_light",
+   "bytes": 6804
+  },
+  {
+   "id": "impactMetal_light_003",
+   "file": "impactMetal_light_003.ogg",
+   "category": "impactMetal_light",
+   "bytes": 9023
+  },
+  {
+   "id": "impactMetal_light_004",
+   "file": "impactMetal_light_004.ogg",
+   "category": "impactMetal_light",
+   "bytes": 6675
+  },
+  {
+   "id": "impactMetal_medium_000",
+   "file": "impactMetal_medium_000.ogg",
+   "category": "impactMetal_medium",
+   "bytes": 7117
+  },
+  {
+   "id": "impactMetal_medium_001",
+   "file": "impactMetal_medium_001.ogg",
+   "category": "impactMetal_medium",
+   "bytes": 6151
+  },
+  {
+   "id": "impactMetal_medium_002",
+   "file": "impactMetal_medium_002.ogg",
+   "category": "impactMetal_medium",
+   "bytes": 5857
+  },
+  {
+   "id": "impactMetal_medium_003",
+   "file": "impactMetal_medium_003.ogg",
+   "category": "impactMetal_medium",
+   "bytes": 6964
+  },
+  {
+   "id": "impactMetal_medium_004",
+   "file": "impactMetal_medium_004.ogg",
+   "category": "impactMetal_medium",
+   "bytes": 5744
+  },
+  {
+   "id": "impactMining_000",
+   "file": "impactMining_000.ogg",
+   "category": "impactMining",
+   "bytes": 12035
+  },
+  {
+   "id": "impactMining_001",
+   "file": "impactMining_001.ogg",
+   "category": "impactMining",
+   "bytes": 11481
+  },
+  {
+   "id": "impactMining_002",
+   "file": "impactMining_002.ogg",
+   "category": "impactMining",
+   "bytes": 11235
+  },
+  {
+   "id": "impactMining_003",
+   "file": "impactMining_003.ogg",
+   "category": "impactMining",
+   "bytes": 12160
+  },
+  {
+   "id": "impactMining_004",
+   "file": "impactMining_004.ogg",
+   "category": "impactMining",
+   "bytes": 11668
+  },
+  {
+   "id": "impactPlank_medium_000",
+   "file": "impactPlank_medium_000.ogg",
+   "category": "impactPlank_medium",
+   "bytes": 12016
+  },
+  {
+   "id": "impactPlank_medium_001",
+   "file": "impactPlank_medium_001.ogg",
+   "category": "impactPlank_medium",
+   "bytes": 12082
+  },
+  {
+   "id": "impactPlank_medium_002",
+   "file": "impactPlank_medium_002.ogg",
+   "category": "impactPlank_medium",
+   "bytes": 12313
+  },
+  {
+   "id": "impactPlank_medium_003",
+   "file": "impactPlank_medium_003.ogg",
+   "category": "impactPlank_medium",
+   "bytes": 12138
+  },
+  {
+   "id": "impactPlank_medium_004",
+   "file": "impactPlank_medium_004.ogg",
+   "category": "impactPlank_medium",
+   "bytes": 12084
+  },
+  {
+   "id": "impactPlate_heavy_000",
+   "file": "impactPlate_heavy_000.ogg",
+   "category": "impactPlate_heavy",
+   "bytes": 10032
+  },
+  {
+   "id": "impactPlate_heavy_001",
+   "file": "impactPlate_heavy_001.ogg",
+   "category": "impactPlate_heavy",
+   "bytes": 8713
+  },
+  {
+   "id": "impactPlate_heavy_002",
+   "file": "impactPlate_heavy_002.ogg",
+   "category": "impactPlate_heavy",
+   "bytes": 10188
+  },
+  {
+   "id": "impactPlate_heavy_003",
+   "file": "impactPlate_heavy_003.ogg",
+   "category": "impactPlate_heavy",
+   "bytes": 8490
+  },
+  {
+   "id": "impactPlate_heavy_004",
+   "file": "impactPlate_heavy_004.ogg",
+   "category": "impactPlate_heavy",
+   "bytes": 11092
+  },
+  {
+   "id": "impactPlate_light_000",
+   "file": "impactPlate_light_000.ogg",
+   "category": "impactPlate_light",
+   "bytes": 10474
+  },
+  {
+   "id": "impactPlate_light_001",
+   "file": "impactPlate_light_001.ogg",
+   "category": "impactPlate_light",
+   "bytes": 11730
+  },
+  {
+   "id": "impactPlate_light_002",
+   "file": "impactPlate_light_002.ogg",
+   "category": "impactPlate_light",
+   "bytes": 9932
+  },
+  {
+   "id": "impactPlate_light_003",
+   "file": "impactPlate_light_003.ogg",
+   "category": "impactPlate_light",
+   "bytes": 10626
+  },
+  {
+   "id": "impactPlate_light_004",
+   "file": "impactPlate_light_004.ogg",
+   "category": "impactPlate_light",
+   "bytes": 11928
+  },
+  {
+   "id": "impactPlate_medium_000",
+   "file": "impactPlate_medium_000.ogg",
+   "category": "impactPlate_medium",
+   "bytes": 10921
+  },
+  {
+   "id": "impactPlate_medium_001",
+   "file": "impactPlate_medium_001.ogg",
+   "category": "impactPlate_medium",
+   "bytes": 11491
+  },
+  {
+   "id": "impactPlate_medium_002",
+   "file": "impactPlate_medium_002.ogg",
+   "category": "impactPlate_medium",
+   "bytes": 10250
+  },
+  {
+   "id": "impactPlate_medium_003",
+   "file": "impactPlate_medium_003.ogg",
+   "category": "impactPlate_medium",
+   "bytes": 11616
+  },
+  {
+   "id": "impactPlate_medium_004",
+   "file": "impactPlate_medium_004.ogg",
+   "category": "impactPlate_medium",
+   "bytes": 10803
+  },
+  {
+   "id": "impactPunch_heavy_000",
+   "file": "impactPunch_heavy_000.ogg",
+   "category": "impactPunch_heavy",
+   "bytes": 11617
+  },
+  {
+   "id": "impactPunch_heavy_001",
+   "file": "impactPunch_heavy_001.ogg",
+   "category": "impactPunch_heavy",
+   "bytes": 10861
+  },
+  {
+   "id": "impactPunch_heavy_002",
+   "file": "impactPunch_heavy_002.ogg",
+   "category": "impactPunch_heavy",
+   "bytes": 9025
+  },
+  {
+   "id": "impactPunch_heavy_003",
+   "file": "impactPunch_heavy_003.ogg",
+   "category": "impactPunch_heavy",
+   "bytes": 10029
+  },
+  {
+   "id": "impactPunch_heavy_004",
+   "file": "impactPunch_heavy_004.ogg",
+   "category": "impactPunch_heavy",
+   "bytes": 10452
+  },
+  {
+   "id": "impactPunch_medium_000",
+   "file": "impactPunch_medium_000.ogg",
+   "category": "impactPunch_medium",
+   "bytes": 8800
+  },
+  {
+   "id": "impactPunch_medium_001",
+   "file": "impactPunch_medium_001.ogg",
+   "category": "impactPunch_medium",
+   "bytes": 8701
+  },
+  {
+   "id": "impactPunch_medium_002",
+   "file": "impactPunch_medium_002.ogg",
+   "category": "impactPunch_medium",
+   "bytes": 10399
+  },
+  {
+   "id": "impactPunch_medium_003",
+   "file": "impactPunch_medium_003.ogg",
+   "category": "impactPunch_medium",
+   "bytes": 9509
+  },
+  {
+   "id": "impactPunch_medium_004",
+   "file": "impactPunch_medium_004.ogg",
+   "category": "impactPunch_medium",
+   "bytes": 10032
+  },
+  {
+   "id": "impactSoft_heavy_000",
+   "file": "impactSoft_heavy_000.ogg",
+   "category": "impactSoft_heavy",
+   "bytes": 6570
+  },
+  {
+   "id": "impactSoft_heavy_001",
+   "file": "impactSoft_heavy_001.ogg",
+   "category": "impactSoft_heavy",
+   "bytes": 6689
+  },
+  {
+   "id": "impactSoft_heavy_002",
+   "file": "impactSoft_heavy_002.ogg",
+   "category": "impactSoft_heavy",
+   "bytes": 6749
+  },
+  {
+   "id": "impactSoft_heavy_003",
+   "file": "impactSoft_heavy_003.ogg",
+   "category": "impactSoft_heavy",
+   "bytes": 6665
+  },
+  {
+   "id": "impactSoft_heavy_004",
+   "file": "impactSoft_heavy_004.ogg",
+   "category": "impactSoft_heavy",
+   "bytes": 6478
+  },
+  {
+   "id": "impactSoft_medium_000",
+   "file": "impactSoft_medium_000.ogg",
+   "category": "impactSoft_medium",
+   "bytes": 5351
+  },
+  {
+   "id": "impactSoft_medium_001",
+   "file": "impactSoft_medium_001.ogg",
+   "category": "impactSoft_medium",
+   "bytes": 5506
+  },
+  {
+   "id": "impactSoft_medium_002",
+   "file": "impactSoft_medium_002.ogg",
+   "category": "impactSoft_medium",
+   "bytes": 5358
+  },
+  {
+   "id": "impactSoft_medium_003",
+   "file": "impactSoft_medium_003.ogg",
+   "category": "impactSoft_medium",
+   "bytes": 5392
+  },
+  {
+   "id": "impactSoft_medium_004",
+   "file": "impactSoft_medium_004.ogg",
+   "category": "impactSoft_medium",
+   "bytes": 5438
+  },
+  {
+   "id": "impactTin_medium_000",
+   "file": "impactTin_medium_000.ogg",
+   "category": "impactTin_medium",
+   "bytes": 6509
+  },
+  {
+   "id": "impactTin_medium_001",
+   "file": "impactTin_medium_001.ogg",
+   "category": "impactTin_medium",
+   "bytes": 6603
+  },
+  {
+   "id": "impactTin_medium_002",
+   "file": "impactTin_medium_002.ogg",
+   "category": "impactTin_medium",
+   "bytes": 6156
+  },
+  {
+   "id": "impactTin_medium_003",
+   "file": "impactTin_medium_003.ogg",
+   "category": "impactTin_medium",
+   "bytes": 6541
+  },
+  {
+   "id": "impactTin_medium_004",
+   "file": "impactTin_medium_004.ogg",
+   "category": "impactTin_medium",
+   "bytes": 6362
+  },
+  {
+   "id": "impactWood_heavy_000",
+   "file": "impactWood_heavy_000.ogg",
+   "category": "impactWood_heavy",
+   "bytes": 6233
+  },
+  {
+   "id": "impactWood_heavy_001",
+   "file": "impactWood_heavy_001.ogg",
+   "category": "impactWood_heavy",
+   "bytes": 6239
+  },
+  {
+   "id": "impactWood_heavy_002",
+   "file": "impactWood_heavy_002.ogg",
+   "category": "impactWood_heavy",
+   "bytes": 6146
+  },
+  {
+   "id": "impactWood_heavy_003",
+   "file": "impactWood_heavy_003.ogg",
+   "category": "impactWood_heavy",
+   "bytes": 6181
+  },
+  {
+   "id": "impactWood_heavy_004",
+   "file": "impactWood_heavy_004.ogg",
+   "category": "impactWood_heavy",
+   "bytes": 6253
+  },
+  {
+   "id": "impactWood_light_000",
+   "file": "impactWood_light_000.ogg",
+   "category": "impactWood_light",
+   "bytes": 6343
+  },
+  {
+   "id": "impactWood_light_001",
+   "file": "impactWood_light_001.ogg",
+   "category": "impactWood_light",
+   "bytes": 6373
+  },
+  {
+   "id": "impactWood_light_002",
+   "file": "impactWood_light_002.ogg",
+   "category": "impactWood_light",
+   "bytes": 6366
+  },
+  {
+   "id": "impactWood_light_003",
+   "file": "impactWood_light_003.ogg",
+   "category": "impactWood_light",
+   "bytes": 6381
+  },
+  {
+   "id": "impactWood_light_004",
+   "file": "impactWood_light_004.ogg",
+   "category": "impactWood_light",
+   "bytes": 6395
+  },
+  {
+   "id": "impactWood_medium_000",
+   "file": "impactWood_medium_000.ogg",
+   "category": "impactWood_medium",
+   "bytes": 6575
+  },
+  {
+   "id": "impactWood_medium_001",
+   "file": "impactWood_medium_001.ogg",
+   "category": "impactWood_medium",
+   "bytes": 6555
+  },
+  {
+   "id": "impactWood_medium_002",
+   "file": "impactWood_medium_002.ogg",
+   "category": "impactWood_medium",
+   "bytes": 6607
+  },
+  {
+   "id": "impactWood_medium_003",
+   "file": "impactWood_medium_003.ogg",
+   "category": "impactWood_medium",
+   "bytes": 6598
+  },
+  {
+   "id": "impactWood_medium_004",
+   "file": "impactWood_medium_004.ogg",
+   "category": "impactWood_medium",
+   "bytes": 6481
+  }
+ ]
+}

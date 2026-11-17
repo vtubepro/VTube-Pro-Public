@@ -1,0 +1,102 @@
+{
+ "id": "fk_chibi",
+ "name": "Chibi (face_kit)",
+ "creator": {
+  "base": "shibu",
+  "hair": {
+   "style": "shibu",
+   "scale": 1.04
+  },
+  "colors": {
+   "hair": "#ffb35c",
+   "hairTip": "#fff0cc",
+   "hairTipRange": [
+    0.35,
+    1.0
+   ],
+   "eyes": "#3fb0e8",
+   "brows": "#d58a48",
+   "skin": "#ffe0d0",
+   "hairContrast": 0.45,
+   "hairShadeMul": [
+    0.97,
+    0.8,
+    0.68
+   ]
+  },
+  "face": {
+   "eyeSize": 1.4,
+   "eyeHeight": -0.6,
+   "chin": -1.0,
+   "faceWidth": 1.1,
+   "jaw": 0.88
+  },
+  "body": {
+   "head": 1.45,
+   "legs": 0.72,
+   "arms": 0.85,
+   "height": 0.8
+  }
+ },
+ "face": {
+  "skin": {
+   "blush": "#ff8a8a",
+   "blushAlpha": 0.42,
+   "blushSize": 0.95,
+   "blushY": -1.35,
+   "nose": "none",
+   "crease": 0.0,
+   "lowerLash": 0.25,
+   "mouthLine": "#b8605c",
+   "mouthW": 0.8
+  },
+  "eye": {
+   "line": "#2a1a1e",
+   "line2": "#6a3a40",
+   "lineIn": 0.08,
+   "lineMax": 0.24,
+   "lineOverlap": 0.12,
+   "wing": 0.12,
+   "spikes": 2,
+   "spikeLen": 0.35
+  },
+  "iris": {
+   "color": "#3fb0e8",
+   "top": "#0e3a6a",
+   "bottom": "#b8f4ff",
+   "glow": "#d8fff4",
+   "glowAlpha": 0.6,
+   "ring": "#0c2a4a",
+   "streaks": 0.0,
+   "pupil": 0.3,
+   "topBand": 0.28,
+   "scale": 1.05
+  },
+  "hl": {
+   "main": [
+    0.28,
+    0.36,
+    0.4,
+    0.34
+   ],
+   "mainRot": 0.0,
+   "dot": [
+    -0.3,
+    -0.44,
+    0.16
+   ],
+   "sparkles": 2
+  },
+  "brow": {
+   "height": 2.4,
+   "arch": 0.25,
+   "width": 0.1
+  }
+ },
+ "proxy": 1.0,
+ "profile": {
+  "look": {
+   "vrmExposure": 0.66
+  }
+ }
+}

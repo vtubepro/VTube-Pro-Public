@@ -1,0 +1,377 @@
+{
+ "1": {
+  "class_type": "LoadImage",
+  "inputs": {
+   "image": "vtp_texture.png"
+  },
+  "_meta": {
+   "title": "Your texture (from your model)"
+  }
+ },
+ "2": {
+  "class_type": "LoadImage",
+  "inputs": {
+   "image": "vtp_reference.png"
+  },
+  "_meta": {
+   "title": "Your reference (character picture)"
+  }
+ },
+ "3": {
+  "class_type": "UNETLoader",
+  "inputs": {
+   "unet_name": "flux-2-klein-4b.safetensors",
+   "weight_dtype": "default"
+  },
+  "_meta": {
+   "title": "Load Diffusion Model"
+  }
+ },
+ "4": {
+  "class_type": "CLIPLoader",
+  "inputs": {
+   "clip_name": "qwen_3_4b.safetensors",
+   "type": "flux2",
+   "device": "default"
+  },
+  "_meta": {
+   "title": "Load CLIP"
+  }
+ },
+ "5": {
+  "class_type": "VAELoader",
+  "inputs": {
+   "vae_name": "flux2-vae.safetensors"
+  },
+  "_meta": {
+   "title": "Load VAE"
+  }
+ },
+ "6": {
+  "class_type": "ImageScaleToTotalPixels",
+  "inputs": {
+   "image": [
+    "1",
+    0
+   ],
+   "upscale_method": "lanczos",
+   "megapixels": 1,
+   "resolution_steps": 16
+  },
+  "_meta": {
+   "title": "Image 1 at about 1 megapixel"
+  }
+ },
+ "7": {
+  "class_type": "GetImageSize",
+  "inputs": {
+   "image": [
+    "6",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "Get Image Size"
+  }
+ },
+ "8": {
+  "class_type": "CLIPTextEncode",
+  "inputs": {
+   "text": "Repaint image 1 using the colours and materials of the character in image 2. Keep every shape, seam, island and line of image 1 exactly where it is. Flat even lighting, no shadows.",
+   "clip": [
+    "4",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "Your edit: say what to change"
+  }
+ },
+ "9": {
+  "class_type": "ConditioningZeroOut",
+  "inputs": {
+   "conditioning": [
+    "8",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "ConditioningZeroOut"
+  }
+ },
+ "10": {
+  "class_type": "ImageScaleToTotalPixels",
+  "inputs": {
+   "image": [
+    "2",
+    0
+   ],
+   "upscale_method": "lanczos",
+   "megapixels": 1,
+   "resolution_steps": 16
+  },
+  "_meta": {
+   "title": "Image 2 at about 1 megapixel"
+  }
+ },
+ "11": {
+  "class_type": "VAEEncode",
+  "inputs": {
+   "pixels": [
+    "6",
+    0
+   ],
+   "vae": [
+    "5",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "VAE Encode"
+  }
+ },
+ "12": {
+  "class_type": "ReferenceLatent",
+  "inputs": {
+   "conditioning": [
+    "8",
+    0
+   ],
+   "latent": [
+    "11",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "ReferenceLatent"
+  }
+ },
+ "13": {
+  "class_type": "ReferenceLatent",
+  "inputs": {
+   "conditioning": [
+    "9",
+    0
+   ],
+   "latent": [
+    "11",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "ReferenceLatent"
+  }
+ },
+ "14": {
+  "class_type": "VAEEncode",
+  "inputs": {
+   "pixels": [
+    "10",
+    0
+   ],
+   "vae": [
+    "5",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "VAE Encode"
+  }
+ },
+ "15": {
+  "class_type": "ReferenceLatent",
+  "inputs": {
+   "conditioning": [
+    "12",
+    0
+   ],
+   "latent": [
+    "14",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "ReferenceLatent"
+  }
+ },
+ "16": {
+  "class_type": "ReferenceLatent",
+  "inputs": {
+   "conditioning": [
+    "13",
+    0
+   ],
+   "latent": [
+    "14",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "ReferenceLatent"
+  }
+ },
+ "17": {
+  "class_type": "CFGGuider",
+  "inputs": {
+   "model": [
+    "3",
+    0
+   ],
+   "positive": [
+    "15",
+    0
+   ],
+   "negative": [
+    "16",
+    0
+   ],
+   "cfg": 1
+  },
+  "_meta": {
+   "title": "CFG Guider"
+  }
+ },
+ "18": {
+  "class_type": "KSamplerSelect",
+  "inputs": {
+   "sampler_name": "euler"
+  },
+  "_meta": {
+   "title": "KSamplerSelect"
+  }
+ },
+ "19": {
+  "class_type": "Flux2Scheduler",
+  "inputs": {
+   "steps": 4,
+   "width": [
+    "7",
+    0
+   ],
+   "height": [
+    "7",
+    1
+   ]
+  },
+  "_meta": {
+   "title": "Flux2Scheduler"
+  }
+ },
+ "20": {
+  "class_type": "RandomNoise",
+  "inputs": {
+   "noise_seed": 20261001
+  },
+  "_meta": {
+   "title": "RandomNoise"
+  }
+ },
+ "21": {
+  "class_type": "EmptyFlux2LatentImage",
+  "inputs": {
+   "width": [
+    "7",
+    0
+   ],
+   "height": [
+    "7",
+    1
+   ],
+   "batch_size": 1
+  },
+  "_meta": {
+   "title": "Empty Flux 2 Latent"
+  }
+ },
+ "22": {
+  "class_type": "SamplerCustomAdvanced",
+  "inputs": {
+   "noise": [
+    "20",
+    0
+   ],
+   "guider": [
+    "17",
+    0
+   ],
+   "sampler": [
+    "18",
+    0
+   ],
+   "sigmas": [
+    "19",
+    0
+   ],
+   "latent_image": [
+    "21",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "SamplerCustomAdvanced"
+  }
+ },
+ "23": {
+  "class_type": "VAEDecode",
+  "inputs": {
+   "samples": [
+    "22",
+    0
+   ],
+   "vae": [
+    "5",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "VAE Decode"
+  }
+ },
+ "24": {
+  "class_type": "GetImageSize",
+  "inputs": {
+   "image": [
+    "1",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "Original size"
+  }
+ },
+ "25": {
+  "class_type": "ImageScale",
+  "inputs": {
+   "image": [
+    "23",
+    0
+   ],
+   "upscale_method": "lanczos",
+   "width": [
+    "24",
+    0
+   ],
+   "height": [
+    "24",
+    1
+   ],
+   "crop": "disabled"
+  },
+  "_meta": {
+   "title": "Back to the original size"
+  }
+ },
+ "26": {
+  "class_type": "SaveImage",
+  "inputs": {
+   "images": [
+    "25",
+    0
+   ],
+   "filename_prefix": "VTubePro/avatar-texture"
+  },
+  "_meta": {
+   "title": "Save the picture"
+  }
+ }
+}

@@ -1,0 +1,44 @@
+{
+  "config": {
+    "vtsPhone": {
+      "enabled": false,
+      "phoneIp": "",
+      "phonePort": 21412,
+      "listenPort": 21413,
+      "bind": "0.0.0.0",
+      "invert": {
+        "yaw": false,
+        "pitch": false,
+        "roll": false
+      }
+    },
+    "ifacialmocap": {
+      "enabled": false,
+      "phoneIp": "",
+      "phonePort": 49983,
+      "port": 49983,
+      "bind": "0.0.0.0",
+      "invert": {
+        "yaw": false,
+        "pitch": false,
+        "roll": false
+      }
+    },
+    "vmc": {
+      "enabled": false,
+      "port": 39539,
+      "bind": "0.0.0.0",
+      "out": {
+        "enabled": false,
+        "host": "127.0.0.1",
+        "port": 39540
+      }
+    },
+    "vtsApi": {
+      "enabled": false,
+      "port": 8001,
+      "bind": "127.0.0.1"
+    }
+  },
+  "vtsTokens": []
+}

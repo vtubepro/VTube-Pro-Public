@@ -1,0 +1,7 @@
+Audio2Face-3D-v2.3.1-Claire (network.onnx, model_data.npz, bs_skin.npz, bs_tongue.npz, implicit_emo_db.npz and configs)
+https://huggingface.co/nvidia/Audio2Face-3D-v2.3.1-Claire
+
+Licensed by NVIDIA Corporation under the NVIDIA Open Model License
+
+Full agreement: LICENSE-NVIDIA-Open-Model-License.txt (retrieved 2026-09-25 from
+https://www.nvidia.com/en-us/agreements/enterprise-software/nvidia-open-model-license/).

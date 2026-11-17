@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ES2022",
+    "moduleResolution": "Bundler",
+    "strict": true,
+    "experimentalDecorators": false,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "noEmit": false,
+    "outDir": "com.vtubepro.deck.sdPlugin/bin",
+    "types": ["node"]
+  },
+  "include": ["src"]
+}

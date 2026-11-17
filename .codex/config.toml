@@ -1,0 +1,6 @@
+[mcp_servers.vtube-pro]
+command = "npx"
+args = [
+    "tsx",
+    "server/mcp.ts",
+]

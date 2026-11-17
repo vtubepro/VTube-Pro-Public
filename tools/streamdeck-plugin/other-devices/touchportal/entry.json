@@ -1,0 +1,1983 @@
+{
+  "sdk": 6,
+  "version": 100,
+  "name": "VTube Pro",
+  "id": "vtubepro",
+  "configuration": {
+    "colorDark": "#2a1a5a",
+    "colorLight": "#7c5cff"
+  },
+  "categories": [
+    {
+      "id": "vtubepro.main",
+      "name": "VTube Pro",
+      "actions": [
+        {
+          "id": "vtubepro.lighting",
+          "prefix": "VTube Pro",
+          "name": "Lighting state",
+          "type": "execute",
+          "tryInline": true,
+          "format": "Lighting state: {$vtubepro.lighting.state$}",
+          "execution_cmd": "curl -s -X POST \"http://127.0.0.1:5191/api/deck/run/lighting?state={$vtubepro.lighting.state$}\"",
+          "description": "Preshow / Show / React / BRB / Outro (lights + screen video follow)",
+          "data": [
+            {
+              "id": "vtubepro.lighting.state",
+              "type": "choice",
+              "label": "State",
+              "default": "show",
+              "valueChoices": [
+                "preshow",
+                "show",
+                "react",
+                "brb",
+                "outro"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "vtubepro.mode",
+          "prefix": "VTube Pro",
+          "name": "Stage mode",
+          "type": "execute",
+          "tryInline": true,
+          "format": "Stage mode: {$vtubepro.mode.mode$}",
+          "execution_cmd": "curl -s -X POST \"http://127.0.0.1:5191/api/deck/run/mode?mode={$vtubepro.mode.mode$}\"",
+          "description": "Talk, React, Gaming or any installed mode (interview, …)",
+          "data": [
+            {
+              "id": "vtubepro.mode.mode",
+              "type": "choice",
+              "label": "Mode",
+              "default": "talk",
+              "valueChoices": [
+                "talk",
+                "react",
+                "gaming",
+                "interview"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "vtubepro.room",
+          "prefix": "VTube Pro",
+          "name": "Go to room",
+          "type": "execute",
+          "tryInline": true,
+          "format": "Go to room: {$vtubepro.room.sceneId$}",
+          "execution_cmd": "curl -s -X POST \"http://127.0.0.1:5191/api/deck/run/room?sceneId={$vtubepro.room.sceneId$}\"",
+          "description": "Switch the room (with the transition card). Empty = Classic (no room)",
+          "data": [
+            {
+              "id": "vtubepro.room.sceneId",
+              "type": "text",
+              "label": "Room",
+              "default": ""
+            }
+          ]
+        },
+        {
+          "id": "vtubepro.area",
+          "prefix": "VTube Pro",
+          "name": "Room area",
+          "type": "execute",
+          "tryInline": true,
+          "format": "Room area: {$vtubepro.area.area$}",
+          "execution_cmd": "curl -s -X POST \"http://127.0.0.1:5191/api/deck/run/area?area={$vtubepro.area.area$}\"",
+          "description": "Next / previous area of rooms that have areas, or an area key",
+          "data": [
+            {
+              "id": "vtubepro.area.area",
+              "type": "text",
+              "label": "Area",
+              "default": "next"
+            }
+          ]
+        },
+        {
+          "id": "vtubepro.curtain",
+          "prefix": "VTube Pro",
+          "name": "Reveal room (curtain)",
+          "type": "execute",
+          "tryInline": true,
+          "format": "Reveal room (curtain)",
+          "execution_cmd": "curl -s -X POST \"http://127.0.0.1:5191/api/deck/run/curtain\"",
+          "description": "Hold-mode transition card: reveal the new room now"
+        },
+        {
+          "id": "vtubepro.cover",
+          "prefix": "VTube Pro",
+          "name": "Hide my screen (capture cover)",
+          "type": "execute",
+          "tryInline": true,
+          "format": "Hide my screen (capture cover): {$vtubepro.cover.on$} {$vtubepro.cover.text$} {$vtubepro.cover.style$}",
+          "execution_cmd": "curl -s -X POST \"http://127.0.0.1:5191/api/deck/run/cover?on={$vtubepro.cover.on$}&text={$vtubepro.cover.text$}&style={$vtubepro.cover.style$}\"",
+          "description": "Animated card over your game / window capture (Blow the cartridge, Jacking in, Press Start …). Same as the Hide my screen key (Ctrl+B unless changed in Live → Privacy)",
+          "data": [
+            {
+              "id": "vtubepro.cover.on",
+              "type": "choice",
+              "label": "Press does",
+              "default": "toggle",
+              "valueChoices": [
+                "toggle",
+                "true",
+                "false"
+              ]
+            },
+            {
+              "id": "vtubepro.cover.text",
+              "type": "text",
+              "label": "Card line (empty = keep)",
+              "default": ""
+            },
+            {
+              "id": "vtubepro.cover.style",
+              "type": "text",
+              "label": "Card style id (empty = keep)",
+              "default": ""
+            }
+          ]
+        },
+        {
+          "id": "vtubepro.transition",
+          "prefix": "VTube Pro",
+          "name": "Room transition",
+          "type": "execute",
+          "tryInline": true,
+          "format": "Room transition: {$vtubepro.transition.style$} {$vtubepro.transition.dur$} {$vtubepro.transition.hold$}",
+          "execution_cmd": "curl -s -X POST \"http://127.0.0.1:5191/api/deck/run/transition?style={$vtubepro.transition.style$}&dur={$vtubepro.transition.dur$}&hold={$vtubepro.transition.hold$}\"",
+          "description": "The card that covers a room change: style, speed (seconds) and “wait for me” (hold until you reveal)",
+          "data": [
+            {
+              "id": "vtubepro.transition.style",
+              "type": "text",
+              "label": "Style id (vtp-dark, vtp-light, shuffle, cut …; keep = no change)",
+              "default": "vtp-dark"
+            },
+            {
+              "id": "vtubepro.transition.dur",
+              "type": "number",
+              "label": "Speed in seconds (0 = no change)",
+              "default": "0"
+            },
+            {
+              "id": "vtubepro.transition.hold",
+              "type": "choice",
+              "label": "Wait for me",
+              "default": "keep",
+              "valueChoices": [
+                "keep",
+                "true",
+                "false",
+                "toggle"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "vtubepro.camera-move",
+          "prefix": "VTube Pro",
+          "name": "Camera move",
+          "type": "execute",
+          "tryInline": true,
+          "format": "Camera move: {$vtubepro.camera-move.secs$}",
+          "execution_cmd": "curl -s -X POST \"http://127.0.0.1:5191/api/deck/run/camera-move?secs={$vtubepro.camera-move.secs$}\"",
+          "description": "How the camera changes shots: 0 = a hard cut, else a glide of that many seconds",
+          "data": [
+            {
+              "id": "vtubepro.camera-move.secs",
+              "type": "number",
+              "label": "Seconds (0 = cut)",
+              "default": "0"
+            }
+          ]
+        },
+        {
+          "id": "vtubepro.brb-card",
+          "prefix": "VTube Pro",
+          "name": "BRB card look",
+          "type": "execute",
+          "tryInline": true,
+          "format": "BRB card look: {$vtubepro.brb-card.style$} {$vtubepro.brb-card.theme$} {$vtubepro.brb-card.text$} {$vtubepro.brb-card.bg$}",
+          "execution_cmd": "curl -s -X POST \"http://127.0.0.1:5191/api/deck/run/brb-card?style={$vtubepro.brb-card.style$}&theme={$vtubepro.brb-card.theme$}&text={$vtubepro.brb-card.text$}&bg={$vtubepro.brb-card.bg$}\"",
+          "description": "The Be Right Back card (BRB = the BRB lighting state: fade to black, guests muted, this card): animation, Light / Dark, its words",
+          "data": [
+            {
+              "id": "vtubepro.brb-card.style",
+              "type": "choice",
+              "label": "Animation",
+              "default": "keep",
+              "valueChoices": [
+                "keep",
+                "breathe",
+                "sweep",
+                "dots"
+              ]
+            },
+            {
+              "id": "vtubepro.brb-card.theme",
+              "type": "choice",
+              "label": "Theme",
+              "default": "toggle",
+              "valueChoices": [
+                "keep",
+                "dark",
+                "light",
+                "toggle"
+              ]
+            },
+            {
+              "id": "vtubepro.brb-card.text",
+              "type": "text",
+              "label": "Words (empty = no change)",
+              "default": ""
+            },
+            {
+              "id": "vtubepro.brb-card.bg",
+              "type": "text",
+              "label": "Your own background (none = remove; empty = no change)",
+              "default": ""
+            }
+          ]
+        },
+        {
+          "id": "vtubepro.chat-hide",
+          "prefix": "VTube Pro",
+          "name": "Hide chat on stream",
+          "type": "execute",
+          "tryInline": true,
+          "format": "Hide chat on stream: {$vtubepro.chat-hide.on$}",
+          "execution_cmd": "curl -s -X POST \"http://127.0.0.1:5191/api/deck/run/chat-hide?on={$vtubepro.chat-hide.on$}\"",
+          "description": "Hides the chat monitor, the chat buddy and the docked chat from viewers (support alerts stay)",
+          "data": [
+            {
+              "id": "vtubepro.chat-hide.on",
+              "type": "choice",
+              "label": "Press does",
+              "default": "toggle",
+              "valueChoices": [
+                "toggle",
+                "true",
+                "false"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "vtubepro.video",
+          "prefix": "VTube Pro",
+          "name": "Screen video",
+          "type": "execute",
+          "tryInline": true,
+          "format": "Screen video: {$vtubepro.video.action$} {$vtubepro.video.slot$}",
+          "execution_cmd": "curl -s -X POST \"http://127.0.0.1:5191/api/deck/run/video?action={$vtubepro.video.action$}&slot={$vtubepro.video.slot$}\"",
+          "description": "Play / stop / next on the room screen",
+          "data": [
+            {
+              "id": "vtubepro.video.action",
+              "type": "choice",
+              "label": "Action",
+              "default": "toggle",
+              "valueChoices": [
+                "toggle",
+                "play",
+                "stop",
+                "next",
+                "restart",
+                "off",
+                "on"
+              ]
+            },
+            {
+              "id": "vtubepro.video.slot",
+              "type": "choice",
+              "label": "Playlist",
+              "default": "",
+              "valueChoices": [
+                "",
+                "preshow",
+                "ambience",
+                "brb",
+                "outro"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "vtubepro.camera",
+          "prefix": "VTube Pro",
+          "name": "Scene camera",
+          "type": "execute",
+          "tryInline": true,
+          "format": "Scene camera: {$vtubepro.camera.cam$} {$vtubepro.camera.focus$}",
+          "execution_cmd": "curl -s -X POST \"http://127.0.0.1:5191/api/deck/run/camera?cam={$vtubepro.camera.cam$}&focus={$vtubepro.camera.focus$}\"",
+          "description": "Talk / React / Gaming …: close-up (of someone), group, wide, the screen (centres the video / react window) or a room camera",
+          "data": [
+            {
+              "id": "vtubepro.camera.cam",
+              "type": "choice",
+              "label": "Camera",
+              "default": "auto",
+              "valueChoices": [
+                "auto",
+                "talk",
+                "group",
+                "wide",
+                "screen",
+                "react"
+              ]
+            },
+            {
+              "id": "vtubepro.camera.focus",
+              "type": "text",
+              "label": "Close-up of (me / member id)",
+              "default": ""
+            }
+          ]
+        },
+        {
+          "id": "vtubepro.presence",
+          "prefix": "VTube Pro",
+          "name": "In the room / outside",
+          "type": "execute",
+          "tryInline": true,
+          "format": "In the room / outside: {$vtubepro.presence.who$} {$vtubepro.presence.on$} {$vtubepro.presence.how$}",
+          "execution_cmd": "curl -s -X POST \"http://127.0.0.1:5191/api/deck/run/presence?who={$vtubepro.presence.who$}&on={$vtubepro.presence.on$}&how={$vtubepro.presence.how$}\"",
+          "description": "Bring someone into the room or send them out (me, or a party member): walk through the door or appear instantly",
+          "data": [
+            {
+              "id": "vtubepro.presence.who",
+              "type": "text",
+              "label": "Who (me / member id)",
+              "default": "me"
+            },
+            {
+              "id": "vtubepro.presence.on",
+              "type": "choice",
+              "label": "Press does",
+              "default": "toggle",
+              "valueChoices": [
+                "toggle",
+                "in",
+                "out"
+              ]
+            },
+            {
+              "id": "vtubepro.presence.how",
+              "type": "choice",
+              "label": "How",
+              "default": "",
+              "valueChoices": [
+                "",
+                "walk",
+                "instant"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "vtubepro.entrances",
+          "prefix": "VTube Pro",
+          "name": "Entrances",
+          "type": "execute",
+          "tryInline": true,
+          "format": "Entrances: {$vtubepro.entrances.walk$} {$vtubepro.entrances.join$}",
+          "execution_cmd": "curl -s -X POST \"http://127.0.0.1:5191/api/deck/run/entrances?walk={$vtubepro.entrances.walk$}&join={$vtubepro.entrances.join$}\"",
+          "description": "Walk-ins on / off (off = people appear in their seats), and how people who join arrive",
+          "data": [
+            {
+              "id": "vtubepro.entrances.walk",
+              "type": "choice",
+              "label": "Walk-ins",
+              "default": "toggle",
+              "valueChoices": [
+                "toggle",
+                "true",
+                "false",
+                ""
+              ]
+            },
+            {
+              "id": "vtubepro.entrances.join",
+              "type": "choice",
+              "label": "People who join",
+              "default": "",
+              "valueChoices": [
+                "",
+                "walk",
+                "seated",
+                "outside"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "vtubepro.video-audio",
+          "prefix": "VTube Pro",
+          "name": "Screen video sound",
+          "type": "execute",
+          "tryInline": true,
+          "format": "Screen video sound",
+          "execution_cmd": "curl -s -X POST \"http://127.0.0.1:5191/api/deck/run/video-audio\"",
+          "description": "Toggle the screen video sound on the OBS page"
+        },
+        {
+          "id": "vtubepro.ambcam",
+          "prefix": "VTube Pro",
+          "name": "Ambient cameras",
+          "type": "execute",
+          "tryInline": true,
+          "format": "Ambient cameras: {$vtubepro.ambcam.action$} {$vtubepro.ambcam.state$}",
+          "execution_cmd": "curl -s -X POST \"http://127.0.0.1:5191/api/deck/run/ambcam?action={$vtubepro.ambcam.action$}&state={$vtubepro.ambcam.state$}\"",
+          "description": "Preshow / BRB / Outro camera moves: next shot, pick a move (orbit, pan, tour …), on / off",
+          "data": [
+            {
+              "id": "vtubepro.ambcam.action",
+              "type": "choice",
+              "label": "Press does",
+              "default": "next",
+              "valueChoices": [
+                "next",
+                "toggle",
+                "auto",
+                "orbit",
+                "pan",
+                "dolly",
+                "crane",
+                "zoom",
+                "drift",
+                "security",
+                "tour"
+              ]
+            },
+            {
+              "id": "vtubepro.ambcam.state",
+              "type": "choice",
+              "label": "Moment",
+              "default": "",
+              "valueChoices": [
+                "",
+                "preshow",
+                "brb",
+                "outro"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "vtubepro.weather",
+          "prefix": "VTube Pro",
+          "name": "Weather",
+          "type": "execute",
+          "tryInline": true,
+          "format": "Weather: {$vtubepro.weather.weather$}",
+          "execution_cmd": "curl -s -X POST \"http://127.0.0.1:5191/api/deck/run/weather?weather={$vtubepro.weather.weather$}\"",
+          "description": "Rooms with time of day / weather",
+          "data": [
+            {
+              "id": "vtubepro.weather.weather",
+              "type": "choice",
+              "label": "Weather",
+              "default": "rain",
+              "valueChoices": [
+                "clear",
+                "cloudy",
+                "overcast",
+                "rain",
+                "heavyrain",
+                "storm",
+                "fog"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "vtubepro.hour",
+          "prefix": "VTube Pro",
+          "name": "Time of day",
+          "type": "execute",
+          "tryInline": true,
+          "format": "Time of day: {$vtubepro.hour.hour$}",
+          "execution_cmd": "curl -s -X POST \"http://127.0.0.1:5191/api/deck/run/hour?hour={$vtubepro.hour.hour$}\"",
+          "description": "Set the clock of rooms with time of day (0–24)",
+          "data": [
+            {
+              "id": "vtubepro.hour.hour",
+              "type": "number",
+              "label": "Hour",
+              "default": "21"
+            }
+          ]
+        },
+        {
+          "id": "vtubepro.raid",
+          "prefix": "VTube Pro",
+          "name": "Background raid",
+          "type": "execute",
+          "tryInline": true,
+          "format": "Background raid",
+          "execution_cmd": "curl -s -X POST \"http://127.0.0.1:5191/api/deck/run/raid\"",
+          "description": "Background combat on / off"
+        },
+        {
+          "id": "vtubepro.warzone",
+          "prefix": "VTube Pro",
+          "name": "Warzone set piece",
+          "type": "execute",
+          "tryInline": true,
+          "format": "Warzone set piece: {$vtubepro.warzone.event$}",
+          "execution_cmd": "curl -s -X POST \"http://127.0.0.1:5191/api/deck/run/warzone?event={$vtubepro.warzone.event$}\"",
+          "description": "Warzone rooms: call in an air strike, an armoured push, a militia assault the frogs repel, a technical, a mortar barrage, a gunship pass, flares or the sniper",
+          "data": [
+            {
+              "id": "vtubepro.warzone.event",
+              "type": "choice",
+              "label": "Set piece",
+              "default": "wz_airstrike",
+              "valueChoices": [
+                "wz_airstrike",
+                "wz_armor",
+                "wz_assault",
+                "wz_technical",
+                "wz_mortar",
+                "wz_heli",
+                "wz_flare",
+                "wz_sniper"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "vtubepro.calm",
+          "prefix": "VTube Pro",
+          "name": "Calm the battle",
+          "type": "execute",
+          "tryInline": true,
+          "format": "Calm the battle",
+          "execution_cmd": "curl -s -X POST \"http://127.0.0.1:5191/api/deck/run/calm\"",
+          "description": "Warzone rooms: no new big moments and no shake inside while you talk (the far fighting goes on)"
+        },
+        {
+          "id": "vtubepro.club",
+          "prefix": "VTube Pro",
+          "name": "Club moment",
+          "type": "execute",
+          "tryInline": true,
+          "format": "Club moment: {$vtubepro.club.event$}",
+          "execution_cmd": "curl -s -X POST \"http://127.0.0.1:5191/api/deck/run/club?event={$vtubepro.club.event$}\"",
+          "description": "Club room bits: conga, danceoff, raid, tip, big …",
+          "data": [
+            {
+              "id": "vtubepro.club.event",
+              "type": "text",
+              "label": "Event",
+              "default": "conga"
+            }
+          ]
+        },
+        {
+          "id": "vtubepro.lounge",
+          "prefix": "VTube Pro",
+          "name": "Lounge celebration",
+          "type": "execute",
+          "tryInline": true,
+          "format": "Lounge celebration: {$vtubepro.lounge.event$} {$vtubepro.lounge.count$} {$vtubepro.lounge.user$}",
+          "execution_cmd": "curl -s -X POST \"http://127.0.0.1:5191/api/deck/run/lounge?event={$vtubepro.lounge.event$}&count={$vtubepro.lounge.count$}&user={$vtubepro.lounge.user$}\"",
+          "description": "Hangout lounge: test a donation tier (bar drinks / shots, patio firepit + fireworks, lounge champagne + balloons), gifted subs, a gift train, or calm / off",
+          "data": [
+            {
+              "id": "vtubepro.lounge.event",
+              "type": "choice",
+              "label": "Event",
+              "default": "t3",
+              "valueChoices": [
+                "t1",
+                "t2",
+                "t3",
+                "t4",
+                "t5",
+                "gift",
+                "train",
+                "sub",
+                "raid",
+                "calm",
+                "toggle"
+              ]
+            },
+            {
+              "id": "vtubepro.lounge.count",
+              "type": "number",
+              "label": "Gifts (gift / train)",
+              "default": "5"
+            },
+            {
+              "id": "vtubepro.lounge.user",
+              "type": "text",
+              "label": "Name on the banner",
+              "default": ""
+            }
+          ]
+        },
+        {
+          "id": "vtubepro.slap",
+          "prefix": "VTube Pro",
+          "name": "Slap!",
+          "type": "execute",
+          "tryInline": true,
+          "format": "Slap!: {$vtubepro.slap.target$}",
+          "execution_cmd": "curl -s -X POST \"http://127.0.0.1:5191/api/deck/run/slap?target={$vtubepro.slap.target$}\"",
+          "description": "The minion slaps someone (random guest, host or a name)",
+          "data": [
+            {
+              "id": "vtubepro.slap.target",
+              "type": "text",
+              "label": "Target",
+              "default": "random"
+            }
+          ]
+        },
+        {
+          "id": "vtubepro.emote",
+          "prefix": "VTube Pro",
+          "name": "Emote",
+          "type": "execute",
+          "tryInline": true,
+          "format": "Emote: {$vtubepro.emote.name$}",
+          "execution_cmd": "curl -s -X POST \"http://127.0.0.1:5191/api/deck/run/emote?name={$vtubepro.emote.name$}\"",
+          "description": "Play a VRMA emote by name (\"stop\" stops it)",
+          "data": [
+            {
+              "id": "vtubepro.emote.name",
+              "type": "text",
+              "label": "Emote",
+              "default": "wave"
+            }
+          ]
+        },
+        {
+          "id": "vtubepro.expression",
+          "prefix": "VTube Pro",
+          "name": "Expression",
+          "type": "execute",
+          "tryInline": true,
+          "format": "Expression: {$vtubepro.expression.name$} {$vtubepro.expression.seconds$}",
+          "execution_cmd": "curl -s -X POST \"http://127.0.0.1:5191/api/deck/run/expression?name={$vtubepro.expression.name$}&seconds={$vtubepro.expression.seconds$}\"",
+          "description": "Show an expression for a few seconds",
+          "data": [
+            {
+              "id": "vtubepro.expression.name",
+              "type": "choice",
+              "label": "Expression",
+              "default": "happy",
+              "valueChoices": [
+                "happy",
+                "angry",
+                "sad",
+                "surprised",
+                "relaxed"
+              ]
+            },
+            {
+              "id": "vtubepro.expression.seconds",
+              "type": "number",
+              "label": "Seconds",
+              "default": "2.5"
+            }
+          ]
+        },
+        {
+          "id": "vtubepro.interview",
+          "prefix": "VTube Pro",
+          "name": "Interview shot",
+          "type": "execute",
+          "tryInline": true,
+          "format": "Interview shot: {$vtubepro.interview.shot$}",
+          "execution_cmd": "curl -s -X POST \"http://127.0.0.1:5191/api/deck/run/interview?shot={$vtubepro.interview.shot$}\"",
+          "description": "Interview mode camera: auto / manual director, host, co-host 1–2, hosts, panel, guest 1–4, two-shot, wide …",
+          "data": [
+            {
+              "id": "vtubepro.interview.shot",
+              "type": "choice",
+              "label": "Shot",
+              "default": "auto",
+              "valueChoices": [
+                "auto",
+                "manual",
+                "establishing",
+                "host",
+                "cohost1",
+                "cohost2",
+                "hosts",
+                "panel",
+                "guest",
+                "guest1",
+                "guest2",
+                "guest3",
+                "guest4",
+                "ots",
+                "two",
+                "wide",
+                "audience",
+                "house",
+                "take",
+                "sidekick",
+                "push",
+                "snap",
+                "reverse",
+                "bumper",
+                "pin",
+                "turn-guest",
+                "turn-host",
+                "pace-calm",
+                "pace-normal",
+                "pace-snappy"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "vtubepro.guest-place",
+          "prefix": "VTube Pro",
+          "name": "Guest: studio / monitor",
+          "type": "execute",
+          "tryInline": true,
+          "format": "Guest: studio / monitor: {$vtubepro.guest-place.guest$} {$vtubepro.guest-place.where$} {$vtubepro.guest-place.peer$}",
+          "execution_cmd": "curl -s -X POST \"http://127.0.0.1:5191/api/deck/run/guest-place?guest={$vtubepro.guest-place.guest$}&where={$vtubepro.guest-place.where$}&peer={$vtubepro.guest-place.peer$}\"",
+          "description": "Interview guest N (or a member id): seated in the studio or on the monitor",
+          "data": [
+            {
+              "id": "vtubepro.guest-place.guest",
+              "type": "number",
+              "label": "Guest #",
+              "default": "1"
+            },
+            {
+              "id": "vtubepro.guest-place.where",
+              "type": "choice",
+              "label": "Where",
+              "default": "toggle",
+              "valueChoices": [
+                "toggle",
+                "studio",
+                "monitor"
+              ]
+            },
+            {
+              "id": "vtubepro.guest-place.peer",
+              "type": "text",
+              "label": "Member id (optional)",
+              "default": ""
+            }
+          ]
+        },
+        {
+          "id": "vtubepro.interview-role",
+          "prefix": "VTube Pro",
+          "name": "Co-host / guest",
+          "type": "execute",
+          "tryInline": true,
+          "format": "Co-host / guest: {$vtubepro.interview-role.who$} {$vtubepro.interview-role.role$}",
+          "execution_cmd": "curl -s -X POST \"http://127.0.0.1:5191/api/deck/run/interview-role?who={$vtubepro.interview-role.who$}&role={$vtubepro.interview-role.role$}\"",
+          "description": "Interview: make someone a co-host (sits with you at the desk) or a guest again. Who: a member id, guest1…4 or cohost1…2",
+          "data": [
+            {
+              "id": "vtubepro.interview-role.who",
+              "type": "text",
+              "label": "Who (member id / guest1 / cohost1)",
+              "default": "guest1"
+            },
+            {
+              "id": "vtubepro.interview-role.role",
+              "type": "choice",
+              "label": "Press does",
+              "default": "toggle",
+              "valueChoices": [
+                "toggle",
+                "cohost",
+                "guest"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "vtubepro.knock-approve",
+          "prefix": "VTube Pro",
+          "name": "Let in (knock)",
+          "type": "execute",
+          "tryInline": true,
+          "format": "Let in (knock)",
+          "execution_cmd": "curl -s -X POST \"http://127.0.0.1:5191/api/deck/run/knock-approve\"",
+          "description": "Let in the first person knocking"
+        },
+        {
+          "id": "vtubepro.knock-deny",
+          "prefix": "VTube Pro",
+          "name": "Deny (knock)",
+          "type": "execute",
+          "tryInline": true,
+          "format": "Deny (knock)",
+          "execution_cmd": "curl -s -X POST \"http://127.0.0.1:5191/api/deck/run/knock-deny\"",
+          "description": "Turn away the first person knocking"
+        },
+        {
+          "id": "vtubepro.guest-kick",
+          "prefix": "VTube Pro",
+          "name": "Kick guest",
+          "type": "execute",
+          "tryInline": true,
+          "format": "Kick guest: {$vtubepro.guest-kick.guest$} {$vtubepro.guest-kick.peer$} {$vtubepro.guest-kick.ban$} {$vtubepro.guest-kick.revoke$}",
+          "execution_cmd": "curl -s -X POST \"http://127.0.0.1:5191/api/deck/run/guest-kick?guest={$vtubepro.guest-kick.guest$}&peer={$vtubepro.guest-kick.peer$}&ban={$vtubepro.guest-kick.ban$}&revoke={$vtubepro.guest-kick.revoke$}\"",
+          "description": "Remove party member N (or a member id). \"Also block them\": they can’t come back with the same account / browser tab",
+          "data": [
+            {
+              "id": "vtubepro.guest-kick.guest",
+              "type": "number",
+              "label": "Member #",
+              "default": "1"
+            },
+            {
+              "id": "vtubepro.guest-kick.peer",
+              "type": "text",
+              "label": "Member id (optional)",
+              "default": ""
+            },
+            {
+              "id": "vtubepro.guest-kick.ban",
+              "type": "choice",
+              "label": "Also block them",
+              "default": "false",
+              "valueChoices": [
+                "false",
+                "true"
+              ]
+            },
+            {
+              "id": "vtubepro.guest-kick.revoke",
+              "type": "choice",
+              "label": "Also turn the invite link off",
+              "default": "false",
+              "valueChoices": [
+                "false",
+                "true"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "vtubepro.guest-mute",
+          "prefix": "VTube Pro",
+          "name": "Mute guest",
+          "type": "execute",
+          "tryInline": true,
+          "format": "Mute guest: {$vtubepro.guest-mute.guest$} {$vtubepro.guest-mute.peer$} {$vtubepro.guest-mute.on$}",
+          "execution_cmd": "curl -s -X POST \"http://127.0.0.1:5191/api/deck/run/guest-mute?guest={$vtubepro.guest-mute.guest$}&peer={$vtubepro.guest-mute.peer$}&on={$vtubepro.guest-mute.on$}\"",
+          "description": "Mute / unmute a guest everywhere: stream, the OBS page, your speakers and every other guest’s ears (party member N, or a member id). Undo-able",
+          "data": [
+            {
+              "id": "vtubepro.guest-mute.guest",
+              "type": "number",
+              "label": "Member #",
+              "default": "1"
+            },
+            {
+              "id": "vtubepro.guest-mute.peer",
+              "type": "text",
+              "label": "Member id (optional)",
+              "default": ""
+            },
+            {
+              "id": "vtubepro.guest-mute.on",
+              "type": "choice",
+              "label": "Mute",
+              "default": "toggle",
+              "valueChoices": [
+                "toggle",
+                "true",
+                "false"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "vtubepro.guest-cam",
+          "prefix": "VTube Pro",
+          "name": "Hide guest camera",
+          "type": "execute",
+          "tryInline": true,
+          "format": "Hide guest camera: {$vtubepro.guest-cam.guest$} {$vtubepro.guest-cam.peer$} {$vtubepro.guest-cam.on$}",
+          "execution_cmd": "curl -s -X POST \"http://127.0.0.1:5191/api/deck/run/guest-cam?guest={$vtubepro.guest-cam.guest$}&peer={$vtubepro.guest-cam.peer$}&on={$vtubepro.guest-cam.on$}\"",
+          "description": "Hide / show a guest’s camera on stream, the OBS page and for other guests (everyone sees a “Camera off” card; a 3D-avatar guest leaves the room). Party member N or a member id",
+          "data": [
+            {
+              "id": "vtubepro.guest-cam.guest",
+              "type": "number",
+              "label": "Member #",
+              "default": "1"
+            },
+            {
+              "id": "vtubepro.guest-cam.peer",
+              "type": "text",
+              "label": "Member id (optional)",
+              "default": ""
+            },
+            {
+              "id": "vtubepro.guest-cam.on",
+              "type": "choice",
+              "label": "Press does",
+              "default": "toggle",
+              "valueChoices": [
+                "toggle",
+                "true",
+                "false"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "vtubepro.guest-volume",
+          "prefix": "VTube Pro",
+          "name": "Guest volume",
+          "type": "execute",
+          "tryInline": true,
+          "format": "Guest volume: {$vtubepro.guest-volume.guest$} {$vtubepro.guest-volume.peer$} {$vtubepro.guest-volume.vol$}",
+          "execution_cmd": "curl -s -X POST \"http://127.0.0.1:5191/api/deck/run/guest-volume?guest={$vtubepro.guest-volume.guest$}&peer={$vtubepro.guest-volume.peer$}&vol={$vtubepro.guest-volume.vol$}\"",
+          "description": "A guest’s volume on stream, in your speakers and in the other guests’ mix (0–100)",
+          "data": [
+            {
+              "id": "vtubepro.guest-volume.guest",
+              "type": "number",
+              "label": "Member #",
+              "default": "1"
+            },
+            {
+              "id": "vtubepro.guest-volume.peer",
+              "type": "text",
+              "label": "Member id (optional)",
+              "default": ""
+            },
+            {
+              "id": "vtubepro.guest-volume.vol",
+              "type": "number",
+              "label": "Volume %",
+              "default": "100"
+            }
+          ]
+        },
+        {
+          "id": "vtubepro.guest-cut",
+          "prefix": "VTube Pro",
+          "name": "Cut guest (camera + mic)",
+          "type": "execute",
+          "tryInline": true,
+          "format": "Cut guest (camera + mic): {$vtubepro.guest-cut.guest$} {$vtubepro.guest-cut.peer$} {$vtubepro.guest-cut.on$}",
+          "execution_cmd": "curl -s -X POST \"http://127.0.0.1:5191/api/deck/run/guest-cut?guest={$vtubepro.guest-cut.guest$}&peer={$vtubepro.guest-cut.peer$}&on={$vtubepro.guest-cut.on$}\"",
+          "description": "Panic button for one guest: camera AND mic off at once, everywhere. Press again (toggle) or Undo brings them back",
+          "data": [
+            {
+              "id": "vtubepro.guest-cut.guest",
+              "type": "number",
+              "label": "Member #",
+              "default": "1"
+            },
+            {
+              "id": "vtubepro.guest-cut.peer",
+              "type": "text",
+              "label": "Member id (optional)",
+              "default": ""
+            },
+            {
+              "id": "vtubepro.guest-cut.on",
+              "type": "choice",
+              "label": "Press does",
+              "default": "toggle",
+              "valueChoices": [
+                "toggle",
+                "true",
+                "false"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "vtubepro.guests-cut-all",
+          "prefix": "VTube Pro",
+          "name": "Cut all guests",
+          "type": "execute",
+          "tryInline": true,
+          "format": "Cut all guests: {$vtubepro.guests-cut-all.on$}",
+          "execution_cmd": "curl -s -X POST \"http://127.0.0.1:5191/api/deck/run/guests-cut-all?on={$vtubepro.guests-cut-all.on$}\"",
+          "description": "Emergency: every guest’s camera and mic off at once (one Undo brings them all back)",
+          "data": [
+            {
+              "id": "vtubepro.guests-cut-all.on",
+              "type": "choice",
+              "label": "Press does",
+              "default": "true",
+              "valueChoices": [
+                "true",
+                "false",
+                "toggle"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "vtubepro.guest-undo",
+          "prefix": "VTube Pro",
+          "name": "Undo (guest moderation)",
+          "type": "execute",
+          "tryInline": true,
+          "format": "Undo (guest moderation)",
+          "execution_cmd": "curl -s -X POST \"http://127.0.0.1:5191/api/deck/run/guest-undo\"",
+          "description": "Undo the last camera / mic / volume / cut change"
+        },
+        {
+          "id": "vtubepro.guest-cut-hold",
+          "prefix": "VTube Pro",
+          "name": "Cut: also to green room",
+          "type": "execute",
+          "tryInline": true,
+          "format": "Cut: also to green room: {$vtubepro.guest-cut-hold.on$}",
+          "execution_cmd": "curl -s -X POST \"http://127.0.0.1:5191/api/deck/run/guest-cut-hold?on={$vtubepro.guest-cut-hold.on$}\"",
+          "description": "When you cut a guest, also send them back to the green room (off the show until you bring them on)",
+          "data": [
+            {
+              "id": "vtubepro.guest-cut-hold.on",
+              "type": "choice",
+              "label": "Press does",
+              "default": "toggle",
+              "valueChoices": [
+                "toggle",
+                "true",
+                "false"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "vtubepro.guest-voice",
+          "prefix": "VTube Pro",
+          "name": "Link guests: voice",
+          "type": "execute",
+          "tryInline": true,
+          "format": "Link guests: voice: {$vtubepro.guest-voice.what$} {$vtubepro.guest-voice.on$} {$vtubepro.guest-voice.mic$}",
+          "execution_cmd": "curl -s -X POST \"http://127.0.0.1:5191/api/deck/run/guest-voice?what={$vtubepro.guest-voice.what$}&on={$vtubepro.guest-voice.on$}&mic={$vtubepro.guest-voice.mic$}\"",
+          "description": "Talk with link guests without Discord: hear them in the studio / send them your voice",
+          "data": [
+            {
+              "id": "vtubepro.guest-voice.what",
+              "type": "choice",
+              "label": "What",
+              "default": "hear",
+              "valueChoices": [
+                "hear",
+                "talkback",
+                "mic"
+              ]
+            },
+            {
+              "id": "vtubepro.guest-voice.on",
+              "type": "choice",
+              "label": "Press does",
+              "default": "toggle",
+              "valueChoices": [
+                "toggle",
+                "true",
+                "false"
+              ]
+            },
+            {
+              "id": "vtubepro.guest-voice.mic",
+              "type": "text",
+              "label": "Mic id (Pick the mic; empty = same as lip sync)",
+              "default": ""
+            }
+          ]
+        },
+        {
+          "id": "vtubepro.party-end",
+          "prefix": "VTube Pro",
+          "name": "End party",
+          "type": "execute",
+          "tryInline": true,
+          "format": "End party",
+          "execution_cmd": "curl -s -X POST \"http://127.0.0.1:5191/api/deck/run/party-end\"",
+          "description": "Close the party for everyone"
+        },
+        {
+          "id": "vtubepro.guest-link",
+          "prefix": "VTube Pro",
+          "name": "Copy interview link",
+          "type": "execute",
+          "tryInline": true,
+          "format": "Copy interview link: {$vtubepro.guest-link.do$}",
+          "execution_cmd": "curl -s -X POST \"http://127.0.0.1:5191/api/deck/run/guest-link?do={$vtubepro.guest-link.do$}\"",
+          "description": "Mint + copy a no-install guest link (in the studio window), or turn the current link off (it stops working for everyone)",
+          "data": [
+            {
+              "id": "vtubepro.guest-link.do",
+              "type": "choice",
+              "label": "Press does",
+              "default": "copy",
+              "valueChoices": [
+                "copy",
+                "off"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "vtubepro.greenroom-on",
+          "prefix": "VTube Pro",
+          "name": "Bring on (green room)",
+          "type": "execute",
+          "tryInline": true,
+          "format": "Bring on (green room): {$vtubepro.greenroom-on.guest$} {$vtubepro.greenroom-on.peer$}",
+          "execution_cmd": "curl -s -X POST \"http://127.0.0.1:5191/api/deck/run/greenroom-on?guest={$vtubepro.greenroom-on.guest$}&peer={$vtubepro.greenroom-on.peer$}\"",
+          "description": "Bring a guest from the green room onto the show (the Entrances setting: walk in / appear). Empty = the next guest (READY first, then who waited longest)",
+          "data": [
+            {
+              "id": "vtubepro.greenroom-on.guest",
+              "type": "number",
+              "label": "Member # (0 = next)",
+              "default": "0"
+            },
+            {
+              "id": "vtubepro.greenroom-on.peer",
+              "type": "text",
+              "label": "Member id (optional)",
+              "default": ""
+            }
+          ]
+        },
+        {
+          "id": "vtubepro.greenroom-back",
+          "prefix": "VTube Pro",
+          "name": "Back to green room",
+          "type": "execute",
+          "tryInline": true,
+          "format": "Back to green room: {$vtubepro.greenroom-back.guest$} {$vtubepro.greenroom-back.peer$}",
+          "execution_cmd": "curl -s -X POST \"http://127.0.0.1:5191/api/deck/run/greenroom-back?guest={$vtubepro.greenroom-back.guest$}&peer={$vtubepro.greenroom-back.peer$}\"",
+          "description": "Send a guest back to the green room (they walk out first when walk-ins are on). Empty = the guest brought on last",
+          "data": [
+            {
+              "id": "vtubepro.greenroom-back.guest",
+              "type": "number",
+              "label": "Member # (0 = last on)",
+              "default": "0"
+            },
+            {
+              "id": "vtubepro.greenroom-back.peer",
+              "type": "text",
+              "label": "Member id (optional)",
+              "default": ""
+            }
+          ]
+        },
+        {
+          "id": "vtubepro.greenroom-next",
+          "prefix": "VTube Pro",
+          "name": "Next guest",
+          "type": "execute",
+          "tryInline": true,
+          "format": "Next guest",
+          "execution_cmd": "curl -s -X POST \"http://127.0.0.1:5191/api/deck/run/greenroom-next\"",
+          "description": "The guest brought on last goes back to the green room and the next waiting guest (READY first) comes on"
+        },
+        {
+          "id": "vtubepro.greenroom-msg",
+          "prefix": "VTube Pro",
+          "name": "Message a guest",
+          "type": "execute",
+          "tryInline": true,
+          "format": "Message a guest: {$vtubepro.greenroom-msg.preset$} {$vtubepro.greenroom-msg.text$} {$vtubepro.greenroom-msg.to$} {$vtubepro.greenroom-msg.guest$} {$vtubepro.greenroom-msg.peer$}",
+          "execution_cmd": "curl -s -X POST \"http://127.0.0.1:5191/api/deck/run/greenroom-msg?preset={$vtubepro.greenroom-msg.preset$}&text={$vtubepro.greenroom-msg.text$}&to={$vtubepro.greenroom-msg.to$}&guest={$vtubepro.greenroom-msg.guest$}&peer={$vtubepro.greenroom-msg.peer$}\"",
+          "description": "Send a guest a message on their page (no sound: a banner): up next, in 1 minute, you’re live, hang tight, or your own text",
+          "data": [
+            {
+              "id": "vtubepro.greenroom-msg.preset",
+              "type": "choice",
+              "label": "Message",
+              "default": "next",
+              "valueChoices": [
+                "next",
+                "minute",
+                "live",
+                "hold",
+                "text"
+              ]
+            },
+            {
+              "id": "vtubepro.greenroom-msg.text",
+              "type": "text",
+              "label": "Own text (max 140)",
+              "default": ""
+            },
+            {
+              "id": "vtubepro.greenroom-msg.to",
+              "type": "choice",
+              "label": "To",
+              "default": "next",
+              "valueChoices": [
+                "next",
+                "all",
+                "last",
+                "member"
+              ]
+            },
+            {
+              "id": "vtubepro.greenroom-msg.guest",
+              "type": "number",
+              "label": "Member #",
+              "default": "1"
+            },
+            {
+              "id": "vtubepro.greenroom-msg.peer",
+              "type": "text",
+              "label": "Member id (optional)",
+              "default": ""
+            }
+          ]
+        },
+        {
+          "id": "vtubepro.greenroom-talk",
+          "prefix": "VTube Pro",
+          "name": "Talk backstage",
+          "type": "execute",
+          "tryInline": true,
+          "format": "Talk backstage: {$vtubepro.greenroom-talk.peer$} {$vtubepro.greenroom-talk.on$}",
+          "execution_cmd": "curl -s -X POST \"http://127.0.0.1:5191/api/deck/run/greenroom-talk?peer={$vtubepro.greenroom-talk.peer$}&on={$vtubepro.greenroom-talk.on$}\"",
+          "description": "Two-way voice with one waiting guest only (plays on the backstage output you picked, never on the OBS page)",
+          "data": [
+            {
+              "id": "vtubepro.greenroom-talk.peer",
+              "type": "text",
+              "label": "Member id",
+              "default": ""
+            },
+            {
+              "id": "vtubepro.greenroom-talk.on",
+              "type": "choice",
+              "label": "Press does",
+              "default": "toggle",
+              "valueChoices": [
+                "toggle",
+                "true",
+                "false"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "vtubepro.greenroom-output",
+          "prefix": "VTube Pro",
+          "name": "Backstage voice output",
+          "type": "execute",
+          "tryInline": true,
+          "format": "Backstage voice output: {$vtubepro.greenroom-output.sink$}",
+          "execution_cmd": "curl -s -X POST \"http://127.0.0.1:5191/api/deck/run/greenroom-output?sink={$vtubepro.greenroom-output.sink$}\"",
+          "description": "Where backstage voice plays (headphones OBS does NOT capture). Empty = the default output",
+          "data": [
+            {
+              "id": "vtubepro.greenroom-output.sink",
+              "type": "text",
+              "label": "Output device id (empty = default)",
+              "default": ""
+            }
+          ]
+        },
+        {
+          "id": "vtubepro.greenroom-mode",
+          "prefix": "VTube Pro",
+          "name": "Green room: who waits",
+          "type": "execute",
+          "tryInline": true,
+          "format": "Green room: who waits: {$vtubepro.greenroom-mode.mode$}",
+          "execution_cmd": "curl -s -X POST \"http://127.0.0.1:5191/api/deck/run/greenroom-mode?mode={$vtubepro.greenroom-mode.mode$}\"",
+          "description": "Who waits in the green room when they join: link guests (default), everyone, or nobody (straight in)",
+          "data": [
+            {
+              "id": "vtubepro.greenroom-mode.mode",
+              "type": "choice",
+              "label": "New guests",
+              "default": "link",
+              "valueChoices": [
+                "link",
+                "all",
+                "off"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "vtubepro.costume",
+          "prefix": "VTube Pro",
+          "name": "Outfit",
+          "type": "execute",
+          "tryInline": true,
+          "format": "Outfit: {$vtubepro.costume.id$}",
+          "execution_cmd": "curl -s -X POST \"http://127.0.0.1:5191/api/deck/run/costume?id={$vtubepro.costume.id$}\"",
+          "description": "Switch outfit by id (empty = default outfit)",
+          "data": [
+            {
+              "id": "vtubepro.costume.id",
+              "type": "text",
+              "label": "Outfit id",
+              "default": ""
+            }
+          ]
+        },
+        {
+          "id": "vtubepro.accessory",
+          "prefix": "VTube Pro",
+          "name": "Accessory on / off",
+          "type": "execute",
+          "tryInline": true,
+          "format": "Accessory on / off: {$vtubepro.accessory.id$}",
+          "execution_cmd": "curl -s -X POST \"http://127.0.0.1:5191/api/deck/run/accessory?id={$vtubepro.accessory.id$}\"",
+          "description": "Toggle an accessory by id",
+          "data": [
+            {
+              "id": "vtubepro.accessory.id",
+              "type": "text",
+              "label": "Accessory id",
+              "default": ""
+            }
+          ]
+        },
+        {
+          "id": "vtubepro.model-slider",
+          "prefix": "VTube Pro",
+          "name": "2D model slider / outfit",
+          "type": "execute",
+          "tryInline": true,
+          "format": "2D model slider / outfit: {$vtubepro.model-slider.slider$} {$vtubepro.model-slider.do$} {$vtubepro.model-slider.value$}",
+          "execution_cmd": "curl -s -X POST \"http://127.0.0.1:5191/api/deck/run/model-slider?slider={$vtubepro.model-slider.slider$}&do={$vtubepro.model-slider.do$}&value={$vtubepro.model-slider.value$}\"",
+          "description": "Pro2D models: toggle, step, set or reset a model slider (chest, body, outfit, hair …) or switch an outfit on / off, by the name the studio shows (empty = the first slider)",
+          "data": [
+            {
+              "id": "vtubepro.model-slider.slider",
+              "type": "text",
+              "label": "Slider or outfit name",
+              "default": ""
+            },
+            {
+              "id": "vtubepro.model-slider.do",
+              "type": "choice",
+              "label": "Do",
+              "default": "toggle",
+              "valueChoices": [
+                "toggle",
+                "step",
+                "set",
+                "reset",
+                "on",
+                "off"
+              ]
+            },
+            {
+              "id": "vtubepro.model-slider.value",
+              "type": "number",
+              "label": "Value (for set)",
+              "default": "1"
+            }
+          ]
+        },
+        {
+          "id": "vtubepro.recalibrate",
+          "prefix": "VTube Pro",
+          "name": "Recalibrate face",
+          "type": "execute",
+          "tryInline": true,
+          "format": "Recalibrate face",
+          "execution_cmd": "curl -s -X POST \"http://127.0.0.1:5191/api/deck/run/recalibrate\"",
+          "description": "Hold a neutral face for 2.5 s: re-centres the tracking"
+        },
+        {
+          "id": "vtubepro.trackloss",
+          "prefix": "VTube Pro",
+          "name": "When tracking is lost",
+          "type": "execute",
+          "tryInline": true,
+          "format": "When tracking is lost: {$vtubepro.trackloss.mode$} {$vtubepro.trackloss.part$}",
+          "execution_cmd": "curl -s -X POST \"http://127.0.0.1:5191/api/deck/run/trackloss?mode={$vtubepro.trackloss.mode$}&part={$vtubepro.trackloss.part$}\"",
+          "description": "Hold last pose / return to rest / voice life when the camera loses you (per part, or all); \"cycle\" steps through them",
+          "data": [
+            {
+              "id": "vtubepro.trackloss.mode",
+              "type": "choice",
+              "label": "Mode",
+              "default": "hold",
+              "valueChoices": [
+                "hold",
+                "rest",
+                "life",
+                "cycle"
+              ]
+            },
+            {
+              "id": "vtubepro.trackloss.part",
+              "type": "choice",
+              "label": "Part",
+              "default": "all",
+              "valueChoices": [
+                "all",
+                "face",
+                "eyes",
+                "body",
+                "hands"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "vtubepro.hub-ack-next",
+          "prefix": "VTube Pro",
+          "name": "Acknowledge next",
+          "type": "execute",
+          "tryInline": true,
+          "format": "Acknowledge next",
+          "execution_cmd": "curl -s -X POST \"http://127.0.0.1:5191/api/deck/run/hub-ack-next\"",
+          "description": "Mark the oldest open support / event as done"
+        },
+        {
+          "id": "vtubepro.hub-thank-next",
+          "prefix": "VTube Pro",
+          "name": "Thank next",
+          "type": "execute",
+          "tryInline": true,
+          "format": "Thank next",
+          "execution_cmd": "curl -s -X POST \"http://127.0.0.1:5191/api/deck/run/hub-thank-next\"",
+          "description": "Thank the oldest open supporter"
+        },
+        {
+          "id": "vtubepro.hub-ack-all",
+          "prefix": "VTube Pro",
+          "name": "Acknowledge all",
+          "type": "execute",
+          "tryInline": true,
+          "format": "Acknowledge all",
+          "execution_cmd": "curl -s -X POST \"http://127.0.0.1:5191/api/deck/run/hub-ack-all\"",
+          "description": "Clear the whole queue"
+        },
+        {
+          "id": "vtubepro.hub-skip",
+          "prefix": "VTube Pro",
+          "name": "Skip read-aloud",
+          "type": "execute",
+          "tryInline": true,
+          "format": "Skip read-aloud",
+          "execution_cmd": "curl -s -X POST \"http://127.0.0.1:5191/api/deck/run/hub-skip\"",
+          "description": "Stop the message being read out"
+        },
+        {
+          "id": "vtubepro.hub-replay",
+          "prefix": "VTube Pro",
+          "name": "Replay read-aloud",
+          "type": "execute",
+          "tryInline": true,
+          "format": "Replay read-aloud",
+          "execution_cmd": "curl -s -X POST \"http://127.0.0.1:5191/api/deck/run/hub-replay\"",
+          "description": "Read the last message again"
+        },
+        {
+          "id": "vtubepro.hub-tts",
+          "prefix": "VTube Pro",
+          "name": "Read-aloud on / off",
+          "type": "execute",
+          "tryInline": true,
+          "format": "Read-aloud on / off",
+          "execution_cmd": "curl -s -X POST \"http://127.0.0.1:5191/api/deck/run/hub-tts\"",
+          "description": "Text-to-speech of donation messages"
+        },
+        {
+          "id": "vtubepro.emote-sounds",
+          "prefix": "VTube Pro",
+          "name": "Emote sounds on / off",
+          "type": "execute",
+          "tryInline": true,
+          "format": "Emote sounds on / off: {$vtubepro.emote-sounds.on$}",
+          "execution_cmd": "curl -s -X POST \"http://127.0.0.1:5191/api/deck/run/emote-sounds?on={$vtubepro.emote-sounds.on$}\"",
+          "description": "The sounds you gave emotes (Chat → Emotes): play when chat uses them",
+          "data": [
+            {
+              "id": "vtubepro.emote-sounds.on",
+              "type": "choice",
+              "label": "Press does",
+              "default": "toggle",
+              "valueChoices": [
+                "toggle",
+                "true",
+                "false"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "vtubepro.poll-start",
+          "prefix": "VTube Pro",
+          "name": "Start poll",
+          "type": "execute",
+          "tryInline": true,
+          "format": "Start poll: {$vtubepro.poll-start.template$}",
+          "execution_cmd": "curl -s -X POST \"http://127.0.0.1:5191/api/deck/run/poll-start?template={$vtubepro.poll-start.template$}\"",
+          "description": "Start a saved poll by name (empty = the last saved one, else Yes / No; \"1–4\" = the 1–4 preset)",
+          "data": [
+            {
+              "id": "vtubepro.poll-start.template",
+              "type": "text",
+              "label": "Saved poll name",
+              "default": ""
+            }
+          ]
+        },
+        {
+          "id": "vtubepro.poll-end",
+          "prefix": "VTube Pro",
+          "name": "End poll",
+          "type": "execute",
+          "tryInline": true,
+          "format": "End poll",
+          "execution_cmd": "curl -s -X POST \"http://127.0.0.1:5191/api/deck/run/poll-end\"",
+          "description": "End the running poll now (winner reveal)"
+        },
+        {
+          "id": "vtubepro.poll-show",
+          "prefix": "VTube Pro",
+          "name": "Show / hide poll",
+          "type": "execute",
+          "tryInline": true,
+          "format": "Show / hide poll: {$vtubepro.poll-show.on$}",
+          "execution_cmd": "curl -s -X POST \"http://127.0.0.1:5191/api/deck/run/poll-show?on={$vtubepro.poll-show.on$}\"",
+          "description": "Show or hide the poll card on stream",
+          "data": [
+            {
+              "id": "vtubepro.poll-show.on",
+              "type": "choice",
+              "label": "Card",
+              "default": "toggle",
+              "valueChoices": [
+                "toggle",
+                "show",
+                "hide"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "vtubepro.subathon",
+          "prefix": "VTube Pro",
+          "name": "Subathon timer",
+          "type": "execute",
+          "tryInline": true,
+          "format": "Subathon timer: {$vtubepro.subathon.do$} {$vtubepro.subathon.minutes$} {$vtubepro.subathon.mult$}",
+          "execution_cmd": "curl -s -X POST \"http://127.0.0.1:5191/api/deck/run/subathon?do={$vtubepro.subathon.do$}&minutes={$vtubepro.subathon.minutes$}&mult={$vtubepro.subathon.mult$}\"",
+          "description": "Pause / resume the subathon, add or take off time, undo the last change, happy hour, sleep mode, or start a new one",
+          "data": [
+            {
+              "id": "vtubepro.subathon.do",
+              "type": "choice",
+              "label": "Press does",
+              "default": "toggle",
+              "valueChoices": [
+                "toggle",
+                "pause",
+                "resume",
+                "add",
+                "sub",
+                "undo",
+                "happy",
+                "happy-off",
+                "sleep",
+                "start"
+              ]
+            },
+            {
+              "id": "vtubepro.subathon.minutes",
+              "type": "number",
+              "label": "Minutes (add / take off / happy hour length)",
+              "default": "5"
+            },
+            {
+              "id": "vtubepro.subathon.mult",
+              "type": "number",
+              "label": "Happy hour ×",
+              "default": "2"
+            }
+          ]
+        },
+        {
+          "id": "vtubepro.goal",
+          "prefix": "VTube Pro",
+          "name": "Goal",
+          "type": "execute",
+          "tryInline": true,
+          "format": "Goal: {$vtubepro.goal.do$} {$vtubepro.goal.goal$} {$vtubepro.goal.amount$}",
+          "execution_cmd": "curl -s -X POST \"http://127.0.0.1:5191/api/deck/run/goal?do={$vtubepro.goal.do$}&goal={$vtubepro.goal.goal$}&amount={$vtubepro.goal.amount$}\"",
+          "description": "Show / hide a goal on stream, add to it by hand, or start a new stream (every-stream goals start over)",
+          "data": [
+            {
+              "id": "vtubepro.goal.do",
+              "type": "choice",
+              "label": "Press does",
+              "default": "toggle",
+              "valueChoices": [
+                "toggle",
+                "show",
+                "hide",
+                "add",
+                "newstream"
+              ]
+            },
+            {
+              "id": "vtubepro.goal.goal",
+              "type": "text",
+              "label": "Goal (its name or number; empty = the first)",
+              "default": ""
+            },
+            {
+              "id": "vtubepro.goal.amount",
+              "type": "number",
+              "label": "Amount to add (negative takes off)",
+              "default": "5"
+            }
+          ]
+        },
+        {
+          "id": "vtubepro.wheel-spin",
+          "prefix": "VTube Pro",
+          "name": "Spin the wheel",
+          "type": "execute",
+          "tryInline": true,
+          "format": "Spin the wheel",
+          "execution_cmd": "curl -s -X POST \"http://127.0.0.1:5191/api/deck/run/wheel-spin\"",
+          "description": "Spin the wheel on stream (its slots are set in Goals & subathon)"
+        },
+        {
+          "id": "vtubepro.audience-applause",
+          "prefix": "VTube Pro",
+          "name": "Applause",
+          "type": "execute",
+          "tryInline": true,
+          "format": "Applause",
+          "execution_cmd": "curl -s -X POST \"http://127.0.0.1:5191/api/deck/run/audience-applause\"",
+          "description": "The whole chat audience claps and cheers"
+        },
+        {
+          "id": "vtubepro.audience-next",
+          "prefix": "VTube Pro",
+          "name": "Next question",
+          "type": "execute",
+          "tryInline": true,
+          "format": "Next question",
+          "execution_cmd": "curl -s -X POST \"http://127.0.0.1:5191/api/deck/run/audience-next\"",
+          "description": "Show the next approved question (pinned first, then paid / bumped, then oldest)"
+        },
+        {
+          "id": "vtubepro.audience-done",
+          "prefix": "VTube Pro",
+          "name": "Question done",
+          "type": "execute",
+          "tryInline": true,
+          "format": "Question done",
+          "execution_cmd": "curl -s -X POST \"http://127.0.0.1:5191/api/deck/run/audience-done\"",
+          "description": "Take the question being answered off stream"
+        },
+        {
+          "id": "vtubepro.throw",
+          "prefix": "VTube Pro",
+          "name": "Throw at my head",
+          "type": "execute",
+          "tryInline": true,
+          "format": "Throw at my head: {$vtubepro.throw.what$} {$vtubepro.throw.count$} {$vtubepro.throw.item$} {$vtubepro.throw.from$}",
+          "execution_cmd": "curl -s -X POST \"http://127.0.0.1:5191/api/deck/run/throw?what={$vtubepro.throw.what$}&count={$vtubepro.throw.count$}&item={$vtubepro.throw.item$}&from={$vtubepro.throw.from$}\"",
+          "description": "Chat emotes, a starter prop or your own picture fly at the avatar's head (headpat = a hand pats it)",
+          "data": [
+            {
+              "id": "vtubepro.throw.what",
+              "type": "choice",
+              "label": "What",
+              "default": "emote",
+              "valueChoices": [
+                "emote",
+                "prop",
+                "image",
+                "headpat"
+              ]
+            },
+            {
+              "id": "vtubepro.throw.count",
+              "type": "number",
+              "label": "How many",
+              "default": "1"
+            },
+            {
+              "id": "vtubepro.throw.item",
+              "type": "text",
+              "label": "Item id (empty = random)",
+              "default": ""
+            },
+            {
+              "id": "vtubepro.throw.from",
+              "type": "choice",
+              "label": "Whose emotes",
+              "default": "chat",
+              "valueChoices": [
+                "chat",
+                "raider",
+                "redeemer"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "vtubepro.item-scene",
+          "prefix": "VTube Pro",
+          "name": "Item scene",
+          "type": "execute",
+          "tryInline": true,
+          "format": "Item scene: {$vtubepro.item-scene.name$} {$vtubepro.item-scene.on$}",
+          "execution_cmd": "curl -s -X POST \"http://127.0.0.1:5191/api/deck/run/item-scene?name={$vtubepro.item-scene.name$}&on={$vtubepro.item-scene.on$}\"",
+          "description": "Turn a saved set of stickers / props on the avatar on, off or toggle (empty name = the last one used)",
+          "data": [
+            {
+              "id": "vtubepro.item-scene.name",
+              "type": "text",
+              "label": "Scene name",
+              "default": ""
+            },
+            {
+              "id": "vtubepro.item-scene.on",
+              "type": "choice",
+              "label": "Press does",
+              "default": "toggle",
+              "valueChoices": [
+                "toggle",
+                "true",
+                "false"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "vtubepro.sticker",
+          "prefix": "VTube Pro",
+          "name": "Sticker on me",
+          "type": "execute",
+          "tryInline": true,
+          "format": "Sticker on me: {$vtubepro.sticker.op$} {$vtubepro.sticker.item$} {$vtubepro.sticker.secs$}",
+          "execution_cmd": "curl -s -X POST \"http://127.0.0.1:5191/api/deck/run/sticker?op={$vtubepro.sticker.op$}&item={$vtubepro.sticker.item$}&secs={$vtubepro.sticker.secs$}\"",
+          "description": "Put a sticker or item on the avatar (random from your sticker set when empty), or clear them",
+          "data": [
+            {
+              "id": "vtubepro.sticker.op",
+              "type": "choice",
+              "label": "Do",
+              "default": "random",
+              "valueChoices": [
+                "random",
+                "add",
+                "clear"
+              ]
+            },
+            {
+              "id": "vtubepro.sticker.item",
+              "type": "text",
+              "label": "Item id (empty = random)",
+              "default": ""
+            },
+            {
+              "id": "vtubepro.sticker.secs",
+              "type": "number",
+              "label": "Seconds (0 = stays)",
+              "default": "0"
+            }
+          ]
+        },
+        {
+          "id": "vtubepro.emote-rain",
+          "prefix": "VTube Pro",
+          "name": "Emote rain",
+          "type": "execute",
+          "tryInline": true,
+          "format": "Emote rain: {$vtubepro.emote-rain.op$} {$vtubepro.emote-rain.secs$} {$vtubepro.emote-rain.from$}",
+          "execution_cmd": "curl -s -X POST \"http://127.0.0.1:5191/api/deck/run/emote-rain?op={$vtubepro.emote-rain.op$}&secs={$vtubepro.emote-rain.secs$}&from={$vtubepro.emote-rain.from$}\"",
+          "description": "Chat emotes fall onto the avatar's head and shoulders",
+          "data": [
+            {
+              "id": "vtubepro.emote-rain.op",
+              "type": "choice",
+              "label": "Do",
+              "default": "burst",
+              "valueChoices": [
+                "burst",
+                "start",
+                "stop"
+              ]
+            },
+            {
+              "id": "vtubepro.emote-rain.secs",
+              "type": "number",
+              "label": "Seconds",
+              "default": "8"
+            },
+            {
+              "id": "vtubepro.emote-rain.from",
+              "type": "choice",
+              "label": "Whose emotes",
+              "default": "chat",
+              "valueChoices": [
+                "chat",
+                "raider",
+                "redeemer"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "vtubepro.sfx",
+          "prefix": "VTube Pro",
+          "name": "Play a sound",
+          "type": "execute",
+          "tryInline": true,
+          "format": "Play a sound: {$vtubepro.sfx.id$} {$vtubepro.sfx.volume$}",
+          "execution_cmd": "curl -s -X POST \"http://127.0.0.1:5191/api/deck/run/sfx?id={$vtubepro.sfx.id$}&volume={$vtubepro.sfx.volume$}\"",
+          "description": "A soundboard sting. Plays on the OBS page only, and only when sounds are switched on",
+          "data": [
+            {
+              "id": "vtubepro.sfx.id",
+              "type": "text",
+              "label": "Sound id (empty = none)",
+              "default": ""
+            },
+            {
+              "id": "vtubepro.sfx.volume",
+              "type": "number",
+              "label": "Volume %",
+              "default": "70"
+            }
+          ]
+        },
+        {
+          "id": "vtubepro.screen-fx",
+          "prefix": "VTube Pro",
+          "name": "Screen effect",
+          "type": "execute",
+          "tryInline": true,
+          "format": "Screen effect: {$vtubepro.screen-fx.preset$} {$vtubepro.screen-fx.secs$}",
+          "execution_cmd": "curl -s -X POST \"http://127.0.0.1:5191/api/deck/run/screen-fx?preset={$vtubepro.screen-fx.preset$}&secs={$vtubepro.screen-fx.secs$}\"",
+          "description": "A short full-frame effect: glitch, VHS, pixelate, shake, bloom pop or black & white (always inside the flash-safety limit)",
+          "data": [
+            {
+              "id": "vtubepro.screen-fx.preset",
+              "type": "choice",
+              "label": "Effect",
+              "default": "glitch",
+              "valueChoices": [
+                "glitch",
+                "vhs",
+                "pixelate",
+                "shake",
+                "bloom",
+                "bw"
+              ]
+            },
+            {
+              "id": "vtubepro.screen-fx.secs",
+              "type": "number",
+              "label": "Seconds",
+              "default": "3"
+            }
+          ]
+        },
+        {
+          "id": "vtubepro.recorded-emote",
+          "prefix": "VTube Pro",
+          "name": "My recorded emote",
+          "type": "execute",
+          "tryInline": true,
+          "format": "My recorded emote: {$vtubepro.recorded-emote.name$}",
+          "execution_cmd": "curl -s -X POST \"http://127.0.0.1:5191/api/deck/run/recorded-emote?name={$vtubepro.recorded-emote.name$}\"",
+          "description": "Play an emote you recorded from your own camera (empty = the latest one)",
+          "data": [
+            {
+              "id": "vtubepro.recorded-emote.name",
+              "type": "text",
+              "label": "Emote name",
+              "default": ""
+            }
+          ]
+        },
+        {
+          "id": "vtubepro.cohost-say",
+          "prefix": "VTube Pro",
+          "name": "Co-host says",
+          "type": "execute",
+          "tryInline": true,
+          "format": "Co-host says: {$vtubepro.cohost-say.text$}",
+          "execution_cmd": "curl -s -X POST \"http://127.0.0.1:5191/api/deck/run/cohost-say?text={$vtubepro.cohost-say.text$}\"",
+          "description": "The AI co-host says a line, or answers chat when empty (needs the co-host switched on)",
+          "data": [
+            {
+              "id": "vtubepro.cohost-say.text",
+              "type": "text",
+              "label": "Say (empty = answer chat)",
+              "default": ""
+            }
+          ]
+        },
+        {
+          "id": "vtubepro.cohost-mute",
+          "prefix": "VTube Pro",
+          "name": "Mute co-host",
+          "type": "execute",
+          "tryInline": true,
+          "format": "Mute co-host: {$vtubepro.cohost-mute.on$}",
+          "execution_cmd": "curl -s -X POST \"http://127.0.0.1:5191/api/deck/run/cohost-mute?on={$vtubepro.cohost-mute.on$}\"",
+          "description": "Stop the AI co-host from talking (and let it talk again)",
+          "data": [
+            {
+              "id": "vtubepro.cohost-mute.on",
+              "type": "choice",
+              "label": "Press does",
+              "default": "toggle",
+              "valueChoices": [
+                "toggle",
+                "true",
+                "false"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "vtubepro.command",
+          "prefix": "VTube Pro",
+          "name": "Custom command",
+          "type": "execute",
+          "tryInline": true,
+          "format": "Custom command: {$vtubepro.command.command$} {$vtubepro.command.args$}",
+          "execution_cmd": "curl -s -X POST \"http://127.0.0.1:5191/api/deck/run/command?command={$vtubepro.command.command$}&args={$vtubepro.command.args$}\"",
+          "description": "Any studio bus command (docs/SCENES.md): command name + JSON args",
+          "data": [
+            {
+              "id": "vtubepro.command.command",
+              "type": "text",
+              "label": "Command",
+              "default": "scene"
+            },
+            {
+              "id": "vtubepro.command.args",
+              "type": "text",
+              "label": "Args (JSON)",
+              "default": "{\"lighting\":\"show\"}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

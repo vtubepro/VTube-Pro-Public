@@ -1,0 +1,320 @@
+{
+ "1": {
+  "class_type": "LoadImage",
+  "inputs": {
+   "image": "vtp_avatar.png"
+  },
+  "_meta": {
+   "title": "Your avatar (a face close-up)"
+  }
+ },
+ "2": {
+  "class_type": "CheckpointLoaderSimple",
+  "inputs": {
+   "ckpt_name": "animagine-xl-4.0-opt.safetensors"
+  },
+  "_meta": {
+   "title": "Load Checkpoint"
+  }
+ },
+ "3": {
+  "class_type": "IPAdapterModelLoader",
+  "inputs": {
+   "ipadapter_file": "ip-adapter-plus_sdxl_vit-h.safetensors"
+  },
+  "_meta": {
+   "title": "IPAdapter Model Loader"
+  }
+ },
+ "4": {
+  "class_type": "CLIPVisionLoader",
+  "inputs": {
+   "clip_name": "CLIP-ViT-H-14-laion2B-s32B-b79K.safetensors"
+  },
+  "_meta": {
+   "title": "Load CLIP Vision"
+  }
+ },
+ "5": {
+  "class_type": "IPAdapterAdvanced",
+  "inputs": {
+   "model": [
+    "2",
+    0
+   ],
+   "ipadapter": [
+    "3",
+    0
+   ],
+   "image": [
+    "1",
+    0
+   ],
+   "weight": 0.75,
+   "weight_type": "linear",
+   "combine_embeds": "concat",
+   "start_at": 0,
+   "end_at": 1,
+   "embeds_scaling": "V only",
+   "clip_vision": [
+    "4",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "Look like your avatar"
+  }
+ },
+ "6": {
+  "class_type": "CLIPTextEncode",
+  "inputs": {
+   "text": "chibi, chat emote, 1girl, laughing, closed eyes, open mouth, thick outline, simple shading, head and shoulders, white background",
+   "clip": [
+    "2",
+    1
+   ]
+  },
+  "_meta": {
+   "title": "Your prompt: describe the picture"
+  }
+ },
+ "7": {
+  "class_type": "CLIPTextEncode",
+  "inputs": {
+   "text": "lowres, blurry, jpeg artifacts, watermark, signature, text, logo, deformed, bad anatomy, extra fingers, cropped",
+   "clip": [
+    "2",
+    1
+   ]
+  },
+  "_meta": {
+   "title": "Things to avoid"
+  }
+ },
+ "8": {
+  "class_type": "EmptyLatentImage",
+  "inputs": {
+   "width": 1024,
+   "height": 1024,
+   "batch_size": 1
+  },
+  "_meta": {
+   "title": "Picture size 1024x1024"
+  }
+ },
+ "9": {
+  "class_type": "KSampler",
+  "inputs": {
+   "model": [
+    "5",
+    0
+   ],
+   "seed": 20261001,
+   "steps": 28,
+   "cfg": 5,
+   "sampler_name": "euler_ancestral",
+   "scheduler": "normal",
+   "positive": [
+    "6",
+    0
+   ],
+   "negative": [
+    "7",
+    0
+   ],
+   "latent_image": [
+    "8",
+    0
+   ],
+   "denoise": 1
+  },
+  "_meta": {
+   "title": "KSampler"
+  }
+ },
+ "10": {
+  "class_type": "VAEDecode",
+  "inputs": {
+   "samples": [
+    "9",
+    0
+   ],
+   "vae": [
+    "2",
+    2
+   ]
+  },
+  "_meta": {
+   "title": "VAE Decode"
+  }
+ },
+ "11": {
+  "class_type": "LoadBackgroundRemovalModel",
+  "inputs": {
+   "bg_removal_name": "birefnet.safetensors"
+  },
+  "_meta": {
+   "title": "Background remover (BiRefNet, MIT)"
+  }
+ },
+ "12": {
+  "class_type": "RemoveBackground",
+  "inputs": {
+   "image": [
+    "10",
+    0
+   ],
+   "bg_removal_model": [
+    "11",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "Remove Background"
+  }
+ },
+ "13": {
+  "class_type": "InvertMask",
+  "inputs": {
+   "mask": [
+    "12",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "Invert Mask"
+  }
+ },
+ "14": {
+  "class_type": "JoinImageWithAlpha",
+  "inputs": {
+   "image": [
+    "10",
+    0
+   ],
+   "alpha": [
+    "13",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "Transparent background"
+  }
+ },
+ "15": {
+  "class_type": "ImageScale",
+  "inputs": {
+   "image": [
+    "14",
+    0
+   ],
+   "upscale_method": "lanczos",
+   "width": 1024,
+   "height": 1024,
+   "crop": "center"
+  },
+  "_meta": {
+   "title": "Square 1024"
+  }
+ },
+ "16": {
+  "class_type": "SaveImage",
+  "inputs": {
+   "images": [
+    "15",
+    0
+   ],
+   "filename_prefix": "VTubePro/emote-1024"
+  },
+  "_meta": {
+   "title": "Save the master (1024)"
+  }
+ },
+ "17": {
+  "class_type": "ImageScale",
+  "inputs": {
+   "image": [
+    "15",
+    0
+   ],
+   "upscale_method": "area",
+   "width": 112,
+   "height": 112,
+   "crop": "disabled"
+  },
+  "_meta": {
+   "title": "112 px"
+  }
+ },
+ "18": {
+  "class_type": "SaveImage",
+  "inputs": {
+   "images": [
+    "17",
+    0
+   ],
+   "filename_prefix": "VTubePro/emote-112"
+  },
+  "_meta": {
+   "title": "Save 112 px"
+  }
+ },
+ "19": {
+  "class_type": "ImageScale",
+  "inputs": {
+   "image": [
+    "15",
+    0
+   ],
+   "upscale_method": "area",
+   "width": 56,
+   "height": 56,
+   "crop": "disabled"
+  },
+  "_meta": {
+   "title": "56 px"
+  }
+ },
+ "20": {
+  "class_type": "SaveImage",
+  "inputs": {
+   "images": [
+    "19",
+    0
+   ],
+   "filename_prefix": "VTubePro/emote-56"
+  },
+  "_meta": {
+   "title": "Save 56 px"
+  }
+ },
+ "21": {
+  "class_type": "ImageScale",
+  "inputs": {
+   "image": [
+    "15",
+    0
+   ],
+   "upscale_method": "area",
+   "width": 28,
+   "height": 28,
+   "crop": "disabled"
+  },
+  "_meta": {
+   "title": "28 px"
+  }
+ },
+ "22": {
+  "class_type": "SaveImage",
+  "inputs": {
+   "images": [
+    "21",
+    0
+   ],
+   "filename_prefix": "VTubePro/emote-28"
+  },
+  "_meta": {
+   "title": "Save 28 px"
+  }
+ }
+}

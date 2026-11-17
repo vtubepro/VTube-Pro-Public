@@ -1,0 +1,13 @@
+{"id": "fk_anime_boy", "name": "Anime boy (face_kit)",
+ "creator": {"base": "fumiriya", "hair": {"style": "fumiriya"},
+   "colors": {"hair": "#262a3e", "hairTip": null, "eyes": "#e0a02e", "brows": "#1f2233", "skin": "#f8d8c4"},
+   "face": {"eyeSize": 1.0, "eyeTilt": 2}},
+ "face": {
+   "skin": {"blush": "#f09a90", "blushAlpha": 0.10, "nose": "wedge", "noseSize": 0.9, "crease": 0.5, "creaseAlpha": 0.35, "lowerLash": 0.0, "lidPink": 0.2, "mouthLine": "#9a5a52", "mouthThick": 0.06},
+   "eye": {"line": "#1c1624", "line2": "#3a2c3a", "lineIn": 0.06, "lineMax": 0.16, "lineOverlap": 0.1, "wing": 0.08, "wingDrop": -0.04, "spikes": 0, "whiteShadow": "#c8c6d8", "whiteShadowH": 0.32},
+   "iris": {"color": "#e0a02e", "top": "#5a2e0c", "bottom": "#ffe08a", "glow": null, "ring": "#3a1e08", "streaks": 0.14, "pupil": 0.32, "pupilColor": "#2a1206", "topBand": 0.36, "pupilRing": 0.2},
+   "hl": {"main": [0.32, 0.42, 0.24, 0.18], "mainRot": -0.5, "dot": [-0.3, -0.5, 0.08], "sparkles": 0},
+   "brow": {"shape": "male", "height": 1.75, "arch": 0.12, "width": 0.24, "inner": -0.8, "outer": 1.1, "tilt": -0.25, "innerWidth": 0.9}
+ },
+ "proxy": 1.0
+}

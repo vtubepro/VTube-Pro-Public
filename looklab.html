@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="vtube-pro-licence" content="VTube Pro is free software for noncommercial use (PolyForm Noncommercial License 1.0.0). It may not be sold or offered as a paid, subscription or ad-funded service. https://github.com/vtubepro/VTube-Pro-Public" />
+  <title>Look Lab · VTube Pro</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root { --bg: #0b0c12; --panel: #141621; --line: #262a3a; --text: #e9ecf6; --dim: #9aa2bd; --acc: #7c5cff; --ok: #3ddc84; --bad: #ff5470; --fav: #ffc83d; }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; height: 100%; background: var(--bg); color: var(--text); font: 14px/1.4 "Segoe UI", system-ui, sans-serif; }
+    #app { display: grid; grid-template-columns: minmax(0, 1fr) 380px; height: 100vh; }
+    #left { display: flex; flex-direction: column; min-width: 0; padding: 14px; gap: 10px; }
+    #stageWrap { position: relative; width: 100%; aspect-ratio: 16 / 9; background: #000; border-radius: 12px; overflow: hidden; touch-action: pan-y; }
+    #stage { width: 100%; height: 100%; display: block; }
+    #hud { position: absolute; left: 12px; top: 10px; right: 12px; display: flex; justify-content: space-between; pointer-events: none; text-shadow: 0 1px 3px #000; }
+    #hud .name { font-size: 20px; font-weight: 700; }
+    #hud .meta { color: #cfd4ea; font-size: 12px; }
+    #swipe { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-size: 64px; font-weight: 900; opacity: 0; transition: opacity .25s; pointer-events: none; }
+    .bar { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+    button { background: #22263a; color: var(--text); border: 1px solid var(--line); border-radius: 9px; padding: 9px 14px; font: inherit; cursor: pointer; }
+    button:hover { border-color: #4a4f70; }
+    button.on { background: var(--acc); border-color: var(--acc); }
+    button.kill { background: #3a1620; border-color: #6b2234; font-weight: 700; }
+    button.keep { background: #143a26; border-color: #22663f; font-weight: 700; }
+    button.fav { background: #3a3012; border-color: #6b5a22; }
+    button.big { font-size: 16px; padding: 12px 20px; flex: 1; min-width: 120px; }
+    .swatches { display: flex; gap: 4px; }
+    .sw { width: 22px; height: 22px; border-radius: 6px; border: 1px solid #0006; }
+    #info { display: grid; grid-template-columns: auto 1fr; gap: 3px 12px; color: var(--dim); font-size: 13px; }
+    #info b { color: var(--text); font-weight: 600; }
+    #right { border-left: 1px solid var(--line); display: flex; flex-direction: column; min-height: 0; background: var(--panel); }
+    #right header { padding: 12px; border-bottom: 1px solid var(--line); display: flex; flex-direction: column; gap: 8px; }
+    #prog { height: 8px; background: #22263a; border-radius: 4px; overflow: hidden; display: flex; }
+    #prog i { display: block; height: 100%; }
+    #list { overflow-y: auto; flex: 1; }
+    .item { display: flex; gap: 10px; align-items: center; padding: 8px 12px; border-bottom: 1px solid #1c1f2d; cursor: pointer; }
+    .item:hover { background: #1a1d2b; }
+    .item.sel { background: #262046; }
+    .item .n { flex: 1; min-width: 0; }
+    .item .n div { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .item .n small { color: var(--dim); }
+    .tag { font-size: 11px; padding: 2px 6px; border-radius: 6px; background: #22263a; color: var(--dim); }
+    .tag.k { background: #143a26; color: var(--ok); } .tag.x { background: #3a1620; color: var(--bad); } .tag.f { background: #3a3012; color: var(--fav); } .tag.q { background: #2a1630; color: #e08aff; }
+    input[type=search], select, input[type=range] { background: #0f1119; color: var(--text); border: 1px solid var(--line); border-radius: 8px; padding: 7px 9px; font: inherit; }
+    input[type=search] { width: 100%; }
+    .row { display: flex; gap: 6px; flex-wrap: wrap; }
+    .note { color: var(--dim); font-size: 12px; margin: 0; }
+    #toast { position: fixed; left: 50%; bottom: 24px; transform: translateX(-50%); background: #262046; border: 1px solid var(--acc); padding: 10px 16px; border-radius: 10px; opacity: 0; transition: opacity .3s; pointer-events: none; }
+    @media (max-width: 860px) {
+      #app { grid-template-columns: 1fr; grid-template-rows: auto minmax(0, 1fr); height: auto; min-height: 100vh; }
+      #right { border-left: 0; border-top: 1px solid var(--line); }
+      #list { max-height: 60vh; }
+      #hud .name { font-size: 16px; }
+      button.big { min-width: 0; padding: 12px 10px; }
+    }
+    body.sheet #app { display: block; } body.sheet #right, body.sheet .bar, body.sheet #info, body.sheet #hud { display: none; }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <div id="left">
+      <div id="stageWrap"><canvas id="stage"></canvas><div id="hud"><div><div class="name" id="hName">Look Lab</div><div class="meta" id="hMeta"></div></div><div class="meta" id="hMusic"></div></div><div id="swipe"></div></div>
+      <div class="bar">
+        <button class="big kill" id="bKill" title="Remove this look from your shows (← key, or swipe left)">✗ Remove it</button>
+        <button class="big fav" id="bFav" title="Star it: a favourite (↑ key)">★ Favourite</button>
+        <button class="big keep" id="bKeep" title="Keep it in your shows (→ key, or swipe right)">✓ Keep it</button>
+      </div>
+      <div class="bar" id="sections"></div>
+      <div class="bar">
+        <span class="note">Tempo</span><input type="range" id="bpm" min="70" max="230" step="1" value="150" style="width:180px"><span id="bpmV" class="note">150 BPM</span>
+        <label class="note"><input type="checkbox" id="strobe"> Real strobes (not photosensitivity-safe)</label>
+      </div>
+      <div class="swatches" id="sw"></div>
+      <div id="info"></div>
+    </div>
+    <aside id="right">
+      <header>
+        <div class="row" style="justify-content:space-between;align-items:center"><b>Your looks</b><span class="note" id="count"></span></div>
+        <div id="prog"></div>
+        <input type="search" id="q" placeholder="Search looks (name, colour, move …)">
+        <div class="row">
+          <select id="fState"><option value="all">All</option><option value="todo">Not reviewed</option><option value="keep">Kept</option><option value="kill">Removed</option><option value="fav">Favourites</option></select>
+          <select id="fCls"><option value="">Any energy</option><option value="chill">Chill</option><option value="mid">Groove</option><option value="peak">Drop</option></select>
+          <select id="fShow"><option value="">Every show</option></select>
+        </div>
+        <div class="row">
+          <button id="bUse" class="on" title="Your studio uses exactly the looks you kept (everything you did not remove)">Use these looks on my stage</button>
+          <button id="bSheet" title="All looks of this list as a contact sheet">Contact sheet</button>
+          <button id="bExport" title="Save your picks as a file (to share or back up)">Save file</button>
+          <button id="bImport">Load file</button>
+          <button id="bReset" title="Start over from the Quality team's first pass">Start over</button>
+        </div>
+        <p class="note">Swipe or use ← / → to remove or keep the look that is playing. The Quality team already removed the weak ones (purple tag); you have the final say.</p>
+      </header>
+      <div id="list"></div>
+    </aside>
+  </div>
+  <div id="toast"></div>
+  <script type="module" src="/src/scene/festival/lab/lookLab.ts"></script>
+</body>
+</html>

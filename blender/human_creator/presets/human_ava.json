@@ -1,0 +1,11 @@
+{
+ "id": "human_ava", "name": "Ava (realistic)", "sex": "female",
+ "body": {"age": 26, "muscle": 0.5, "weight": 0.45, "height": 0.55, "proportions": 0.8, "cupsize": 0.55,
+          "race": {"caucasian": 1.0}},
+ "face": {},
+ "skin": {"texture": "young_caucasian_female", "smooth": 0.35, "makeup": {"lips": 0.2, "lipColor": "#b85a64", "blush": 0.2}},
+ "eyes": {"color": "green"},
+ "eyebrows": "eyebrow010",
+ "hair": {"style": "long01", "color": "chestnut"},
+ "outfit": {"clothes": ["female_casualsuit01"], "shoes": "shoes01"}
+}

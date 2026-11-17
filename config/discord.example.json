@@ -1,0 +1,11 @@
+{
+  "relayUrl": "",
+  "clientId": "",
+  "autoApprove": false,
+  "relayOnly": false,
+  "guildId": "",
+  "roleIds": [],
+  "channelId": "",
+  "bans": [],
+  "trustedRelays": []
+}

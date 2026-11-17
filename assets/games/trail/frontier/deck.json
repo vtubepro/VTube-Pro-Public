@@ -1,0 +1,3706 @@
+{
+ "id": "frontier",
+ "name": "The Frontier Trail",
+ "text": {
+  "title": "THE FRONTIER TRAIL",
+  "subtitle": "Two thousand miles of dust, rivers and bad decisions.",
+  "year": "1848",
+  "starvation": "starvation",
+  "exhaustionCause": "exhaustion",
+  "wagon": "wagon",
+  "draft": "oxen",
+  "draftOne": "ox",
+  "whisperer": "ox whisperer",
+  "huntTool": "rifle",
+  "ammoUnit": "bullets",
+  "place": "the Promised Valley"
+ },
+ "currency": {
+  "name": "dollars",
+  "sym": "$"
+ },
+ "palette": {
+  "bg": "#1d1a14",
+  "panel": "#2b261c",
+  "ink": "#f3e7c9",
+  "accent": "#e8a33d",
+  "accent2": "#7fb8d6",
+  "danger": "#e0523d",
+  "good": "#8fd16a",
+  "sky": "#9cc7e6",
+  "ground": "#8b7a55",
+  "fog": "#d9c9a3"
+ },
+ "route": [
+  {
+   "id": "start",
+   "kind": "start",
+   "name": "Prairie Junction",
+   "miles": 0
+  },
+  {
+   "id": "river_1",
+   "kind": "river",
+   "name": "Muddy Fork River",
+   "miles": 110,
+   "depth": 2.6,
+   "width": 420,
+   "ferry": 5
+  },
+  {
+   "id": "fort_1",
+   "kind": "fort",
+   "name": "Fort Kettle",
+   "miles": 250
+  },
+  {
+   "id": "landmark_1",
+   "kind": "landmark",
+   "name": "Chimney Spire",
+   "miles": 380
+  },
+  {
+   "id": "river_2",
+   "kind": "river",
+   "name": "Big Blue Crossing",
+   "miles": 500,
+   "depth": 3.4,
+   "width": 580,
+   "ferry": 8
+  },
+  {
+   "id": "landmark_2",
+   "kind": "landmark",
+   "name": "Register Rock",
+   "miles": 640
+  },
+  {
+   "id": "pass",
+   "kind": "pass",
+   "name": "Windy Pass",
+   "miles": 780
+  },
+  {
+   "id": "river_3",
+   "kind": "river",
+   "name": "Serpent River",
+   "miles": 900,
+   "depth": 4.6,
+   "width": 900,
+   "ferry": 15
+  },
+  {
+   "id": "gate",
+   "kind": "fort",
+   "name": "Last Fort",
+   "miles": 1050
+  },
+  {
+   "id": "end",
+   "kind": "end",
+   "name": "the Promised Valley",
+   "miles": 1200
+  }
+ ],
+ "slice": [
+  {
+   "id": "start",
+   "kind": "start",
+   "name": "Prairie Junction",
+   "miles": 0
+  },
+  {
+   "id": "river_1",
+   "kind": "river",
+   "name": "Muddy Fork River",
+   "miles": 90,
+   "depth": 2.8,
+   "width": 420,
+   "ferry": 5
+  },
+  {
+   "id": "landmark_1",
+   "kind": "landmark",
+   "name": "Chimney Spire",
+   "miles": 250
+  },
+  {
+   "id": "end",
+   "kind": "end",
+   "name": "the Promised Valley",
+   "miles": 400
+  }
+ ],
+ "roles": {
+  "banker": {
+   "name": "Banker",
+   "perk": "Store prices −15 %, haggles better",
+   "money": 800,
+   "mult": 1
+  },
+  "carpenter": {
+   "name": "Carpenter",
+   "perk": "Repairs 2× faster, can jury-rig",
+   "money": 400,
+   "mult": 1.5
+  },
+  "whisperer": {
+   "name": "Ox Whisperer",
+   "perk": "Draft animals tire ½ as fast, calms herds",
+   "money": 400,
+   "mult": 1.5
+  },
+  "medic": {
+   "name": "Doctor",
+   "perk": "Cures once a day, revives 2× faster",
+   "money": 350,
+   "mult": 2
+  },
+  "hunter": {
+   "name": "Hunter",
+   "perk": "+50 % carry in hunts, better aim",
+   "money": 300,
+   "mult": 2
+  },
+  "streamer": {
+   "name": "Farmer",
+   "perk": "Chat votes ×2, morale +1/day",
+   "money": 200,
+   "mult": 3
+  }
+ },
+ "conds": {
+  "dysentery": {
+   "name": "dysentery",
+   "drain": 6,
+   "days": 6
+  },
+  "cholera": {
+   "name": "cholera",
+   "drain": 9,
+   "days": 6
+  },
+  "typhoid": {
+   "name": "typhoid",
+   "drain": 7,
+   "days": 7
+  },
+  "measles": {
+   "name": "measles",
+   "drain": 5,
+   "days": 6
+  },
+  "exhaustion": {
+   "name": "exhaustion",
+   "drain": 3,
+   "days": 4
+  },
+  "snakebite": {
+   "name": "a snakebite",
+   "drain": 8,
+   "days": 3
+  },
+  "broken_leg": {
+   "name": "a broken leg",
+   "drain": 4,
+   "days": 5
+  },
+  "munchies": {
+   "name": "the munchies",
+   "drain": 0,
+   "days": 3
+  }
+ },
+ "items": {
+  "food": {
+   "name": "food",
+   "price": 10,
+   "unit": 50
+  },
+  "draft": {
+   "name": "ox",
+   "price": 40
+  },
+  "clothes": {
+   "name": "set of clothes",
+   "price": 10
+  },
+  "ammo": {
+   "name": "box of bullets",
+   "price": 2,
+   "unit": 20
+  },
+  "wheel": {
+   "name": "spare wheel",
+   "price": 10
+  },
+  "axle": {
+   "name": "spare axle",
+   "price": 10
+  },
+  "tongue": {
+   "name": "spare tongue",
+   "price": 10
+  },
+  "medicine": {
+   "name": "medicine",
+   "price": 15
+  },
+  "meme": {
+   "name": "the lucky horseshoe",
+   "price": 25
+  }
+ },
+ "events": [
+  {
+   "id": "wild_fruit",
+   "tier": "mild",
+   "kind": "card",
+   "name": "Wild Berries",
+   "text": "You find bushes heavy with wild berries.",
+   "icon": "food",
+   "target": "random",
+   "choices": [
+    {
+     "id": "eat",
+     "label": "Eat them now",
+     "hint": "+food, small risk",
+     "outcomes": [
+      {
+       "text": "Delicious. Everyone feels better.",
+       "fx": [
+        {
+         "k": "food",
+         "n": 20
+        },
+        {
+         "k": "morale",
+         "n": 3
+        }
+       ],
+       "w": 0.8
+      },
+      {
+       "text": "{target} ate far too many and now has the munchies.",
+       "fx": [
+        {
+         "k": "food",
+         "n": 20
+        },
+        {
+         "k": "cond",
+         "id": "munchies",
+         "who": "target"
+        }
+       ],
+       "w": 0.2,
+       "mods": [
+        {
+         "role": "medic",
+         "x": 0
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "pack",
+     "label": "Pack them for later",
+     "hint": "+12 lbs food",
+     "outcomes": [
+      {
+       "text": "You pack 12 lbs of berries.",
+       "fx": [
+        {
+         "k": "food",
+         "n": 12
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "leave",
+     "label": "Leave them",
+     "hint": "nothing happens",
+     "outcomes": [
+      {
+       "text": "You leave them for the birds.",
+       "fx": []
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "lost_trail",
+   "tier": "mild",
+   "kind": "card",
+   "name": "Lost Trail",
+   "text": "The trail disappears into tall grass. Nobody is sure which way it goes.",
+   "icon": "day",
+   "target": "none",
+   "choices": [
+    {
+     "id": "back",
+     "label": "Backtrack",
+     "hint": "−2 days, safe",
+     "outcomes": [
+      {
+       "text": "You find the trail again. You lost 2 days.",
+       "fx": [
+        {
+         "k": "days",
+         "n": 2
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "gut",
+     "label": "Trust your gut",
+     "hint": "coin flip",
+     "outcomes": [
+      {
+       "text": "Your gut was right! No time lost.",
+       "fx": [],
+       "w": 1,
+       "mods": [
+        {
+         "role": "hunter",
+         "x": 5.7
+        },
+        {
+         "size": "micro",
+         "x": 1.5
+        }
+       ]
+      },
+      {
+       "text": "Your gut was wrong. You lose 4 days.",
+       "fx": [
+        {
+         "k": "days",
+         "n": 4
+        },
+        {
+         "k": "morale",
+         "n": -5
+        }
+       ],
+       "w": 1
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "heavy_fog",
+   "tier": "mild",
+   "kind": "card",
+   "name": "Heavy Fog",
+   "text": "A fog so thick you can't see the {draft} in front of the {wagon}.",
+   "icon": "weather_fog",
+   "target": "none",
+   "choices": [
+    {
+     "id": "wait",
+     "label": "Wait it out",
+     "hint": "−1 day",
+     "outcomes": [
+      {
+       "text": "The fog lifts after a day.",
+       "fx": [
+        {
+         "k": "days",
+         "n": 1
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "push",
+     "label": "Push on",
+     "hint": "you might get lost",
+     "outcomes": [
+      {
+       "text": "You feel your way through it.",
+       "fx": [],
+       "w": 0.7
+      },
+      {
+       "text": "You got turned around in the fog…",
+       "fx": [
+        {
+         "k": "chain",
+         "id": "lost_trail"
+        }
+       ],
+       "w": 0.3
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "abandoned_wagon",
+   "tier": "mild",
+   "kind": "stop",
+   "level": "road",
+   "name": "Abandoned Wagon",
+   "text": "An abandoned {wagon} sits by the trail. It might have supplies. It might have something else.",
+   "icon": "wheel",
+   "target": "random",
+   "choices": [
+    {
+     "id": "search",
+     "label": "Search it",
+     "hint": "loot (physical)",
+     "outcomes": [
+      {
+       "on": "success",
+       "w": 0.6,
+       "text": "You find a spare wheel and 30 lbs of food!",
+       "fx": [
+        {
+         "k": "item",
+         "id": "wheel",
+         "n": 1
+        },
+        {
+         "k": "food",
+         "n": 30
+        }
+       ],
+       "mods": [
+        {
+         "flag": "packrat",
+         "x": 1.5
+        }
+       ]
+      },
+      {
+       "on": "partial",
+       "w": 0.25,
+       "text": "A few scraps: 10 lbs of food.",
+       "fx": [
+        {
+         "k": "food",
+         "n": 10
+        }
+       ]
+      },
+      {
+       "on": "fail",
+       "w": 0.15,
+       "text": "Something was sleeping inside. It bites {target}!",
+       "fx": [
+        {
+         "k": "health",
+         "n": -15,
+         "who": "target"
+        }
+       ]
+      }
+     ],
+     "stop": "search"
+    },
+    {
+     "id": "leave",
+     "label": "Leave it",
+     "hint": "nothing happens",
+     "outcomes": [
+      {
+       "text": "You leave it alone. Probably wise.",
+       "fx": []
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "bad_water",
+   "tier": "mild",
+   "kind": "card",
+   "name": "Bad Water",
+   "text": "The only water around is brown, warm and has a smell.",
+   "icon": "sick",
+   "target": "random",
+   "choices": [
+    {
+     "id": "drink",
+     "label": "Drink it",
+     "hint": "free, risky",
+     "outcomes": [
+      {
+       "text": "It tastes… fine? Everyone feels a bit off.",
+       "fx": [
+        {
+         "k": "health",
+         "n": -8,
+         "who": "living"
+        },
+        {
+         "k": "cond",
+         "id": "dysentery",
+         "who": "random",
+         "p": 0.4
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "boil",
+     "label": "Boil it",
+     "hint": "−1 day",
+     "outcomes": [
+      {
+       "text": "You boil every drop. A day lost, everyone fine.",
+       "fx": [
+        {
+         "k": "days",
+         "n": 1
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "medic",
+     "label": "Medic purifies it",
+     "hint": "needs a medic",
+     "outcomes": [
+      {
+       "text": "Your medic purifies it. Safe and free.",
+       "fx": []
+      }
+     ],
+     "req": {
+      "role": "medic"
+     }
+    },
+    {
+     "id": "filter",
+     "label": "Use medicine to purify it",
+     "hint": "−1 medicine",
+     "outcomes": [
+      {
+       "text": "Safe to drink.",
+       "fx": [
+        {
+         "k": "item",
+         "id": "medicine",
+         "n": -1
+        }
+       ]
+      }
+     ],
+     "req": {
+      "item": "medicine",
+      "n": 1
+     }
+    }
+   ]
+  },
+  {
+   "id": "friendly_locals",
+   "tier": "mild",
+   "kind": "card",
+   "name": "Friendly Locals",
+   "text": "Some locals wave you down. They want to trade.",
+   "icon": "money",
+   "target": "none",
+   "choices": [
+    {
+     "id": "clothes",
+     "label": "Trade 2 clothes for 60 lbs food",
+     "hint": "",
+     "outcomes": [
+      {
+       "text": "A fair deal.",
+       "fx": [
+        {
+         "k": "item",
+         "id": "clothes",
+         "n": -2
+        },
+        {
+         "k": "food",
+         "n": 60
+        }
+       ]
+      }
+     ],
+     "req": {
+      "item": "clothes",
+      "n": 2
+     }
+    },
+    {
+     "id": "wheel",
+     "label": "Trade 40 lbs food for a spare wheel",
+     "hint": "",
+     "outcomes": [
+      {
+       "text": "You got a spare wheel.",
+       "fx": [
+        {
+         "k": "food",
+         "n": -40
+        },
+        {
+         "k": "item",
+         "id": "wheel",
+         "n": 1
+        }
+       ]
+      }
+     ],
+     "req": {
+      "food": 40
+     }
+    },
+    {
+     "id": "haggle",
+     "label": "Haggle",
+     "hint": "a better deal… or none",
+     "outcomes": [
+      {
+       "text": "What a deal: 80 lbs of food for one set of clothes!",
+       "fx": [
+        {
+         "k": "item",
+         "id": "clothes",
+         "n": -1
+        },
+        {
+         "k": "food",
+         "n": 80
+        }
+       ],
+       "w": 1,
+       "mods": [
+        {
+         "role": "banker",
+         "x": 3
+        }
+       ]
+      },
+      {
+       "text": "They got annoyed and left.",
+       "fx": [
+        {
+         "k": "morale",
+         "n": -2
+        }
+       ],
+       "w": 1
+      }
+     ],
+     "req": {
+      "item": "clothes",
+      "n": 1
+     }
+    },
+    {
+     "id": "decline",
+     "label": "No thanks",
+     "hint": "",
+     "outcomes": [
+      {
+       "text": "You wave goodbye.",
+       "fx": []
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ox_wanders",
+   "tier": "mild",
+   "kind": "stop",
+   "level": "road",
+   "name": "Runaway {draftOne}",
+   "text": "One of the {draft} wandered off during the night.",
+   "icon": "draft",
+   "target": "none",
+   "trigger": {
+    "need": [
+     {
+      "s": "draft",
+      "op": ">=",
+      "n": 3
+     }
+    ]
+   },
+   "choices": [
+    {
+     "id": "search",
+     "label": "Search for it",
+     "hint": "physical search",
+     "outcomes": [
+      {
+       "on": "success",
+       "w": 0.65,
+       "text": "You found it munching grass behind a hill.",
+       "fx": [],
+       "mods": [
+        {
+         "role": "whisperer",
+         "x": 2
+        }
+       ]
+      },
+      {
+       "on": "fail",
+       "w": 0.35,
+       "text": "It's gone. You lost one {draftOne}.",
+       "fx": [
+        {
+         "k": "draft",
+         "n": -1
+        }
+       ]
+      }
+     ],
+     "stop": "search"
+    },
+    {
+     "id": "leave",
+     "label": "Leave it",
+     "hint": "−1 {draftOne}",
+     "outcomes": [
+      {
+       "text": "You lost one {draftOne}.",
+       "fx": [
+        {
+         "k": "draft",
+         "n": -1
+        }
+       ],
+       "w": 1
+      },
+      {
+       "text": "It came back on its own! Good {draftOne}.",
+       "fx": [],
+       "w": 0.05,
+       "mods": [
+        {
+         "role": "whisperer",
+         "x": 20
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "good_weather",
+   "tier": "mild",
+   "kind": "card",
+   "name": "Perfect Weather",
+   "text": "Blue sky, gentle breeze, the {draft} are in a great mood.",
+   "icon": "weather_clear",
+   "target": "none",
+   "choices": [
+    {
+     "id": "enjoy",
+     "label": "Keep rolling",
+     "hint": "+12 miles",
+     "outcomes": [
+      {
+       "text": "You make great time. +12 miles.",
+       "fx": [
+        {
+         "k": "miles",
+         "n": 12
+        },
+        {
+         "k": "morale",
+         "n": 3
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "party",
+     "label": "Throw a roadside party",
+     "hint": "−1 day, big morale",
+     "outcomes": [
+      {
+       "text": "Best night of the trip.",
+       "fx": [
+        {
+         "k": "rest",
+         "n": 1
+        },
+        {
+         "k": "morale",
+         "n": 10
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "peddler",
+   "tier": "mild",
+   "kind": "card",
+   "name": "The Peddler",
+   "text": "A peddler offers a Mystery Box for {sym}60. \"No refunds.\"",
+   "icon": "money",
+   "target": "none",
+   "choices": [
+    {
+     "id": "buy",
+     "label": "Buy the Mystery Box",
+     "hint": "{sym}60",
+     "outcomes": [
+      {
+       "text": "Three crates of food!",
+       "fx": [
+        {
+         "k": "money",
+         "n": -60
+        },
+        {
+         "k": "food",
+         "n": 150
+        }
+       ],
+       "w": 1
+      },
+      {
+       "text": "A spare wheel and a spare axle!",
+       "fx": [
+        {
+         "k": "money",
+         "n": -60
+        },
+        {
+         "k": "item",
+         "id": "wheel",
+         "n": 1
+        },
+        {
+         "k": "item",
+         "id": "axle",
+         "n": 1
+        }
+       ],
+       "w": 1
+      },
+      {
+       "text": "Two bottles of medicine.",
+       "fx": [
+        {
+         "k": "money",
+         "n": -60
+        },
+        {
+         "k": "item",
+         "id": "medicine",
+         "n": 2
+        }
+       ],
+       "w": 1
+      },
+      {
+       "text": "A pizza. Pepperoni and cheese.",
+       "fx": [
+        {
+         "k": "money",
+         "n": -60
+        },
+        {
+         "k": "food",
+         "n": 5
+        },
+        {
+         "k": "morale",
+         "n": 8
+        }
+       ],
+       "w": 0.6
+      },
+      {
+       "text": "It's empty except for a note: \"sucker\". Bad luck follows.",
+       "fx": [
+        {
+         "k": "money",
+         "n": -60
+        },
+        {
+         "k": "flag",
+         "id": "cursed",
+         "n": 1
+        }
+       ],
+       "w": 0.5
+      }
+     ],
+     "req": {
+      "money": 60
+     }
+    },
+    {
+     "id": "no",
+     "label": "No thanks",
+     "hint": "",
+     "outcomes": [
+      {
+       "text": "The peddler shrugs and rolls on.",
+       "fx": []
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "grave_found",
+   "tier": "mild",
+   "kind": "card",
+   "name": "A Familiar Grave",
+   "text": "A weathered tombstone by the trail. Here lies {graveName}, who died of {graveCause}. \"{graveEpitaph}\"",
+   "icon": "grave",
+   "target": "none",
+   "trigger": {
+    "need": [
+     {
+      "s": "graves",
+      "op": ">",
+      "n": 0
+     }
+    ]
+   },
+   "choices": [
+    {
+     "id": "respects",
+     "label": "Pay respects (F)",
+     "hint": "+morale",
+     "outcomes": [
+      {
+       "text": "You pay your respects. F.",
+       "fx": [
+        {
+         "k": "morale",
+         "n": 5
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "loot",
+     "label": "Loot the grave",
+     "hint": "+food, bad idea",
+     "outcomes": [
+      {
+       "text": "You dig up 15 lbs of food. Somewhere, a ghost is annoyed.",
+       "fx": [
+        {
+         "k": "food",
+         "n": 15
+        },
+        {
+         "k": "morale",
+         "n": -3
+        },
+        {
+         "k": "flag",
+         "id": "haunted",
+         "n": 1
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "read",
+     "label": "Read it out loud",
+     "hint": "",
+     "outcomes": [
+      {
+       "text": "\"{graveEpitaph}\" — the words hang in the air.",
+       "fx": [
+        {
+         "k": "morale",
+         "n": 2
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "shortcut_sign",
+   "tier": "mild",
+   "kind": "card",
+   "name": "A Shortcut?",
+   "text": "A hand-painted sign: \"SHORTCUT (TRUST ME)\".",
+   "icon": "map",
+   "target": "none",
+   "trigger": {
+    "maxP": 0.8
+   },
+   "choices": [
+    {
+     "id": "take",
+     "label": "Take the shortcut",
+     "hint": "gamble",
+     "outcomes": [
+      {
+       "text": "It actually works! 40 miles saved.",
+       "fx": [
+        {
+         "k": "miles",
+         "n": 40
+        }
+       ],
+       "w": 1
+      },
+      {
+       "text": "It leads through a bog. The next river will be deeper.",
+       "fx": [
+        {
+         "k": "depth",
+         "n": 1
+        },
+        {
+         "k": "days",
+         "n": 1
+        }
+       ],
+       "w": 1
+      }
+     ]
+    },
+    {
+     "id": "ignore",
+     "label": "Stay on the trail",
+     "hint": "",
+     "outcomes": [
+      {
+       "text": "You ignore the sign. Good instincts.",
+       "fx": []
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "pothole_launch",
+   "tier": "hilarious",
+   "kind": "trail3d",
+   "name": "Giant Pothole",
+   "text": "The {wagon} hits a pothole the size of a bathtub. Hold on!",
+   "icon": "wheel",
+   "target": "smallest",
+   "choices": [
+    {
+     "id": "hold",
+     "label": "HOLD ON!",
+     "hint": "get back on the wagon",
+     "outcomes": [
+      {
+       "on": "success",
+       "w": 0.5,
+       "text": "Everyone made it back on the {wagon}.",
+       "fx": [
+        {
+         "k": "morale",
+         "n": 2
+        }
+       ]
+      },
+      {
+       "on": "partial",
+       "w": 0.3,
+       "text": "Someone got dragged a quarter mile.",
+       "fx": [
+        {
+         "k": "health",
+         "n": -8,
+         "who": "target"
+        }
+       ]
+      },
+      {
+       "on": "fail",
+       "w": 0.2,
+       "text": "Half the party is eating dirt, and the ammo box burst open.",
+       "fx": [
+        {
+         "k": "health",
+         "n": -6,
+         "who": "living"
+        },
+        {
+         "k": "item",
+         "id": "ammo",
+         "n": -10
+        }
+       ]
+      }
+     ],
+     "stop": "trail3d:pothole"
+    }
+   ]
+  },
+  {
+   "id": "snack_thieves",
+   "tier": "hilarious",
+   "kind": "stop",
+   "level": "road",
+   "name": "Snack Thieves",
+   "text": "A gang of raccoons is making off with your food crates!",
+   "icon": "food",
+   "target": "none",
+   "trigger": {
+    "need": [
+     {
+      "s": "food",
+      "op": ">",
+      "n": 100
+     }
+    ]
+   },
+   "choices": [
+    {
+     "id": "chase",
+     "label": "CHASE THEM",
+     "hint": "tackle them (physical)",
+     "outcomes": [
+      {
+       "on": "success",
+       "w": 0.5,
+       "text": "You tackled every last one. All food recovered!",
+       "fx": [
+        {
+         "k": "morale",
+         "n": 5
+        }
+       ],
+       "mods": [
+        {
+         "size": "macro",
+         "x": 1.5
+        }
+       ]
+      },
+      {
+       "on": "partial",
+       "w": 0.3,
+       "text": "You got most of it back.",
+       "fx": [
+        {
+         "k": "food",
+         "n": -25
+        }
+       ]
+      },
+      {
+       "on": "fail",
+       "w": 0.2,
+       "text": "They got away with 75 lbs of food.",
+       "fx": [
+        {
+         "k": "food",
+         "n": -75
+        }
+       ]
+      }
+     ],
+     "stop": "chase"
+    },
+    {
+     "id": "let",
+     "label": "Let them have it",
+     "hint": "−50 lbs, +morale",
+     "outcomes": [
+      {
+       "text": "You let them have a crate. They look grateful.",
+       "fx": [
+        {
+         "k": "food",
+         "n": -50
+        },
+        {
+         "k": "morale",
+         "n": 3
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "toad_mutiny",
+   "tier": "hilarious",
+   "kind": "voice",
+   "name": "{draft} Strike",
+   "text": "The {draft} refuse to move. They want a song. A real one. Everyone.",
+   "icon": "draft",
+   "target": "none",
+   "trigger": {
+    "need": [
+     {
+      "s": "draft",
+      "op": ">=",
+      "n": 2
+     }
+    ]
+   },
+   "choices": [
+    {
+     "id": "sing",
+     "label": "SING TO THEM",
+     "hint": "everyone make noise (mic)",
+     "outcomes": [
+      {
+       "on": "success",
+       "w": 0.6,
+       "text": "The {draft} are moved to tears. They pull with new vigour!",
+       "fx": [
+        {
+         "k": "draftHealth",
+         "n": 20
+        },
+        {
+         "k": "morale",
+         "n": 8
+        }
+       ],
+       "mods": [
+        {
+         "role": "whisperer",
+         "x": 2
+        },
+        {
+         "role": "streamer",
+         "x": 1.5
+        }
+       ]
+      },
+      {
+       "on": "fail",
+       "w": 0.4,
+       "text": "That was not a song. The {draft} sulk for a day.",
+       "fx": [
+        {
+         "k": "days",
+         "n": 1
+        }
+       ]
+      }
+     ],
+     "stop": "voice:sing"
+    },
+    {
+     "id": "bribe",
+     "label": "Bribe them with food",
+     "hint": "−25 lbs",
+     "outcomes": [
+      {
+       "text": "25 lbs of food later, they're happy to go.",
+       "fx": [
+        {
+         "k": "food",
+         "n": -25
+        }
+       ]
+      }
+     ],
+     "req": {
+      "food": 25
+     }
+    },
+    {
+     "id": "wait",
+     "label": "Wait them out",
+     "hint": "−1 day",
+     "outcomes": [
+      {
+       "text": "You wait them out. A day lost.",
+       "fx": [
+        {
+         "k": "days",
+         "n": 1
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "the_runs",
+   "tier": "hilarious",
+   "kind": "stop",
+   "level": "road",
+   "name": "Dysentery Speedrun",
+   "text": "{target} needs a bush. Now. The nearest bush is VERY far away.",
+   "icon": "sick",
+   "target": "dysentery",
+   "trigger": {
+    "need": [
+     {
+      "s": "dysentery",
+      "op": ">=",
+      "n": 1
+     }
+    ]
+   },
+   "choices": [
+    {
+     "id": "run",
+     "label": "RUN!",
+     "hint": "{target} races to the bush",
+     "outcomes": [
+      {
+       "on": "success",
+       "w": 0.55,
+       "text": "{target} made it! Cured by sheer willpower.",
+       "fx": [
+        {
+         "k": "cure",
+         "who": "target"
+        },
+        {
+         "k": "morale",
+         "n": 5
+        }
+       ],
+       "mods": [
+        {
+         "size": "micro",
+         "x": 1.5,
+         "on": "target"
+        }
+       ]
+      },
+      {
+       "on": "fail",
+       "w": 0.45,
+       "text": "{target} did not make it in time. We don't talk about it.",
+       "fx": [
+        {
+         "k": "health",
+         "n": -20,
+         "who": "target"
+        },
+        {
+         "k": "morale",
+         "n": -5
+        }
+       ]
+      }
+     ],
+     "stop": "runs"
+    },
+    {
+     "id": "hold",
+     "label": "Hold it in",
+     "hint": "risky",
+     "outcomes": [
+      {
+       "text": "{target} holds it in. Heroic, but ill-advised.",
+       "fx": [
+        {
+         "k": "health",
+         "n": -10,
+         "who": "target"
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "swamp_gas_trip",
+   "tier": "hilarious",
+   "kind": "modifier",
+   "name": "Strange Fumes",
+   "text": "A sweet-smelling mist rolls over the trail. The {draft} start giggling.",
+   "icon": "weather_fog",
+   "target": "none",
+   "choices": [
+    {
+     "id": "breathe",
+     "label": "Breathe it in",
+     "hint": "next stop: wobbly",
+     "outcomes": [
+      {
+       "text": "Everything is wobbly. Controls are reversed at the next stop.",
+       "fx": [
+        {
+         "k": "mod",
+         "id": "inverted"
+        },
+        {
+         "k": "morale",
+         "n": 4
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "hold",
+     "label": "Hold your breath",
+     "hint": "−5 health, half effect",
+     "outcomes": [
+      {
+       "text": "You hold your breath. Only some of you are affected.",
+       "fx": [
+        {
+         "k": "health",
+         "n": -5,
+         "who": "living"
+        },
+        {
+         "k": "mod",
+         "id": "inverted_half"
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "big_head",
+   "tier": "hilarious",
+   "kind": "modifier",
+   "name": "Funny Mushrooms",
+   "text": "You find a patch of big, friendly-looking mushrooms.",
+   "icon": "food",
+   "target": "none",
+   "choices": [
+    {
+     "id": "eat",
+     "label": "Eat them",
+     "hint": "big heads until camp",
+     "outcomes": [
+      {
+       "text": "Your heads swell to twice their size. Doorways are now a challenge.",
+       "fx": [
+        {
+         "k": "mod",
+         "id": "big_head"
+        },
+        {
+         "k": "food",
+         "n": 10
+        },
+        {
+         "k": "morale",
+         "n": 4
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "dont",
+     "label": "Don't",
+     "hint": "",
+     "outcomes": [
+      {
+       "text": "Probably wise.",
+       "fx": []
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "talent_show",
+   "tier": "hilarious",
+   "kind": "voice",
+   "name": "Talent Show",
+   "text": "Travellers are holding a talent show. First prize: {sym}100. Judged on FACES.",
+   "icon": "vote",
+   "target": "none",
+   "choices": [
+    {
+     "id": "perform",
+     "label": "Perform!",
+     "hint": "most expressive face wins (camera)",
+     "outcomes": [
+      {
+       "on": "success",
+       "w": 0.7,
+       "text": "The crowd loves {winner}! +{sym}100.",
+       "fx": [
+        {
+         "k": "money",
+         "n": 100
+        },
+        {
+         "k": "morale",
+         "n": 5
+        }
+       ],
+       "mods": [
+        {
+         "role": "streamer",
+         "x": 2
+        }
+       ]
+      },
+      {
+       "on": "fail",
+       "w": 0.3,
+       "text": "The crowd throws tomatoes. Free food, at least.",
+       "fx": [
+        {
+         "k": "food",
+         "n": 10
+        }
+       ]
+      }
+     ],
+     "stop": "voice:talent"
+    },
+    {
+     "id": "skip",
+     "label": "Skip it",
+     "hint": "",
+     "outcomes": [
+      {
+       "text": "You watch from the back.",
+       "fx": []
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "greased_wagon",
+   "tier": "hilarious",
+   "kind": "stop",
+   "level": "road",
+   "name": "Greased {wagon}",
+   "text": "Someone spilled a barrel of grease all over the {wagon} bed. There's a hill ahead.",
+   "icon": "wheel",
+   "target": "none",
+   "choices": [
+    {
+     "id": "scrub",
+     "label": "Scrub it clean",
+     "hint": "−1 day",
+     "outcomes": [
+      {
+       "text": "You scrub the {wagon} for a day.",
+       "fx": [
+        {
+         "k": "days",
+         "n": 1
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "yolo",
+     "label": "YOLO",
+     "hint": "catch what slides out",
+     "outcomes": [
+      {
+       "on": "success",
+       "w": 0.4,
+       "text": "You caught everything that slid out!",
+       "fx": [
+        {
+         "k": "morale",
+         "n": 5
+        }
+       ]
+      },
+      {
+       "on": "partial",
+       "w": 0.35,
+       "text": "Some of it rolled into a ravine.",
+       "fx": [
+        {
+         "k": "food",
+         "n": -25
+        },
+        {
+         "k": "item",
+         "id": "ammo",
+         "n": -20
+        }
+       ]
+      },
+      {
+       "on": "fail",
+       "w": 0.25,
+       "text": "Half the cargo is at the bottom of the hill.",
+       "fx": [
+        {
+         "k": "food",
+         "n": -60
+        },
+        {
+         "k": "item",
+         "id": "clothes",
+         "n": -1
+        }
+       ]
+      }
+     ],
+     "stop": "greased"
+    }
+   ]
+  },
+  {
+   "id": "goose_chase",
+   "tier": "hilarious",
+   "kind": "stop",
+   "level": "road",
+   "name": "Goose Heist",
+   "text": "A goose grabs {meme} and waddles off at speed!",
+   "icon": "meme",
+   "target": "none",
+   "trigger": {
+    "need": [
+     {
+      "s": "meme",
+      "op": ">=",
+      "n": 1
+     }
+    ]
+   },
+   "choices": [
+    {
+     "id": "chase",
+     "label": "Get it back!",
+     "hint": "physical chase",
+     "outcomes": [
+      {
+       "on": "success",
+       "w": 0.55,
+       "text": "You tackled the goose. {meme} is safe.",
+       "fx": [
+        {
+         "k": "morale",
+         "n": 6
+        }
+       ]
+      },
+      {
+       "on": "fail",
+       "w": 0.45,
+       "text": "It got away with {meme}. Never forget.",
+       "fx": [
+        {
+         "k": "meme",
+         "n": -1
+        },
+        {
+         "k": "morale",
+         "n": -10
+        }
+       ]
+      }
+     ],
+     "stop": "chase"
+    },
+    {
+     "id": "let",
+     "label": "Let it go",
+     "hint": "",
+     "outcomes": [
+      {
+       "text": "{meme} is gone. Pour one out.",
+       "fx": [
+        {
+         "k": "meme",
+         "n": -1
+        },
+        {
+         "k": "morale",
+         "n": -8
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "tourist_bus",
+   "tier": "hilarious",
+   "kind": "stop",
+   "level": "road",
+   "name": "Tourists!",
+   "text": "A coach of tourists wants a photo with real trail pilgrims.",
+   "icon": "vote",
+   "target": "none",
+   "choices": [
+    {
+     "id": "pose",
+     "label": "Pose for the photo",
+     "hint": "everyone in the frame",
+     "outcomes": [
+      {
+       "on": "success",
+       "w": 0.7,
+       "text": "Great photo! The tourists tip {sym}80.",
+       "fx": [
+        {
+         "k": "money",
+         "n": 80
+        },
+        {
+         "k": "morale",
+         "n": 4
+        }
+       ],
+       "mods": [
+        {
+         "size": "macro",
+         "x": 1.5
+        }
+       ]
+      },
+      {
+       "on": "fail",
+       "w": 0.3,
+       "text": "Somebody ruined the photo. The tourists leave, disappointed.",
+       "fx": [
+        {
+         "k": "morale",
+         "n": -4
+        }
+       ]
+      }
+     ],
+     "stop": "photo"
+    },
+    {
+     "id": "ignore",
+     "label": "Ignore them",
+     "hint": "",
+     "outcomes": [
+      {
+       "text": "You roll past. They take a photo of your backside.",
+       "fx": []
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "stuck_in_mud",
+   "tier": "hilarious",
+   "kind": "stop",
+   "level": "road",
+   "name": "Stuck in the Mud",
+   "text": "The {wagon} sinks up to its axles in mud.",
+   "icon": "wheel",
+   "target": "none",
+   "choices": [
+    {
+     "id": "push",
+     "label": "PUSH!",
+     "hint": "everyone push (physical)",
+     "outcomes": [
+      {
+       "on": "success",
+       "w": 0.55,
+       "text": "With a mighty heave, the {wagon} is free!",
+       "fx": [
+        {
+         "k": "morale",
+         "n": 4
+        }
+       ],
+       "mods": [
+        {
+         "size": "macro",
+         "x": 3
+        },
+        {
+         "role": "carpenter",
+         "x": 1.5
+        }
+       ]
+      },
+      {
+       "on": "fail",
+       "w": 0.45,
+       "text": "The mud wins. 2 days of digging.",
+       "fx": [
+        {
+         "k": "days",
+         "n": 2
+        }
+       ]
+      }
+     ],
+     "stop": "mud"
+    },
+    {
+     "id": "unload",
+     "label": "Throw out 50 lbs of supplies",
+     "hint": "",
+     "outcomes": [
+      {
+       "text": "Lighter now, the {wagon} rolls free.",
+       "fx": [
+        {
+         "k": "food",
+         "n": -50
+        }
+       ]
+      }
+     ],
+     "req": {
+      "food": 50
+     }
+    },
+    {
+     "id": "wait",
+     "label": "Wait for it to dry",
+     "hint": "−2 days",
+     "outcomes": [
+      {
+       "text": "Two days later, the mud lets go.",
+       "fx": [
+        {
+         "k": "days",
+         "n": 2
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "broken_wheel",
+   "tier": "hard",
+   "kind": "stop",
+   "level": "road",
+   "name": "Wheel's Off!",
+   "text": "CRACK. A wheel shatters and the {wagon} slumps into the dirt.",
+   "icon": "wheel",
+   "target": "none",
+   "fire": [
+    {
+     "k": "break",
+     "part": "wheel"
+    }
+   ],
+   "choices": [
+    {
+     "id": "replace",
+     "label": "Replace it",
+     "hint": "needs a spare wheel (physical)",
+     "outcomes": [
+      {
+       "on": "success",
+       "w": 0.8,
+       "text": "Wheel replaced. Back on the trail!",
+       "fx": [
+        {
+         "k": "item",
+         "id": "wheel",
+         "n": -1
+        },
+        {
+         "k": "repair",
+         "part": "wheel"
+        }
+       ]
+      },
+      {
+       "on": "fail",
+       "w": 0.2,
+       "text": "It took all day, but the new wheel is on.",
+       "fx": [
+        {
+         "k": "item",
+         "id": "wheel",
+         "n": -1
+        },
+        {
+         "k": "repair",
+         "part": "wheel"
+        },
+        {
+         "k": "days",
+         "n": 1
+        }
+       ]
+      }
+     ],
+     "req": {
+      "item": "wheel",
+      "n": 1
+     },
+     "stop": "wheel"
+    },
+    {
+     "id": "jury",
+     "label": "Jury-rig it",
+     "hint": "needs a carpenter, 60 %",
+     "outcomes": [
+      {
+       "text": "Jury-rigged! Good as new (ish).",
+       "fx": [
+        {
+         "k": "repair",
+         "part": "wheel"
+        }
+       ],
+       "w": 0.6
+      },
+      {
+       "text": "The jury-rig collapses. You limp on.",
+       "fx": [
+        {
+         "k": "days",
+         "n": 1
+        },
+        {
+         "k": "limp"
+        }
+       ],
+       "w": 0.4
+      }
+     ],
+     "req": {
+      "role": "carpenter"
+     }
+    },
+    {
+     "id": "limp",
+     "label": "Limp on",
+     "hint": "−40 % speed until fixed",
+     "outcomes": [
+      {
+       "text": "You limp along on three wheels.",
+       "fx": [
+        {
+         "k": "limp"
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "broken_axle",
+   "tier": "hard",
+   "kind": "stop",
+   "level": "road",
+   "name": "Broken Axle",
+   "text": "The axle snaps with a sound like a gunshot.",
+   "icon": "axle",
+   "target": "none",
+   "fire": [
+    {
+     "k": "break",
+     "part": "axle"
+    }
+   ],
+   "choices": [
+    {
+     "id": "replace",
+     "label": "Replace it",
+     "hint": "needs a spare axle (physical)",
+     "outcomes": [
+      {
+       "on": "success",
+       "w": 0.8,
+       "text": "New axle in. Back on the trail!",
+       "fx": [
+        {
+         "k": "item",
+         "id": "axle",
+         "n": -1
+        },
+        {
+         "k": "repair",
+         "part": "axle"
+        }
+       ]
+      },
+      {
+       "on": "fail",
+       "w": 0.2,
+       "text": "It took all day, but it's in.",
+       "fx": [
+        {
+         "k": "item",
+         "id": "axle",
+         "n": -1
+        },
+        {
+         "k": "repair",
+         "part": "axle"
+        },
+        {
+         "k": "days",
+         "n": 1
+        }
+       ]
+      }
+     ],
+     "req": {
+      "item": "axle",
+      "n": 1
+     },
+     "stop": "wheel"
+    },
+    {
+     "id": "jury",
+     "label": "Jury-rig it",
+     "hint": "needs a carpenter, 50 %",
+     "outcomes": [
+      {
+       "text": "Lashed together with rope and hope. It holds!",
+       "fx": [
+        {
+         "k": "repair",
+         "part": "axle"
+        }
+       ],
+       "w": 0.5
+      },
+      {
+       "text": "It didn't hold. You limp on.",
+       "fx": [
+        {
+         "k": "days",
+         "n": 1
+        },
+        {
+         "k": "limp"
+        }
+       ],
+       "w": 0.5
+      }
+     ],
+     "req": {
+      "role": "carpenter"
+     }
+    },
+    {
+     "id": "limp",
+     "label": "Limp on",
+     "hint": "−40 % speed until fixed",
+     "outcomes": [
+      {
+       "text": "You drag the {wagon} along.",
+       "fx": [
+        {
+         "k": "limp"
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "snakebite",
+   "tier": "hard",
+   "kind": "card",
+   "name": "Snakebite",
+   "text": "A snake bites {target}!",
+   "icon": "sick",
+   "target": "random",
+   "fire": [
+    {
+     "k": "health",
+     "n": -10,
+     "who": "target"
+    }
+   ],
+   "choices": [
+    {
+     "id": "medicine",
+     "label": "Use medicine",
+     "hint": "−1 medicine",
+     "outcomes": [
+      {
+       "text": "Medicine applied. {target} will be fine.",
+       "fx": [
+        {
+         "k": "item",
+         "id": "medicine",
+         "n": -1
+        }
+       ]
+      }
+     ],
+     "req": {
+      "item": "medicine",
+      "n": 1
+     }
+    },
+    {
+     "id": "medic",
+     "label": "Medic treats it",
+     "hint": "needs a medic",
+     "outcomes": [
+      {
+       "text": "Your medic handles it like a pro.",
+       "fx": []
+      }
+     ],
+     "req": {
+      "role": "medic"
+     }
+    },
+    {
+     "id": "suck",
+     "label": "Someone sucks the venom out",
+     "hint": "a volunteer…",
+     "outcomes": [
+      {
+       "text": "{volunteer} sucks the venom out. Gross, but it worked.",
+       "fx": [],
+       "w": 0.75
+      },
+      {
+       "text": "{volunteer} got a mouthful of venom. Now they're both sick.",
+       "fx": [
+        {
+         "k": "cond",
+         "id": "snakebite",
+         "who": "volunteer"
+        },
+        {
+         "k": "cond",
+         "id": "snakebite",
+         "who": "target"
+        }
+       ],
+       "w": 0.25
+      }
+     ]
+    },
+    {
+     "id": "walk",
+     "label": "Walk it off",
+     "hint": "risky",
+     "outcomes": [
+      {
+       "text": "{target} tries to walk it off.",
+       "fx": [
+        {
+         "k": "health",
+         "n": -15,
+         "who": "target"
+        },
+        {
+         "k": "cond",
+         "id": "snakebite",
+         "who": "target"
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "illness",
+   "tier": "hard",
+   "kind": "card",
+   "name": "Sickness",
+   "text": "{target} looks terrible. Something is going around.",
+   "icon": "sick",
+   "target": "random",
+   "fire": [
+    {
+     "k": "cond",
+     "id": "random",
+     "who": "target"
+    }
+   ],
+   "choices": [
+    {
+     "id": "rest",
+     "label": "Rest 2 days",
+     "hint": "+health",
+     "outcomes": [
+      {
+       "text": "You rest for two days.",
+       "fx": [
+        {
+         "k": "rest",
+         "n": 2
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "medicine",
+     "label": "Use medicine",
+     "hint": "−1 medicine",
+     "outcomes": [
+      {
+       "text": "The medicine works.",
+       "fx": [
+        {
+         "k": "item",
+         "id": "medicine",
+         "n": -1
+        },
+        {
+         "k": "cure",
+         "who": "target"
+        }
+       ]
+      }
+     ],
+     "req": {
+      "item": "medicine",
+      "n": 1
+     }
+    },
+    {
+     "id": "push",
+     "label": "Push on",
+     "hint": "",
+     "outcomes": [
+      {
+       "text": "You push on. {target} feels worse.",
+       "fx": [
+        {
+         "k": "health",
+         "n": -10,
+         "who": "target"
+        },
+        {
+         "k": "cond",
+         "id": "random",
+         "who": "random",
+         "p": 0.3
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "thief_night",
+   "tier": "hard",
+   "kind": "stop",
+   "level": "camp",
+   "name": "Night Thieves",
+   "text": "Something is rummaging through your supplies in the dark.",
+   "icon": "food",
+   "target": "none",
+   "trigger": {
+    "need": [
+     {
+      "s": "food",
+      "op": ">",
+      "n": 40
+     }
+    ]
+   },
+   "choices": [
+    {
+     "id": "chase",
+     "label": "Grab the lanterns!",
+     "hint": "chase them off (physical)",
+     "outcomes": [
+      {
+       "on": "success",
+       "w": 0.5,
+       "text": "You chased them off with everything intact.",
+       "fx": [
+        {
+         "k": "morale",
+         "n": 4
+        }
+       ]
+      },
+      {
+       "on": "partial",
+       "w": 0.3,
+       "text": "They got away with a little.",
+       "fx": [
+        {
+         "k": "food",
+         "n": -30
+        }
+       ]
+      },
+      {
+       "on": "fail",
+       "w": 0.2,
+       "text": "By the time you found the lantern, they were gone.",
+       "fx": [
+        {
+         "k": "food",
+         "n": -60
+        },
+        {
+         "k": "item",
+         "id": "clothes",
+         "n": -1
+        }
+       ]
+      }
+     ],
+     "stop": "thieves"
+    },
+    {
+     "id": "ignore",
+     "label": "Pretend to be asleep",
+     "hint": "",
+     "outcomes": [
+      {
+       "text": "By morning, 60 lbs of food and a set of clothes are gone.",
+       "fx": [
+        {
+         "k": "food",
+         "n": -60
+        },
+        {
+         "k": "item",
+         "id": "clothes",
+         "n": -1
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "flash_flood",
+   "tier": "hard",
+   "kind": "stop",
+   "level": "road",
+   "name": "Flash Flood",
+   "text": "A wall of water comes roaring down the gully!",
+   "icon": "weather_rain",
+   "target": "none",
+   "choices": [
+    {
+     "id": "save",
+     "label": "Carry everything to high ground",
+     "hint": "60 s (physical)",
+     "outcomes": [
+      {
+       "on": "success",
+       "w": 0.45,
+       "text": "Everything reached high ground. Soaked, but safe.",
+       "fx": []
+      },
+      {
+       "on": "partial",
+       "w": 0.35,
+       "text": "Some of the food got soaked.",
+       "fx": [
+        {
+         "k": "food",
+         "n": -40
+        }
+       ]
+      },
+      {
+       "on": "fail",
+       "w": 0.2,
+       "text": "The flood takes food, clothes and ammo.",
+       "fx": [
+        {
+         "k": "food",
+         "n": -100
+        },
+        {
+         "k": "item",
+         "id": "clothes",
+         "n": -1
+        },
+        {
+         "k": "item",
+         "id": "ammo",
+         "n": -20
+        }
+       ]
+      }
+     ],
+     "stop": "flood"
+    },
+    {
+     "id": "pray",
+     "label": "Climb a tree and pray",
+     "hint": "",
+     "outcomes": [
+      {
+       "text": "You survive. Your supplies mostly don't.",
+       "fx": [
+        {
+         "k": "food",
+         "n": -80
+        },
+        {
+         "k": "item",
+         "id": "clothes",
+         "n": -1
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "wagon_fire",
+   "tier": "hard",
+   "kind": "stop",
+   "level": "road",
+   "name": "Fire!",
+   "text": "A lantern tips over. The {wagon} is on fire!",
+   "icon": "fire",
+   "target": "none",
+   "choices": [
+    {
+     "id": "fight",
+     "label": "Buckets! NOW!",
+     "hint": "carry water (physical)",
+     "outcomes": [
+      {
+       "on": "success",
+       "w": 0.45,
+       "text": "Fire out! Only a little singed.",
+       "fx": [
+        {
+         "k": "food",
+         "n": -10
+        }
+       ],
+       "mods": [
+        {
+         "role": "carpenter",
+         "x": 1.3
+        }
+       ]
+      },
+      {
+       "on": "partial",
+       "w": 0.35,
+       "text": "Fire out, but the food and clothes took a beating.",
+       "fx": [
+        {
+         "k": "food",
+         "n": -50
+        },
+        {
+         "k": "item",
+         "id": "clothes",
+         "n": -2
+        }
+       ]
+      },
+      {
+       "on": "fail",
+       "w": 0.2,
+       "text": "It burned for a long time.",
+       "fx": [
+        {
+         "k": "food",
+         "n": -120
+        },
+        {
+         "k": "item",
+         "id": "clothes",
+         "n": -3
+        },
+        {
+         "k": "item",
+         "id": "medicine",
+         "n": -1
+        },
+        {
+         "k": "morale",
+         "n": -10
+        }
+       ]
+      }
+     ],
+     "stop": "fire"
+    },
+    {
+     "id": "burn",
+     "label": "Let it burn out",
+     "hint": "",
+     "outcomes": [
+      {
+       "text": "You watch it burn. It takes a lot with it.",
+       "fx": [
+        {
+         "k": "food",
+         "n": -80
+        },
+        {
+         "k": "item",
+         "id": "clothes",
+         "n": -2
+        },
+        {
+         "k": "morale",
+         "n": -6
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "stampede",
+   "tier": "hard",
+   "kind": "stop",
+   "level": "road",
+   "name": "Stampede!",
+   "text": "The ground shakes. A herd is coming straight at the {wagon}!",
+   "icon": "draft",
+   "target": "random",
+   "choices": [
+    {
+     "id": "brace",
+     "label": "Brace!",
+     "hint": "dodge and protect the wagon (physical)",
+     "outcomes": [
+      {
+       "on": "success",
+       "w": 0.4,
+       "text": "The herd thunders past. Everyone's okay.",
+       "fx": [],
+       "mods": [
+        {
+         "size": "macro",
+         "x": 2
+        }
+       ]
+      },
+      {
+       "on": "partial",
+       "w": 0.4,
+       "text": "{target} got trampled and some food was lost.",
+       "fx": [
+        {
+         "k": "health",
+         "n": -15,
+         "who": "target"
+        },
+        {
+         "k": "food",
+         "n": -30
+        }
+       ]
+      },
+      {
+       "on": "fail",
+       "w": 0.2,
+       "text": "Chaos. Everyone is bruised and a {draftOne} ran off with the herd.",
+       "fx": [
+        {
+         "k": "health",
+         "n": -12,
+         "who": "living"
+        },
+        {
+         "k": "draft",
+         "n": -1
+        }
+       ]
+      }
+     ],
+     "stop": "stampede"
+    },
+    {
+     "id": "turn",
+     "label": "Turn the herd",
+     "hint": "needs a {whisperer}",
+     "outcomes": [
+      {
+       "text": "Your animal whisperer turns the herd aside. Legend.",
+       "fx": [
+        {
+         "k": "morale",
+         "n": 6
+        }
+       ]
+      }
+     ],
+     "req": {
+      "role": "whisperer"
+     }
+    }
+   ]
+  },
+  {
+   "id": "toll_trolls",
+   "tier": "hard",
+   "kind": "card",
+   "name": "Toll Bridge",
+   "text": "Three large, rude people block the only bridge. \"Toll's {sym}100.\"",
+   "icon": "money",
+   "target": "none",
+   "choices": [
+    {
+     "id": "pay",
+     "label": "Pay the toll",
+     "hint": "{sym}100",
+     "outcomes": [
+      {
+       "text": "You pay. They laugh.",
+       "fx": [
+        {
+         "k": "money",
+         "n": -100
+        }
+       ]
+      }
+     ],
+     "req": {
+      "money": 100
+     }
+    },
+    {
+     "id": "haggle",
+     "label": "Haggle",
+     "hint": "needs a banker: {sym}50",
+     "outcomes": [
+      {
+       "text": "Your banker talks them down to {sym}50.",
+       "fx": [
+        {
+         "k": "money",
+         "n": -50
+        }
+       ]
+      }
+     ],
+     "req": {
+      "role": "banker",
+      "money": 50
+     }
+    },
+    {
+     "id": "fight",
+     "label": "Fight them",
+     "hint": "push them into the river",
+     "outcomes": [
+      {
+       "on": "success",
+       "w": 0.45,
+       "text": "You tossed them in the river! They drop {sym}40.",
+       "fx": [
+        {
+         "k": "money",
+         "n": 40
+        },
+        {
+         "k": "morale",
+         "n": 6
+        }
+       ],
+       "mods": [
+        {
+         "size": "macro",
+         "x": 3
+        },
+        {
+         "size": "large",
+         "x": 1.5
+        }
+       ]
+      },
+      {
+       "on": "fail",
+       "w": 0.55,
+       "text": "They beat you up and take the toll anyway.",
+       "fx": [
+        {
+         "k": "money",
+         "n": -100
+        },
+        {
+         "k": "health",
+         "n": -10,
+         "who": "living"
+        }
+       ]
+      }
+     ],
+     "stop": "toll_fight"
+    },
+    {
+     "id": "sneak",
+     "label": "Sneak past",
+     "hint": "small scouts help",
+     "outcomes": [
+      {
+       "text": "You sneak past in the dark.",
+       "fx": [],
+       "w": 0.5,
+       "mods": [
+        {
+         "size": "micro",
+         "x": 3
+        },
+        {
+         "size": "small",
+         "x": 1.5
+        }
+       ]
+      },
+      {
+       "text": "Caught! They take double.",
+       "fx": [
+        {
+         "k": "money",
+         "n": -150
+        }
+       ],
+       "w": 0.5
+      }
+     ]
+    },
+    {
+     "id": "around",
+     "label": "Go around",
+     "hint": "−3 days",
+     "outcomes": [
+      {
+       "text": "The long way round costs 3 days.",
+       "fx": [
+        {
+         "k": "days",
+         "n": 3
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "bird_snatch",
+   "tier": "hard",
+   "kind": "stop",
+   "level": "road",
+   "name": "Snatched!",
+   "text": "A huge bird swoops down and grabs {target}!",
+   "icon": "bird",
+   "target": "smallest",
+   "trigger": {
+    "need": [
+     {
+      "s": "small",
+      "op": ">=",
+      "n": 1
+     }
+    ]
+   },
+   "choices": [
+    {
+     "id": "rescue",
+     "label": "Throw things at it!",
+     "hint": "make it drop them (physical)",
+     "outcomes": [
+      {
+       "on": "success",
+       "w": 0.55,
+       "text": "The bird drops {target} into a soft bush. Saved!",
+       "fx": [
+        {
+         "k": "morale",
+         "n": 4
+        }
+       ],
+       "mods": [
+        {
+         "role": "hunter",
+         "x": 1.6
+        }
+       ]
+      },
+      {
+       "on": "fail",
+       "w": 0.45,
+       "text": "It drops {target} on a high rock. It takes a day to get them down.",
+       "fx": [
+        {
+         "k": "days",
+         "n": 1
+        },
+        {
+         "k": "health",
+         "n": -10,
+         "who": "target"
+        }
+       ]
+      }
+     ],
+     "stop": "bird"
+    },
+    {
+     "id": "wave",
+     "label": "Wave goodbye",
+     "hint": "",
+     "outcomes": [
+      {
+       "text": "{target} is carried off… and dropped a mile back. They walk.",
+       "fx": [
+        {
+         "k": "days",
+         "n": 1
+        },
+        {
+         "k": "health",
+         "n": -15,
+         "who": "target"
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "cold_snap",
+   "tier": "hard",
+   "kind": "card",
+   "name": "Cold Snap",
+   "text": "The temperature drops like a stone. Frost on everything.",
+   "icon": "weather_cold",
+   "target": "none",
+   "choices": [
+    {
+     "id": "shelter",
+     "label": "Shelter for 2 days",
+     "hint": "−2 days",
+     "outcomes": [
+      {
+       "text": "You huddle together for two days.",
+       "fx": [
+        {
+         "k": "rest",
+         "n": 2
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "push",
+     "label": "Push on",
+     "hint": "clothes help",
+     "outcomes": [
+      {
+       "text": "Without enough clothes, everyone suffers.",
+       "fx": [
+        {
+         "k": "health",
+         "n": -15,
+         "who": "living"
+        }
+       ],
+       "w": 1,
+       "mods": [
+        {
+         "item": "clothes",
+         "x": 0.01
+        }
+       ]
+      },
+      {
+       "text": "Your clothes keep the worst of it off.",
+       "fx": [
+        {
+         "k": "health",
+         "n": -5,
+         "who": "living"
+        }
+       ],
+       "w": 0.01,
+       "mods": [
+        {
+         "item": "clothes",
+         "x": 100
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "burn",
+     "label": "Burn a spare wheel for warmth",
+     "hint": "−1 spare wheel",
+     "outcomes": [
+      {
+       "text": "The spare wheel burns merrily. Everyone is toasty.",
+       "fx": [
+        {
+         "k": "item",
+         "id": "wheel",
+         "n": -1
+        }
+       ]
+      }
+     ],
+     "req": {
+      "item": "wheel",
+      "n": 1
+     }
+    }
+   ]
+  },
+  {
+   "id": "hangry",
+   "tier": "hard",
+   "kind": "card",
+   "name": "Hangry",
+   "text": "Food is running low. People are getting snippy.",
+   "icon": "food",
+   "target": "none",
+   "trigger": {
+    "need": [
+     {
+      "s": "foodDays",
+      "op": "<",
+      "n": 3
+     }
+    ]
+   },
+   "choices": [
+    {
+     "id": "hunt",
+     "label": "Go hunting now",
+     "hint": "hunting stop",
+     "outcomes": [
+      {
+       "text": "Time to hunt!",
+       "fx": [
+        {
+         "k": "hunt"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "ration",
+     "label": "Bare-bones rations",
+     "hint": "5 days",
+     "outcomes": [
+      {
+       "text": "Belts tighten.",
+       "fx": [
+        {
+         "k": "rations",
+         "v": "bare",
+         "days": 5
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "eat_meme",
+     "label": "Eat {meme}",
+     "hint": "+20 lbs… you monsters",
+     "outcomes": [
+      {
+       "text": "You ate {meme}. You will carry this forever.",
+       "fx": [
+        {
+         "k": "meme",
+         "n": -1
+        },
+        {
+         "k": "food",
+         "n": 20
+        },
+        {
+         "k": "morale",
+         "n": -30
+        },
+        {
+         "k": "flag",
+         "id": "ateMeme",
+         "n": 1
+        }
+       ]
+      }
+     ],
+     "req": {
+      "item": "meme",
+      "n": 1
+     }
+    }
+   ]
+  },
+  {
+   "id": "kaiju",
+   "tier": "insane",
+   "kind": "stop",
+   "level": "road",
+   "name": "THE BEAST",
+   "text": "The ground splits. Something ENORMOUS rises and it's looking at your food.",
+   "icon": "tier_insane",
+   "target": "random",
+   "trigger": {
+    "minLeg": 3,
+    "minP": 0.35
+   },
+   "choices": [
+    {
+     "id": "fight",
+     "label": "FIGHT IT",
+     "hint": "hit the weak spot / wrestle it (physical)",
+     "outcomes": [
+      {
+       "on": "success",
+       "w": 0.35,
+       "text": "You slayed the beast! Its hoard is yours.",
+       "fx": [
+        {
+         "k": "food",
+         "n": 300
+        },
+        {
+         "k": "money",
+         "n": 300
+        },
+        {
+         "k": "morale",
+         "n": 50
+        },
+        {
+         "k": "flag",
+         "id": "kaiju",
+         "n": 1
+        }
+       ],
+       "mods": [
+        {
+         "size": "macro",
+         "x": 2.5
+        }
+       ]
+      },
+      {
+       "on": "partial",
+       "w": 0.35,
+       "text": "It retreats, wounded. So are you.",
+       "fx": [
+        {
+         "k": "health",
+         "n": -20,
+         "who": "living"
+        },
+        {
+         "k": "food",
+         "n": 100
+        }
+       ]
+      },
+      {
+       "on": "fail",
+       "w": 0.3,
+       "text": "It ate half your supplies and all of your dignity.",
+       "fx": [
+        {
+         "k": "food",
+         "n": -150
+        },
+        {
+         "k": "health",
+         "n": -25,
+         "who": "living"
+        },
+        {
+         "k": "item",
+         "id": "clothes",
+         "n": -2
+        }
+       ]
+      }
+     ],
+     "stop": "kaiju"
+    },
+    {
+     "id": "offer",
+     "label": "Offer it {meme}",
+     "hint": "",
+     "outcomes": [
+      {
+       "text": "It takes {meme}, sniffs it, and leaves peacefully.",
+       "fx": [
+        {
+         "k": "meme",
+         "n": -1
+        },
+        {
+         "k": "morale",
+         "n": -5
+        }
+       ]
+      }
+     ],
+     "req": {
+      "item": "meme",
+      "n": 1
+     }
+    },
+    {
+     "id": "run",
+     "label": "RUN",
+     "hint": "coin flip",
+     "outcomes": [
+      {
+       "text": "You outran it!",
+       "fx": [
+        {
+         "k": "morale",
+         "n": 5
+        }
+       ],
+       "w": 0.5
+      },
+      {
+       "text": "It snapped at the stragglers.",
+       "fx": [
+        {
+         "k": "health",
+         "n": -30,
+         "who": "target"
+        },
+        {
+         "k": "food",
+         "n": -50
+        }
+       ],
+       "w": 0.5
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "geyser_launch",
+   "tier": "insane",
+   "kind": "stop",
+   "level": "road",
+   "name": "LAUNCH",
+   "text": "The ground hisses. A geyser erupts right under the {wagon}!",
+   "icon": "tier_insane",
+   "target": "none",
+   "choices": [
+    {
+     "id": "hold",
+     "label": "HOLD ON TO SOMETHING",
+     "hint": "fly, land, collect (physical)",
+     "outcomes": [
+      {
+       "on": "success",
+       "w": 0.4,
+       "text": "You land 60 miles ahead and gather everything!",
+       "fx": [
+        {
+         "k": "miles",
+         "n": 60
+        },
+        {
+         "k": "morale",
+         "n": 10
+        }
+       ]
+      },
+      {
+       "on": "partial",
+       "w": 0.4,
+       "text": "You land 60 miles ahead. Some things didn't.",
+       "fx": [
+        {
+         "k": "miles",
+         "n": 60
+        },
+        {
+         "k": "food",
+         "n": -40
+        }
+       ]
+      },
+      {
+       "on": "fail",
+       "w": 0.2,
+       "text": "60 miles ahead, bruised, and missing half the cargo.",
+       "fx": [
+        {
+         "k": "miles",
+         "n": 60
+        },
+        {
+         "k": "food",
+         "n": -100
+        },
+        {
+         "k": "item",
+         "id": "ammo",
+         "n": -40
+        },
+        {
+         "k": "health",
+         "n": -10,
+         "who": "living"
+        }
+       ]
+      }
+     ],
+     "stop": "geyser"
+    }
+   ]
+  },
+  {
+   "id": "time_loop",
+   "tier": "insane",
+   "kind": "card",
+   "name": "Déjà Vu",
+   "text": "You wake up. It's yesterday. Again.",
+   "icon": "day",
+   "target": "none",
+   "trigger": {
+    "need": [
+     {
+      "s": "badDays",
+      "op": ">=",
+      "n": 1
+     }
+    ]
+   },
+   "choices": [
+    {
+     "id": "accept",
+     "label": "Live it again",
+     "hint": "redo the last event",
+     "outcomes": [
+      {
+       "text": "The day repeats. Choose better this time.",
+       "fx": [
+        {
+         "k": "rewind"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "refuse",
+     "label": "Refuse to relive it",
+     "hint": "−1 day",
+     "outcomes": [
+      {
+       "text": "You refuse. The day passes anyway.",
+       "fx": [
+        {
+         "k": "days",
+         "n": 1
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "body_swap",
+   "tier": "insane",
+   "kind": "modifier",
+   "name": "Soul Swap",
+   "text": "Lightning strikes the {wagon}. Two of you feel… different. (Everyone must agree.)",
+   "icon": "tier_insane",
+   "target": "none",
+   "trigger": {
+    "need": [
+     {
+      "s": "living",
+      "op": ">=",
+      "n": 2
+     }
+    ]
+   },
+   "choices": [
+    {
+     "id": "agree",
+     "label": "Everyone agrees",
+     "hint": "two players swap bodies until camp",
+     "outcomes": [
+      {
+       "text": "Two of you wake up in the wrong body.",
+       "fx": [
+        {
+         "k": "swap"
+        },
+        {
+         "k": "morale",
+         "n": 5
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "refuse",
+     "label": "Somebody says no",
+     "hint": "consent is sacred",
+     "outcomes": [
+      {
+       "text": "Someone said no. Consent is sacred, even on the trail.",
+       "fx": []
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ghost_convoy",
+   "tier": "insane",
+   "kind": "stop",
+   "level": "road",
+   "name": "The Ghost Wagon",
+   "text": "A translucent {wagon} pulls up. Its passengers died on this very trail. They want a race.",
+   "icon": "ghost",
+   "target": "random",
+   "trigger": {
+    "need": [
+     {
+      "s": "graves",
+      "op": ">=",
+      "n": 1
+     }
+    ]
+   },
+   "choices": [
+    {
+     "id": "race",
+     "label": "Race them",
+     "hint": "everyone to the finish (physical)",
+     "outcomes": [
+      {
+       "on": "success",
+       "w": 0.5,
+       "text": "The ghosts bless you: full health, and one of the fallen returns!",
+       "fx": [
+        {
+         "k": "health",
+         "n": 100,
+         "who": "living"
+        },
+        {
+         "k": "revive",
+         "who": "dead"
+        }
+       ]
+      },
+      {
+       "on": "fail",
+       "w": 0.5,
+       "text": "The ghosts win. {target} joins them until camp.",
+       "fx": [
+        {
+         "k": "ghost",
+         "who": "target"
+        }
+       ]
+      }
+     ],
+     "stop": "ghostrace"
+    },
+    {
+     "id": "decline",
+     "label": "Decline",
+     "hint": "",
+     "outcomes": [
+      {
+       "text": "The ghost wagon fades… with a set of your clothes.",
+       "fx": [
+        {
+         "k": "item",
+         "id": "clothes",
+         "n": -1
+        },
+        {
+         "k": "flag",
+         "id": "haunted",
+         "n": 1
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "divine_deal",
+   "tier": "insane",
+   "kind": "card",
+   "name": "A Divine Offer",
+   "text": "The sky opens. A god offers to bring {dead} back — for a price.",
+   "icon": "tier_insane",
+   "target": "none",
+   "trigger": {
+    "need": [
+     {
+      "s": "dead",
+      "op": ">=",
+      "n": 1
+     }
+    ]
+   },
+   "choices": [
+    {
+     "id": "food",
+     "label": "For 100 lbs of food",
+     "hint": "",
+     "outcomes": [
+      {
+       "text": "{dead} gasps back to life!",
+       "fx": [
+        {
+         "k": "food",
+         "n": -100
+        },
+        {
+         "k": "revive",
+         "who": "dead"
+        }
+       ]
+      }
+     ],
+     "req": {
+      "food": 100
+     }
+    },
+    {
+     "id": "meme",
+     "label": "For {meme}",
+     "hint": "",
+     "outcomes": [
+      {
+       "text": "The god takes {meme}. {dead} returns!",
+       "fx": [
+        {
+         "k": "meme",
+         "n": -1
+        },
+        {
+         "k": "revive",
+         "who": "dead"
+        }
+       ]
+      }
+     ],
+     "req": {
+      "item": "meme",
+      "n": 1
+     }
+    },
+    {
+     "id": "dignity",
+     "label": "For someone's dignity",
+     "hint": "hat of shame",
+     "outcomes": [
+      {
+       "text": "{dead} returns. Someone now wears the Hat of Shame.",
+       "fx": [
+        {
+         "k": "revive",
+         "who": "dead"
+        },
+        {
+         "k": "mod",
+         "id": "hat_of_shame"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "refuse",
+     "label": "Refuse",
+     "hint": "honour the fallen",
+     "outcomes": [
+      {
+       "text": "You honour the fallen.",
+       "fx": [
+        {
+         "k": "morale",
+         "n": 10
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "epitaphs": [
+  "pepperoni and cheese",
+  "should have caulked it",
+  "here lies a legend (of dysentery)",
+  "forded when they should have ferried",
+  "died doing what they loved: bad decisions",
+  "gone but not forgotten (mostly forgotten)",
+  "I told you I was sick",
+  "skill issue",
+  "they tried their best (it was not good)",
+  "F"
+ ],
+ "memes": [
+  "You have died of dysentery.",
+  "Caulk the wagon and float it.",
+  "pepperoni and cheese",
+  "skill issue",
+  "the trail giveth, the trail taketh"
+ ],
+ "weather": [
+  {
+   "id": "clear",
+   "name": "clear",
+   "speed": 1,
+   "health": 0
+  },
+  {
+   "id": "warm",
+   "name": "warm",
+   "speed": 1,
+   "health": 0
+  },
+  {
+   "id": "hot",
+   "name": "hot",
+   "speed": 0.95,
+   "health": -1
+  },
+  {
+   "id": "rain",
+   "name": "rainy",
+   "speed": 0.85,
+   "health": -1
+  },
+  {
+   "id": "cold",
+   "name": "cold",
+   "speed": 0.95,
+   "health": -2
+  },
+  {
+   "id": "storm",
+   "name": "stormy",
+   "speed": 0.6,
+   "health": -3
+  }
+ ],
+ "biomes": [
+  {
+   "id": "plains",
+   "name": "the plains",
+   "from": 0
+  },
+  {
+   "id": "hills",
+   "name": "the hills",
+   "from": 0.35
+  },
+  {
+   "id": "mountains",
+   "name": "the mountains",
+   "from": 0.7
+  }
+ ],
+ "animals": {
+  "deer": {
+   "name": "deer",
+   "kg": 50,
+   "speed": 7,
+   "danger": 0,
+   "flee": 16,
+   "count": 4
+  },
+  "rabbit": {
+   "name": "rabbit",
+   "kg": 4,
+   "speed": 6,
+   "danger": 0,
+   "flee": 8,
+   "count": 5
+  },
+  "bear": {
+   "name": "bear",
+   "kg": 200,
+   "speed": 5,
+   "danger": 0.8,
+   "flee": 0,
+   "count": 1
+  }
+ },
+ "npcs": {
+  "shopkeeper": {
+   "name": "Matt",
+   "lines": [
+    "Welcome! Buy what you can carry.",
+    "Oxen are out back.",
+    "No refunds."
+   ]
+  },
+  "ferryman": {
+   "name": "The Ferryman",
+   "lines": [
+    "Five dollars and I'll get you across.",
+    "Keep your hands inside the ferry."
+   ]
+  },
+  "talker_1": {
+   "name": "An old settler",
+   "lines": [
+    "The river ahead is deeper than it looks.",
+    "Rest when you're sick. Trust me."
+   ]
+  },
+  "talker_2": {
+   "name": "A tired pilgrim",
+   "lines": [
+    "We lost our wheel two days back.",
+    "Don't drink the brown water."
+   ]
+  },
+  "talker_3": {
+   "name": "A kid",
+   "lines": [
+    "Are you going to die of dysentery?",
+    "I saw a bear!"
+   ]
+  }
+ }
+}

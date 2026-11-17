@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="vtube-pro-licence" content="VTube Pro is free software for noncommercial use (PolyForm Noncommercial License 1.0.0). It may not be sold or offered as a paid, subscription or ad-funded service. https://github.com/vtubepro/VTube-Pro-Public" />
+  <title>VTube Pro — live captions (OBS browser source)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    /* A transparent page for an OBS Browser Source: http://127.0.0.1:5191/captions.html (1920 x 1080, "Shutdown source when
+       not visible" off). Options in the address: ?size=44&lines=2&chars=38&color=ffffff&bg=0.5&font=sans&align=center&valign=bottom&tentative=1&idle=4500
+       docs/LIVE_CAPTIONS.md */
+    html, body { margin: 0; height: 100%; background: transparent; overflow: hidden; }
+    /* the block's width and place come from the address (src/captions/overlay.ts): centred captions sit in a FIXED-width centred block
+       with each line anchored at its left edge, so a word that is on screen never shifts sideways as more words arrive */
+    #cap { position: absolute; left: 4%; right: 4%; display: flex; flex-direction: column; gap: 0.12em; font-family: system-ui, "Segoe UI", Roboto, Arial, sans-serif; font-weight: 700; line-height: 1.25; }
+    #cap .ln { display: inline-block; padding: 0.05em 0.45em; border-radius: 0.2em; white-space: pre-wrap; text-shadow: 0 0 0.08em #000, 0 0 0.16em #000, 0 0.04em 0.12em #000; }
+    #cap .tent { opacity: 0.55; }
+    #cap .ln { text-align: left; }
+    #cap .ln.fade { animation: in 0.12s ease-out; }
+    /* a line whose text is replaced by the next one (the lines scrolled up): a short rise and fade instead of a hard swap */
+    #cap .ln.swap { animation: swap 0.22s ease-out; }
+    @keyframes in { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes swap { from { opacity: 0.15; transform: translateY(0.35em); } to { opacity: 1; transform: none; } }
+  </style>
+</head>
+<body>
+  <div id="cap" role="status" aria-live="polite"></div>
+  <script type="module" src="/src/captions/overlay.ts"></script>
+</body>
+</html>

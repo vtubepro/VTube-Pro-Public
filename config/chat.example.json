@@ -1,0 +1,32 @@
+{
+  "kick": {
+    "enabled": false,
+    "channel": "",
+    "chatroomId": null,
+    "channelId": null,
+    "sevenTv": true
+  },
+  "rumble": {
+    "enabled": false,
+    "apiKey": "",
+    "streamId": "",
+    "ssePath": "",
+    "pollIntervalMs": 4000,
+    "announceFollowers": true
+  },
+  "youtube": {
+    "enabled": false,
+    "handle": "",
+    "channelId": "",
+    "videoId": "",
+    "intervalMs": 1200,
+    "reconnectMs": 15000
+  },
+  "twitch": {
+    "enabled": false,
+    "channel": ""
+  },
+  "names": [],
+  "vips": [],
+  "emotes": true
+}

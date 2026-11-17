@@ -1,0 +1,224 @@
+{
+ "1": {
+  "class_type": "LoadImage",
+  "inputs": {
+   "image": "vtp_avatar.png"
+  },
+  "_meta": {
+   "title": "Your avatar (a studio picture)"
+  }
+ },
+ "2": {
+  "class_type": "CheckpointLoaderSimple",
+  "inputs": {
+   "ckpt_name": "sd_xl_base_1.0.safetensors"
+  },
+  "_meta": {
+   "title": "Load Checkpoint"
+  }
+ },
+ "3": {
+  "class_type": "CLIPTextEncode",
+  "inputs": {
+   "text": "youtube thumbnail background, cozy neon arcade at night, vibrant colours, high contrast, empty space on the left for a title",
+   "clip": [
+    "2",
+    1
+   ]
+  },
+  "_meta": {
+   "title": "Your prompt: describe the picture"
+  }
+ },
+ "4": {
+  "class_type": "CLIPTextEncode",
+  "inputs": {
+   "text": "lowres, blurry, jpeg artifacts, watermark, signature, text, logo, deformed, bad anatomy, extra fingers, cropped",
+   "clip": [
+    "2",
+    1
+   ]
+  },
+  "_meta": {
+   "title": "Things to avoid"
+  }
+ },
+ "5": {
+  "class_type": "EmptyLatentImage",
+  "inputs": {
+   "width": 1344,
+   "height": 768,
+   "batch_size": 1
+  },
+  "_meta": {
+   "title": "Picture size 1344x768"
+  }
+ },
+ "6": {
+  "class_type": "KSampler",
+  "inputs": {
+   "model": [
+    "2",
+    0
+   ],
+   "seed": 20261001,
+   "steps": 28,
+   "cfg": 6,
+   "sampler_name": "dpmpp_2m",
+   "scheduler": "karras",
+   "positive": [
+    "3",
+    0
+   ],
+   "negative": [
+    "4",
+    0
+   ],
+   "latent_image": [
+    "5",
+    0
+   ],
+   "denoise": 1
+  },
+  "_meta": {
+   "title": "KSampler"
+  }
+ },
+ "7": {
+  "class_type": "VAEDecode",
+  "inputs": {
+   "samples": [
+    "6",
+    0
+   ],
+   "vae": [
+    "2",
+    2
+   ]
+  },
+  "_meta": {
+   "title": "VAE Decode"
+  }
+ },
+ "8": {
+  "class_type": "ImageScale",
+  "inputs": {
+   "image": [
+    "1",
+    0
+   ],
+   "upscale_method": "lanczos",
+   "width": 0,
+   "height": 730,
+   "crop": "disabled"
+  },
+  "_meta": {
+   "title": "Avatar height"
+  }
+ },
+ "9": {
+  "class_type": "LoadBackgroundRemovalModel",
+  "inputs": {
+   "bg_removal_name": "birefnet.safetensors"
+  },
+  "_meta": {
+   "title": "Background remover (BiRefNet, MIT)"
+  }
+ },
+ "10": {
+  "class_type": "RemoveBackground",
+  "inputs": {
+   "image": [
+    "8",
+    0
+   ],
+   "bg_removal_model": [
+    "9",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "Remove Background"
+  }
+ },
+ "11": {
+  "class_type": "InvertMask",
+  "inputs": {
+   "mask": [
+    "10",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "Invert Mask"
+  }
+ },
+ "12": {
+  "class_type": "JoinImageWithAlpha",
+  "inputs": {
+   "image": [
+    "8",
+    0
+   ],
+   "alpha": [
+    "11",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "Transparent background"
+  }
+ },
+ "13": {
+  "class_type": "ImageCompositeMasked",
+  "inputs": {
+   "destination": [
+    "7",
+    0
+   ],
+   "source": [
+    "8",
+    0
+   ],
+   "x": 760,
+   "y": 38,
+   "resize_source": false,
+   "mask": [
+    "10",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "Place your avatar (x, y)"
+  }
+ },
+ "14": {
+  "class_type": "ImageScale",
+  "inputs": {
+   "image": [
+    "13",
+    0
+   ],
+   "upscale_method": "lanczos",
+   "width": 1280,
+   "height": 720,
+   "crop": "center"
+  },
+  "_meta": {
+   "title": "Final size 1280x720"
+  }
+ },
+ "15": {
+  "class_type": "SaveImage",
+  "inputs": {
+   "images": [
+    "14",
+    0
+   ],
+   "filename_prefix": "VTubePro/thumbnail"
+  },
+  "_meta": {
+   "title": "Save the picture"
+  }
+ }
+}

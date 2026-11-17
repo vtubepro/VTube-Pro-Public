@@ -1,0 +1,99 @@
+{
+  "_README": [
+    "Optional third-party downloads fetched from their ORIGINAL sources by setup (-Dev / --dev).",
+    "None of these is used by the studio, the OBS page or the server at runtime: they are evaluation / R&D tools.",
+    "Every file is verified against the SHA-256 below (the same hashes Hugging Face / GitHub publish).",
+    "Licences: see THIRD_PARTY_NOTICES.md and docs/licenses/."
+  ],
+  "groups": [
+    {
+      "id": "rhubarb",
+      "name": "Rhubarb Lip Sync 1.14.0 (offline lip-sync reference, Windows)",
+      "license": "MIT",
+      "items": [
+        {
+          "url": "https://github.com/DanielSWolf/rhubarb-lip-sync/releases/download/v1.14.0/Rhubarb-Lip-Sync-1.14.0-Windows.zip",
+          "dest": "tools/vendor/rhubarb/Rhubarb-Lip-Sync-1.14.0-Windows.zip",
+          "size": 87374842,
+          "sha256": "62fa416a8d5e382a3828ee4bef358ce520d0b4cabdeaea75a7ac266d098d1fe3"
+        }
+      ]
+    },
+    {
+      "id": "wav2arkit",
+      "name": "wav2arkit_cpu (audio -> ARKit blendshapes, neural lip-sync evaluation)",
+      "license": "Apache-2.0",
+      "items": [
+        {
+          "url": "https://huggingface.co/myned-ai/wav2arkit_cpu/resolve/main/config.json",
+          "dest": "tools/vendor/wav2arkit_cpu/config.json",
+          "size": 1985,
+          "sha256": "281cdabf83258d3bbb4954452e55e9c68abe579e130de107d2b16b10a6320151"
+        },
+        {
+          "url": "https://huggingface.co/myned-ai/wav2arkit_cpu/resolve/main/wav2arkit_cpu.onnx",
+          "dest": "tools/vendor/wav2arkit_cpu/wav2arkit_cpu.onnx",
+          "size": 1862753,
+          "sha256": "cdecbfad3915dd20b2f0718942d0b8894b2ee11edcc5a9a9da45d29a46af2ed9"
+        },
+        {
+          "url": "https://huggingface.co/myned-ai/wav2arkit_cpu/resolve/main/wav2arkit_cpu.onnx.data",
+          "dest": "tools/vendor/wav2arkit_cpu/wav2arkit_cpu.onnx.data",
+          "size": 402063360,
+          "sha256": "c0f0364673c6e50be126b193e2b56809c16ac6bee4805aea9b8251ce53429bf8"
+        }
+      ]
+    },
+    {
+      "id": "depth_anything",
+      "name": "Depth Anything V2 Small, ONNX (Apache-2.0 - the Small model only)",
+      "license": "Apache-2.0",
+      "items": [
+        {
+          "url": "https://huggingface.co/onnx-community/depth-anything-v2-small/resolve/main/config.json",
+          "dest": "tools/vendor/depth_anything_v2_small/config.json",
+          "size": 38,
+          "sha256": "3aee5b9bc4f711ee885c2526d871f0c8c6c8c4b26b8e04253d0167f6a83264f5"
+        },
+        {
+          "url": "https://huggingface.co/onnx-community/depth-anything-v2-small/resolve/main/preprocessor_config.json",
+          "dest": "tools/vendor/depth_anything_v2_small/preprocessor_config.json",
+          "size": 461,
+          "sha256": "03576db3c13dd0471fdf5f5e1428befcb95de063fe699879150b293dc9e0a2c6"
+        },
+        {
+          "url": "https://huggingface.co/onnx-community/depth-anything-v2-small/resolve/main/onnx/model_fp16.onnx",
+          "dest": "tools/vendor/depth_anything_v2_small/onnx/model_fp16.onnx",
+          "size": 49642442,
+          "sha256": "2df6223f206b5164e21f664ace61dabeb9bb6a49b8b5a3e00510b4807d0f5b04"
+        },
+        {
+          "url": "https://huggingface.co/onnx-community/depth-anything-v2-small/resolve/main/onnx/model_q4f16.onnx",
+          "dest": "tools/vendor/depth_anything_v2_small/onnx/model_q4f16.onnx",
+          "size": 19126267,
+          "sha256": "eca72971aea64216d767c70c534160de53b5435b588d362bac6dbd5a73f9bf1e"
+        }
+      ]
+    },
+    {
+      "id": "audio2face",
+      "name": "NVIDIA Audio2Face-3D v2.3.1 Claire (NVIDIA Open Model License - read it before use)",
+      "license": "NVIDIA Open Model License",
+      "items": [
+        { "url": "https://huggingface.co/nvidia/Audio2Face-3D-v2.3.1-Claire/resolve/main/README.md", "dest": "tools/vendor/audio2face3d_claire/README.md", "size": 11162, "sha256": "17385721f7940e3e4d4d2e266a54ace3aff5dadea8518334135d05a716cb3518" },
+        { "url": "https://huggingface.co/nvidia/Audio2Face-3D-v2.3.1-Claire/resolve/main/a2f_ms_config.json", "dest": "tools/vendor/audio2face3d_claire/a2f_ms_config.json", "size": 7413, "sha256": "380f87208cd683bc0fa8d03387b9b8b0c30706c07e5e878fbfc18f21e9858336" },
+        { "url": "https://huggingface.co/nvidia/Audio2Face-3D-v2.3.1-Claire/resolve/main/bs_skin.npz", "dest": "tools/vendor/audio2face3d_claire/bs_skin.npz", "size": 39182291, "sha256": "cc94a937af9438f007b811b3f686015d7e96fc0ce964974905e130724ff1c4db" },
+        { "url": "https://huggingface.co/nvidia/Audio2Face-3D-v2.3.1-Claire/resolve/main/bs_skin_config.json", "dest": "tools/vendor/audio2face3d_claire/bs_skin_config.json", "size": 4944, "sha256": "8580023e66336320e3802efe5c9be8a72fd5aa6162561d27225a056565345e4c" },
+        { "url": "https://huggingface.co/nvidia/Audio2Face-3D-v2.3.1-Claire/resolve/main/bs_tongue.npz", "dest": "tools/vendor/audio2face3d_claire/bs_tongue.npz", "size": 1147669, "sha256": "82032cb3a4f08d1f6e543ce80e8d9587aca8394b8cc009384ef21db19a90450e" },
+        { "url": "https://huggingface.co/nvidia/Audio2Face-3D-v2.3.1-Claire/resolve/main/bs_tongue_config.json", "dest": "tools/vendor/audio2face3d_claire/bs_tongue_config.json", "size": 1871, "sha256": "9ef4d5ee664cb0975624de11b689b374c69d74b99126297ac4bdd58b9470a750" },
+        { "url": "https://huggingface.co/nvidia/Audio2Face-3D-v2.3.1-Claire/resolve/main/implicit_emo_db.npz", "dest": "tools/vendor/audio2face3d_claire/implicit_emo_db.npz", "size": 1713860, "sha256": "562ee9fac5eded20753eb40230519a7304156c177f52d9aa44580d5cf57c0447" },
+        { "url": "https://huggingface.co/nvidia/Audio2Face-3D-v2.3.1-Claire/resolve/main/model.json", "dest": "tools/vendor/audio2face3d_claire/model.json", "size": 484, "sha256": "1a03fc1c3b1978e9c73c197c4fe5af90da63f1c7d65cb85750035f60608fe1fd" },
+        { "url": "https://huggingface.co/nvidia/Audio2Face-3D-v2.3.1-Claire/resolve/main/model_config.json", "dest": "tools/vendor/audio2face3d_claire/model_config.json", "size": 980, "sha256": "8d0da080d3960177f920b5aa1734da86715d9ed2c307e6245c12525f2066b800" },
+        { "url": "https://huggingface.co/nvidia/Audio2Face-3D-v2.3.1-Claire/resolve/main/model_data.npz", "dest": "tools/vendor/audio2face3d_claire/model_data.npz", "size": 106350002, "sha256": "4c2205365533790add8219170b9505960e31d2fca82708f2e3db31c5ccf092a4" },
+        { "url": "https://huggingface.co/nvidia/Audio2Face-3D-v2.3.1-Claire/resolve/main/network.onnx", "dest": "tools/vendor/audio2face3d_claire/network.onnx", "size": 159044772, "sha256": "6bb7a3a3c22491960e71a14742891e0d7205d7c80414aebe326cad82fd6867c3" },
+        { "url": "https://huggingface.co/nvidia/Audio2Face-3D-v2.3.1-Claire/resolve/main/network_info.json", "dest": "tools/vendor/audio2face3d_claire/network_info.json", "size": 1017, "sha256": "41b49f603139c2b52f395793480cc830685634cc94955bbad80121787a36fc21" },
+        { "url": "https://huggingface.co/nvidia/Audio2Face-3D-v2.3.1-Claire/resolve/main/trt_info.json", "dest": "tools/vendor/audio2face3d_claire/trt_info.json", "size": 506, "sha256": "b288b5bba1e9eb0a1c49db0d3e182203d303c3ff26b8a6a284a3879b01758d0a" }
+      ]
+    }
+  ]
+}

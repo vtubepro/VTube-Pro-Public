@@ -1,0 +1,427 @@
+{
+ "1": {
+  "class_type": "LoadImage",
+  "inputs": {
+   "image": "vtp_avatar.png"
+  },
+  "_meta": {
+   "title": "Your avatar (a face close-up)"
+  }
+ },
+ "2": {
+  "class_type": "UNETLoader",
+  "inputs": {
+   "unet_name": "flux-2-klein-4b.safetensors",
+   "weight_dtype": "default"
+  },
+  "_meta": {
+   "title": "Load Diffusion Model"
+  }
+ },
+ "3": {
+  "class_type": "CLIPLoader",
+  "inputs": {
+   "clip_name": "qwen_3_4b.safetensors",
+   "type": "flux2",
+   "device": "default"
+  },
+  "_meta": {
+   "title": "Load CLIP"
+  }
+ },
+ "4": {
+  "class_type": "VAELoader",
+  "inputs": {
+   "vae_name": "flux2-vae.safetensors"
+  },
+  "_meta": {
+   "title": "Load VAE"
+  }
+ },
+ "5": {
+  "class_type": "ImageScaleToTotalPixels",
+  "inputs": {
+   "image": [
+    "1",
+    0
+   ],
+   "upscale_method": "lanczos",
+   "megapixels": 1,
+   "resolution_steps": 16
+  },
+  "_meta": {
+   "title": "Image 1 at about 1 megapixel"
+  }
+ },
+ "6": {
+  "class_type": "GetImageSize",
+  "inputs": {
+   "image": [
+    "5",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "Get Image Size"
+  }
+ },
+ "7": {
+  "class_type": "CLIPTextEncode",
+  "inputs": {
+   "text": "Turn this character into a chibi chat emote: laughing with closed eyes and open mouth, thick outline, simple shading, head and shoulders, plain white background.",
+   "clip": [
+    "3",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "Your edit: say what to change"
+  }
+ },
+ "8": {
+  "class_type": "ConditioningZeroOut",
+  "inputs": {
+   "conditioning": [
+    "7",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "ConditioningZeroOut"
+  }
+ },
+ "9": {
+  "class_type": "VAEEncode",
+  "inputs": {
+   "pixels": [
+    "5",
+    0
+   ],
+   "vae": [
+    "4",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "VAE Encode"
+  }
+ },
+ "10": {
+  "class_type": "ReferenceLatent",
+  "inputs": {
+   "conditioning": [
+    "7",
+    0
+   ],
+   "latent": [
+    "9",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "ReferenceLatent"
+  }
+ },
+ "11": {
+  "class_type": "ReferenceLatent",
+  "inputs": {
+   "conditioning": [
+    "8",
+    0
+   ],
+   "latent": [
+    "9",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "ReferenceLatent"
+  }
+ },
+ "12": {
+  "class_type": "CFGGuider",
+  "inputs": {
+   "model": [
+    "2",
+    0
+   ],
+   "positive": [
+    "10",
+    0
+   ],
+   "negative": [
+    "11",
+    0
+   ],
+   "cfg": 1
+  },
+  "_meta": {
+   "title": "CFG Guider"
+  }
+ },
+ "13": {
+  "class_type": "KSamplerSelect",
+  "inputs": {
+   "sampler_name": "euler"
+  },
+  "_meta": {
+   "title": "KSamplerSelect"
+  }
+ },
+ "14": {
+  "class_type": "Flux2Scheduler",
+  "inputs": {
+   "steps": 4,
+   "width": [
+    "6",
+    0
+   ],
+   "height": [
+    "6",
+    1
+   ]
+  },
+  "_meta": {
+   "title": "Flux2Scheduler"
+  }
+ },
+ "15": {
+  "class_type": "RandomNoise",
+  "inputs": {
+   "noise_seed": 20261001
+  },
+  "_meta": {
+   "title": "RandomNoise"
+  }
+ },
+ "16": {
+  "class_type": "EmptyFlux2LatentImage",
+  "inputs": {
+   "width": [
+    "6",
+    0
+   ],
+   "height": [
+    "6",
+    1
+   ],
+   "batch_size": 1
+  },
+  "_meta": {
+   "title": "Empty Flux 2 Latent"
+  }
+ },
+ "17": {
+  "class_type": "SamplerCustomAdvanced",
+  "inputs": {
+   "noise": [
+    "15",
+    0
+   ],
+   "guider": [
+    "12",
+    0
+   ],
+   "sampler": [
+    "13",
+    0
+   ],
+   "sigmas": [
+    "14",
+    0
+   ],
+   "latent_image": [
+    "16",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "SamplerCustomAdvanced"
+  }
+ },
+ "18": {
+  "class_type": "VAEDecode",
+  "inputs": {
+   "samples": [
+    "17",
+    0
+   ],
+   "vae": [
+    "4",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "VAE Decode"
+  }
+ },
+ "19": {
+  "class_type": "LoadBackgroundRemovalModel",
+  "inputs": {
+   "bg_removal_name": "birefnet.safetensors"
+  },
+  "_meta": {
+   "title": "Background remover (BiRefNet, MIT)"
+  }
+ },
+ "20": {
+  "class_type": "RemoveBackground",
+  "inputs": {
+   "image": [
+    "18",
+    0
+   ],
+   "bg_removal_model": [
+    "19",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "Remove Background"
+  }
+ },
+ "21": {
+  "class_type": "InvertMask",
+  "inputs": {
+   "mask": [
+    "20",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "Invert Mask"
+  }
+ },
+ "22": {
+  "class_type": "JoinImageWithAlpha",
+  "inputs": {
+   "image": [
+    "18",
+    0
+   ],
+   "alpha": [
+    "21",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "Transparent background"
+  }
+ },
+ "23": {
+  "class_type": "ImageScale",
+  "inputs": {
+   "image": [
+    "22",
+    0
+   ],
+   "upscale_method": "lanczos",
+   "width": 1024,
+   "height": 1024,
+   "crop": "center"
+  },
+  "_meta": {
+   "title": "Square 1024"
+  }
+ },
+ "24": {
+  "class_type": "SaveImage",
+  "inputs": {
+   "images": [
+    "23",
+    0
+   ],
+   "filename_prefix": "VTubePro/emote-1024"
+  },
+  "_meta": {
+   "title": "Save the master (1024)"
+  }
+ },
+ "25": {
+  "class_type": "ImageScale",
+  "inputs": {
+   "image": [
+    "23",
+    0
+   ],
+   "upscale_method": "area",
+   "width": 112,
+   "height": 112,
+   "crop": "disabled"
+  },
+  "_meta": {
+   "title": "112 px"
+  }
+ },
+ "26": {
+  "class_type": "SaveImage",
+  "inputs": {
+   "images": [
+    "25",
+    0
+   ],
+   "filename_prefix": "VTubePro/emote-112"
+  },
+  "_meta": {
+   "title": "Save 112 px"
+  }
+ },
+ "27": {
+  "class_type": "ImageScale",
+  "inputs": {
+   "image": [
+    "23",
+    0
+   ],
+   "upscale_method": "area",
+   "width": 56,
+   "height": 56,
+   "crop": "disabled"
+  },
+  "_meta": {
+   "title": "56 px"
+  }
+ },
+ "28": {
+  "class_type": "SaveImage",
+  "inputs": {
+   "images": [
+    "27",
+    0
+   ],
+   "filename_prefix": "VTubePro/emote-56"
+  },
+  "_meta": {
+   "title": "Save 56 px"
+  }
+ },
+ "29": {
+  "class_type": "ImageScale",
+  "inputs": {
+   "image": [
+    "23",
+    0
+   ],
+   "upscale_method": "area",
+   "width": 28,
+   "height": 28,
+   "crop": "disabled"
+  },
+  "_meta": {
+   "title": "28 px"
+  }
+ },
+ "30": {
+  "class_type": "SaveImage",
+  "inputs": {
+   "images": [
+    "29",
+    0
+   ],
+   "filename_prefix": "VTubePro/emote-28"
+  },
+  "_meta": {
+   "title": "Save 28 px"
+  }
+ }
+}

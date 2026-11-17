@@ -1,0 +1,5 @@
+body { background:#2d2d2d; color:#d8d8d8; font:13px/1.35 "Segoe UI", -apple-system, sans-serif; margin:0; padding:8px 12px; }
+.sdpi-item { display:flex; align-items:center; margin:6px 0; gap:8px; }
+.sdpi-item-label { width:90px; flex:none; text-align:right; color:#9a9a9a; }
+.sdpi-item-value { flex:1; min-width:0; background:#3d3d3d; color:#eee; border:1px solid #555; border-radius:3px; padding:4px 6px; font:inherit; }
+p { margin:6px 0; } .ok { color:#6fdc8c; } .warn { color:#f0c060; } .hint { color:#9a9a9a; font-size:12px; }

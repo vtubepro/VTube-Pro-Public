@@ -1,0 +1,172 @@
+{
+ "clips": {
+  "idle": {
+   "dur": 2.5,
+   "loop": true,
+   "source": "Quaternius Universal Animation Library: Idle_Loop (CC0)",
+   "stride": 0.0
+  },
+  "talk": {
+   "dur": 2.9333,
+   "loop": true,
+   "source": "Quaternius Universal Animation Library: Idle_Talking_Loop (CC0)",
+   "stride": 0.0
+  },
+  "walk": {
+   "dur": 1.3333,
+   "loop": true,
+   "source": "Quaternius Universal Animation Library: Walk_Loop (CC0)",
+   "stride": 1.3
+  },
+  "jog": {
+   "dur": 0.9333,
+   "loop": true,
+   "source": "Quaternius Universal Animation Library: Jog_Fwd_Loop (CC0)",
+   "stride": 5.0
+  },
+  "sprint": {
+   "dur": 0.6667,
+   "loop": true,
+   "source": "Quaternius Universal Animation Library: Sprint_Loop (CC0)",
+   "stride": 5.5
+  },
+  "jump_start": {
+   "dur": 1.3333,
+   "loop": false,
+   "source": "Quaternius Universal Animation Library: Jump_Start (CC0)",
+   "stride": 0.0
+  },
+  "jump_air": {
+   "dur": 2.5,
+   "loop": true,
+   "source": "Quaternius Universal Animation Library: Jump_Loop (CC0)",
+   "stride": 0.0
+  },
+  "jump_land": {
+   "dur": 1.2667,
+   "loop": false,
+   "source": "Quaternius Universal Animation Library: Jump_Land (CC0)",
+   "stride": 0.0
+  },
+  "carry": {
+   "dur": 2.0,
+   "loop": true,
+   "source": "Quaternius Universal Animation Library: Walk_Carry_Loop (CC0)",
+   "stride": 1.3
+  },
+  "crouch_walk": {
+   "dur": 2.0,
+   "loop": true,
+   "source": "Quaternius Universal Animation Library: Crouch_Fwd_Loop (CC0)",
+   "stride": 1.5
+  },
+  "crouch_idle": {
+   "dur": 2.9333,
+   "loop": true,
+   "source": "Quaternius Universal Animation Library: Crouch_Idle_Loop (CC0)",
+   "stride": 0.0
+  },
+  "pickup": {
+   "dur": 0.8333,
+   "loop": false,
+   "source": "Quaternius Universal Animation Library: PickUp_Table (CC0)",
+   "stride": 0.0
+  },
+  "push": {
+   "dur": 2.6667,
+   "loop": true,
+   "source": "Quaternius Universal Animation Library: Push_Loop (CC0)",
+   "stride": 0.8
+  },
+  "climb": {
+   "dur": 0.6667,
+   "loop": false,
+   "source": "Quaternius Universal Animation Library: ClimbUp_1m (CC0)",
+   "stride": 1.6764
+  },
+  "swim": {
+   "dur": 1.3333,
+   "loop": true,
+   "source": "Quaternius Universal Animation Library: Swim_Fwd_Loop (CC0)",
+   "stride": 2.9
+  },
+  "swim_idle": {
+   "dur": 3.3333,
+   "loop": true,
+   "source": "Quaternius Universal Animation Library: Swim_Idle_Loop (CC0)",
+   "stride": 0.0
+  },
+  "sit": {
+   "dur": 1.6667,
+   "loop": true,
+   "source": "Quaternius Universal Animation Library: Sitting_Idle_Loop (CC0)",
+   "stride": 0.0
+  },
+  "sit_talk": {
+   "dur": 2.9333,
+   "loop": true,
+   "source": "Quaternius Universal Animation Library: Sitting_Talking_Loop (CC0)",
+   "stride": 0.0
+  },
+  "drive": {
+   "dur": 1.6667,
+   "loop": true,
+   "source": "Quaternius Universal Animation Library: Driving_Loop (CC0)",
+   "stride": 0.0
+  },
+  "getup": {
+   "dur": 1.5333,
+   "loop": false,
+   "source": "Quaternius Universal Animation Library: LayToIdle (CC0)",
+   "stride": 0.0
+  },
+  "dance": {
+   "dur": 1.0,
+   "loop": true,
+   "source": "Quaternius Universal Animation Library: Dance_Loop (CC0)",
+   "stride": 0.0
+  },
+  "call": {
+   "dur": 2.5,
+   "loop": false,
+   "source": "Quaternius Universal Animation Library: Idle_Rail_Call (CC0)",
+   "stride": 0.0
+  },
+  "wave": {
+   "dur": 2.6,
+   "loop": false,
+   "source": "VTube Pro trailbodies (keyframed over Quaternius UAL Idle_Loop, CC0)",
+   "stride": 0.0
+  },
+  "point": {
+   "dur": 2.2,
+   "loop": false,
+   "source": "VTube Pro trailbodies (keyframed over Quaternius UAL Idle_Loop, CC0)",
+   "stride": 0.0
+  },
+  "facepalm": {
+   "dur": 2.8,
+   "loop": false,
+   "source": "VTube Pro trailbodies (keyframed over Quaternius UAL Idle_Loop, CC0)",
+   "stride": 0.0
+  },
+  "cheer": {
+   "dur": 2.4,
+   "loop": false,
+   "source": "VTube Pro trailbodies (keyframed over Quaternius UAL Idle_Loop, CC0)",
+   "stride": 0.0
+  },
+  "laugh": {
+   "dur": 2.6,
+   "loop": false,
+   "source": "VTube Pro trailbodies (keyframed over Quaternius UAL Idle_Loop, CC0)",
+   "stride": 0.0
+  },
+  "sit_ground": {
+   "dur": 2.5,
+   "loop": true,
+   "source": "VTube Pro trailbodies (keyframed over Quaternius UAL Idle_Loop, CC0)",
+   "stride": 0.0
+  }
+ }
+}

@@ -1,0 +1,8 @@
+Throw & Bonk starter props (assets/library/throwables/*.svg)
+
+These thirteen small pictures (tomato, cream pie, rubber duck, banana, snowball, boxing glove, pillow, heart, bonk bat, paper
+plane, the headpat hand, the boop finger and the impact star) were drawn by hand for VTube Pro from plain shapes. No outside
+artwork, font, clip-art, AI-image or trademarked design was used.
+
+Licence: CC0 1.0 Universal (public domain dedication, https://creativecommons.org/publicdomain/zero/1.0/). Use them for anything,
+no credit needed.

@@ -1,0 +1,1304 @@
+{
+ "clips": {
+  "raid": {
+   "ual_crouch_fwd": {
+    "dur": 2.0,
+    "loop": true,
+    "src": "Quaternius UAL: Crouch_Fwd_Loop",
+    "cycle": 1.6036
+   },
+   "ual_crouch_idle": {
+    "dur": 2.9333,
+    "loop": true,
+    "src": "Quaternius UAL: Crouch_Idle_Loop",
+    "cycle": null
+   },
+   "ual_dance": {
+    "dur": 1.0,
+    "loop": true,
+    "src": "Quaternius UAL: Dance_Loop",
+    "cycle": null
+   },
+   "ual_death01": {
+    "dur": 2.4,
+    "loop": false,
+    "src": "Quaternius UAL: Death01",
+    "cycle": 0.6949
+   },
+   "ual_driving": {
+    "dur": 1.6667,
+    "loop": true,
+    "src": "Quaternius UAL: Driving_Loop",
+    "cycle": null
+   },
+   "ual_fixing_kneeling": {
+    "dur": 5.2,
+    "loop": false,
+    "src": "Quaternius UAL: Fixing_Kneeling",
+    "cycle": null
+   },
+   "ual_hit_chest": {
+    "dur": 0.3333,
+    "loop": false,
+    "src": "Quaternius UAL: Hit_Chest",
+    "cycle": null
+   },
+   "ual_hit_head": {
+    "dur": 0.4333,
+    "loop": false,
+    "src": "Quaternius UAL: Hit_Head",
+    "cycle": null
+   },
+   "ual_idle": {
+    "dur": 2.5,
+    "loop": true,
+    "src": "Quaternius UAL: Idle_Loop",
+    "cycle": null
+   },
+   "ual_idle_talking": {
+    "dur": 2.9333,
+    "loop": true,
+    "src": "Quaternius UAL: Idle_Talking_Loop",
+    "cycle": null
+   },
+   "ual_idle_torch": {
+    "dur": 1.2667,
+    "loop": true,
+    "src": "Quaternius UAL: Idle_Torch_Loop",
+    "cycle": null
+   },
+   "ual_interact": {
+    "dur": 2.0,
+    "loop": false,
+    "src": "Quaternius UAL: Interact",
+    "cycle": null
+   },
+   "ual_jog_fwd": {
+    "dur": 0.9333,
+    "loop": true,
+    "src": "Quaternius UAL: Jog_Fwd_Loop",
+    "cycle": 5.3453
+   },
+   "ual_jump_land": {
+    "dur": 1.2667,
+    "loop": false,
+    "src": "Quaternius UAL: Jump_Land",
+    "cycle": null
+   },
+   "ual_jump": {
+    "dur": 2.5,
+    "loop": true,
+    "src": "Quaternius UAL: Jump_Loop",
+    "cycle": null
+   },
+   "ual_jump_start": {
+    "dur": 1.3333,
+    "loop": false,
+    "src": "Quaternius UAL: Jump_Start",
+    "cycle": null
+   },
+   "ual_pick_up_table": {
+    "dur": 0.8333,
+    "loop": false,
+    "src": "Quaternius UAL: PickUp_Table",
+    "cycle": null
+   },
+   "ual_pistol_aim_down": {
+    "dur": 0.1667,
+    "loop": false,
+    "src": "Quaternius UAL: Pistol_Aim_Down",
+    "cycle": null
+   },
+   "ual_pistol_aim_neutral": {
+    "dur": 0.1667,
+    "loop": false,
+    "src": "Quaternius UAL: Pistol_Aim_Neutral",
+    "cycle": null
+   },
+   "ual_pistol_aim_up": {
+    "dur": 0.1667,
+    "loop": false,
+    "src": "Quaternius UAL: Pistol_Aim_Up",
+    "cycle": null
+   },
+   "ual_pistol_idle": {
+    "dur": 1.6667,
+    "loop": true,
+    "src": "Quaternius UAL: Pistol_Idle_Loop",
+    "cycle": null
+   },
+   "ual_pistol_reload": {
+    "dur": 1.6667,
+    "loop": false,
+    "src": "Quaternius UAL: Pistol_Reload",
+    "cycle": null
+   },
+   "ual_pistol_shoot": {
+    "dur": 0.6333,
+    "loop": false,
+    "src": "Quaternius UAL: Pistol_Shoot",
+    "cycle": null
+   },
+   "ual_punch_cross": {
+    "dur": 1.0,
+    "loop": false,
+    "src": "Quaternius UAL: Punch_Cross",
+    "cycle": null
+   },
+   "ual_punch_jab": {
+    "dur": 0.8667,
+    "loop": false,
+    "src": "Quaternius UAL: Punch_Jab",
+    "cycle": null
+   },
+   "ual_push": {
+    "dur": 2.6667,
+    "loop": true,
+    "src": "Quaternius UAL: Push_Loop",
+    "cycle": 0.8552
+   },
+   "ual_roll": {
+    "dur": 1.4667,
+    "loop": false,
+    "src": "Quaternius UAL: Roll",
+    "cycle": 5.3361
+   },
+   "ual_sitting_enter": {
+    "dur": 1.3,
+    "loop": false,
+    "src": "Quaternius UAL: Sitting_Enter",
+    "cycle": null
+   },
+   "ual_sitting_exit": {
+    "dur": 1.0333,
+    "loop": false,
+    "src": "Quaternius UAL: Sitting_Exit",
+    "cycle": null
+   },
+   "ual_sitting_idle": {
+    "dur": 1.6667,
+    "loop": true,
+    "src": "Quaternius UAL: Sitting_Idle_Loop",
+    "cycle": null
+   },
+   "ual_sitting_talking": {
+    "dur": 2.9333,
+    "loop": true,
+    "src": "Quaternius UAL: Sitting_Talking_Loop",
+    "cycle": null
+   },
+   "ual_spell_simple_enter": {
+    "dur": 0.5333,
+    "loop": false,
+    "src": "Quaternius UAL: Spell_Simple_Enter",
+    "cycle": null
+   },
+   "ual_spell_simple_exit": {
+    "dur": 0.4333,
+    "loop": false,
+    "src": "Quaternius UAL: Spell_Simple_Exit",
+    "cycle": null
+   },
+   "ual_spell_simple_idle": {
+    "dur": 2.1,
+    "loop": true,
+    "src": "Quaternius UAL: Spell_Simple_Idle_Loop",
+    "cycle": null
+   },
+   "ual_spell_simple_shoot": {
+    "dur": 0.5,
+    "loop": false,
+    "src": "Quaternius UAL: Spell_Simple_Shoot",
+    "cycle": null
+   },
+   "ual_sprint": {
+    "dur": 0.6667,
+    "loop": true,
+    "src": "Quaternius UAL: Sprint_Loop",
+    "cycle": 5.8798
+   },
+   "ual_swim_fwd": {
+    "dur": 1.3333,
+    "loop": true,
+    "src": "Quaternius UAL: Swim_Fwd_Loop",
+    "cycle": 3.1003
+   },
+   "ual_swim_idle": {
+    "dur": 3.3333,
+    "loop": true,
+    "src": "Quaternius UAL: Swim_Idle_Loop",
+    "cycle": null
+   },
+   "ual_sword_attack": {
+    "dur": 1.5333,
+    "loop": false,
+    "src": "Quaternius UAL: Sword_Attack",
+    "cycle": 1.6041
+   },
+   "ual_sword_idle": {
+    "dur": 1.6667,
+    "loop": true,
+    "src": "Quaternius UAL: Sword_Idle",
+    "cycle": null
+   },
+   "ual_walk_formal": {
+    "dur": 1.3333,
+    "loop": true,
+    "src": "Quaternius UAL: Walk_Formal_Loop",
+    "cycle": 1.3898
+   },
+   "ual_walk": {
+    "dur": 1.3333,
+    "loop": true,
+    "src": "Quaternius UAL: Walk_Loop",
+    "cycle": 1.3898
+   },
+   "ual_chest_open": {
+    "dur": 1.3667,
+    "loop": false,
+    "src": "Quaternius UAL: Chest_Open",
+    "cycle": null
+   },
+   "ual_climb_up_1m": {
+    "dur": 0.6667,
+    "loop": false,
+    "src": "Quaternius UAL: ClimbUp_1m",
+    "cycle": 1.7921
+   },
+   "ual_consume": {
+    "dur": 1.3333,
+    "loop": false,
+    "src": "Quaternius UAL: Consume",
+    "cycle": null
+   },
+   "ual_farm_harvest": {
+    "dur": 2.5,
+    "loop": false,
+    "src": "Quaternius UAL: Farm_Harvest",
+    "cycle": null
+   },
+   "ual_farm_plant_seed": {
+    "dur": 2.7667,
+    "loop": false,
+    "src": "Quaternius UAL: Farm_PlantSeed",
+    "cycle": null
+   },
+   "ual_farm_watering": {
+    "dur": 3.8,
+    "loop": false,
+    "src": "Quaternius UAL: Farm_Watering",
+    "cycle": null
+   },
+   "ual_hit_knockback": {
+    "dur": 0.8333,
+    "loop": false,
+    "src": "Quaternius UAL: Hit_Knockback",
+    "cycle": 3.2072
+   },
+   "ual_idle_fold_arms": {
+    "dur": 2.5,
+    "loop": true,
+    "src": "Quaternius UAL: Idle_FoldArms_Loop",
+    "cycle": null
+   },
+   "ual_idle_lantern": {
+    "dur": 2.5,
+    "loop": true,
+    "src": "Quaternius UAL: Idle_Lantern_Loop",
+    "cycle": null
+   },
+   "ual_idle_no": {
+    "dur": 2.5,
+    "loop": true,
+    "src": "Quaternius UAL: Idle_No_Loop",
+    "cycle": null
+   },
+   "ual_idle_rail_call": {
+    "dur": 2.5,
+    "loop": false,
+    "src": "Quaternius UAL: Idle_Rail_Call",
+    "cycle": null
+   },
+   "ual_idle_rail": {
+    "dur": 2.5,
+    "loop": true,
+    "src": "Quaternius UAL: Idle_Rail_Loop",
+    "cycle": null
+   },
+   "ual_idle_shield_break": {
+    "dur": 1.0667,
+    "loop": false,
+    "src": "Quaternius UAL: Idle_Shield_Break",
+    "cycle": null
+   },
+   "ual_idle_shield": {
+    "dur": 2.5,
+    "loop": true,
+    "src": "Quaternius UAL: Idle_Shield_Loop",
+    "cycle": null
+   },
+   "ual_idle_talking_phone": {
+    "dur": 2.9333,
+    "loop": true,
+    "src": "Quaternius UAL: Idle_TalkingPhone_Loop",
+    "cycle": null
+   },
+   "ual_lay_to_idle": {
+    "dur": 1.5333,
+    "loop": false,
+    "src": "Quaternius UAL: LayToIdle",
+    "cycle": null
+   },
+   "ual_melee_hook": {
+    "dur": 0.4667,
+    "loop": false,
+    "src": "Quaternius UAL: Melee_Hook",
+    "cycle": 0.3792
+   },
+   "ual_melee_hook_rec": {
+    "dur": 0.6,
+    "loop": false,
+    "src": "Quaternius UAL: Melee_Hook_Rec",
+    "cycle": null
+   },
+   "ual_ninja_jump_idle": {
+    "dur": 2.0,
+    "loop": true,
+    "src": "Quaternius UAL: NinjaJump_Idle_Loop",
+    "cycle": null
+   },
+   "ual_ninja_jump_land": {
+    "dur": 1.2667,
+    "loop": false,
+    "src": "Quaternius UAL: NinjaJump_Land",
+    "cycle": null
+   },
+   "ual_ninja_jump_start": {
+    "dur": 0.9667,
+    "loop": false,
+    "src": "Quaternius UAL: NinjaJump_Start",
+    "cycle": null
+   },
+   "ual_overhand_throw": {
+    "dur": 1.3333,
+    "loop": false,
+    "src": "Quaternius UAL: OverhandThrow",
+    "cycle": null
+   },
+   "ual_shield_dash": {
+    "dur": 1.1,
+    "loop": false,
+    "src": "Quaternius UAL: Shield_Dash",
+    "cycle": 1.0691
+   },
+   "ual_shield_one_shot": {
+    "dur": 0.8333,
+    "loop": false,
+    "src": "Quaternius UAL: Shield_OneShot",
+    "cycle": null
+   },
+   "ual_slide_exit": {
+    "dur": 0.5,
+    "loop": false,
+    "src": "Quaternius UAL: Slide_Exit",
+    "cycle": 2.1381
+   },
+   "ual_slide": {
+    "dur": 2.0,
+    "loop": true,
+    "src": "Quaternius UAL: Slide_Loop",
+    "cycle": 9.6215
+   },
+   "ual_slide_start": {
+    "dur": 0.8333,
+    "loop": false,
+    "src": "Quaternius UAL: Slide_Start",
+    "cycle": 4.2762
+   },
+   "ual_sword_block": {
+    "dur": 1.2333,
+    "loop": false,
+    "src": "Quaternius UAL: Sword_Block",
+    "cycle": null
+   },
+   "ual_sword_dash": {
+    "dur": 1.5667,
+    "loop": false,
+    "src": "Quaternius UAL: Sword_Dash",
+    "cycle": 3.9472
+   },
+   "ual_sword_heavy_combo": {
+    "dur": 4.3333,
+    "loop": false,
+    "src": "Quaternius UAL: Sword_Heavy_Combo",
+    "cycle": 5.6919
+   },
+   "ual_sword_regular_a": {
+    "dur": 0.4333,
+    "loop": false,
+    "src": "Quaternius UAL: Sword_Regular_A",
+    "cycle": 0.8815
+   },
+   "ual_sword_regular_a_rec": {
+    "dur": 0.9667,
+    "loop": false,
+    "src": "Quaternius UAL: Sword_Regular_A_Rec",
+    "cycle": 0.3301
+   },
+   "ual_sword_regular_b": {
+    "dur": 0.5333,
+    "loop": false,
+    "src": "Quaternius UAL: Sword_Regular_B",
+    "cycle": null
+   },
+   "ual_sword_regular_b_rec": {
+    "dur": 1.0333,
+    "loop": false,
+    "src": "Quaternius UAL: Sword_Regular_B_Rec",
+    "cycle": 0.3953
+   },
+   "ual_sword_regular_c": {
+    "dur": 2.0,
+    "loop": false,
+    "src": "Quaternius UAL: Sword_Regular_C",
+    "cycle": 1.6638
+   },
+   "ual_sword_regular_combo": {
+    "dur": 3.0,
+    "loop": false,
+    "src": "Quaternius UAL: Sword_Regular_Combo",
+    "cycle": 2.5043
+   },
+   "ual_tree_chopping": {
+    "dur": 0.9667,
+    "loop": true,
+    "src": "Quaternius UAL: TreeChopping_Loop",
+    "cycle": null
+   },
+   "ual_walk_carry": {
+    "dur": 2.0,
+    "loop": true,
+    "src": "Quaternius UAL: Walk_Carry_Loop",
+    "cycle": 1.3898
+   },
+   "ual_yes": {
+    "dur": 2.5,
+    "loop": false,
+    "src": "Quaternius UAL: Yes",
+    "cycle": null
+   },
+   "ual_zombie_idle": {
+    "dur": 1.3333,
+    "loop": true,
+    "src": "Quaternius UAL: Zombie_Idle_Loop",
+    "cycle": null
+   },
+   "ual_zombie_scratch": {
+    "dur": 1.8,
+    "loop": false,
+    "src": "Quaternius UAL: Zombie_Scratch",
+    "cycle": null
+   },
+   "ual_zombie_walk_fwd": {
+    "dur": 1.3333,
+    "loop": true,
+    "src": "Quaternius UAL: Zombie_Walk_Fwd_Loop",
+    "cycle": 1.4967
+   },
+   "style_neutral_walk": {
+    "dur": 1.3667,
+    "loop": true,
+    "src": "100STYLE: Neutral_FW.bvh (frames 599..680)",
+    "cycle": 1.1857
+   },
+   "style_neutral_idle": {
+    "dur": 5.4667,
+    "loop": true,
+    "src": "100STYLE: Neutral_ID.bvh (frames 791..1118)",
+    "cycle": null
+   },
+   "style_proud_walk": {
+    "dur": 1.2667,
+    "loop": true,
+    "src": "100STYLE: Proud_FW.bvh (frames 695..770)",
+    "cycle": 1.4725
+   },
+   "style_proud_idle": {
+    "dur": 5.4667,
+    "loop": true,
+    "src": "100STYLE: Proud_ID.bvh (frames 801..1128)",
+    "cycle": null
+   },
+   "style_old_walk": {
+    "dur": 1.6667,
+    "loop": true,
+    "src": "100STYLE: Old_FW.bvh (frames 1213..1312)",
+    "cycle": 0.4103
+   },
+   "style_old_idle": {
+    "dur": 5.4667,
+    "loop": true,
+    "src": "100STYLE: Old_ID.bvh (frames 1355..1682)",
+    "cycle": null
+   },
+   "style_drunk_walk": {
+    "dur": 1.3,
+    "loop": true,
+    "src": "100STYLE: Drunk_FW.bvh (frames 1583..1661)",
+    "cycle": 1.2346
+   },
+   "style_drunk_idle": {
+    "dur": 4.2667,
+    "loop": true,
+    "src": "100STYLE: Drunk_ID.bvh (frames 919..1174)",
+    "cycle": null
+   },
+   "style_hands_in_pockets_walk": {
+    "dur": 1.3333,
+    "loop": true,
+    "src": "100STYLE: HandsInPockets_FW.bvh (frames 657..737)",
+    "cycle": 1.3495
+   },
+   "style_hands_in_pockets_idle": {
+    "dur": 5.4667,
+    "loop": true,
+    "src": "100STYLE: HandsInPockets_ID.bvh (frames 597..924)",
+    "cycle": null
+   },
+   "style_depressed_walk": {
+    "dur": 1.5667,
+    "loop": true,
+    "src": "100STYLE: Depressed_FW.bvh (frames 1342..1436)",
+    "cycle": 0.9616
+   },
+   "style_depressed_idle": {
+    "dur": 5.4667,
+    "loop": true,
+    "src": "100STYLE: Depressed_ID.bvh (frames 1384..1711)",
+    "cycle": null
+   },
+   "style_strutting_walk": {
+    "dur": 1.3,
+    "loop": true,
+    "src": "100STYLE: Strutting_FW.bvh (frames 1548..1626)",
+    "cycle": 0.8945
+   },
+   "style_strutting_idle": {
+    "dur": 5.4667,
+    "loop": true,
+    "src": "100STYLE: Strutting_ID.bvh (frames 1149..1476)",
+    "cycle": null
+   },
+   "style_tiptoe_walk": {
+    "dur": 1.2,
+    "loop": true,
+    "src": "100STYLE: Tiptoe_FW.bvh (frames 660..732)",
+    "cycle": 0.9668
+   },
+   "style_tiptoe_idle": {
+    "dur": 5.3667,
+    "loop": true,
+    "src": "100STYLE: Tiptoe_ID.bvh (frames 1053..1374)",
+    "cycle": null
+   },
+   "style_heavyset_walk": {
+    "dur": 1.3,
+    "loop": true,
+    "src": "100STYLE: Heavyset_FW.bvh (frames 822..899)",
+    "cycle": 1.2451
+   },
+   "style_heavyset_idle": {
+    "dur": 5.4667,
+    "loop": true,
+    "src": "100STYLE: Heavyset_ID.bvh (frames 1057..1384)",
+    "cycle": null
+   },
+   "style_on_phone_right_walk": {
+    "dur": 1.3,
+    "loop": true,
+    "src": "100STYLE: OnPhoneRight_FW.bvh (frames 594..672)",
+    "cycle": 1.3148
+   },
+   "style_on_phone_right_idle": {
+    "dur": 5.4667,
+    "loop": true,
+    "src": "100STYLE: OnPhoneRight_ID.bvh (frames 1202..1529)",
+    "cycle": null
+   },
+   "style_arms_behind_back_walk": {
+    "dur": 1.3667,
+    "loop": true,
+    "src": "100STYLE: ArmsBehindBack_FW.bvh (frames 617..699)",
+    "cycle": 1.3011
+   },
+   "style_arms_behind_back_idle": {
+    "dur": 5.4667,
+    "loop": true,
+    "src": "100STYLE: ArmsBehindBack_ID.bvh (frames 1134..1461)",
+    "cycle": null
+   },
+   "style_rushed_walk": {
+    "dur": 0.8333,
+    "loop": true,
+    "src": "100STYLE: Rushed_FW.bvh (frames 429..479)",
+    "cycle": 1.9166
+   },
+   "style_rushed_idle": {
+    "dur": 5.4667,
+    "loop": true,
+    "src": "100STYLE: Rushed_ID.bvh (frames 1069..1396)",
+    "cycle": null
+   }
+  },
+  "town": {
+   "ual_crouch_fwd": {
+    "dur": 2.0,
+    "loop": true,
+    "src": "Quaternius UAL: Crouch_Fwd_Loop",
+    "cycle": 1.6036
+   },
+   "ual_crouch_idle": {
+    "dur": 2.9333,
+    "loop": true,
+    "src": "Quaternius UAL: Crouch_Idle_Loop",
+    "cycle": null
+   },
+   "ual_dance": {
+    "dur": 1.0,
+    "loop": true,
+    "src": "Quaternius UAL: Dance_Loop",
+    "cycle": null
+   },
+   "ual_death01": {
+    "dur": 2.4,
+    "loop": false,
+    "src": "Quaternius UAL: Death01",
+    "cycle": 0.6949
+   },
+   "ual_driving": {
+    "dur": 1.6667,
+    "loop": true,
+    "src": "Quaternius UAL: Driving_Loop",
+    "cycle": null
+   },
+   "ual_fixing_kneeling": {
+    "dur": 5.2,
+    "loop": false,
+    "src": "Quaternius UAL: Fixing_Kneeling",
+    "cycle": null
+   },
+   "ual_hit_chest": {
+    "dur": 0.3333,
+    "loop": false,
+    "src": "Quaternius UAL: Hit_Chest",
+    "cycle": null
+   },
+   "ual_hit_head": {
+    "dur": 0.4333,
+    "loop": false,
+    "src": "Quaternius UAL: Hit_Head",
+    "cycle": null
+   },
+   "ual_idle": {
+    "dur": 2.5,
+    "loop": true,
+    "src": "Quaternius UAL: Idle_Loop",
+    "cycle": null
+   },
+   "ual_idle_talking": {
+    "dur": 2.9333,
+    "loop": true,
+    "src": "Quaternius UAL: Idle_Talking_Loop",
+    "cycle": null
+   },
+   "ual_idle_torch": {
+    "dur": 1.2667,
+    "loop": true,
+    "src": "Quaternius UAL: Idle_Torch_Loop",
+    "cycle": null
+   },
+   "ual_interact": {
+    "dur": 2.0,
+    "loop": false,
+    "src": "Quaternius UAL: Interact",
+    "cycle": null
+   },
+   "ual_jog_fwd": {
+    "dur": 0.9333,
+    "loop": true,
+    "src": "Quaternius UAL: Jog_Fwd_Loop",
+    "cycle": 5.3453
+   },
+   "ual_jump_land": {
+    "dur": 1.2667,
+    "loop": false,
+    "src": "Quaternius UAL: Jump_Land",
+    "cycle": null
+   },
+   "ual_jump": {
+    "dur": 2.5,
+    "loop": true,
+    "src": "Quaternius UAL: Jump_Loop",
+    "cycle": null
+   },
+   "ual_jump_start": {
+    "dur": 1.3333,
+    "loop": false,
+    "src": "Quaternius UAL: Jump_Start",
+    "cycle": null
+   },
+   "ual_pick_up_table": {
+    "dur": 0.8333,
+    "loop": false,
+    "src": "Quaternius UAL: PickUp_Table",
+    "cycle": null
+   },
+   "ual_pistol_aim_down": {
+    "dur": 0.1667,
+    "loop": false,
+    "src": "Quaternius UAL: Pistol_Aim_Down",
+    "cycle": null
+   },
+   "ual_pistol_aim_neutral": {
+    "dur": 0.1667,
+    "loop": false,
+    "src": "Quaternius UAL: Pistol_Aim_Neutral",
+    "cycle": null
+   },
+   "ual_pistol_aim_up": {
+    "dur": 0.1667,
+    "loop": false,
+    "src": "Quaternius UAL: Pistol_Aim_Up",
+    "cycle": null
+   },
+   "ual_pistol_idle": {
+    "dur": 1.6667,
+    "loop": true,
+    "src": "Quaternius UAL: Pistol_Idle_Loop",
+    "cycle": null
+   },
+   "ual_pistol_reload": {
+    "dur": 1.6667,
+    "loop": false,
+    "src": "Quaternius UAL: Pistol_Reload",
+    "cycle": null
+   },
+   "ual_pistol_shoot": {
+    "dur": 0.6333,
+    "loop": false,
+    "src": "Quaternius UAL: Pistol_Shoot",
+    "cycle": null
+   },
+   "ual_punch_cross": {
+    "dur": 1.0,
+    "loop": false,
+    "src": "Quaternius UAL: Punch_Cross",
+    "cycle": null
+   },
+   "ual_punch_jab": {
+    "dur": 0.8667,
+    "loop": false,
+    "src": "Quaternius UAL: Punch_Jab",
+    "cycle": null
+   },
+   "ual_push": {
+    "dur": 2.6667,
+    "loop": true,
+    "src": "Quaternius UAL: Push_Loop",
+    "cycle": 0.8552
+   },
+   "ual_roll": {
+    "dur": 1.4667,
+    "loop": false,
+    "src": "Quaternius UAL: Roll",
+    "cycle": 5.3361
+   },
+   "ual_sitting_enter": {
+    "dur": 1.3,
+    "loop": false,
+    "src": "Quaternius UAL: Sitting_Enter",
+    "cycle": null
+   },
+   "ual_sitting_exit": {
+    "dur": 1.0333,
+    "loop": false,
+    "src": "Quaternius UAL: Sitting_Exit",
+    "cycle": null
+   },
+   "ual_sitting_idle": {
+    "dur": 1.6667,
+    "loop": true,
+    "src": "Quaternius UAL: Sitting_Idle_Loop",
+    "cycle": null
+   },
+   "ual_sitting_talking": {
+    "dur": 2.9333,
+    "loop": true,
+    "src": "Quaternius UAL: Sitting_Talking_Loop",
+    "cycle": null
+   },
+   "ual_spell_simple_enter": {
+    "dur": 0.5333,
+    "loop": false,
+    "src": "Quaternius UAL: Spell_Simple_Enter",
+    "cycle": null
+   },
+   "ual_spell_simple_exit": {
+    "dur": 0.4333,
+    "loop": false,
+    "src": "Quaternius UAL: Spell_Simple_Exit",
+    "cycle": null
+   },
+   "ual_spell_simple_idle": {
+    "dur": 2.1,
+    "loop": true,
+    "src": "Quaternius UAL: Spell_Simple_Idle_Loop",
+    "cycle": null
+   },
+   "ual_spell_simple_shoot": {
+    "dur": 0.5,
+    "loop": false,
+    "src": "Quaternius UAL: Spell_Simple_Shoot",
+    "cycle": null
+   },
+   "ual_sprint": {
+    "dur": 0.6667,
+    "loop": true,
+    "src": "Quaternius UAL: Sprint_Loop",
+    "cycle": 5.8798
+   },
+   "ual_swim_fwd": {
+    "dur": 1.3333,
+    "loop": true,
+    "src": "Quaternius UAL: Swim_Fwd_Loop",
+    "cycle": 3.1003
+   },
+   "ual_swim_idle": {
+    "dur": 3.3333,
+    "loop": true,
+    "src": "Quaternius UAL: Swim_Idle_Loop",
+    "cycle": null
+   },
+   "ual_sword_attack": {
+    "dur": 1.5333,
+    "loop": false,
+    "src": "Quaternius UAL: Sword_Attack",
+    "cycle": 1.6041
+   },
+   "ual_sword_idle": {
+    "dur": 1.6667,
+    "loop": true,
+    "src": "Quaternius UAL: Sword_Idle",
+    "cycle": null
+   },
+   "ual_walk_formal": {
+    "dur": 1.3333,
+    "loop": true,
+    "src": "Quaternius UAL: Walk_Formal_Loop",
+    "cycle": 1.3898
+   },
+   "ual_walk": {
+    "dur": 1.3333,
+    "loop": true,
+    "src": "Quaternius UAL: Walk_Loop",
+    "cycle": 1.3898
+   },
+   "ual_chest_open": {
+    "dur": 1.3667,
+    "loop": false,
+    "src": "Quaternius UAL: Chest_Open",
+    "cycle": null
+   },
+   "ual_climb_up_1m": {
+    "dur": 0.6667,
+    "loop": false,
+    "src": "Quaternius UAL: ClimbUp_1m",
+    "cycle": 1.7921
+   },
+   "ual_consume": {
+    "dur": 1.3333,
+    "loop": false,
+    "src": "Quaternius UAL: Consume",
+    "cycle": null
+   },
+   "ual_farm_harvest": {
+    "dur": 2.5,
+    "loop": false,
+    "src": "Quaternius UAL: Farm_Harvest",
+    "cycle": null
+   },
+   "ual_farm_plant_seed": {
+    "dur": 2.7667,
+    "loop": false,
+    "src": "Quaternius UAL: Farm_PlantSeed",
+    "cycle": null
+   },
+   "ual_farm_watering": {
+    "dur": 3.8,
+    "loop": false,
+    "src": "Quaternius UAL: Farm_Watering",
+    "cycle": null
+   },
+   "ual_hit_knockback": {
+    "dur": 0.8333,
+    "loop": false,
+    "src": "Quaternius UAL: Hit_Knockback",
+    "cycle": 3.2072
+   },
+   "ual_idle_fold_arms": {
+    "dur": 2.5,
+    "loop": true,
+    "src": "Quaternius UAL: Idle_FoldArms_Loop",
+    "cycle": null
+   },
+   "ual_idle_lantern": {
+    "dur": 2.5,
+    "loop": true,
+    "src": "Quaternius UAL: Idle_Lantern_Loop",
+    "cycle": null
+   },
+   "ual_idle_no": {
+    "dur": 2.5,
+    "loop": true,
+    "src": "Quaternius UAL: Idle_No_Loop",
+    "cycle": null
+   },
+   "ual_idle_rail_call": {
+    "dur": 2.5,
+    "loop": false,
+    "src": "Quaternius UAL: Idle_Rail_Call",
+    "cycle": null
+   },
+   "ual_idle_rail": {
+    "dur": 2.5,
+    "loop": true,
+    "src": "Quaternius UAL: Idle_Rail_Loop",
+    "cycle": null
+   },
+   "ual_idle_shield_break": {
+    "dur": 1.0667,
+    "loop": false,
+    "src": "Quaternius UAL: Idle_Shield_Break",
+    "cycle": null
+   },
+   "ual_idle_shield": {
+    "dur": 2.5,
+    "loop": true,
+    "src": "Quaternius UAL: Idle_Shield_Loop",
+    "cycle": null
+   },
+   "ual_idle_talking_phone": {
+    "dur": 2.9333,
+    "loop": true,
+    "src": "Quaternius UAL: Idle_TalkingPhone_Loop",
+    "cycle": null
+   },
+   "ual_lay_to_idle": {
+    "dur": 1.5333,
+    "loop": false,
+    "src": "Quaternius UAL: LayToIdle",
+    "cycle": null
+   },
+   "ual_melee_hook": {
+    "dur": 0.4667,
+    "loop": false,
+    "src": "Quaternius UAL: Melee_Hook",
+    "cycle": 0.3792
+   },
+   "ual_melee_hook_rec": {
+    "dur": 0.6,
+    "loop": false,
+    "src": "Quaternius UAL: Melee_Hook_Rec",
+    "cycle": null
+   },
+   "ual_ninja_jump_idle": {
+    "dur": 2.0,
+    "loop": true,
+    "src": "Quaternius UAL: NinjaJump_Idle_Loop",
+    "cycle": null
+   },
+   "ual_ninja_jump_land": {
+    "dur": 1.2667,
+    "loop": false,
+    "src": "Quaternius UAL: NinjaJump_Land",
+    "cycle": null
+   },
+   "ual_ninja_jump_start": {
+    "dur": 0.9667,
+    "loop": false,
+    "src": "Quaternius UAL: NinjaJump_Start",
+    "cycle": null
+   },
+   "ual_overhand_throw": {
+    "dur": 1.3333,
+    "loop": false,
+    "src": "Quaternius UAL: OverhandThrow",
+    "cycle": null
+   },
+   "ual_shield_dash": {
+    "dur": 1.1,
+    "loop": false,
+    "src": "Quaternius UAL: Shield_Dash",
+    "cycle": 1.0691
+   },
+   "ual_shield_one_shot": {
+    "dur": 0.8333,
+    "loop": false,
+    "src": "Quaternius UAL: Shield_OneShot",
+    "cycle": null
+   },
+   "ual_slide_exit": {
+    "dur": 0.5,
+    "loop": false,
+    "src": "Quaternius UAL: Slide_Exit",
+    "cycle": 2.1381
+   },
+   "ual_slide": {
+    "dur": 2.0,
+    "loop": true,
+    "src": "Quaternius UAL: Slide_Loop",
+    "cycle": 9.6215
+   },
+   "ual_slide_start": {
+    "dur": 0.8333,
+    "loop": false,
+    "src": "Quaternius UAL: Slide_Start",
+    "cycle": 4.2762
+   },
+   "ual_sword_block": {
+    "dur": 1.2333,
+    "loop": false,
+    "src": "Quaternius UAL: Sword_Block",
+    "cycle": null
+   },
+   "ual_sword_dash": {
+    "dur": 1.5667,
+    "loop": false,
+    "src": "Quaternius UAL: Sword_Dash",
+    "cycle": 3.9472
+   },
+   "ual_sword_heavy_combo": {
+    "dur": 4.3333,
+    "loop": false,
+    "src": "Quaternius UAL: Sword_Heavy_Combo",
+    "cycle": 5.6919
+   },
+   "ual_sword_regular_a": {
+    "dur": 0.4333,
+    "loop": false,
+    "src": "Quaternius UAL: Sword_Regular_A",
+    "cycle": 0.8815
+   },
+   "ual_sword_regular_a_rec": {
+    "dur": 0.9667,
+    "loop": false,
+    "src": "Quaternius UAL: Sword_Regular_A_Rec",
+    "cycle": 0.3301
+   },
+   "ual_sword_regular_b": {
+    "dur": 0.5333,
+    "loop": false,
+    "src": "Quaternius UAL: Sword_Regular_B",
+    "cycle": null
+   },
+   "ual_sword_regular_b_rec": {
+    "dur": 1.0333,
+    "loop": false,
+    "src": "Quaternius UAL: Sword_Regular_B_Rec",
+    "cycle": 0.3953
+   },
+   "ual_sword_regular_c": {
+    "dur": 2.0,
+    "loop": false,
+    "src": "Quaternius UAL: Sword_Regular_C",
+    "cycle": 1.6638
+   },
+   "ual_sword_regular_combo": {
+    "dur": 3.0,
+    "loop": false,
+    "src": "Quaternius UAL: Sword_Regular_Combo",
+    "cycle": 2.5043
+   },
+   "ual_tree_chopping": {
+    "dur": 0.9667,
+    "loop": true,
+    "src": "Quaternius UAL: TreeChopping_Loop",
+    "cycle": null
+   },
+   "ual_walk_carry": {
+    "dur": 2.0,
+    "loop": true,
+    "src": "Quaternius UAL: Walk_Carry_Loop",
+    "cycle": 1.3898
+   },
+   "ual_yes": {
+    "dur": 2.5,
+    "loop": false,
+    "src": "Quaternius UAL: Yes",
+    "cycle": null
+   },
+   "ual_zombie_idle": {
+    "dur": 1.3333,
+    "loop": true,
+    "src": "Quaternius UAL: Zombie_Idle_Loop",
+    "cycle": null
+   },
+   "ual_zombie_scratch": {
+    "dur": 1.8,
+    "loop": false,
+    "src": "Quaternius UAL: Zombie_Scratch",
+    "cycle": null
+   },
+   "ual_zombie_walk_fwd": {
+    "dur": 1.3333,
+    "loop": true,
+    "src": "Quaternius UAL: Zombie_Walk_Fwd_Loop",
+    "cycle": 1.4967
+   },
+   "style_neutral_walk": {
+    "dur": 1.3667,
+    "loop": true,
+    "src": "100STYLE: Neutral_FW.bvh (frames 599..680)",
+    "cycle": 1.1857
+   },
+   "style_neutral_idle": {
+    "dur": 5.4667,
+    "loop": true,
+    "src": "100STYLE: Neutral_ID.bvh (frames 791..1118)",
+    "cycle": null
+   },
+   "style_proud_walk": {
+    "dur": 1.2667,
+    "loop": true,
+    "src": "100STYLE: Proud_FW.bvh (frames 695..770)",
+    "cycle": 1.4725
+   },
+   "style_proud_idle": {
+    "dur": 5.4667,
+    "loop": true,
+    "src": "100STYLE: Proud_ID.bvh (frames 801..1128)",
+    "cycle": null
+   },
+   "style_old_walk": {
+    "dur": 1.6667,
+    "loop": true,
+    "src": "100STYLE: Old_FW.bvh (frames 1213..1312)",
+    "cycle": 0.4103
+   },
+   "style_old_idle": {
+    "dur": 5.4667,
+    "loop": true,
+    "src": "100STYLE: Old_ID.bvh (frames 1355..1682)",
+    "cycle": null
+   },
+   "style_drunk_walk": {
+    "dur": 1.3,
+    "loop": true,
+    "src": "100STYLE: Drunk_FW.bvh (frames 1583..1661)",
+    "cycle": 1.2346
+   },
+   "style_drunk_idle": {
+    "dur": 4.2667,
+    "loop": true,
+    "src": "100STYLE: Drunk_ID.bvh (frames 919..1174)",
+    "cycle": null
+   },
+   "style_hands_in_pockets_walk": {
+    "dur": 1.3333,
+    "loop": true,
+    "src": "100STYLE: HandsInPockets_FW.bvh (frames 657..737)",
+    "cycle": 1.3495
+   },
+   "style_hands_in_pockets_idle": {
+    "dur": 5.4667,
+    "loop": true,
+    "src": "100STYLE: HandsInPockets_ID.bvh (frames 597..924)",
+    "cycle": null
+   },
+   "style_depressed_walk": {
+    "dur": 1.5667,
+    "loop": true,
+    "src": "100STYLE: Depressed_FW.bvh (frames 1342..1436)",
+    "cycle": 0.9616
+   },
+   "style_depressed_idle": {
+    "dur": 5.4667,
+    "loop": true,
+    "src": "100STYLE: Depressed_ID.bvh (frames 1384..1711)",
+    "cycle": null
+   },
+   "style_strutting_walk": {
+    "dur": 1.3,
+    "loop": true,
+    "src": "100STYLE: Strutting_FW.bvh (frames 1548..1626)",
+    "cycle": 0.8945
+   },
+   "style_strutting_idle": {
+    "dur": 5.4667,
+    "loop": true,
+    "src": "100STYLE: Strutting_ID.bvh (frames 1149..1476)",
+    "cycle": null
+   },
+   "style_tiptoe_walk": {
+    "dur": 1.2,
+    "loop": true,
+    "src": "100STYLE: Tiptoe_FW.bvh (frames 660..732)",
+    "cycle": 0.9668
+   },
+   "style_tiptoe_idle": {
+    "dur": 5.3667,
+    "loop": true,
+    "src": "100STYLE: Tiptoe_ID.bvh (frames 1053..1374)",
+    "cycle": null
+   },
+   "style_heavyset_walk": {
+    "dur": 1.3,
+    "loop": true,
+    "src": "100STYLE: Heavyset_FW.bvh (frames 822..899)",
+    "cycle": 1.2451
+   },
+   "style_heavyset_idle": {
+    "dur": 5.4667,
+    "loop": true,
+    "src": "100STYLE: Heavyset_ID.bvh (frames 1057..1384)",
+    "cycle": null
+   },
+   "style_on_phone_right_walk": {
+    "dur": 1.3,
+    "loop": true,
+    "src": "100STYLE: OnPhoneRight_FW.bvh (frames 594..672)",
+    "cycle": 1.3148
+   },
+   "style_on_phone_right_idle": {
+    "dur": 5.4667,
+    "loop": true,
+    "src": "100STYLE: OnPhoneRight_ID.bvh (frames 1202..1529)",
+    "cycle": null
+   },
+   "style_arms_behind_back_walk": {
+    "dur": 1.3667,
+    "loop": true,
+    "src": "100STYLE: ArmsBehindBack_FW.bvh (frames 617..699)",
+    "cycle": 1.3011
+   },
+   "style_arms_behind_back_idle": {
+    "dur": 5.4667,
+    "loop": true,
+    "src": "100STYLE: ArmsBehindBack_ID.bvh (frames 1134..1461)",
+    "cycle": null
+   },
+   "style_rushed_walk": {
+    "dur": 0.8333,
+    "loop": true,
+    "src": "100STYLE: Rushed_FW.bvh (frames 429..479)",
+    "cycle": 1.9166
+   },
+   "style_rushed_idle": {
+    "dur": 5.4667,
+    "loop": true,
+    "src": "100STYLE: Rushed_ID.bvh (frames 1069..1396)",
+    "cycle": null
+   }
+  }
+ }
+}

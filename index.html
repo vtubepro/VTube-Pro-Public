@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="vtube-pro-licence" content="VTube Pro is free software for noncommercial use (PolyForm Noncommercial License 1.0.0). It may not be sold or offered as a paid, subscription or ad-funded service. https://github.com/vtubepro/VTube-Pro-Public" />
+  <title>VTube Pro Studio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <!-- Add to Home Screen (phones): a full-screen app with its own icon, and Safari keeps its saved models (src/mobile/) -->
+  <!-- (relative to this page: the web build lives at /studio/, and the manifest's scope is that folder) -->
+  <link rel="manifest" href="app/manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="app/apple-touch-icon.png" />
+  <meta name="theme-color" content="#0e1117" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta name="apple-mobile-web-app-title" content="VTube Pro" />
+  <!-- no web fonts from other sites (nothing leaves this PC): the page uses Inter if it is installed, else the system font (src/styles.css) -->
+  <link rel="icon" type="image/png" href="app/icon-192.png" />
+  <link rel="stylesheet" href="/src/styles.css" />
+</head>
+<body>
+  <div id="app">
+    <header id="topbar"></header>
+    <nav id="tabs"></nav>
+    <aside id="panel"></aside>
+    <main id="viewport">
+      <canvas id="stage"></canvas>
+      <div id="hud"></div>
+      <div id="campip"></div>
+      <div id="statusline"></div>
+    </main>
+  </div>
+  <script type="module" src="/src/ui/splash.ts"></script>
+  <script type="module" src="/src/main.ts"></script>
+</body>
+</html>

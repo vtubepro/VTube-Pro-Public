@@ -1,0 +1,738 @@
+{
+ "last_node_id": 15,
+ "last_link_id": 14,
+ "nodes": [
+  {
+   "id": 1,
+   "type": "UNETLoader",
+   "pos": [
+    540,
+    60
+   ],
+   "size": [
+    340,
+    122
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "outputs": [
+    {
+     "name": "MODEL",
+     "type": "MODEL",
+     "links": [
+      1
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "UNETLoader",
+    "models": [
+     {
+      "name": "qwen_image_2512_fp8_e4m3fn.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/Qwen-Image_ComfyUI/resolve/1f12b17be14c89b026c51a91d67c32f84bb047bc/split_files/diffusion_models/qwen_image_2512_fp8_e4m3fn.safetensors",
+      "directory": "diffusion_models",
+      "hash": "5dc80554d5d83390046a2f4a94ece06afb7700bf7b0aaf8bde9769793875876b",
+      "hash_type": "SHA256"
+     }
+    ]
+   },
+   "widgets_values": [
+    "qwen_image_2512_fp8_e4m3fn.safetensors",
+    "default"
+   ]
+  },
+  {
+   "id": 2,
+   "type": "LoraLoaderModelOnly",
+   "pos": [
+    990,
+    60
+   ],
+   "size": [
+    340,
+    122
+   ],
+   "flags": {},
+   "order": 5,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "model",
+     "type": "MODEL",
+     "link": 1
+    }
+   ],
+   "outputs": [
+    {
+     "name": "MODEL",
+     "type": "MODEL",
+     "links": [
+      2
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "LoraLoaderModelOnly",
+    "models": [
+     {
+      "name": "Qwen-Image-2512-Lightning-4steps-V1.0-bf16.safetensors",
+      "url": "https://huggingface.co/lightx2v/Qwen-Image-2512-Lightning/resolve/a52649c9d0f6e1a248bff13f0df33bb8a2abdb52/Qwen-Image-2512-Lightning-4steps-V1.0-bf16.safetensors",
+      "directory": "loras",
+      "hash": "de0d236e54ecf2c43b32447d13478c6eae0d361b1fed48c69675b084fa240d87",
+      "hash_type": "SHA256"
+     }
+    ]
+   },
+   "widgets_values": [
+    "Qwen-Image-2512-Lightning-4steps-V1.0-bf16.safetensors",
+    1
+   ],
+   "title": "Lightning LoRA (4 steps)"
+  },
+  {
+   "id": 3,
+   "type": "ModelSamplingAuraFlow",
+   "pos": [
+    1440,
+    60
+   ],
+   "size": [
+    340,
+    96
+   ],
+   "flags": {},
+   "order": 8,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "model",
+     "type": "MODEL",
+     "link": 2
+    }
+   ],
+   "outputs": [
+    {
+     "name": "MODEL",
+     "type": "MODEL",
+     "links": [
+      5
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "ModelSamplingAuraFlow"
+   },
+   "widgets_values": [
+    3.1
+   ]
+  },
+  {
+   "id": 4,
+   "type": "CLIPLoader",
+   "pos": [
+    540,
+    222
+   ],
+   "size": [
+    340,
+    148
+   ],
+   "flags": {},
+   "order": 1,
+   "mode": 0,
+   "outputs": [
+    {
+     "name": "CLIP",
+     "type": "CLIP",
+     "links": [
+      3,
+      4
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "CLIPLoader",
+    "models": [
+     {
+      "name": "qwen_2.5_vl_7b_fp8_scaled.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/Qwen-Image_ComfyUI/resolve/1f12b17be14c89b026c51a91d67c32f84bb047bc/split_files/text_encoders/qwen_2.5_vl_7b_fp8_scaled.safetensors",
+      "directory": "text_encoders",
+      "hash": "cb5636d852a0ea6a9075ab1bef496c0db7aef13c02350571e388aea959c5c0b4",
+      "hash_type": "SHA256"
+     }
+    ]
+   },
+   "widgets_values": [
+    "qwen_2.5_vl_7b_fp8_scaled.safetensors",
+    "qwen_image",
+    "default"
+   ]
+  },
+  {
+   "id": 5,
+   "type": "VAELoader",
+   "pos": [
+    540,
+    410
+   ],
+   "size": [
+    340,
+    96
+   ],
+   "flags": {},
+   "order": 2,
+   "mode": 0,
+   "outputs": [
+    {
+     "name": "VAE",
+     "type": "VAE",
+     "links": [
+      10
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "VAELoader",
+    "models": [
+     {
+      "name": "qwen_image_vae.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/Qwen-Image_ComfyUI/resolve/1f12b17be14c89b026c51a91d67c32f84bb047bc/split_files/vae/qwen_image_vae.safetensors",
+      "directory": "vae",
+      "hash": "a70580f0213e67967ee9c95f05bb400e8fb08307e017a924bf3441223e023d1f",
+      "hash_type": "SHA256"
+     }
+    ]
+   },
+   "widgets_values": [
+    "qwen_image_vae.safetensors"
+   ]
+  },
+  {
+   "id": 6,
+   "type": "CLIPTextEncode",
+   "pos": [
+    990,
+    222
+   ],
+   "size": [
+    420,
+    206
+   ],
+   "flags": {},
+   "order": 6,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "clip",
+     "type": "CLIP",
+     "link": 3
+    }
+   ],
+   "outputs": [
+    {
+     "name": "CONDITIONING",
+     "type": "CONDITIONING",
+     "links": [
+      6
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "CLIPTextEncode"
+   },
+   "widgets_values": [
+    "Character turnaround sheet of an original anime-style character: front view, side view and back view side by side, full body, neutral A-pose, plain white background, even studio light. Silver hair, teal eyes, oversized hoodie, sneakers."
+   ],
+   "title": "Your prompt: describe the picture",
+   "color": "#3f5f12",
+   "bgcolor": "#2b3f0c"
+  },
+  {
+   "id": 7,
+   "type": "CLIPTextEncode",
+   "pos": [
+    990,
+    468
+   ],
+   "size": [
+    420,
+    206
+   ],
+   "flags": {},
+   "order": 7,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "clip",
+     "type": "CLIP",
+     "link": 4
+    }
+   ],
+   "outputs": [
+    {
+     "name": "CONDITIONING",
+     "type": "CONDITIONING",
+     "links": [
+      7
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "CLIPTextEncode"
+   },
+   "widgets_values": [
+    "blurry, low quality, distorted text, misspelled words, watermark, deformed"
+   ],
+   "title": "Things to avoid"
+  },
+  {
+   "id": 8,
+   "type": "EmptySD3LatentImage",
+   "pos": [
+    540,
+    546
+   ],
+   "size": [
+    340,
+    148
+   ],
+   "flags": {},
+   "order": 3,
+   "mode": 0,
+   "outputs": [
+    {
+     "name": "LATENT",
+     "type": "LATENT",
+     "links": [
+      8
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "EmptySD3LatentImage"
+   },
+   "widgets_values": [
+    1664,
+    832,
+    1
+   ],
+   "title": "Picture size 1664x832"
+  },
+  {
+   "id": 9,
+   "type": "KSampler",
+   "pos": [
+    1890,
+    60
+   ],
+   "size": [
+    340,
+    324
+   ],
+   "flags": {},
+   "order": 9,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "model",
+     "type": "MODEL",
+     "link": 5
+    },
+    {
+     "name": "positive",
+     "type": "CONDITIONING",
+     "link": 6
+    },
+    {
+     "name": "negative",
+     "type": "CONDITIONING",
+     "link": 7
+    },
+    {
+     "name": "latent_image",
+     "type": "LATENT",
+     "link": 8
+    }
+   ],
+   "outputs": [
+    {
+     "name": "LATENT",
+     "type": "LATENT",
+     "links": [
+      9
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "KSampler"
+   },
+   "widgets_values": [
+    20261001,
+    "randomize",
+    4,
+    1,
+    "euler",
+    "simple",
+    1
+   ]
+  },
+  {
+   "id": 10,
+   "type": "VAEDecode",
+   "pos": [
+    2340,
+    60
+   ],
+   "size": [
+    340,
+    94
+   ],
+   "flags": {},
+   "order": 10,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "samples",
+     "type": "LATENT",
+     "link": 9
+    },
+    {
+     "name": "vae",
+     "type": "VAE",
+     "link": 10
+    }
+   ],
+   "outputs": [
+    {
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "links": [
+      12
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "VAEDecode"
+   },
+   "widgets_values": []
+  },
+  {
+   "id": 11,
+   "type": "UpscaleModelLoader",
+   "pos": [
+    540,
+    734
+   ],
+   "size": [
+    340,
+    96
+   ],
+   "flags": {},
+   "order": 4,
+   "mode": 0,
+   "outputs": [
+    {
+     "name": "UPSCALE_MODEL",
+     "type": "UPSCALE_MODEL",
+     "links": [
+      11
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "UpscaleModelLoader",
+    "models": [
+     {
+      "name": "RealESRGAN_x4plus.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/Real-ESRGAN_repackaged/resolve/5fd49b7b278836f48af63ecd314d0f98ab336105/RealESRGAN_x4plus.safetensors",
+      "directory": "upscale_models",
+      "hash": "37f9a931c215f040aa6d50f711f2cb115f713c46df1d0d6469a8bd7bfe9a60bb",
+      "hash_type": "SHA256"
+     }
+    ]
+   },
+   "widgets_values": [
+    "RealESRGAN_x4plus.safetensors"
+   ]
+  },
+  {
+   "id": 12,
+   "type": "ImageUpscaleWithModel",
+   "pos": [
+    2790,
+    60
+   ],
+   "size": [
+    340,
+    94
+   ],
+   "flags": {},
+   "order": 11,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "upscale_model",
+     "type": "UPSCALE_MODEL",
+     "link": 11
+    },
+    {
+     "name": "image",
+     "type": "IMAGE",
+     "link": 12
+    }
+   ],
+   "outputs": [
+    {
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "links": [
+      13
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "ImageUpscaleWithModel"
+   },
+   "widgets_values": []
+  },
+  {
+   "id": 13,
+   "type": "ImageScale",
+   "pos": [
+    3240,
+    60
+   ],
+   "size": [
+    340,
+    174
+   ],
+   "flags": {},
+   "order": 12,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "image",
+     "type": "IMAGE",
+     "link": 13
+    }
+   ],
+   "outputs": [
+    {
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "links": [
+      14
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "ImageScale"
+   },
+   "widgets_values": [
+    "lanczos",
+    2048,
+    1024,
+    "center"
+   ],
+   "title": "Final size 2048x1024"
+  },
+  {
+   "id": 14,
+   "type": "SaveImage",
+   "pos": [
+    3690,
+    60
+   ],
+   "size": [
+    340,
+    96
+   ],
+   "flags": {},
+   "order": 13,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "images",
+     "type": "IMAGE",
+     "link": 14
+    }
+   ],
+   "outputs": [],
+   "properties": {
+    "Node name for S&R": "SaveImage"
+   },
+   "widgets_values": [
+    "VTubePro/character-sheet"
+   ],
+   "title": "Save the picture"
+  },
+  {
+   "id": 15,
+   "type": "MarkdownNote",
+   "pos": [
+    40,
+    60
+   ],
+   "size": [
+    460,
+    784
+   ],
+   "flags": {},
+   "order": 14,
+   "mode": 0,
+   "properties": {},
+   "widgets_values": [
+    "# Character reference sheet (front, side, back)\n**VTube Pro workflow, 24 GB graphics card** (Qwen-Image 2512 + Qwen-Image-Edit 2511). Pack 2026.10.01.\n\nFront, side and back views of an original character, to model from or to paint textures with.\n\n## How to use it\n1. Describe your character in \"Your prompt\": hair, eyes, outfit, colours.\n2. Press Run a few times and keep the most consistent sheet.\n3. Find the result in ComfyUI's **output/VTubePro** folder (or right-click the picture > Save Image).\n\nThe **green boxes** are the ones to change.\n\n**You get:** One wide sheet, 2048x1024 PNG, plain background.\n\n**In VTube Pro:** Use it as the reference for the texture repaint workflow and for your model maker.\n\n**Settings:** 1664x832, 4 steps (Lightning), CFG 1, then Real-ESRGAN to 2048x1024.\n\n## Models (all allow commercial use)\n- [qwen_image_2512_fp8_e4m3fn.safetensors](https://huggingface.co/Comfy-Org/Qwen-Image_ComfyUI) (20.4 GB) in `models/diffusion_models`: Apache-2.0\n- [Qwen-Image-2512-Lightning-4steps-V1.0-bf16.safetensors](https://huggingface.co/lightx2v/Qwen-Image-2512-Lightning) (0.8 GB) in `models/loras`: Apache-2.0\n- [qwen_2.5_vl_7b_fp8_scaled.safetensors](https://huggingface.co/Comfy-Org/Qwen-Image_ComfyUI) (9.4 GB) in `models/text_encoders`: Apache-2.0\n- [qwen_image_vae.safetensors](https://huggingface.co/Comfy-Org/Qwen-Image_ComfyUI) (0.3 GB) in `models/vae`: Apache-2.0\n- [RealESRGAN_x4plus.safetensors](https://huggingface.co/Comfy-Org/Real-ESRGAN_repackaged) (0.1 GB) in `models/upscale_models`: BSD-3-Clause\n\nMissing a model? ComfyUI offers to download it when you open this workflow. Or ask your AI: \n*\"Set up the VTube Pro character sheet workflow in ComfyUI\"*: the VTube Pro Helper downloads every file from its official page, checks it, and adds this workflow, after you say yes.\n\n## Tips\n- Original designs only: no existing characters, logos or game outfits.\n- A neutral A-pose and even light make modelling easier.\n- Make pictures when you are not live: picture AI slows face tracking."
+   ],
+   "title": "Start here",
+   "color": "#432",
+   "bgcolor": "#653"
+  }
+ ],
+ "links": [
+  [
+   1,
+   1,
+   0,
+   2,
+   0,
+   "MODEL"
+  ],
+  [
+   2,
+   2,
+   0,
+   3,
+   0,
+   "MODEL"
+  ],
+  [
+   3,
+   4,
+   0,
+   6,
+   0,
+   "CLIP"
+  ],
+  [
+   4,
+   4,
+   0,
+   7,
+   0,
+   "CLIP"
+  ],
+  [
+   5,
+   3,
+   0,
+   9,
+   0,
+   "MODEL"
+  ],
+  [
+   6,
+   6,
+   0,
+   9,
+   1,
+   "CONDITIONING"
+  ],
+  [
+   7,
+   7,
+   0,
+   9,
+   2,
+   "CONDITIONING"
+  ],
+  [
+   8,
+   8,
+   0,
+   9,
+   3,
+   "LATENT"
+  ],
+  [
+   9,
+   9,
+   0,
+   10,
+   0,
+   "LATENT"
+  ],
+  [
+   10,
+   5,
+   0,
+   10,
+   1,
+   "VAE"
+  ],
+  [
+   11,
+   11,
+   0,
+   12,
+   0,
+   "UPSCALE_MODEL"
+  ],
+  [
+   12,
+   10,
+   0,
+   12,
+   1,
+   "IMAGE"
+  ],
+  [
+   13,
+   12,
+   0,
+   13,
+   0,
+   "IMAGE"
+  ],
+  [
+   14,
+   13,
+   0,
+   14,
+   0,
+   "IMAGE"
+  ]
+ ],
+ "groups": [],
+ "config": {},
+ "extra": {
+  "ds": {
+   "scale": 0.7,
+   "offset": [
+    0,
+    0
+   ]
+  },
+  "vtubePro": {
+   "workflow": "character-concept-sheet",
+   "tier": "large",
+   "version": "2026.10.01",
+   "manifest": "character-concept-sheet/large.manifest.json"
+  }
+ },
+ "version": 0.4
+}

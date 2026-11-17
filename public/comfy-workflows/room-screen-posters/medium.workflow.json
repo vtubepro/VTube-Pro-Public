@@ -1,0 +1,678 @@
+{
+ "last_node_id": 14,
+ "last_link_id": 13,
+ "nodes": [
+  {
+   "id": 1,
+   "type": "UNETLoader",
+   "pos": [
+    540,
+    60
+   ],
+   "size": [
+    340,
+    122
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "outputs": [
+    {
+     "name": "MODEL",
+     "type": "MODEL",
+     "links": [
+      1
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "UNETLoader",
+    "models": [
+     {
+      "name": "z_image_turbo_bf16.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/z_image_turbo/resolve/6fc90a3b1b653e935a0d175e260736de25b84df5/split_files/diffusion_models/z_image_turbo_bf16.safetensors",
+      "directory": "diffusion_models",
+      "hash": "2407613050b809ffdff18a4ac99af83ea6b95443ecebdf80e064a79c825574a6",
+      "hash_type": "SHA256"
+     }
+    ]
+   },
+   "widgets_values": [
+    "z_image_turbo_bf16.safetensors",
+    "default"
+   ]
+  },
+  {
+   "id": 2,
+   "type": "CLIPLoader",
+   "pos": [
+    540,
+    222
+   ],
+   "size": [
+    340,
+    148
+   ],
+   "flags": {},
+   "order": 1,
+   "mode": 0,
+   "outputs": [
+    {
+     "name": "CLIP",
+     "type": "CLIP",
+     "links": [
+      2
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "CLIPLoader",
+    "models": [
+     {
+      "name": "qwen_3_4b.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/z_image_turbo/resolve/6fc90a3b1b653e935a0d175e260736de25b84df5/split_files/text_encoders/qwen_3_4b.safetensors",
+      "directory": "text_encoders",
+      "hash": "6c671498573ac2f7a5501502ccce8d2b08ea6ca2f661c458e708f36b36edfc5a",
+      "hash_type": "SHA256"
+     }
+    ]
+   },
+   "widgets_values": [
+    "qwen_3_4b.safetensors",
+    "lumina2",
+    "default"
+   ]
+  },
+  {
+   "id": 3,
+   "type": "VAELoader",
+   "pos": [
+    540,
+    410
+   ],
+   "size": [
+    340,
+    96
+   ],
+   "flags": {},
+   "order": 2,
+   "mode": 0,
+   "outputs": [
+    {
+     "name": "VAE",
+     "type": "VAE",
+     "links": [
+      9
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "VAELoader",
+    "models": [
+     {
+      "name": "ae.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/z_image_turbo/resolve/6fc90a3b1b653e935a0d175e260736de25b84df5/split_files/vae/ae.safetensors",
+      "directory": "vae",
+      "hash": "afc8e28272cd15db3919bacdb6918ce9c1ed22e96cb12c4d5ed0fba823529e38",
+      "hash_type": "SHA256"
+     }
+    ]
+   },
+   "widgets_values": [
+    "ae.safetensors"
+   ]
+  },
+  {
+   "id": 4,
+   "type": "ModelSamplingAuraFlow",
+   "pos": [
+    990,
+    60
+   ],
+   "size": [
+    340,
+    96
+   ],
+   "flags": {},
+   "order": 5,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "model",
+     "type": "MODEL",
+     "link": 1
+    }
+   ],
+   "outputs": [
+    {
+     "name": "MODEL",
+     "type": "MODEL",
+     "links": [
+      4
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "ModelSamplingAuraFlow"
+   },
+   "widgets_values": [
+    3
+   ]
+  },
+  {
+   "id": 5,
+   "type": "CLIPTextEncode",
+   "pos": [
+    990,
+    196
+   ],
+   "size": [
+    420,
+    206
+   ],
+   "flags": {},
+   "order": 6,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "clip",
+     "type": "CLIP",
+     "link": 2
+    }
+   ],
+   "outputs": [
+    {
+     "name": "CONDITIONING",
+     "type": "CONDITIONING",
+     "links": [
+      3,
+      5
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "CLIPTextEncode"
+   },
+   "widgets_values": [
+    "Retro poster with the title \"LATE NIGHT RAMEN\" in big bold letters at the top, a steaming ramen bowl, neon city at night, bold graphic shapes."
+   ],
+   "title": "Your prompt: describe the picture",
+   "color": "#3f5f12",
+   "bgcolor": "#2b3f0c"
+  },
+  {
+   "id": 6,
+   "type": "ConditioningZeroOut",
+   "pos": [
+    1440,
+    60
+   ],
+   "size": [
+    340,
+    70
+   ],
+   "flags": {},
+   "order": 7,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "conditioning",
+     "type": "CONDITIONING",
+     "link": 3
+    }
+   ],
+   "outputs": [
+    {
+     "name": "CONDITIONING",
+     "type": "CONDITIONING",
+     "links": [
+      6
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "ConditioningZeroOut"
+   },
+   "widgets_values": []
+  },
+  {
+   "id": 7,
+   "type": "EmptySD3LatentImage",
+   "pos": [
+    540,
+    546
+   ],
+   "size": [
+    340,
+    148
+   ],
+   "flags": {},
+   "order": 3,
+   "mode": 0,
+   "outputs": [
+    {
+     "name": "LATENT",
+     "type": "LATENT",
+     "links": [
+      7
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "EmptySD3LatentImage"
+   },
+   "widgets_values": [
+    768,
+    1536,
+    1
+   ],
+   "title": "Picture size 768x1536"
+  },
+  {
+   "id": 8,
+   "type": "KSampler",
+   "pos": [
+    1890,
+    60
+   ],
+   "size": [
+    340,
+    324
+   ],
+   "flags": {},
+   "order": 8,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "model",
+     "type": "MODEL",
+     "link": 4
+    },
+    {
+     "name": "positive",
+     "type": "CONDITIONING",
+     "link": 5
+    },
+    {
+     "name": "negative",
+     "type": "CONDITIONING",
+     "link": 6
+    },
+    {
+     "name": "latent_image",
+     "type": "LATENT",
+     "link": 7
+    }
+   ],
+   "outputs": [
+    {
+     "name": "LATENT",
+     "type": "LATENT",
+     "links": [
+      8
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "KSampler"
+   },
+   "widgets_values": [
+    20261001,
+    "randomize",
+    8,
+    1,
+    "res_multistep",
+    "simple",
+    1
+   ]
+  },
+  {
+   "id": 9,
+   "type": "VAEDecode",
+   "pos": [
+    2340,
+    60
+   ],
+   "size": [
+    340,
+    94
+   ],
+   "flags": {},
+   "order": 9,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "samples",
+     "type": "LATENT",
+     "link": 8
+    },
+    {
+     "name": "vae",
+     "type": "VAE",
+     "link": 9
+    }
+   ],
+   "outputs": [
+    {
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "links": [
+      11
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "VAEDecode"
+   },
+   "widgets_values": []
+  },
+  {
+   "id": 10,
+   "type": "UpscaleModelLoader",
+   "pos": [
+    540,
+    734
+   ],
+   "size": [
+    340,
+    96
+   ],
+   "flags": {},
+   "order": 4,
+   "mode": 0,
+   "outputs": [
+    {
+     "name": "UPSCALE_MODEL",
+     "type": "UPSCALE_MODEL",
+     "links": [
+      10
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "UpscaleModelLoader",
+    "models": [
+     {
+      "name": "RealESRGAN_x4plus.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/Real-ESRGAN_repackaged/resolve/5fd49b7b278836f48af63ecd314d0f98ab336105/RealESRGAN_x4plus.safetensors",
+      "directory": "upscale_models",
+      "hash": "37f9a931c215f040aa6d50f711f2cb115f713c46df1d0d6469a8bd7bfe9a60bb",
+      "hash_type": "SHA256"
+     }
+    ]
+   },
+   "widgets_values": [
+    "RealESRGAN_x4plus.safetensors"
+   ]
+  },
+  {
+   "id": 11,
+   "type": "ImageUpscaleWithModel",
+   "pos": [
+    2790,
+    60
+   ],
+   "size": [
+    340,
+    94
+   ],
+   "flags": {},
+   "order": 10,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "upscale_model",
+     "type": "UPSCALE_MODEL",
+     "link": 10
+    },
+    {
+     "name": "image",
+     "type": "IMAGE",
+     "link": 11
+    }
+   ],
+   "outputs": [
+    {
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "links": [
+      12
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "ImageUpscaleWithModel"
+   },
+   "widgets_values": []
+  },
+  {
+   "id": 12,
+   "type": "ImageScale",
+   "pos": [
+    3240,
+    60
+   ],
+   "size": [
+    340,
+    174
+   ],
+   "flags": {},
+   "order": 11,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "image",
+     "type": "IMAGE",
+     "link": 12
+    }
+   ],
+   "outputs": [
+    {
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "links": [
+      13
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "ImageScale"
+   },
+   "widgets_values": [
+    "lanczos",
+    1024,
+    2048,
+    "center"
+   ],
+   "title": "Final size 1024x2048"
+  },
+  {
+   "id": 13,
+   "type": "SaveImage",
+   "pos": [
+    3690,
+    60
+   ],
+   "size": [
+    340,
+    96
+   ],
+   "flags": {},
+   "order": 12,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "images",
+     "type": "IMAGE",
+     "link": 13
+    }
+   ],
+   "outputs": [],
+   "properties": {
+    "Node name for S&R": "SaveImage"
+   },
+   "widgets_values": [
+    "VTubePro/poster"
+   ],
+   "title": "Save the picture"
+  },
+  {
+   "id": 14,
+   "type": "MarkdownNote",
+   "pos": [
+    40,
+    60
+   ],
+   "size": [
+    460,
+    762
+   ],
+   "flags": {},
+   "order": 13,
+   "mode": 0,
+   "properties": {},
+   "widgets_values": [
+    "# Posters and signs with words, for your room\n**VTube Pro workflow, 16 GB graphics card** (Z-Image-Turbo + FLUX.2 klein 4B). Pack 2026.10.01.\n\nWall posters, shop signs, menu boards and banners with readable words.\n\n## How to use it\n1. Write the words in quotes inside \"Your prompt\", like the title \"LATE NIGHT RAMEN\".\n2. Press Run. Small: add the words in any editor afterwards.\n3. Find the result in ComfyUI's **output/VTubePro** folder (or right-click the picture > Save Image).\n\nThe **green boxes** are the ones to change.\n\n**You get:** 1024x2048 PNG (portrait poster). Power-of-two, so it works as a texture.\n\n**In VTube Pro:** Put it on a poster or sign in your room (Blender), or use it as the in-room screen picture.\n\n**Settings:** 768x1536, 8 steps, CFG 1, Real-ESRGAN to 1024x2048.\n\n## Models (all allow commercial use)\n- [z_image_turbo_bf16.safetensors](https://huggingface.co/Comfy-Org/z_image_turbo) (12.3 GB) in `models/diffusion_models`: Apache-2.0\n- [qwen_3_4b.safetensors](https://huggingface.co/Comfy-Org/z_image_turbo) (8.0 GB) in `models/text_encoders`: Apache-2.0\n- [ae.safetensors](https://huggingface.co/Comfy-Org/z_image_turbo) (0.3 GB) in `models/vae`: Apache-2.0\n- [RealESRGAN_x4plus.safetensors](https://huggingface.co/Comfy-Org/Real-ESRGAN_repackaged) (0.1 GB) in `models/upscale_models`: BSD-3-Clause\n\nMissing a model? ComfyUI offers to download it when you open this workflow. Or ask your AI: \n*\"Set up the VTube Pro poster workflow in ComfyUI\"*: the VTube Pro Helper downloads every file from its official page, checks it, and adds this workflow, after you say yes.\n\n## Tips\n- No real brands or logos: make your own designs.\n- Short titles come out best (2-4 words).\n- Make pictures when you are not live: picture AI slows face tracking."
+   ],
+   "title": "Start here",
+   "color": "#432",
+   "bgcolor": "#653"
+  }
+ ],
+ "links": [
+  [
+   1,
+   1,
+   0,
+   4,
+   0,
+   "MODEL"
+  ],
+  [
+   2,
+   2,
+   0,
+   5,
+   0,
+   "CLIP"
+  ],
+  [
+   3,
+   5,
+   0,
+   6,
+   0,
+   "CONDITIONING"
+  ],
+  [
+   4,
+   4,
+   0,
+   8,
+   0,
+   "MODEL"
+  ],
+  [
+   5,
+   5,
+   0,
+   8,
+   1,
+   "CONDITIONING"
+  ],
+  [
+   6,
+   6,
+   0,
+   8,
+   2,
+   "CONDITIONING"
+  ],
+  [
+   7,
+   7,
+   0,
+   8,
+   3,
+   "LATENT"
+  ],
+  [
+   8,
+   8,
+   0,
+   9,
+   0,
+   "LATENT"
+  ],
+  [
+   9,
+   3,
+   0,
+   9,
+   1,
+   "VAE"
+  ],
+  [
+   10,
+   10,
+   0,
+   11,
+   0,
+   "UPSCALE_MODEL"
+  ],
+  [
+   11,
+   9,
+   0,
+   11,
+   1,
+   "IMAGE"
+  ],
+  [
+   12,
+   11,
+   0,
+   12,
+   0,
+   "IMAGE"
+  ],
+  [
+   13,
+   12,
+   0,
+   13,
+   0,
+   "IMAGE"
+  ]
+ ],
+ "groups": [],
+ "config": {},
+ "extra": {
+  "ds": {
+   "scale": 0.7,
+   "offset": [
+    0,
+    0
+   ]
+  },
+  "vtubePro": {
+   "workflow": "room-screen-posters",
+   "tier": "medium",
+   "version": "2026.10.01",
+   "manifest": "room-screen-posters/medium.manifest.json"
+  }
+ },
+ "version": 0.4
+}

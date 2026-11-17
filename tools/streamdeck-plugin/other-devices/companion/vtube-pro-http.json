@@ -1,0 +1,1301 @@
+{
+  "about": "VTube Pro buttons for Bitfocus Companion. Add the \"Generic: HTTP Requests\" connection (base URL empty), then per button add the action \"POST\" with the url below (body empty). Not a .companionconfig import file: see docs/STREAM_DECK.md.",
+  "buttons": [
+    {
+      "group": "Scene",
+      "label": "Lighting state: Preshow",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/lighting?state=preshow",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": true
+    },
+    {
+      "group": "Scene",
+      "label": "Lighting state: Show",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/lighting?state=show",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": true
+    },
+    {
+      "group": "Scene",
+      "label": "Lighting state: React",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/lighting?state=react",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": true
+    },
+    {
+      "group": "Scene",
+      "label": "Lighting state: Brb",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/lighting?state=brb",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": true
+    },
+    {
+      "group": "Scene",
+      "label": "Lighting state: Outro",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/lighting?state=outro",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": true
+    },
+    {
+      "group": "Scene",
+      "label": "Stage mode: Talk",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/mode?mode=talk",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": true
+    },
+    {
+      "group": "Scene",
+      "label": "Stage mode: React",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/mode?mode=react",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": true
+    },
+    {
+      "group": "Scene",
+      "label": "Stage mode: Gaming",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/mode?mode=gaming",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": true
+    },
+    {
+      "group": "Scene",
+      "label": "Stage mode: Interview",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/mode?mode=interview",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": true
+    },
+    {
+      "group": "Scene",
+      "label": "Go to room",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/room?sceneId=",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": true
+    },
+    {
+      "group": "Scene",
+      "label": "Room area",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/area?area=next",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": false
+    },
+    {
+      "group": "Scene",
+      "label": "Reveal room (curtain)",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/curtain",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": false
+    },
+    {
+      "group": "Scene",
+      "label": "Hide my screen (capture cover)",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/cover?on=toggle&text=&style=",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": true
+    },
+    {
+      "group": "Scene",
+      "label": "Room transition",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/transition?style=vtp-dark&dur=0&hold=keep",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": true
+    },
+    {
+      "group": "Scene",
+      "label": "Camera move",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/camera-move?secs=0",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": true
+    },
+    {
+      "group": "Scene",
+      "label": "BRB card look",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/brb-card?style=keep&theme=toggle&text=&bg=",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": false
+    },
+    {
+      "group": "Scene",
+      "label": "Hide chat on stream: Toggle",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/chat-hide?on=toggle",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": true
+    },
+    {
+      "group": "Scene",
+      "label": "Hide chat on stream: Hide",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/chat-hide?on=true",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": true
+    },
+    {
+      "group": "Scene",
+      "label": "Hide chat on stream: Show",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/chat-hide?on=false",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": true
+    },
+    {
+      "group": "Scene",
+      "label": "Screen video",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/video?action=toggle&slot=",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": true
+    },
+    {
+      "group": "Scene",
+      "label": "Scene camera",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/camera?cam=auto&focus=",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": true
+    },
+    {
+      "group": "Scene",
+      "label": "In the room / outside",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/presence?who=me&on=toggle&how=",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": true
+    },
+    {
+      "group": "Scene",
+      "label": "Entrances",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/entrances?walk=toggle&join=",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": true
+    },
+    {
+      "group": "Scene",
+      "label": "Screen video sound",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/video-audio",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": true
+    },
+    {
+      "group": "Scene",
+      "label": "Ambient cameras",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/ambcam?action=next&state=",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": true
+    },
+    {
+      "group": "Scene",
+      "label": "Weather: Clear",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/weather?weather=clear",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": true
+    },
+    {
+      "group": "Scene",
+      "label": "Weather: Cloudy",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/weather?weather=cloudy",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": true
+    },
+    {
+      "group": "Scene",
+      "label": "Weather: Overcast",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/weather?weather=overcast",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": true
+    },
+    {
+      "group": "Scene",
+      "label": "Weather: Rain",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/weather?weather=rain",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": true
+    },
+    {
+      "group": "Scene",
+      "label": "Weather: Heavy rain",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/weather?weather=heavyrain",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": true
+    },
+    {
+      "group": "Scene",
+      "label": "Weather: Storm",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/weather?weather=storm",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": true
+    },
+    {
+      "group": "Scene",
+      "label": "Weather: Fog",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/weather?weather=fog",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": true
+    },
+    {
+      "group": "Scene",
+      "label": "Time of day",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/hour?hour=21",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": false
+    },
+    {
+      "group": "Scene",
+      "label": "Background raid",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/raid",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": true
+    },
+    {
+      "group": "Scene",
+      "label": "Warzone set piece: Air strike",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/warzone?event=wz_airstrike",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": false
+    },
+    {
+      "group": "Scene",
+      "label": "Warzone set piece: Armoured push",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/warzone?event=wz_armor",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": false
+    },
+    {
+      "group": "Scene",
+      "label": "Warzone set piece: Militia assault",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/warzone?event=wz_assault",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": false
+    },
+    {
+      "group": "Scene",
+      "label": "Warzone set piece: Technical",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/warzone?event=wz_technical",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": false
+    },
+    {
+      "group": "Scene",
+      "label": "Warzone set piece: Mortar barrage",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/warzone?event=wz_mortar",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": false
+    },
+    {
+      "group": "Scene",
+      "label": "Warzone set piece: Gunship pass",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/warzone?event=wz_heli",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": false
+    },
+    {
+      "group": "Scene",
+      "label": "Warzone set piece: Illumination flares",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/warzone?event=wz_flare",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": false
+    },
+    {
+      "group": "Scene",
+      "label": "Warzone set piece: Frog sniper",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/warzone?event=wz_sniper",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": false
+    },
+    {
+      "group": "Scene",
+      "label": "Calm the battle",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/calm",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": true
+    },
+    {
+      "group": "Scene",
+      "label": "Club moment",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/club?event=conga",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": false
+    },
+    {
+      "group": "Scene",
+      "label": "Lounge celebration",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/lounge?event=t3&count=5&user=",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": false
+    },
+    {
+      "group": "Fun",
+      "label": "Slap!",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/slap?target=random",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": false
+    },
+    {
+      "group": "Fun",
+      "label": "Emote",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/emote?name=wave",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": false
+    },
+    {
+      "group": "Fun",
+      "label": "Expression",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/expression?name=happy&seconds=2.5",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": false
+    },
+    {
+      "group": "Show",
+      "label": "Interview shot: Auto",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/interview?shot=auto",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": true
+    },
+    {
+      "group": "Show",
+      "label": "Interview shot: Manual director",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/interview?shot=manual",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": true
+    },
+    {
+      "group": "Show",
+      "label": "Interview shot: Establishing",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/interview?shot=establishing",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": true
+    },
+    {
+      "group": "Show",
+      "label": "Interview shot: Host",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/interview?shot=host",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": true
+    },
+    {
+      "group": "Show",
+      "label": "Interview shot: Co-host 1",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/interview?shot=cohost1",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": true
+    },
+    {
+      "group": "Show",
+      "label": "Interview shot: Co-host 2",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/interview?shot=cohost2",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": true
+    },
+    {
+      "group": "Show",
+      "label": "Interview shot: Hosts (you + a co-host)",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/interview?shot=hosts",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": true
+    },
+    {
+      "group": "Show",
+      "label": "Interview shot: Panel (everyone at the desk)",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/interview?shot=panel",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": true
+    },
+    {
+      "group": "Show",
+      "label": "Interview shot: Guest",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/interview?shot=guest",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": true
+    },
+    {
+      "group": "Show",
+      "label": "Interview shot: Guest 1",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/interview?shot=guest1",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": true
+    },
+    {
+      "group": "Show",
+      "label": "Interview shot: Guest 2",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/interview?shot=guest2",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": true
+    },
+    {
+      "group": "Show",
+      "label": "Interview shot: Guest 3",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/interview?shot=guest3",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": true
+    },
+    {
+      "group": "Show",
+      "label": "Interview shot: Guest 4",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/interview?shot=guest4",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": true
+    },
+    {
+      "group": "Show",
+      "label": "Interview shot: Ots",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/interview?shot=ots",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": true
+    },
+    {
+      "group": "Show",
+      "label": "Interview shot: Two",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/interview?shot=two",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": true
+    },
+    {
+      "group": "Show",
+      "label": "Interview shot: Wide",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/interview?shot=wide",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": true
+    },
+    {
+      "group": "Show",
+      "label": "Interview shot: Audience (the crowd)",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/interview?shot=audience",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": true
+    },
+    {
+      "group": "Show",
+      "label": "Interview shot: House wide",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/interview?shot=house",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": true
+    },
+    {
+      "group": "Show",
+      "label": "Interview shot: The take (snap zoom on the host)",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/interview?shot=take",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": true
+    },
+    {
+      "group": "Show",
+      "label": "Interview shot: Sidekick",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/interview?shot=sidekick",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": true
+    },
+    {
+      "group": "Show",
+      "label": "Interview shot: Push",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/interview?shot=push",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": true
+    },
+    {
+      "group": "Show",
+      "label": "Interview shot: Snap",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/interview?shot=snap",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": true
+    },
+    {
+      "group": "Show",
+      "label": "Interview shot: Reverse",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/interview?shot=reverse",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": true
+    },
+    {
+      "group": "Show",
+      "label": "Interview shot: Show open",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/interview?shot=bumper",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": true
+    },
+    {
+      "group": "Show",
+      "label": "Interview shot: Pin the shot on air (toggle)",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/interview?shot=pin",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": true
+    },
+    {
+      "group": "Show",
+      "label": "Interview shot: The guest’s turn",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/interview?shot=turn-guest",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": true
+    },
+    {
+      "group": "Show",
+      "label": "Interview shot: My turn",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/interview?shot=turn-host",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": true
+    },
+    {
+      "group": "Show",
+      "label": "Interview shot: Pace: calm",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/interview?shot=pace-calm",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": true
+    },
+    {
+      "group": "Show",
+      "label": "Interview shot: Pace: normal",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/interview?shot=pace-normal",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": true
+    },
+    {
+      "group": "Show",
+      "label": "Interview shot: Pace: snappy",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/interview?shot=pace-snappy",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": true
+    },
+    {
+      "group": "Party",
+      "label": "Guest: studio / monitor",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/guest-place?guest=1&where=toggle&peer=",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": true
+    },
+    {
+      "group": "Party",
+      "label": "Co-host / guest",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/interview-role?who=guest1&role=toggle",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": true
+    },
+    {
+      "group": "Party",
+      "label": "Let in (knock)",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/knock-approve",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": false
+    },
+    {
+      "group": "Party",
+      "label": "Deny (knock)",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/knock-deny",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": false
+    },
+    {
+      "group": "Party",
+      "label": "Kick guest",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/guest-kick?guest=1&peer=&ban=false&revoke=false",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": false
+    },
+    {
+      "group": "Party",
+      "label": "Mute guest",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/guest-mute?guest=1&peer=&on=toggle",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": false
+    },
+    {
+      "group": "Party",
+      "label": "Hide guest camera",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/guest-cam?guest=1&peer=&on=toggle",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": false
+    },
+    {
+      "group": "Party",
+      "label": "Guest volume",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/guest-volume?guest=1&peer=&vol=100",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": false
+    },
+    {
+      "group": "Party",
+      "label": "Cut guest (camera + mic)",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/guest-cut?guest=1&peer=&on=toggle",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": false
+    },
+    {
+      "group": "Party",
+      "label": "Cut all guests: Cut everyone",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/guests-cut-all?on=true",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": false
+    },
+    {
+      "group": "Party",
+      "label": "Cut all guests: Bring everyone back",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/guests-cut-all?on=false",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": false
+    },
+    {
+      "group": "Party",
+      "label": "Cut all guests: Toggle",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/guests-cut-all?on=toggle",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": false
+    },
+    {
+      "group": "Party",
+      "label": "Undo (guest moderation)",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/guest-undo",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": false
+    },
+    {
+      "group": "Party",
+      "label": "Cut: also to green room: Toggle",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/guest-cut-hold?on=toggle",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": false
+    },
+    {
+      "group": "Party",
+      "label": "Cut: also to green room: On",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/guest-cut-hold?on=true",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": false
+    },
+    {
+      "group": "Party",
+      "label": "Cut: also to green room: Off",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/guest-cut-hold?on=false",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": false
+    },
+    {
+      "group": "Party",
+      "label": "Link guests: voice",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/guest-voice?what=hear&on=toggle&mic=",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": false
+    },
+    {
+      "group": "Party",
+      "label": "End party",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/party-end",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": false
+    },
+    {
+      "group": "Party",
+      "label": "Copy interview link: Copy a link",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/guest-link?do=copy",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": false
+    },
+    {
+      "group": "Party",
+      "label": "Copy interview link: Turn the link off",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/guest-link?do=off",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": false
+    },
+    {
+      "group": "Party",
+      "label": "Bring on (green room)",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/greenroom-on?guest=0&peer=",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": false
+    },
+    {
+      "group": "Party",
+      "label": "Back to green room",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/greenroom-back?guest=0&peer=",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": false
+    },
+    {
+      "group": "Party",
+      "label": "Next guest",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/greenroom-next",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": false
+    },
+    {
+      "group": "Party",
+      "label": "Message a guest",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/greenroom-msg?preset=next&text=&to=next&guest=1&peer=",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": false
+    },
+    {
+      "group": "Party",
+      "label": "Talk backstage",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/greenroom-talk?peer=&on=toggle",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": false
+    },
+    {
+      "group": "Party",
+      "label": "Backstage voice output",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/greenroom-output?sink=",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": false
+    },
+    {
+      "group": "Party",
+      "label": "Green room: who waits: Link guests wait",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/greenroom-mode?mode=link",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": false
+    },
+    {
+      "group": "Party",
+      "label": "Green room: who waits: Everyone waits",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/greenroom-mode?mode=all",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": false
+    },
+    {
+      "group": "Party",
+      "label": "Green room: who waits: Nobody waits",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/greenroom-mode?mode=off",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": false
+    },
+    {
+      "group": "Me",
+      "label": "Outfit",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/costume?id=",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": false
+    },
+    {
+      "group": "Me",
+      "label": "Accessory on / off",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/accessory?id=",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": false
+    },
+    {
+      "group": "Me",
+      "label": "2D model slider / outfit",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/model-slider?slider=&do=toggle&value=1",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": false
+    },
+    {
+      "group": "Me",
+      "label": "Recalibrate face",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/recalibrate",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": false
+    },
+    {
+      "group": "Me",
+      "label": "When tracking is lost",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/trackloss?mode=hold&part=all",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": false
+    },
+    {
+      "group": "Chat Hub",
+      "label": "Acknowledge next",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/hub-ack-next",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": false
+    },
+    {
+      "group": "Chat Hub",
+      "label": "Thank next",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/hub-thank-next",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": false
+    },
+    {
+      "group": "Chat Hub",
+      "label": "Acknowledge all",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/hub-ack-all",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": false
+    },
+    {
+      "group": "Chat Hub",
+      "label": "Skip read-aloud",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/hub-skip",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": false
+    },
+    {
+      "group": "Chat Hub",
+      "label": "Replay read-aloud",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/hub-replay",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": false
+    },
+    {
+      "group": "Chat Hub",
+      "label": "Read-aloud on / off",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/hub-tts",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": true
+    },
+    {
+      "group": "Chat Hub",
+      "label": "Emote sounds on / off: Toggle",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/emote-sounds?on=toggle",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": true
+    },
+    {
+      "group": "Chat Hub",
+      "label": "Emote sounds on / off: Turn on",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/emote-sounds?on=true",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": true
+    },
+    {
+      "group": "Chat Hub",
+      "label": "Emote sounds on / off: Turn off",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/emote-sounds?on=false",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": true
+    },
+    {
+      "group": "Poll",
+      "label": "Start poll",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/poll-start?template=",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": false
+    },
+    {
+      "group": "Poll",
+      "label": "End poll",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/poll-end",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": false
+    },
+    {
+      "group": "Poll",
+      "label": "Show / hide poll: Toggle",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/poll-show?on=toggle",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": false
+    },
+    {
+      "group": "Poll",
+      "label": "Show / hide poll: Show",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/poll-show?on=show",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": false
+    },
+    {
+      "group": "Poll",
+      "label": "Show / hide poll: Hide",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/poll-show?on=hide",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": false
+    },
+    {
+      "group": "Goals",
+      "label": "Subathon timer",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/subathon?do=toggle&minutes=5&mult=2",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": false
+    },
+    {
+      "group": "Goals",
+      "label": "Goal",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/goal?do=toggle&goal=&amount=5",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": false
+    },
+    {
+      "group": "Goals",
+      "label": "Spin the wheel",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/wheel-spin",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": false
+    },
+    {
+      "group": "Audience",
+      "label": "Applause",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/audience-applause",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": false
+    },
+    {
+      "group": "Audience",
+      "label": "Next question",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/audience-next",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": false
+    },
+    {
+      "group": "Audience",
+      "label": "Question done",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/audience-done",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": false
+    },
+    {
+      "group": "Stream extras",
+      "label": "Throw at my head",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/throw?what=emote&count=1&item=&from=chat",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": false
+    },
+    {
+      "group": "Stream extras",
+      "label": "Item scene",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/item-scene?name=&on=toggle",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": false
+    },
+    {
+      "group": "Stream extras",
+      "label": "Sticker on me",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/sticker?op=random&item=&secs=0",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": false
+    },
+    {
+      "group": "Stream extras",
+      "label": "Emote rain",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/emote-rain?op=burst&secs=8&from=chat",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": false
+    },
+    {
+      "group": "Stream extras",
+      "label": "Play a sound",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/sfx?id=&volume=70",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": false
+    },
+    {
+      "group": "Stream extras",
+      "label": "Screen effect",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/screen-fx?preset=glitch&secs=3",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": false
+    },
+    {
+      "group": "Stream extras",
+      "label": "My recorded emote",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/recorded-emote?name=",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": false
+    },
+    {
+      "group": "Stream extras",
+      "label": "Co-host says",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/cohost-say?text=",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": false
+    },
+    {
+      "group": "Stream extras",
+      "label": "Mute co-host: Toggle",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/cohost-mute?on=toggle",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": false
+    },
+    {
+      "group": "Stream extras",
+      "label": "Mute co-host: Mute",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/cohost-mute?on=true",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": false
+    },
+    {
+      "group": "Stream extras",
+      "label": "Mute co-host: Unmute",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/cohost-mute?on=false",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": false
+    },
+    {
+      "group": "Advanced",
+      "label": "Custom command",
+      "method": "POST",
+      "url": "http://127.0.0.1:5191/api/deck/run/command?command=scene&args=%7B%22lighting%22%3A%22show%22%7D",
+      "body": "",
+      "contentType": "application/json",
+      "stateful": false
+    }
+  ]
+}

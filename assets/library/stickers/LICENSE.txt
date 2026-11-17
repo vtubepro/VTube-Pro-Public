@@ -1,0 +1,8 @@
+VTube Pro starter stickers (anger.png, sweat.png, tear.png, heart.png, star.png, sparkle.png, note.png, party-hat.png,
+halo.png, sign.png) and index.json
+
+These ten pictures were drawn for VTube Pro by its own team (original shapes, drawn by a script; no third-party art, no
+photos, no AI-generated images, no character from any game or show).
+
+They are released under CC0 1.0 Universal (public domain dedication): https://creativecommons.org/publicdomain/zero/1.0/
+You may use, copy, change and share them for any purpose, with no credit needed.

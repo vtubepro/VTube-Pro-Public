@@ -1,0 +1,92 @@
+{
+ "clips": [
+  {
+   "id": "dance",
+   "label": "Dance",
+   "file": "dance.vrma",
+   "dur": 1.0,
+   "loop": true,
+   "source": "Quaternius Universal Animation Library: Dance_Loop (CC0)"
+  },
+  {
+   "id": "yes",
+   "label": "Nod yes",
+   "file": "yes.vrma",
+   "dur": 2.5,
+   "loop": false,
+   "source": "Quaternius Universal Animation Library: Yes (CC0)"
+  },
+  {
+   "id": "idle_no",
+   "label": "Shake head no",
+   "file": "idle_no.vrma",
+   "dur": 2.5,
+   "loop": true,
+   "source": "Quaternius Universal Animation Library: Idle_No_Loop (CC0)"
+  },
+  {
+   "id": "idle_fold_arms",
+   "label": "Fold arms",
+   "file": "idle_fold_arms.vrma",
+   "dur": 2.5,
+   "loop": true,
+   "source": "Quaternius Universal Animation Library: Idle_FoldArms_Loop (CC0)"
+  },
+  {
+   "id": "idle_talking",
+   "label": "Talk (hands)",
+   "file": "idle_talking.vrma",
+   "dur": 2.933,
+   "loop": true,
+   "source": "Quaternius Universal Animation Library: Idle_Talking_Loop (CC0)"
+  },
+  {
+   "id": "idle_talking_phone",
+   "label": "On the phone",
+   "file": "idle_talking_phone.vrma",
+   "dur": 2.933,
+   "loop": true,
+   "source": "Quaternius Universal Animation Library: Idle_TalkingPhone_Loop (CC0)"
+  },
+  {
+   "id": "consume",
+   "label": "Eat / drink",
+   "file": "consume.vrma",
+   "dur": 1.333,
+   "loop": false,
+   "source": "Quaternius Universal Animation Library: Consume (CC0)"
+  },
+  {
+   "id": "punch_jab",
+   "label": "Jab",
+   "file": "punch_jab.vrma",
+   "dur": 0.867,
+   "loop": false,
+   "source": "Quaternius Universal Animation Library: Punch_Jab (CC0)"
+  },
+  {
+   "id": "spell_simple_shoot",
+   "label": "Cast spell",
+   "file": "spell_simple_shoot.vrma",
+   "dur": 0.5,
+   "loop": false,
+   "source": "Quaternius Universal Animation Library: Spell_Simple_Shoot (CC0)"
+  },
+  {
+   "id": "idle_rail_call",
+   "label": "Call out",
+   "file": "idle_rail_call.vrma",
+   "dur": 2.5,
+   "loop": false,
+   "source": "Quaternius Universal Animation Library: Idle_Rail_Call (CC0)"
+  },
+  {
+   "id": "interact",
+   "label": "Press / interact",
+   "file": "interact.vrma",
+   "dur": 2.0,
+   "loop": false,
+   "source": "Quaternius Universal Animation Library: Interact (CC0)"
+  }
+ ]
+}

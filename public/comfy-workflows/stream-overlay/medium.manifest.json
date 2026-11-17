@@ -1,0 +1,103 @@
+{
+ "schema": "vtubepro.comfy-workflow/1",
+ "id": "stream-overlay",
+ "tier": "medium",
+ "key": "stream-overlay/medium",
+ "title": "Overlays: Starting soon, Be right back and panels",
+ "short": "Overlays and screens",
+ "task": "overlay",
+ "version": "2026.10.01",
+ "checked": "2026-10-01",
+ "vram": {
+  "minGB": 12,
+  "recommendedGB": 16,
+  "label": "16 GB"
+ },
+ "comfyui": {
+  "tested": "0.22.3",
+  "note": "Uses only built-in ComfyUI nodes (plus the custom node listed, if any). Update ComfyUI if a node shows red."
+ },
+ "models": [
+  {
+   "id": "z-image-turbo",
+   "name": "Z-Image-Turbo (bf16)",
+   "file": "z_image_turbo_bf16.safetensors",
+   "folder": "diffusion_models",
+   "bytes": 12309866400,
+   "sha256": "2407613050b809ffdff18a4ac99af83ea6b95443ecebdf80e064a79c825574a6",
+   "url": "https://huggingface.co/Comfy-Org/z_image_turbo/resolve/6fc90a3b1b653e935a0d175e260736de25b84df5/split_files/diffusion_models/z_image_turbo_bf16.safetensors",
+   "page": "https://huggingface.co/Comfy-Org/z_image_turbo",
+   "repo": "Comfy-Org/z_image_turbo",
+   "revision": "6fc90a3b1b653e935a0d175e260736de25b84df5",
+   "licence": "Apache-2.0",
+   "licenceUrl": "https://huggingface.co/Tongyi-MAI/Z-Image-Turbo",
+   "upstream": "Tongyi-MAI/Z-Image-Turbo"
+  },
+  {
+   "id": "qwen3-4b-te",
+   "name": "Qwen3 4B text encoder (for Z-Image-Turbo and FLUX.2 klein 4B)",
+   "file": "qwen_3_4b.safetensors",
+   "folder": "text_encoders",
+   "bytes": 8044982048,
+   "sha256": "6c671498573ac2f7a5501502ccce8d2b08ea6ca2f661c458e708f36b36edfc5a",
+   "url": "https://huggingface.co/Comfy-Org/z_image_turbo/resolve/6fc90a3b1b653e935a0d175e260736de25b84df5/split_files/text_encoders/qwen_3_4b.safetensors",
+   "page": "https://huggingface.co/Comfy-Org/z_image_turbo",
+   "repo": "Comfy-Org/z_image_turbo",
+   "revision": "6fc90a3b1b653e935a0d175e260736de25b84df5",
+   "licence": "Apache-2.0",
+   "licenceUrl": "https://huggingface.co/Tongyi-MAI/Z-Image-Turbo",
+   "upstream": "Qwen/Qwen3-4B (same SHA-256 in Comfy-Org/flux2-klein)"
+  },
+  {
+   "id": "z-image-vae",
+   "name": "Z-Image VAE (ae)",
+   "file": "ae.safetensors",
+   "folder": "vae",
+   "bytes": 335304388,
+   "sha256": "afc8e28272cd15db3919bacdb6918ce9c1ed22e96cb12c4d5ed0fba823529e38",
+   "url": "https://huggingface.co/Comfy-Org/z_image_turbo/resolve/6fc90a3b1b653e935a0d175e260736de25b84df5/split_files/vae/ae.safetensors",
+   "page": "https://huggingface.co/Comfy-Org/z_image_turbo",
+   "repo": "Comfy-Org/z_image_turbo",
+   "revision": "6fc90a3b1b653e935a0d175e260736de25b84df5",
+   "licence": "Apache-2.0",
+   "licenceUrl": "https://huggingface.co/Tongyi-MAI/Z-Image-Turbo",
+   "upstream": "Tongyi-MAI/Z-Image-Turbo"
+  }
+ ],
+ "customNodes": [],
+ "downloadBytes": 20690152836,
+ "inputs": [
+  {
+   "node": "5",
+   "kind": "text",
+   "what": "Your prompt: describe the picture",
+   "default": "Cozy pixel-art bedroom at night with soft fairy lights and rain on the window. The words \"STARTING SOON\" in big friendly letters at the bottom."
+  }
+ ],
+ "outputs": [
+  {
+   "node": "11",
+   "what": "Overlay",
+   "size": "1920x1080",
+   "format": "PNG"
+  }
+ ],
+ "settings": "1920x1088, 8 steps, CFG 1, cropped to 1920x1080.",
+ "forWhat": "A full-screen \"Starting soon\" or \"Be right back\" picture, or a panel background, in your style.",
+ "output": "1920x1080 PNG.",
+ "vtp": "Add it in OBS as an Image source, or use it as the in-room screen picture.",
+ "ask": "Set up the VTube Pro overlay workflow in ComfyUI",
+ "steps": [
+  "Describe the scene in \"Your prompt\" (medium and large can write the words).",
+  "Press Run."
+ ],
+ "tips": [
+  "Keep the middle calm if your avatar or a game goes there."
+ ],
+ "licenceSummary": "Commercial use OK by default: Apache-2.0.",
+ "files": {
+  "api": "stream-overlay/medium.api.json",
+  "ui": "stream-overlay/medium.workflow.json",
+  "manifest": "stream-overlay/medium.manifest.json"
+ }
+}

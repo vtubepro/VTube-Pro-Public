@@ -1,0 +1,698 @@
+{
+ "schema": "vtubepro.comfy-workflow-index/1",
+ "version": "2026.10.01",
+ "checked": "2026-10-01",
+ "testedComfyUI": "0.22.3",
+ "tiers": {
+  "small": {
+   "id": "small",
+   "label": "8 GB",
+   "minVramGB": 8,
+   "recVramGB": 8,
+   "family": "SDXL",
+   "note": "Most gaming PCs from the last 5 years. Can't write words in pictures: add text in any editor."
+  },
+  "medium": {
+   "id": "medium",
+   "label": "16 GB",
+   "minVramGB": 12,
+   "recVramGB": 16,
+   "family": "Z-Image-Turbo + FLUX.2 klein 4B",
+   "note": "Fast and sharp. Writes short words. Works from 12 GB, a bit slower."
+  },
+  "large": {
+   "id": "large",
+   "label": "24 GB",
+   "minVramGB": 20,
+   "recVramGB": 24,
+   "family": "Qwen-Image 2512 + Qwen-Image-Edit 2511",
+   "note": "Best quality and the best words in pictures. Uses fp8 weights: an NVIDIA RTX card is best."
+  }
+ },
+ "workflows": [
+  {
+   "id": "character-3d",
+   "task": "character-3d",
+   "title": "Character 3D: turn a picture into a 3D model",
+   "short": "Character 3D",
+   "forWhat": "A picture of your character (whole body, facing front) turned into a 3D model on your own computer. The model is plain grey: it has the shape, not the colours.",
+   "ask": "Set up the VTube Pro character 3D workflow in ComfyUI",
+   "tiers": [
+    {
+     "tier": "small",
+     "label": "8 GB",
+     "downloadBytes": 5372625158,
+     "models": [
+      "birefnet.safetensors",
+      "hunyuan3d-dit-v2_fp16.safetensors"
+     ],
+     "customNodes": [],
+     "notices": [
+      "Licence: Tencent Hunyuan 3D Community. It does not cover the EU, the UK or South Korea. If you live there, don't download it. A company with over 1 million monthly users needs Tencent's OK first."
+     ],
+     "files": {
+      "api": "character-3d/small.api.json",
+      "ui": "character-3d/small.workflow.json",
+      "manifest": "character-3d/small.manifest.json"
+     }
+    },
+    {
+     "tier": "medium",
+     "label": "16 GB",
+     "downloadBytes": 7810416886,
+     "models": [
+      "birefnet.safetensors",
+      "hunyuan_3d_v2.1.safetensors"
+     ],
+     "customNodes": [],
+     "notices": [
+      "Licence: Tencent Hunyuan 3D Community. It does not cover the EU, the UK or South Korea. If you live there, don't download it. A company with over 1 million monthly users needs Tencent's OK first."
+     ],
+     "files": {
+      "api": "character-3d/medium.api.json",
+      "ui": "character-3d/medium.workflow.json",
+      "manifest": "character-3d/medium.manifest.json"
+     }
+    },
+    {
+     "tier": "large",
+     "label": "24 GB",
+     "downloadBytes": 7810416886,
+     "models": [
+      "birefnet.safetensors",
+      "hunyuan_3d_v2.1.safetensors"
+     ],
+     "customNodes": [],
+     "notices": [
+      "Licence: Tencent Hunyuan 3D Community. It does not cover the EU, the UK or South Korea. If you live there, don't download it. A company with over 1 million monthly users needs Tencent's OK first."
+     ],
+     "files": {
+      "api": "character-3d/large.api.json",
+      "ui": "character-3d/large.workflow.json",
+      "manifest": "character-3d/large.manifest.json"
+     }
+    }
+   ]
+  },
+  {
+   "id": "avatar-texture-repaint",
+   "task": "avatar-texture",
+   "title": "Repaint an avatar texture from a reference picture",
+   "short": "Avatar texture repaint",
+   "forWhat": "Your model's texture sheet repainted in the colours and materials of a character picture. Every seam stays where it is.",
+   "ask": "Set up the VTube Pro avatar texture repaint workflow in ComfyUI",
+   "tiers": [
+    {
+     "tier": "small",
+     "label": "8 GB",
+     "downloadBytes": 12827583408,
+     "models": [
+      "animagine-xl-4.0-opt.safetensors",
+      "controlnet-union-sdxl-promax.safetensors",
+      "ip-adapter-plus_sdxl_vit-h.safetensors",
+      "CLIP-ViT-H-14-laion2B-s32B-b79K.safetensors"
+     ],
+     "customNodes": [
+      "ComfyUI_IPAdapter_plus"
+     ],
+     "files": {
+      "api": "avatar-texture-repaint/small.api.json",
+      "ui": "avatar-texture-repaint/small.workflow.json",
+      "manifest": "avatar-texture-repaint/small.manifest.json"
+     }
+    },
+    {
+     "tier": "medium",
+     "label": "16 GB",
+     "downloadBytes": 16132299052,
+     "models": [
+      "flux-2-klein-4b.safetensors",
+      "qwen_3_4b.safetensors",
+      "flux2-vae.safetensors"
+     ],
+     "customNodes": [],
+     "files": {
+      "api": "avatar-texture-repaint/medium.api.json",
+      "ui": "avatar-texture-repaint/medium.workflow.json",
+      "manifest": "avatar-texture-repaint/medium.manifest.json"
+     }
+    },
+    {
+     "tier": "large",
+     "label": "24 GB",
+     "downloadBytes": 31021848039,
+     "models": [
+      "qwen_image_edit_2511_fp8mixed.safetensors",
+      "Qwen-Image-Edit-2511-Lightning-4steps-V1.0-bf16.safetensors",
+      "qwen_2.5_vl_7b_fp8_scaled.safetensors",
+      "qwen_image_vae.safetensors"
+     ],
+     "customNodes": [],
+     "files": {
+      "api": "avatar-texture-repaint/large.api.json",
+      "ui": "avatar-texture-repaint/large.workflow.json",
+      "manifest": "avatar-texture-repaint/large.manifest.json"
+     }
+    }
+   ]
+  },
+  {
+   "id": "avatar-skin-variant",
+   "task": "avatar-skin",
+   "title": "New outfit colours or a skin variant",
+   "short": "Outfit or skin variant",
+   "forWhat": "A recolour or restyle of a texture (a winter jacket, a red version) that still fits your model.",
+   "ask": "Set up the VTube Pro outfit variant workflow in ComfyUI",
+   "tiers": [
+    {
+     "tier": "small",
+     "label": "8 GB",
+     "downloadBytes": 9451692448,
+     "models": [
+      "animagine-xl-4.0-opt.safetensors",
+      "controlnet-union-sdxl-promax.safetensors"
+     ],
+     "customNodes": [],
+     "files": {
+      "api": "avatar-skin-variant/small.api.json",
+      "ui": "avatar-skin-variant/small.workflow.json",
+      "manifest": "avatar-skin-variant/small.manifest.json"
+     }
+    },
+    {
+     "tier": "medium",
+     "label": "16 GB",
+     "downloadBytes": 16132299052,
+     "models": [
+      "flux-2-klein-4b.safetensors",
+      "qwen_3_4b.safetensors",
+      "flux2-vae.safetensors"
+     ],
+     "customNodes": [],
+     "files": {
+      "api": "avatar-skin-variant/medium.api.json",
+      "ui": "avatar-skin-variant/medium.workflow.json",
+      "manifest": "avatar-skin-variant/medium.manifest.json"
+     }
+    },
+    {
+     "tier": "large",
+     "label": "24 GB",
+     "downloadBytes": 31021848039,
+     "models": [
+      "qwen_image_edit_2511_fp8mixed.safetensors",
+      "Qwen-Image-Edit-2511-Lightning-4steps-V1.0-bf16.safetensors",
+      "qwen_2.5_vl_7b_fp8_scaled.safetensors",
+      "qwen_image_vae.safetensors"
+     ],
+     "customNodes": [],
+     "files": {
+      "api": "avatar-skin-variant/large.api.json",
+      "ui": "avatar-skin-variant/large.workflow.json",
+      "manifest": "avatar-skin-variant/large.manifest.json"
+     }
+    }
+   ]
+  },
+  {
+   "id": "character-concept-sheet",
+   "task": "concept-sheet",
+   "title": "Character reference sheet (front, side, back)",
+   "short": "Character reference sheet",
+   "forWhat": "Front, side and back views of an original character, to model from or to paint textures with.",
+   "ask": "Set up the VTube Pro character sheet workflow in ComfyUI",
+   "tiers": [
+    {
+     "tier": "small",
+     "label": "8 GB",
+     "downloadBytes": 7005207876,
+     "models": [
+      "animagine-xl-4.0-opt.safetensors",
+      "RealESRGAN_x4plus.safetensors"
+     ],
+     "customNodes": [],
+     "files": {
+      "api": "character-concept-sheet/small.api.json",
+      "ui": "character-concept-sheet/small.workflow.json",
+      "manifest": "character-concept-sheet/small.manifest.json"
+     }
+    },
+    {
+     "tier": "medium",
+     "label": "16 GB",
+     "downloadBytes": 20757010672,
+     "models": [
+      "z_image_turbo_bf16.safetensors",
+      "qwen_3_4b.safetensors",
+      "ae.safetensors",
+      "RealESRGAN_x4plus.safetensors"
+     ],
+     "customNodes": [],
+     "files": {
+      "api": "character-concept-sheet/medium.api.json",
+      "ui": "character-concept-sheet/medium.workflow.json",
+      "manifest": "character-concept-sheet/medium.manifest.json"
+     }
+    },
+    {
+     "tier": "large",
+     "label": "24 GB",
+     "downloadBytes": 30985622202,
+     "models": [
+      "qwen_image_2512_fp8_e4m3fn.safetensors",
+      "Qwen-Image-2512-Lightning-4steps-V1.0-bf16.safetensors",
+      "qwen_2.5_vl_7b_fp8_scaled.safetensors",
+      "qwen_image_vae.safetensors",
+      "RealESRGAN_x4plus.safetensors"
+     ],
+     "customNodes": [],
+     "files": {
+      "api": "character-concept-sheet/large.api.json",
+      "ui": "character-concept-sheet/large.workflow.json",
+      "manifest": "character-concept-sheet/large.manifest.json"
+     }
+    }
+   ]
+  },
+  {
+   "id": "room-seamless-tiles",
+   "task": "room-tiles",
+   "title": "Seamless tiles for rooms (floors, walls, fabric)",
+   "short": "Seamless room tiles",
+   "forWhat": "Square textures that repeat with no visible seam: wood floor, brick, carpet, tiles, fabric.",
+   "ask": "Set up the VTube Pro seamless tile workflow in ComfyUI",
+   "tiers": [
+    {
+     "tier": "small",
+     "label": "8 GB",
+     "downloadBytes": 6938078334,
+     "models": [
+      "sd_xl_base_1.0.safetensors"
+     ],
+     "customNodes": [],
+     "files": {
+      "api": "room-seamless-tiles/small.api.json",
+      "ui": "room-seamless-tiles/small.workflow.json",
+      "manifest": "room-seamless-tiles/small.manifest.json"
+     }
+    },
+    {
+     "tier": "medium",
+     "label": "16 GB",
+     "downloadBytes": 20690152836,
+     "models": [
+      "z_image_turbo_bf16.safetensors",
+      "qwen_3_4b.safetensors",
+      "ae.safetensors"
+     ],
+     "customNodes": [],
+     "files": {
+      "api": "room-seamless-tiles/medium.api.json",
+      "ui": "room-seamless-tiles/medium.workflow.json",
+      "manifest": "room-seamless-tiles/medium.manifest.json"
+     }
+    },
+    {
+     "tier": "large",
+     "label": "24 GB",
+     "downloadBytes": 30918764366,
+     "models": [
+      "qwen_image_2512_fp8_e4m3fn.safetensors",
+      "Qwen-Image-2512-Lightning-4steps-V1.0-bf16.safetensors",
+      "qwen_2.5_vl_7b_fp8_scaled.safetensors",
+      "qwen_image_vae.safetensors"
+     ],
+     "customNodes": [],
+     "files": {
+      "api": "room-seamless-tiles/large.api.json",
+      "ui": "room-seamless-tiles/large.workflow.json",
+      "manifest": "room-seamless-tiles/large.manifest.json"
+     }
+    }
+   ]
+  },
+  {
+   "id": "room-skybox-360",
+   "task": "skybox",
+   "title": "360 sky or backdrop panorama",
+   "short": "360 sky",
+   "forWhat": "A wrap-around sky or far backdrop (sunset city, space, forest) for outside your windows.",
+   "ask": "Set up the VTube Pro 360 sky workflow in ComfyUI",
+   "tiers": [
+    {
+     "tier": "small",
+     "label": "8 GB",
+     "downloadBytes": 7004936170,
+     "models": [
+      "sd_xl_base_1.0.safetensors",
+      "RealESRGAN_x4plus.safetensors"
+     ],
+     "customNodes": [],
+     "files": {
+      "api": "room-skybox-360/small.api.json",
+      "ui": "room-skybox-360/small.workflow.json",
+      "manifest": "room-skybox-360/small.manifest.json"
+     }
+    },
+    {
+     "tier": "medium",
+     "label": "16 GB",
+     "downloadBytes": 20757010672,
+     "models": [
+      "z_image_turbo_bf16.safetensors",
+      "qwen_3_4b.safetensors",
+      "ae.safetensors",
+      "RealESRGAN_x4plus.safetensors"
+     ],
+     "customNodes": [],
+     "files": {
+      "api": "room-skybox-360/medium.api.json",
+      "ui": "room-skybox-360/medium.workflow.json",
+      "manifest": "room-skybox-360/medium.manifest.json"
+     }
+    },
+    {
+     "tier": "large",
+     "label": "24 GB",
+     "downloadBytes": 30985622202,
+     "models": [
+      "qwen_image_2512_fp8_e4m3fn.safetensors",
+      "Qwen-Image-2512-Lightning-4steps-V1.0-bf16.safetensors",
+      "qwen_2.5_vl_7b_fp8_scaled.safetensors",
+      "qwen_image_vae.safetensors",
+      "RealESRGAN_x4plus.safetensors"
+     ],
+     "customNodes": [],
+     "files": {
+      "api": "room-skybox-360/large.api.json",
+      "ui": "room-skybox-360/large.workflow.json",
+      "manifest": "room-skybox-360/large.manifest.json"
+     }
+    }
+   ]
+  },
+  {
+   "id": "room-screen-posters",
+   "task": "room-art",
+   "title": "Posters and signs with words, for your room",
+   "short": "Poster or sign with text",
+   "forWhat": "Wall posters, shop signs, menu boards and banners with readable words.",
+   "ask": "Set up the VTube Pro poster workflow in ComfyUI",
+   "tiers": [
+    {
+     "tier": "small",
+     "label": "8 GB",
+     "downloadBytes": 7004936170,
+     "models": [
+      "sd_xl_base_1.0.safetensors",
+      "RealESRGAN_x4plus.safetensors"
+     ],
+     "customNodes": [],
+     "files": {
+      "api": "room-screen-posters/small.api.json",
+      "ui": "room-screen-posters/small.workflow.json",
+      "manifest": "room-screen-posters/small.manifest.json"
+     }
+    },
+    {
+     "tier": "medium",
+     "label": "16 GB",
+     "downloadBytes": 20757010672,
+     "models": [
+      "z_image_turbo_bf16.safetensors",
+      "qwen_3_4b.safetensors",
+      "ae.safetensors",
+      "RealESRGAN_x4plus.safetensors"
+     ],
+     "customNodes": [],
+     "files": {
+      "api": "room-screen-posters/medium.api.json",
+      "ui": "room-screen-posters/medium.workflow.json",
+      "manifest": "room-screen-posters/medium.manifest.json"
+     }
+    },
+    {
+     "tier": "large",
+     "label": "24 GB",
+     "downloadBytes": 30985622202,
+     "models": [
+      "qwen_image_2512_fp8_e4m3fn.safetensors",
+      "Qwen-Image-2512-Lightning-4steps-V1.0-bf16.safetensors",
+      "qwen_2.5_vl_7b_fp8_scaled.safetensors",
+      "qwen_image_vae.safetensors",
+      "RealESRGAN_x4plus.safetensors"
+     ],
+     "customNodes": [],
+     "files": {
+      "api": "room-screen-posters/large.api.json",
+      "ui": "room-screen-posters/large.workflow.json",
+      "manifest": "room-screen-posters/large.manifest.json"
+     }
+    }
+   ]
+  },
+  {
+   "id": "decals-stickers",
+   "task": "decal",
+   "title": "Decals, stickers and emblems with a see-through background",
+   "short": "Decals and stickers",
+   "forWhat": "Graffiti, stickers, patches and your own emblems for walls and costumes.",
+   "ask": "Set up the VTube Pro sticker workflow in ComfyUI",
+   "tiers": [
+    {
+     "tier": "small",
+     "label": "8 GB",
+     "downloadBytes": 7382551930,
+     "models": [
+      "sd_xl_base_1.0.safetensors",
+      "birefnet.safetensors"
+     ],
+     "customNodes": [],
+     "files": {
+      "api": "decals-stickers/small.api.json",
+      "ui": "decals-stickers/small.workflow.json",
+      "manifest": "decals-stickers/small.manifest.json"
+     }
+    },
+    {
+     "tier": "medium",
+     "label": "16 GB",
+     "downloadBytes": 21134626432,
+     "models": [
+      "z_image_turbo_bf16.safetensors",
+      "qwen_3_4b.safetensors",
+      "ae.safetensors",
+      "birefnet.safetensors"
+     ],
+     "customNodes": [],
+     "files": {
+      "api": "decals-stickers/medium.api.json",
+      "ui": "decals-stickers/medium.workflow.json",
+      "manifest": "decals-stickers/medium.manifest.json"
+     }
+    },
+    {
+     "tier": "large",
+     "label": "24 GB",
+     "downloadBytes": 31363237962,
+     "models": [
+      "qwen_image_2512_fp8_e4m3fn.safetensors",
+      "Qwen-Image-2512-Lightning-4steps-V1.0-bf16.safetensors",
+      "qwen_2.5_vl_7b_fp8_scaled.safetensors",
+      "qwen_image_vae.safetensors",
+      "birefnet.safetensors"
+     ],
+     "customNodes": [],
+     "files": {
+      "api": "decals-stickers/large.api.json",
+      "ui": "decals-stickers/large.workflow.json",
+      "manifest": "decals-stickers/large.manifest.json"
+     }
+    }
+   ]
+  },
+  {
+   "id": "stream-thumbnail",
+   "task": "thumbnail",
+   "title": "Stream and video thumbnails with your avatar",
+   "short": "Stream thumbnail",
+   "forWhat": "A 16:9 thumbnail: a generated background, a big title, and your avatar cut out on top.",
+   "ask": "Set up the VTube Pro thumbnail workflow in ComfyUI",
+   "tiers": [
+    {
+     "tier": "small",
+     "label": "8 GB",
+     "downloadBytes": 7382551930,
+     "models": [
+      "sd_xl_base_1.0.safetensors",
+      "birefnet.safetensors"
+     ],
+     "customNodes": [],
+     "files": {
+      "api": "stream-thumbnail/small.api.json",
+      "ui": "stream-thumbnail/small.workflow.json",
+      "manifest": "stream-thumbnail/small.manifest.json"
+     }
+    },
+    {
+     "tier": "medium",
+     "label": "16 GB",
+     "downloadBytes": 21134626432,
+     "models": [
+      "z_image_turbo_bf16.safetensors",
+      "qwen_3_4b.safetensors",
+      "ae.safetensors",
+      "birefnet.safetensors"
+     ],
+     "customNodes": [],
+     "files": {
+      "api": "stream-thumbnail/medium.api.json",
+      "ui": "stream-thumbnail/medium.workflow.json",
+      "manifest": "stream-thumbnail/medium.manifest.json"
+     }
+    },
+    {
+     "tier": "large",
+     "label": "24 GB",
+     "downloadBytes": 31363237962,
+     "models": [
+      "qwen_image_2512_fp8_e4m3fn.safetensors",
+      "Qwen-Image-2512-Lightning-4steps-V1.0-bf16.safetensors",
+      "qwen_2.5_vl_7b_fp8_scaled.safetensors",
+      "qwen_image_vae.safetensors",
+      "birefnet.safetensors"
+     ],
+     "customNodes": [],
+     "files": {
+      "api": "stream-thumbnail/large.api.json",
+      "ui": "stream-thumbnail/large.workflow.json",
+      "manifest": "stream-thumbnail/large.manifest.json"
+     }
+    }
+   ]
+  },
+  {
+   "id": "stream-overlay",
+   "task": "overlay",
+   "title": "Overlays: Starting soon, Be right back and panels",
+   "short": "Overlays and screens",
+   "forWhat": "A full-screen \"Starting soon\" or \"Be right back\" picture, or a panel background, in your style.",
+   "ask": "Set up the VTube Pro overlay workflow in ComfyUI",
+   "tiers": [
+    {
+     "tier": "small",
+     "label": "8 GB",
+     "downloadBytes": 7004936170,
+     "models": [
+      "sd_xl_base_1.0.safetensors",
+      "RealESRGAN_x4plus.safetensors"
+     ],
+     "customNodes": [],
+     "files": {
+      "api": "stream-overlay/small.api.json",
+      "ui": "stream-overlay/small.workflow.json",
+      "manifest": "stream-overlay/small.manifest.json"
+     }
+    },
+    {
+     "tier": "medium",
+     "label": "16 GB",
+     "downloadBytes": 20690152836,
+     "models": [
+      "z_image_turbo_bf16.safetensors",
+      "qwen_3_4b.safetensors",
+      "ae.safetensors"
+     ],
+     "customNodes": [],
+     "files": {
+      "api": "stream-overlay/medium.api.json",
+      "ui": "stream-overlay/medium.workflow.json",
+      "manifest": "stream-overlay/medium.manifest.json"
+     }
+    },
+    {
+     "tier": "large",
+     "label": "24 GB",
+     "downloadBytes": 30985622202,
+     "models": [
+      "qwen_image_2512_fp8_e4m3fn.safetensors",
+      "Qwen-Image-2512-Lightning-4steps-V1.0-bf16.safetensors",
+      "qwen_2.5_vl_7b_fp8_scaled.safetensors",
+      "qwen_image_vae.safetensors",
+      "RealESRGAN_x4plus.safetensors"
+     ],
+     "customNodes": [],
+     "files": {
+      "api": "stream-overlay/large.api.json",
+      "ui": "stream-overlay/large.workflow.json",
+      "manifest": "stream-overlay/large.manifest.json"
+     }
+    }
+   ]
+  },
+  {
+   "id": "chat-emotes",
+   "task": "emote",
+   "title": "Chat emotes of your character",
+   "short": "Chat emotes",
+   "forWhat": "Little expressive faces of your character for Twitch, YouTube and Discord chat.",
+   "ask": "Set up the VTube Pro emote workflow in ComfyUI",
+   "tiers": [
+    {
+     "tier": "small",
+     "label": "8 GB",
+     "downloadBytes": 10758714596,
+     "models": [
+      "animagine-xl-4.0-opt.safetensors",
+      "ip-adapter-plus_sdxl_vit-h.safetensors",
+      "CLIP-ViT-H-14-laion2B-s32B-b79K.safetensors",
+      "birefnet.safetensors"
+     ],
+     "customNodes": [
+      "ComfyUI_IPAdapter_plus"
+     ],
+     "files": {
+      "api": "chat-emotes/small.api.json",
+      "ui": "chat-emotes/small.workflow.json",
+      "manifest": "chat-emotes/small.manifest.json"
+     }
+    },
+    {
+     "tier": "medium",
+     "label": "16 GB",
+     "downloadBytes": 16576772648,
+     "models": [
+      "flux-2-klein-4b.safetensors",
+      "qwen_3_4b.safetensors",
+      "flux2-vae.safetensors",
+      "birefnet.safetensors"
+     ],
+     "customNodes": [],
+     "files": {
+      "api": "chat-emotes/medium.api.json",
+      "ui": "chat-emotes/medium.workflow.json",
+      "manifest": "chat-emotes/medium.manifest.json"
+     }
+    },
+    {
+     "tier": "large",
+     "label": "24 GB",
+     "downloadBytes": 31466321635,
+     "models": [
+      "qwen_image_edit_2511_fp8mixed.safetensors",
+      "Qwen-Image-Edit-2511-Lightning-4steps-V1.0-bf16.safetensors",
+      "qwen_2.5_vl_7b_fp8_scaled.safetensors",
+      "qwen_image_vae.safetensors",
+      "birefnet.safetensors"
+     ],
+     "customNodes": [],
+     "files": {
+      "api": "chat-emotes/large.api.json",
+      "ui": "chat-emotes/large.workflow.json",
+      "manifest": "chat-emotes/large.manifest.json"
+     }
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,96 @@
+{
+ "schema": "vtubepro.comfy-workflow/1",
+ "id": "avatar-skin-variant",
+ "tier": "small",
+ "key": "avatar-skin-variant/small",
+ "title": "New outfit colours or a skin variant",
+ "short": "Outfit or skin variant",
+ "task": "avatar-skin",
+ "version": "2026.10.01",
+ "checked": "2026-10-01",
+ "vram": {
+  "minGB": 8,
+  "recommendedGB": 8,
+  "label": "8 GB"
+ },
+ "comfyui": {
+  "tested": "0.22.3",
+  "note": "Uses only built-in ComfyUI nodes (plus the custom node listed, if any). Update ComfyUI if a node shows red."
+ },
+ "models": [
+  {
+   "id": "animagine-xl-4",
+   "name": "Animagine XL 4.0 (opt)",
+   "file": "animagine-xl-4.0-opt.safetensors",
+   "folder": "checkpoints",
+   "bytes": 6938350040,
+   "sha256": "6327eca98bfb6538dd7a4edce22484a1bbc57a8cff6b11d075d40da1afb847ac",
+   "url": "https://huggingface.co/cagliostrolab/animagine-xl-4.0/resolve/2b7c1b397761bf5bd3cc42e5b39ec99314a75a96/animagine-xl-4.0-opt.safetensors",
+   "page": "https://huggingface.co/cagliostrolab/animagine-xl-4.0",
+   "repo": "cagliostrolab/animagine-xl-4.0",
+   "revision": "2b7c1b397761bf5bd3cc42e5b39ec99314a75a96",
+   "licence": "CreativeML Open RAIL++-M",
+   "licenceUrl": "https://huggingface.co/cagliostrolab/animagine-xl-4.0",
+   "upstream": "cagliostrolab/animagine-xl-4.0"
+  },
+  {
+   "id": "controlnet-union-sdxl",
+   "name": "ControlNet Union SDXL ProMax (xinsir)",
+   "file": "controlnet-union-sdxl-promax.safetensors",
+   "folder": "controlnet",
+   "bytes": 2513342408,
+   "sha256": "9fae2e50cb431bfcbe05822b59ec2228df545ef27f711dea8949e9f4ed9f7cdc",
+   "url": "https://huggingface.co/xinsir/controlnet-union-sdxl-1.0/resolve/801a4a3fa3d4c936f4feea95b98607bc6726f80c/diffusion_pytorch_model_promax.safetensors",
+   "page": "https://huggingface.co/xinsir/controlnet-union-sdxl-1.0",
+   "repo": "xinsir/controlnet-union-sdxl-1.0",
+   "revision": "801a4a3fa3d4c936f4feea95b98607bc6726f80c",
+   "licence": "Apache-2.0",
+   "licenceUrl": "https://huggingface.co/xinsir/controlnet-union-sdxl-1.0",
+   "upstream": "xinsir/controlnet-union-sdxl-1.0"
+  }
+ ],
+ "customNodes": [],
+ "downloadBytes": 9451692448,
+ "inputs": [
+  {
+   "node": "1",
+   "kind": "image",
+   "what": "Your texture (from your model)",
+   "default": "vtp_texture.png"
+  },
+  {
+   "node": "7",
+   "kind": "text",
+   "what": "Your prompt: describe the picture",
+   "default": "game character texture sheet, dark green wool jacket, same layout, same seams, flat colours"
+  }
+ ],
+ "outputs": [
+  {
+   "node": "15",
+   "what": "New texture",
+   "size": "same as your texture",
+   "format": "PNG"
+  }
+ ],
+ "settings": "28 steps, CFG 5, denoise 0.5 (lower keeps more), ControlNet 0.8.",
+ "forWhat": "A recolour or restyle of a texture (a winter jacket, a red version) that still fits your model.",
+ "output": "A PNG the same size as the original texture.",
+ "vtp": "Add it as a new costume or texture set (the Costumes tab, or import_costume for AIs). Never overwrite the original.",
+ "ask": "Set up the VTube Pro outfit variant workflow in ComfyUI",
+ "steps": [
+  "Load the texture in \"Your texture\".",
+  "Say the change in words, like \"make the jacket dark green wool\".",
+  "Press Run. Try a few times and keep the best."
+ ],
+ "tips": [
+  "Name what must not change: \"keep the emblem and every seam\".",
+  "Picture size stays the same as the original, so it fits your model."
+ ],
+ "licenceSummary": "Commercial use OK by default: CreativeML Open RAIL++-M, Apache-2.0.",
+ "files": {
+  "api": "avatar-skin-variant/small.api.json",
+  "ui": "avatar-skin-variant/small.workflow.json",
+  "manifest": "avatar-skin-variant/small.manifest.json"
+ }
+}

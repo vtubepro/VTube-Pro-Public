@@ -1,0 +1,14 @@
+{
+  "name": "vtube-pro-relay",
+  "private": true,
+  "type": "module",
+  "description": "Signalling relay for VTube Pro multiplayer (Cloudflare Worker + Durable Object). SDP/ICE only - never models.",
+  "scripts": {
+    "typecheck": "tsc --noEmit -p .",
+    "deploy": "npx wrangler@4 deploy",
+    "secrets": "powershell -ExecutionPolicy Bypass -File deploy.ps1 -SecretsOnly"
+  },
+  "devDependencies": {
+    "wrangler": "^4.140.0"
+  }
+}

@@ -1,0 +1,1015 @@
+{
+ "last_node_id": 19,
+ "last_link_id": 23,
+ "nodes": [
+  {
+   "id": 1,
+   "type": "LoadImage",
+   "pos": [
+    540,
+    60
+   ],
+   "size": [
+    340,
+    466
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "outputs": [
+    {
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "links": [
+      1
+     ],
+     "slot_index": 0
+    },
+    {
+     "name": "MASK",
+     "type": "MASK",
+     "links": null,
+     "slot_index": 1
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "LoadImage"
+   },
+   "widgets_values": [
+    "vtp_character.png",
+    "image"
+   ],
+   "title": "Your character picture (whole body, front view)",
+   "color": "#3f5f12",
+   "bgcolor": "#2b3f0c"
+  },
+  {
+   "id": 2,
+   "type": "ImageScaleToTotalPixels",
+   "pos": [
+    990,
+    60
+   ],
+   "size": [
+    340,
+    148
+   ],
+   "flags": {},
+   "order": 4,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "image",
+     "type": "IMAGE",
+     "link": 1
+    }
+   ],
+   "outputs": [
+    {
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "links": [
+      2,
+      4,
+      9
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "ImageScaleToTotalPixels"
+   },
+   "widgets_values": [
+    "lanczos",
+    1,
+    8
+   ],
+   "title": "Work at about 1 megapixel"
+  },
+  {
+   "id": 3,
+   "type": "LoadBackgroundRemovalModel",
+   "pos": [
+    540,
+    566
+   ],
+   "size": [
+    340,
+    96
+   ],
+   "flags": {},
+   "order": 1,
+   "mode": 0,
+   "outputs": [
+    {
+     "name": "bg_model",
+     "type": "BACKGROUND_REMOVAL",
+     "links": [
+      3
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "LoadBackgroundRemovalModel",
+    "models": [
+     {
+      "name": "birefnet.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/BiRefNet/resolve/25511f8787e51912e1480706b4e47b8f467fbf72/background_removal/birefnet.safetensors",
+      "directory": "background_removal",
+      "hash": "9ab37426bf4de0567af6b5d21b16151357149139362e6e8992021b8ce356a154",
+      "hash_type": "SHA256"
+     }
+    ]
+   },
+   "widgets_values": [
+    "birefnet.safetensors"
+   ],
+   "title": "Background remover (BiRefNet, MIT)"
+  },
+  {
+   "id": 4,
+   "type": "RemoveBackground",
+   "pos": [
+    1440,
+    60
+   ],
+   "size": [
+    340,
+    94
+   ],
+   "flags": {},
+   "order": 6,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "image",
+     "type": "IMAGE",
+     "link": 2
+    },
+    {
+     "name": "bg_removal_model",
+     "type": "BACKGROUND_REMOVAL",
+     "link": 3
+    }
+   ],
+   "outputs": [
+    {
+     "name": "mask",
+     "type": "MASK",
+     "links": [
+      10
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "RemoveBackground"
+   },
+   "widgets_values": [],
+   "title": "Find the character"
+  },
+  {
+   "id": 5,
+   "type": "GetImageSize",
+   "pos": [
+    1440,
+    194
+   ],
+   "size": [
+    340,
+    118
+   ],
+   "flags": {},
+   "order": 7,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "image",
+     "type": "IMAGE",
+     "link": 4
+    }
+   ],
+   "outputs": [
+    {
+     "name": "width",
+     "type": "INT",
+     "links": [
+      5
+     ],
+     "slot_index": 0
+    },
+    {
+     "name": "height",
+     "type": "INT",
+     "links": [
+      6
+     ],
+     "slot_index": 1
+    },
+    {
+     "name": "batch_size",
+     "type": "INT",
+     "links": null,
+     "slot_index": 2
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "GetImageSize"
+   },
+   "widgets_values": []
+  },
+  {
+   "id": 6,
+   "type": "SolidMask",
+   "pos": [
+    1890,
+    60
+   ],
+   "size": [
+    340,
+    172
+   ],
+   "flags": {},
+   "order": 8,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "width",
+     "type": "INT",
+     "link": 5,
+     "widget": {
+      "name": "width"
+     }
+    },
+    {
+     "name": "height",
+     "type": "INT",
+     "link": 6,
+     "widget": {
+      "name": "height"
+     }
+    }
+   ],
+   "outputs": [
+    {
+     "name": "MASK",
+     "type": "MASK",
+     "links": [
+      7
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "SolidMask"
+   },
+   "widgets_values": [
+    1,
+    512,
+    512
+   ]
+  },
+  {
+   "id": 7,
+   "type": "MaskToImage",
+   "pos": [
+    2340,
+    60
+   ],
+   "size": [
+    340,
+    70
+   ],
+   "flags": {},
+   "order": 9,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "mask",
+     "type": "MASK",
+     "link": 7
+    }
+   ],
+   "outputs": [
+    {
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "links": [
+      8
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "MaskToImage"
+   },
+   "widgets_values": [],
+   "title": "Plain white background"
+  },
+  {
+   "id": 8,
+   "type": "ImageCompositeMasked",
+   "pos": [
+    2790,
+    60
+   ],
+   "size": [
+    340,
+    196
+   ],
+   "flags": {},
+   "order": 10,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "destination",
+     "type": "IMAGE",
+     "link": 8
+    },
+    {
+     "name": "source",
+     "type": "IMAGE",
+     "link": 9
+    },
+    {
+     "name": "mask",
+     "type": "MASK",
+     "link": 10
+    }
+   ],
+   "outputs": [
+    {
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "links": [
+      11
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "ImageCompositeMasked"
+   },
+   "widgets_values": [
+    0,
+    0,
+    false
+   ],
+   "title": "Character on white"
+  },
+  {
+   "id": 9,
+   "type": "ResizeAndPadImage",
+   "pos": [
+    3240,
+    60
+   ],
+   "size": [
+    340,
+    174
+   ],
+   "flags": {},
+   "order": 11,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "image",
+     "type": "IMAGE",
+     "link": 11
+    }
+   ],
+   "outputs": [
+    {
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "links": [
+      13
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "ResizeAndPadImage"
+   },
+   "widgets_values": [
+    1024,
+    1024,
+    "white",
+    "lanczos"
+   ],
+   "title": "Centre in a square"
+  },
+  {
+   "id": 10,
+   "type": "ImageOnlyCheckpointLoader",
+   "pos": [
+    540,
+    702
+   ],
+   "size": [
+    340,
+    144
+   ],
+   "flags": {},
+   "order": 2,
+   "mode": 0,
+   "outputs": [
+    {
+     "name": "MODEL",
+     "type": "MODEL",
+     "links": [
+      15
+     ],
+     "slot_index": 0
+    },
+    {
+     "name": "CLIP_VISION",
+     "type": "CLIP_VISION",
+     "links": [
+      12
+     ],
+     "slot_index": 1
+    },
+    {
+     "name": "VAE",
+     "type": "VAE",
+     "links": [
+      21
+     ],
+     "slot_index": 2
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "ImageOnlyCheckpointLoader",
+    "models": [
+     {
+      "name": "hunyuan3d-dit-v2_fp16.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/hunyuan3D_2.0_repackaged/resolve/6da110fc4bbaa23cc4fe7d20129c54c2aac28f80/split_files/hunyuan3d-dit-v2_fp16.safetensors",
+      "directory": "checkpoints",
+      "hash": "360bc281fc956d4acac0c3d36d5ec0ebf8cdddbf4b8892e894d12419388d479b",
+      "hash_type": "SHA256"
+     }
+    ]
+   },
+   "widgets_values": [
+    "hunyuan3d-dit-v2_fp16.safetensors"
+   ]
+  },
+  {
+   "id": 11,
+   "type": "CLIPVisionEncode",
+   "pos": [
+    3690,
+    60
+   ],
+   "size": [
+    340,
+    120
+   ],
+   "flags": {},
+   "order": 12,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "clip_vision",
+     "type": "CLIP_VISION",
+     "link": 12
+    },
+    {
+     "name": "image",
+     "type": "IMAGE",
+     "link": 13
+    }
+   ],
+   "outputs": [
+    {
+     "name": "CLIP_VISION_OUTPUT",
+     "type": "CLIP_VISION_OUTPUT",
+     "links": [
+      14
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "CLIPVisionEncode"
+   },
+   "widgets_values": [
+    "center"
+   ]
+  },
+  {
+   "id": 12,
+   "type": "Hunyuan3Dv2Conditioning",
+   "pos": [
+    4140,
+    60
+   ],
+   "size": [
+    340,
+    94
+   ],
+   "flags": {},
+   "order": 13,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "clip_vision_output",
+     "type": "CLIP_VISION_OUTPUT",
+     "link": 14
+    }
+   ],
+   "outputs": [
+    {
+     "name": "positive",
+     "type": "CONDITIONING",
+     "links": [
+      17
+     ],
+     "slot_index": 0
+    },
+    {
+     "name": "negative",
+     "type": "CONDITIONING",
+     "links": [
+      18
+     ],
+     "slot_index": 1
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "Hunyuan3Dv2Conditioning"
+   },
+   "widgets_values": []
+  },
+  {
+   "id": 13,
+   "type": "EmptyLatentHunyuan3Dv2",
+   "pos": [
+    540,
+    886
+   ],
+   "size": [
+    340,
+    122
+   ],
+   "flags": {},
+   "order": 3,
+   "mode": 0,
+   "outputs": [
+    {
+     "name": "LATENT",
+     "type": "LATENT",
+     "links": [
+      19
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "EmptyLatentHunyuan3Dv2"
+   },
+   "widgets_values": [
+    3072,
+    1
+   ]
+  },
+  {
+   "id": 14,
+   "type": "ModelSamplingAuraFlow",
+   "pos": [
+    990,
+    248
+   ],
+   "size": [
+    340,
+    96
+   ],
+   "flags": {},
+   "order": 5,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "model",
+     "type": "MODEL",
+     "link": 15
+    }
+   ],
+   "outputs": [
+    {
+     "name": "MODEL",
+     "type": "MODEL",
+     "links": [
+      16
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "ModelSamplingAuraFlow"
+   },
+   "widgets_values": [
+    1
+   ]
+  },
+  {
+   "id": 15,
+   "type": "KSampler",
+   "pos": [
+    4590,
+    60
+   ],
+   "size": [
+    340,
+    324
+   ],
+   "flags": {},
+   "order": 14,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "model",
+     "type": "MODEL",
+     "link": 16
+    },
+    {
+     "name": "positive",
+     "type": "CONDITIONING",
+     "link": 17
+    },
+    {
+     "name": "negative",
+     "type": "CONDITIONING",
+     "link": 18
+    },
+    {
+     "name": "latent_image",
+     "type": "LATENT",
+     "link": 19
+    }
+   ],
+   "outputs": [
+    {
+     "name": "LATENT",
+     "type": "LATENT",
+     "links": [
+      20
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "KSampler"
+   },
+   "widgets_values": [
+    20261001,
+    "randomize",
+    20,
+    8,
+    "euler",
+    "normal",
+    1
+   ]
+  },
+  {
+   "id": 16,
+   "type": "VAEDecodeHunyuan3D",
+   "pos": [
+    5040,
+    60
+   ],
+   "size": [
+    340,
+    146
+   ],
+   "flags": {},
+   "order": 15,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "samples",
+     "type": "LATENT",
+     "link": 20
+    },
+    {
+     "name": "vae",
+     "type": "VAE",
+     "link": 21
+    }
+   ],
+   "outputs": [
+    {
+     "name": "VOXEL",
+     "type": "VOXEL",
+     "links": [
+      22
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "VAEDecodeHunyuan3D"
+   },
+   "widgets_values": [
+    8000,
+    256
+   ]
+  },
+  {
+   "id": 17,
+   "type": "VoxelToMesh",
+   "pos": [
+    5490,
+    60
+   ],
+   "size": [
+    340,
+    122
+   ],
+   "flags": {},
+   "order": 16,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "voxel",
+     "type": "VOXEL",
+     "link": 22
+    }
+   ],
+   "outputs": [
+    {
+     "name": "MESH",
+     "type": "MESH",
+     "links": [
+      23
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "VoxelToMesh"
+   },
+   "widgets_values": [
+    "surface net",
+    0.6
+   ]
+  },
+  {
+   "id": 18,
+   "type": "SaveGLB",
+   "pos": [
+    5940,
+    60
+   ],
+   "size": [
+    340,
+    96
+   ],
+   "flags": {},
+   "order": 17,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "mesh",
+     "type": "MESH",
+     "link": 23
+    }
+   ],
+   "outputs": [],
+   "properties": {
+    "Node name for S&R": "SaveGLB"
+   },
+   "widgets_values": [
+    "VTubePro/character"
+   ],
+   "title": "Save the 3D character (.glb)"
+  },
+  {
+   "id": 19,
+   "type": "MarkdownNote",
+   "pos": [
+    40,
+    60
+   ],
+   "size": [
+    460,
+    784
+   ],
+   "flags": {},
+   "order": 18,
+   "mode": 0,
+   "properties": {},
+   "widgets_values": [
+    "# Character 3D: turn a picture into a 3D model\n**VTube Pro workflow, 8 GB graphics card** (Hunyuan3D 2.0). Pack 2026.10.01.\n\nA picture of your character (whole body, facing front) turned into a 3D model on your own computer. The model is plain grey: it has the shape, not the colours.\n\n## How to use it\n1. Load a picture of your character in \"Your character picture\": whole body, facing the front, one character.\n2. Press Run. It takes a few minutes, so do it when you are not live.\n3. Find the result in ComfyUI's **output/VTubePro** folder (or right-click the picture > Save Image).\n\nThe **green boxes** are the ones to change.\n\n**You get:** A .glb 3D model in ComfyUI's output/VTubePro folder.\n\n**In VTube Pro:** The Create tab's \"Create my character\" runs this for you. Or add the .glb with \"Add my model\", then paint it (Create tab, \"Paint with AI\") or finish it in Blender. VTube Pro adds the eyes and mouth.\n\n**Settings:** Hunyuan3D 2.0: 20 steps, CFG 8, shape detail 256. Cuts the character out and puts it on white first.\n\n## Models (read the licence note first)\n- [birefnet.safetensors](https://huggingface.co/Comfy-Org/BiRefNet) (0.4 GB) in `models/background_removal`: MIT\n- [hunyuan3d-dit-v2_fp16.safetensors](https://huggingface.co/Comfy-Org/hunyuan3D_2.0_repackaged) (4.9 GB) in `models/checkpoints`: Tencent Hunyuan 3D 2.0 Community (not for use in the EU, UK or South Korea)\n\n**Licence: Tencent Hunyuan 3D Community. It does not cover the EU, the UK or South Korea. If you live there, don't download it. A company with over 1 million monthly users needs Tencent's OK first.**\n\nMissing a model? ComfyUI offers to download it when you open this workflow. Or ask your AI: \n*\"Set up the VTube Pro character 3D workflow in ComfyUI\"*: the VTube Pro Helper downloads every file from its official page, checks it, and adds this workflow, after you say yes.\n\n## Tips\n- Original characters only: no existing characters, logos or game art.\n- A plain background and even light give the cleanest shape.\n- The Hunyuan3D licence does not cover the EU, the UK or South Korea: if you live there, use another way to make your character.\n- Make pictures when you are not live: picture AI slows face tracking."
+   ],
+   "title": "Start here",
+   "color": "#432",
+   "bgcolor": "#653"
+  }
+ ],
+ "links": [
+  [
+   1,
+   1,
+   0,
+   2,
+   0,
+   "IMAGE"
+  ],
+  [
+   2,
+   2,
+   0,
+   4,
+   0,
+   "IMAGE"
+  ],
+  [
+   3,
+   3,
+   0,
+   4,
+   1,
+   "BACKGROUND_REMOVAL"
+  ],
+  [
+   4,
+   2,
+   0,
+   5,
+   0,
+   "IMAGE"
+  ],
+  [
+   5,
+   5,
+   0,
+   6,
+   0,
+   "INT"
+  ],
+  [
+   6,
+   5,
+   1,
+   6,
+   1,
+   "INT"
+  ],
+  [
+   7,
+   6,
+   0,
+   7,
+   0,
+   "MASK"
+  ],
+  [
+   8,
+   7,
+   0,
+   8,
+   0,
+   "IMAGE"
+  ],
+  [
+   9,
+   2,
+   0,
+   8,
+   1,
+   "IMAGE"
+  ],
+  [
+   10,
+   4,
+   0,
+   8,
+   2,
+   "MASK"
+  ],
+  [
+   11,
+   8,
+   0,
+   9,
+   0,
+   "IMAGE"
+  ],
+  [
+   12,
+   10,
+   1,
+   11,
+   0,
+   "CLIP_VISION"
+  ],
+  [
+   13,
+   9,
+   0,
+   11,
+   1,
+   "IMAGE"
+  ],
+  [
+   14,
+   11,
+   0,
+   12,
+   0,
+   "CLIP_VISION_OUTPUT"
+  ],
+  [
+   15,
+   10,
+   0,
+   14,
+   0,
+   "MODEL"
+  ],
+  [
+   16,
+   14,
+   0,
+   15,
+   0,
+   "MODEL"
+  ],
+  [
+   17,
+   12,
+   0,
+   15,
+   1,
+   "CONDITIONING"
+  ],
+  [
+   18,
+   12,
+   1,
+   15,
+   2,
+   "CONDITIONING"
+  ],
+  [
+   19,
+   13,
+   0,
+   15,
+   3,
+   "LATENT"
+  ],
+  [
+   20,
+   15,
+   0,
+   16,
+   0,
+   "LATENT"
+  ],
+  [
+   21,
+   10,
+   2,
+   16,
+   1,
+   "VAE"
+  ],
+  [
+   22,
+   16,
+   0,
+   17,
+   0,
+   "VOXEL"
+  ],
+  [
+   23,
+   17,
+   0,
+   18,
+   0,
+   "MESH"
+  ]
+ ],
+ "groups": [],
+ "config": {},
+ "extra": {
+  "ds": {
+   "scale": 0.7,
+   "offset": [
+    0,
+    0
+   ]
+  },
+  "vtubePro": {
+   "workflow": "character-3d",
+   "tier": "small",
+   "version": "2026.10.01",
+   "manifest": "character-3d/small.manifest.json"
+  }
+ },
+ "version": 0.4
+}

@@ -1,0 +1,267 @@
+{
+ "1": {
+  "class_type": "LoadImage",
+  "inputs": {
+   "image": "vtp_character.png"
+  },
+  "_meta": {
+   "title": "Your character picture (whole body, front view)"
+  }
+ },
+ "2": {
+  "class_type": "ImageScaleToTotalPixels",
+  "inputs": {
+   "image": [
+    "1",
+    0
+   ],
+   "upscale_method": "lanczos",
+   "megapixels": 1,
+   "resolution_steps": 8
+  },
+  "_meta": {
+   "title": "Work at about 1 megapixel"
+  }
+ },
+ "3": {
+  "class_type": "LoadBackgroundRemovalModel",
+  "inputs": {
+   "bg_removal_name": "birefnet.safetensors"
+  },
+  "_meta": {
+   "title": "Background remover (BiRefNet, MIT)"
+  }
+ },
+ "4": {
+  "class_type": "RemoveBackground",
+  "inputs": {
+   "image": [
+    "2",
+    0
+   ],
+   "bg_removal_model": [
+    "3",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "Find the character"
+  }
+ },
+ "5": {
+  "class_type": "GetImageSize",
+  "inputs": {
+   "image": [
+    "2",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "Get Image Size"
+  }
+ },
+ "6": {
+  "class_type": "SolidMask",
+  "inputs": {
+   "value": 1,
+   "width": [
+    "5",
+    0
+   ],
+   "height": [
+    "5",
+    1
+   ]
+  },
+  "_meta": {
+   "title": "Create Solid Mask"
+  }
+ },
+ "7": {
+  "class_type": "MaskToImage",
+  "inputs": {
+   "mask": [
+    "6",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "Plain white background"
+  }
+ },
+ "8": {
+  "class_type": "ImageCompositeMasked",
+  "inputs": {
+   "destination": [
+    "7",
+    0
+   ],
+   "source": [
+    "2",
+    0
+   ],
+   "x": 0,
+   "y": 0,
+   "resize_source": false,
+   "mask": [
+    "4",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "Character on white"
+  }
+ },
+ "9": {
+  "class_type": "ResizeAndPadImage",
+  "inputs": {
+   "image": [
+    "8",
+    0
+   ],
+   "target_width": 1024,
+   "target_height": 1024,
+   "padding_color": "white",
+   "interpolation": "lanczos"
+  },
+  "_meta": {
+   "title": "Centre in a square"
+  }
+ },
+ "10": {
+  "class_type": "ImageOnlyCheckpointLoader",
+  "inputs": {
+   "ckpt_name": "hunyuan_3d_v2.1.safetensors"
+  },
+  "_meta": {
+   "title": "Image Only Checkpoint Loader (img2vid model)"
+  }
+ },
+ "11": {
+  "class_type": "CLIPVisionEncode",
+  "inputs": {
+   "clip_vision": [
+    "10",
+    1
+   ],
+   "image": [
+    "9",
+    0
+   ],
+   "crop": "center"
+  },
+  "_meta": {
+   "title": "CLIP Vision Encode"
+  }
+ },
+ "12": {
+  "class_type": "Hunyuan3Dv2Conditioning",
+  "inputs": {
+   "clip_vision_output": [
+    "11",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "Hunyuan3Dv2Conditioning"
+  }
+ },
+ "13": {
+  "class_type": "EmptyLatentHunyuan3Dv2",
+  "inputs": {
+   "resolution": 4096,
+   "batch_size": 1
+  },
+  "_meta": {
+   "title": "EmptyLatentHunyuan3Dv2"
+  }
+ },
+ "14": {
+  "class_type": "ModelSamplingAuraFlow",
+  "inputs": {
+   "model": [
+    "10",
+    0
+   ],
+   "shift": 1
+  },
+  "_meta": {
+   "title": "ModelSamplingAuraFlow"
+  }
+ },
+ "15": {
+  "class_type": "KSampler",
+  "inputs": {
+   "model": [
+    "14",
+    0
+   ],
+   "seed": 20261001,
+   "steps": 50,
+   "cfg": 5,
+   "sampler_name": "euler",
+   "scheduler": "normal",
+   "positive": [
+    "12",
+    0
+   ],
+   "negative": [
+    "12",
+    1
+   ],
+   "latent_image": [
+    "13",
+    0
+   ],
+   "denoise": 1
+  },
+  "_meta": {
+   "title": "KSampler"
+  }
+ },
+ "16": {
+  "class_type": "VAEDecodeHunyuan3D",
+  "inputs": {
+   "samples": [
+    "15",
+    0
+   ],
+   "vae": [
+    "10",
+    2
+   ],
+   "num_chunks": 8000,
+   "octree_resolution": 384
+  },
+  "_meta": {
+   "title": "VAEDecodeHunyuan3D"
+  }
+ },
+ "17": {
+  "class_type": "VoxelToMesh",
+  "inputs": {
+   "voxel": [
+    "16",
+    0
+   ],
+   "algorithm": "surface net",
+   "threshold": 0.6
+  },
+  "_meta": {
+   "title": "VoxelToMesh"
+  }
+ },
+ "18": {
+  "class_type": "SaveGLB",
+  "inputs": {
+   "mesh": [
+    "17",
+    0
+   ],
+   "filename_prefix": "VTubePro/character"
+  },
+  "_meta": {
+   "title": "Save the 3D character (.glb)"
+  }
+ }
+}

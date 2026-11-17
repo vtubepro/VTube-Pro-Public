@@ -1,0 +1,104 @@
+{
+ "abandoned_factory_canteen_01": {
+  "file": "abandoned_factory_canteen_01_1k.hdr",
+  "meanLum": 0.83562,
+  "peak": [
+   0.4854,
+   0.4004
+  ],
+  "source": "https://polyhaven.com/a/abandoned_factory_canteen_01",
+  "license": "CC0 1.0",
+  "title": "Abandoned Factory Canteen 01",
+  "authors": [
+   "Sergej Majboroda"
+  ]
+ },
+ "belfast_sunset_puresky": {
+  "file": "belfast_sunset_puresky_1k.hdr",
+  "meanLum": 1.07528,
+  "peak": [
+   0.6006,
+   0.4844
+  ],
+  "source": "https://polyhaven.com/a/belfast_sunset_puresky",
+  "license": "CC0 1.0",
+  "title": "Belfast Sunset (Pure Sky)",
+  "authors": [
+   "Greg Zaal",
+   "Dimitrios Savva",
+   "Jarod Guest"
+  ]
+ },
+ "empty_warehouse_01": {
+  "file": "empty_warehouse_01_1k.hdr",
+  "meanLum": 0.77513,
+  "peak": [
+   0.584,
+   0.2207
+  ],
+  "source": "https://polyhaven.com/a/empty_warehouse_01",
+  "license": "CC0 1.0",
+  "title": "Empty Warehouse 01",
+  "authors": [
+   "Sergej Majboroda"
+  ]
+ },
+ "fireplace": {
+  "file": "fireplace_1k.hdr",
+  "meanLum": 0.26102,
+  "peak": [
+   0.5527,
+   0.6367
+  ],
+  "source": "https://polyhaven.com/a/fireplace",
+  "license": "CC0 1.0",
+  "title": "Fireplace",
+  "authors": [
+   "Greg Zaal"
+  ]
+ },
+ "hospital_room_2": {
+  "file": "hospital_room_2_1k.hdr",
+  "meanLum": 0.69766,
+  "peak": [
+   0.582,
+   0.1484
+  ],
+  "source": "https://polyhaven.com/a/hospital_room_2",
+  "license": "CC0 1.0",
+  "title": "Hospital Room 2",
+  "authors": [
+   "Dimitrios Savva",
+   "Jarod Guest"
+  ]
+ },
+ "rogland_clear_night": {
+  "file": "rogland_clear_night_1k.hdr",
+  "meanLum": 0.17267,
+  "peak": [
+   0.4688,
+   0.3105
+  ],
+  "source": "https://polyhaven.com/a/rogland_clear_night",
+  "license": "CC0 1.0",
+  "title": "Rogland Clear Night",
+  "authors": [
+   "Greg Zaal"
+  ]
+ },
+ "small_harbour_sunset": {
+  "file": "small_harbour_sunset_1k.hdr",
+  "meanLum": 0.85147,
+  "peak": [
+   0.6006,
+   0.4434
+  ],
+  "source": "https://polyhaven.com/a/small_harbour_sunset",
+  "license": "CC0 1.0",
+  "title": "Small Harbour Sunset",
+  "authors": [
+   "Greg Zaal",
+   "Jarod Guest"
+  ]
+ }
+}

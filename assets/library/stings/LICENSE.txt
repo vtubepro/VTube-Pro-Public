@@ -1,0 +1,10 @@
+Starter stings for the Soundboard (Live > Stream extras > Sounds & screen effects).
+
+Every .ogg in this folder is an unmodified copy of one file from a Kenney pack, CC0 1.0 (public domain):
+
+  bell, bonk, punch, glass, clang, crash, thud, pickaxe, pop, tin  ->  Kenney "Impact Sounds" 1.0 (kenney.nl/assets/impact-sounds)
+  click, blip                                                     ->  Kenney "UI Audio"       (kenney.nl/assets/ui-audio)
+
+License: Creative Commons Zero, http://creativecommons.org/publicdomain/zero/1.0/
+Free for personal, educational and commercial use. Credit to Kenney (www.kenney.nl) is not required but appreciated.
+The extra built-in sounds (air horn, siren, ding, coin, boing, laser, ta-da) are synthesised in the studio by VTube Pro itself (no file).

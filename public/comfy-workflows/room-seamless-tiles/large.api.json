@@ -1,0 +1,470 @@
+{
+ "1": {
+  "class_type": "UNETLoader",
+  "inputs": {
+   "unet_name": "qwen_image_2512_fp8_e4m3fn.safetensors",
+   "weight_dtype": "default"
+  },
+  "_meta": {
+   "title": "Load Diffusion Model"
+  }
+ },
+ "2": {
+  "class_type": "LoraLoaderModelOnly",
+  "inputs": {
+   "model": [
+    "1",
+    0
+   ],
+   "lora_name": "Qwen-Image-2512-Lightning-4steps-V1.0-bf16.safetensors",
+   "strength_model": 1
+  },
+  "_meta": {
+   "title": "Lightning LoRA (4 steps)"
+  }
+ },
+ "3": {
+  "class_type": "ModelSamplingAuraFlow",
+  "inputs": {
+   "model": [
+    "2",
+    0
+   ],
+   "shift": 3.1
+  },
+  "_meta": {
+   "title": "ModelSamplingAuraFlow"
+  }
+ },
+ "4": {
+  "class_type": "CLIPLoader",
+  "inputs": {
+   "clip_name": "qwen_2.5_vl_7b_fp8_scaled.safetensors",
+   "type": "qwen_image",
+   "device": "default"
+  },
+  "_meta": {
+   "title": "Load CLIP"
+  }
+ },
+ "5": {
+  "class_type": "VAELoader",
+  "inputs": {
+   "vae_name": "qwen_image_vae.safetensors"
+  },
+  "_meta": {
+   "title": "Load VAE"
+  }
+ },
+ "6": {
+  "class_type": "CLIPTextEncode",
+  "inputs": {
+   "text": "Top-down flat texture of old oak floor planks, photographed straight down, perfectly even lighting, no shadows, no perspective, fills the whole frame.",
+   "clip": [
+    "4",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "Your prompt: describe the picture"
+  }
+ },
+ "7": {
+  "class_type": "CLIPTextEncode",
+  "inputs": {
+   "text": "blurry, low quality, distorted text, misspelled words, watermark, deformed",
+   "clip": [
+    "4",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "Things to avoid"
+  }
+ },
+ "8": {
+  "class_type": "EmptySD3LatentImage",
+  "inputs": {
+   "width": 1024,
+   "height": 1024,
+   "batch_size": 1
+  },
+  "_meta": {
+   "title": "Picture size 1024x1024"
+  }
+ },
+ "9": {
+  "class_type": "KSampler",
+  "inputs": {
+   "model": [
+    "3",
+    0
+   ],
+   "seed": 20261001,
+   "steps": 4,
+   "cfg": 1,
+   "sampler_name": "euler",
+   "scheduler": "simple",
+   "positive": [
+    "6",
+    0
+   ],
+   "negative": [
+    "7",
+    0
+   ],
+   "latent_image": [
+    "8",
+    0
+   ],
+   "denoise": 1
+  },
+  "_meta": {
+   "title": "KSampler"
+  }
+ },
+ "10": {
+  "class_type": "VAEDecode",
+  "inputs": {
+   "samples": [
+    "9",
+    0
+   ],
+   "vae": [
+    "5",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "VAE Decode"
+  }
+ },
+ "11": {
+  "class_type": "ImageCrop",
+  "inputs": {
+   "image": [
+    "10",
+    0
+   ],
+   "width": 512,
+   "height": 1024,
+   "x": 0,
+   "y": 0
+  },
+  "_meta": {
+   "title": "Left half"
+  }
+ },
+ "12": {
+  "class_type": "ImageCrop",
+  "inputs": {
+   "image": [
+    "10",
+    0
+   ],
+   "width": 512,
+   "height": 1024,
+   "x": 512,
+   "y": 0
+  },
+  "_meta": {
+   "title": "Right half"
+  }
+ },
+ "13": {
+  "class_type": "ImageStitch",
+  "inputs": {
+   "image1": [
+    "12",
+    0
+   ],
+   "direction": "right",
+   "match_image_size": false,
+   "spacing_width": 0,
+   "spacing_color": "white",
+   "image2": [
+    "11",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "Swap halves (edges meet in the middle)"
+  }
+ },
+ "14": {
+  "class_type": "SolidMask",
+  "inputs": {
+   "value": 0,
+   "width": 1024,
+   "height": 1024
+  },
+  "_meta": {
+   "title": "Create Solid Mask"
+  }
+ },
+ "15": {
+  "class_type": "SolidMask",
+  "inputs": {
+   "value": 1,
+   "width": 128,
+   "height": 1024
+  },
+  "_meta": {
+   "title": "Create Solid Mask"
+  }
+ },
+ "16": {
+  "class_type": "MaskComposite",
+  "inputs": {
+   "destination": [
+    "14",
+    0
+   ],
+   "source": [
+    "15",
+    0
+   ],
+   "x": 448,
+   "y": 0,
+   "operation": "add"
+  },
+  "_meta": {
+   "title": "Seam band"
+  }
+ },
+ "17": {
+  "class_type": "ImageCrop",
+  "inputs": {
+   "image": [
+    "13",
+    0
+   ],
+   "width": 1024,
+   "height": 512,
+   "x": 0,
+   "y": 0
+  },
+  "_meta": {
+   "title": "Top half"
+  }
+ },
+ "18": {
+  "class_type": "ImageCrop",
+  "inputs": {
+   "image": [
+    "13",
+    0
+   ],
+   "width": 1024,
+   "height": 512,
+   "x": 0,
+   "y": 512
+  },
+  "_meta": {
+   "title": "Bottom half"
+  }
+ },
+ "19": {
+  "class_type": "ImageStitch",
+  "inputs": {
+   "image1": [
+    "18",
+    0
+   ],
+   "direction": "down",
+   "match_image_size": false,
+   "spacing_width": 0,
+   "spacing_color": "white",
+   "image2": [
+    "17",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "Swap top and bottom"
+  }
+ },
+ "20": {
+  "class_type": "SolidMask",
+  "inputs": {
+   "value": 1,
+   "width": 1024,
+   "height": 128
+  },
+  "_meta": {
+   "title": "Create Solid Mask"
+  }
+ },
+ "21": {
+  "class_type": "MaskComposite",
+  "inputs": {
+   "destination": [
+    "16",
+    0
+   ],
+   "source": [
+    "20",
+    0
+   ],
+   "x": 0,
+   "y": 448,
+   "operation": "add"
+  },
+  "_meta": {
+   "title": "Seam cross"
+  }
+ },
+ "22": {
+  "class_type": "VAEEncode",
+  "inputs": {
+   "pixels": [
+    "19",
+    0
+   ],
+   "vae": [
+    "5",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "VAE Encode"
+  }
+ },
+ "23": {
+  "class_type": "SetLatentNoiseMask",
+  "inputs": {
+   "samples": [
+    "22",
+    0
+   ],
+   "mask": [
+    "21",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "Set Latent Noise Mask"
+  }
+ },
+ "24": {
+  "class_type": "KSampler",
+  "inputs": {
+   "model": [
+    "3",
+    0
+   ],
+   "seed": 20261001,
+   "steps": 4,
+   "cfg": 1,
+   "sampler_name": "euler",
+   "scheduler": "simple",
+   "positive": [
+    "6",
+    0
+   ],
+   "negative": [
+    "7",
+    0
+   ],
+   "latent_image": [
+    "23",
+    0
+   ],
+   "denoise": 0.7
+  },
+  "_meta": {
+   "title": "KSampler"
+  }
+ },
+ "25": {
+  "class_type": "VAEDecode",
+  "inputs": {
+   "samples": [
+    "24",
+    0
+   ],
+   "vae": [
+    "5",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "VAE Decode"
+  }
+ },
+ "26": {
+  "class_type": "MaskToImage",
+  "inputs": {
+   "mask": [
+    "21",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "Convert Mask to Image"
+  }
+ },
+ "27": {
+  "class_type": "ImageBlur",
+  "inputs": {
+   "image": [
+    "26",
+    0
+   ],
+   "blur_radius": 31,
+   "sigma": 10
+  },
+  "_meta": {
+   "title": "Soft seam edge"
+  }
+ },
+ "28": {
+  "class_type": "ImageToMask",
+  "inputs": {
+   "image": [
+    "27",
+    0
+   ],
+   "channel": "red"
+  },
+  "_meta": {
+   "title": "Convert Image to Mask"
+  }
+ },
+ "29": {
+  "class_type": "ImageCompositeMasked",
+  "inputs": {
+   "destination": [
+    "19",
+    0
+   ],
+   "source": [
+    "25",
+    0
+   ],
+   "x": 0,
+   "y": 0,
+   "resize_source": false,
+   "mask": [
+    "28",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "Seamless result"
+  }
+ },
+ "30": {
+  "class_type": "SaveImage",
+  "inputs": {
+   "images": [
+    "29",
+    0
+   ],
+   "filename_prefix": "VTubePro/room-tile"
+  },
+  "_meta": {
+   "title": "Save the picture"
+  }
+ }
+}

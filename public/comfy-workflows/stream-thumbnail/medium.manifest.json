@@ -1,0 +1,127 @@
+{
+ "schema": "vtubepro.comfy-workflow/1",
+ "id": "stream-thumbnail",
+ "tier": "medium",
+ "key": "stream-thumbnail/medium",
+ "title": "Stream and video thumbnails with your avatar",
+ "short": "Stream thumbnail",
+ "task": "thumbnail",
+ "version": "2026.10.01",
+ "checked": "2026-10-01",
+ "vram": {
+  "minGB": 12,
+  "recommendedGB": 16,
+  "label": "16 GB"
+ },
+ "comfyui": {
+  "tested": "0.22.3",
+  "note": "Uses only built-in ComfyUI nodes (plus the custom node listed, if any). Update ComfyUI if a node shows red."
+ },
+ "models": [
+  {
+   "id": "z-image-turbo",
+   "name": "Z-Image-Turbo (bf16)",
+   "file": "z_image_turbo_bf16.safetensors",
+   "folder": "diffusion_models",
+   "bytes": 12309866400,
+   "sha256": "2407613050b809ffdff18a4ac99af83ea6b95443ecebdf80e064a79c825574a6",
+   "url": "https://huggingface.co/Comfy-Org/z_image_turbo/resolve/6fc90a3b1b653e935a0d175e260736de25b84df5/split_files/diffusion_models/z_image_turbo_bf16.safetensors",
+   "page": "https://huggingface.co/Comfy-Org/z_image_turbo",
+   "repo": "Comfy-Org/z_image_turbo",
+   "revision": "6fc90a3b1b653e935a0d175e260736de25b84df5",
+   "licence": "Apache-2.0",
+   "licenceUrl": "https://huggingface.co/Tongyi-MAI/Z-Image-Turbo",
+   "upstream": "Tongyi-MAI/Z-Image-Turbo"
+  },
+  {
+   "id": "qwen3-4b-te",
+   "name": "Qwen3 4B text encoder (for Z-Image-Turbo and FLUX.2 klein 4B)",
+   "file": "qwen_3_4b.safetensors",
+   "folder": "text_encoders",
+   "bytes": 8044982048,
+   "sha256": "6c671498573ac2f7a5501502ccce8d2b08ea6ca2f661c458e708f36b36edfc5a",
+   "url": "https://huggingface.co/Comfy-Org/z_image_turbo/resolve/6fc90a3b1b653e935a0d175e260736de25b84df5/split_files/text_encoders/qwen_3_4b.safetensors",
+   "page": "https://huggingface.co/Comfy-Org/z_image_turbo",
+   "repo": "Comfy-Org/z_image_turbo",
+   "revision": "6fc90a3b1b653e935a0d175e260736de25b84df5",
+   "licence": "Apache-2.0",
+   "licenceUrl": "https://huggingface.co/Tongyi-MAI/Z-Image-Turbo",
+   "upstream": "Qwen/Qwen3-4B (same SHA-256 in Comfy-Org/flux2-klein)"
+  },
+  {
+   "id": "z-image-vae",
+   "name": "Z-Image VAE (ae)",
+   "file": "ae.safetensors",
+   "folder": "vae",
+   "bytes": 335304388,
+   "sha256": "afc8e28272cd15db3919bacdb6918ce9c1ed22e96cb12c4d5ed0fba823529e38",
+   "url": "https://huggingface.co/Comfy-Org/z_image_turbo/resolve/6fc90a3b1b653e935a0d175e260736de25b84df5/split_files/vae/ae.safetensors",
+   "page": "https://huggingface.co/Comfy-Org/z_image_turbo",
+   "repo": "Comfy-Org/z_image_turbo",
+   "revision": "6fc90a3b1b653e935a0d175e260736de25b84df5",
+   "licence": "Apache-2.0",
+   "licenceUrl": "https://huggingface.co/Tongyi-MAI/Z-Image-Turbo",
+   "upstream": "Tongyi-MAI/Z-Image-Turbo"
+  },
+  {
+   "id": "birefnet",
+   "name": "BiRefNet (background remover)",
+   "file": "birefnet.safetensors",
+   "folder": "background_removal",
+   "bytes": 444473596,
+   "sha256": "9ab37426bf4de0567af6b5d21b16151357149139362e6e8992021b8ce356a154",
+   "url": "https://huggingface.co/Comfy-Org/BiRefNet/resolve/25511f8787e51912e1480706b4e47b8f467fbf72/background_removal/birefnet.safetensors",
+   "page": "https://huggingface.co/Comfy-Org/BiRefNet",
+   "repo": "Comfy-Org/BiRefNet",
+   "revision": "25511f8787e51912e1480706b4e47b8f467fbf72",
+   "licence": "MIT",
+   "licenceUrl": "https://huggingface.co/ZhengPeng7/BiRefNet",
+   "upstream": "ZhengPeng7/BiRefNet (same SHA-256 as its model.safetensors)"
+  }
+ ],
+ "customNodes": [],
+ "downloadBytes": 21134626432,
+ "inputs": [
+  {
+   "node": "1",
+   "kind": "image",
+   "what": "Your avatar (a studio picture)",
+   "default": "vtp_avatar.png"
+  },
+  {
+   "node": "6",
+   "kind": "text",
+   "what": "Your prompt: describe the picture",
+   "default": "YouTube thumbnail background: a cozy neon arcade at night, vibrant colours, high contrast. Big bold title text \"LATE NIGHT GAMES\" on the left side."
+  }
+ ],
+ "outputs": [
+  {
+   "node": "17",
+   "what": "Thumbnail",
+   "size": "1280x720",
+   "format": "PNG"
+  }
+ ],
+ "settings": "1280x720, 8 steps, CFG 1; avatar cut out with BiRefNet.",
+ "forWhat": "A 16:9 thumbnail: a generated background, a big title, and your avatar cut out on top.",
+ "output": "1280x720 PNG (YouTube and Twitch size).",
+ "vtp": "Take a picture of your avatar in the studio (a clean background helps), load it as \"Your avatar\", run, upload the result.",
+ "ask": "Set up the VTube Pro thumbnail workflow in ComfyUI",
+ "steps": [
+  "Load a picture of your avatar in \"Your avatar\".",
+  "Change the theme and the title words in \"Your prompt\".",
+  "Press Run. Your avatar is cut out and placed on the right."
+ ],
+ "tips": [
+  "3-4 big words at most. Strong contrast.",
+  "Your avatar's face should be large.",
+  "Don't use other creators' art or game key art."
+ ],
+ "licenceSummary": "Commercial use OK by default: Apache-2.0, MIT.",
+ "files": {
+  "api": "stream-thumbnail/medium.api.json",
+  "ui": "stream-thumbnail/medium.workflow.json",
+  "manifest": "stream-thumbnail/medium.manifest.json"
+ }
+}

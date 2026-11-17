@@ -1,0 +1,142 @@
+{
+ "schema": "vtubepro.comfy-workflow/1",
+ "id": "stream-thumbnail",
+ "tier": "large",
+ "key": "stream-thumbnail/large",
+ "title": "Stream and video thumbnails with your avatar",
+ "short": "Stream thumbnail",
+ "task": "thumbnail",
+ "version": "2026.10.01",
+ "checked": "2026-10-01",
+ "vram": {
+  "minGB": 20,
+  "recommendedGB": 24,
+  "label": "24 GB"
+ },
+ "comfyui": {
+  "tested": "0.22.3",
+  "note": "Uses only built-in ComfyUI nodes (plus the custom node listed, if any). Update ComfyUI if a node shows red."
+ },
+ "models": [
+  {
+   "id": "qwen-image-2512",
+   "name": "Qwen-Image-2512 (fp8)",
+   "file": "qwen_image_2512_fp8_e4m3fn.safetensors",
+   "folder": "diffusion_models",
+   "bytes": 20430679144,
+   "sha256": "5dc80554d5d83390046a2f4a94ece06afb7700bf7b0aaf8bde9769793875876b",
+   "url": "https://huggingface.co/Comfy-Org/Qwen-Image_ComfyUI/resolve/1f12b17be14c89b026c51a91d67c32f84bb047bc/split_files/diffusion_models/qwen_image_2512_fp8_e4m3fn.safetensors",
+   "page": "https://huggingface.co/Comfy-Org/Qwen-Image_ComfyUI",
+   "repo": "Comfy-Org/Qwen-Image_ComfyUI",
+   "revision": "1f12b17be14c89b026c51a91d67c32f84bb047bc",
+   "licence": "Apache-2.0",
+   "licenceUrl": "https://huggingface.co/Qwen/Qwen-Image-2512",
+   "upstream": "Qwen/Qwen-Image-2512"
+  },
+  {
+   "id": "qwen-image-2512-lightning",
+   "name": "Qwen-Image-2512 Lightning 4-step LoRA",
+   "file": "Qwen-Image-2512-Lightning-4steps-V1.0-bf16.safetensors",
+   "folder": "loras",
+   "bytes": 849608296,
+   "sha256": "de0d236e54ecf2c43b32447d13478c6eae0d361b1fed48c69675b084fa240d87",
+   "url": "https://huggingface.co/lightx2v/Qwen-Image-2512-Lightning/resolve/a52649c9d0f6e1a248bff13f0df33bb8a2abdb52/Qwen-Image-2512-Lightning-4steps-V1.0-bf16.safetensors",
+   "page": "https://huggingface.co/lightx2v/Qwen-Image-2512-Lightning",
+   "repo": "lightx2v/Qwen-Image-2512-Lightning",
+   "revision": "a52649c9d0f6e1a248bff13f0df33bb8a2abdb52",
+   "licence": "Apache-2.0",
+   "licenceUrl": "https://huggingface.co/lightx2v/Qwen-Image-2512-Lightning",
+   "upstream": "lightx2v/Qwen-Image-2512-Lightning"
+  },
+  {
+   "id": "qwen25-vl-7b-te",
+   "name": "Qwen2.5-VL 7B text encoder (fp8)",
+   "file": "qwen_2.5_vl_7b_fp8_scaled.safetensors",
+   "folder": "text_encoders",
+   "bytes": 9384670680,
+   "sha256": "cb5636d852a0ea6a9075ab1bef496c0db7aef13c02350571e388aea959c5c0b4",
+   "url": "https://huggingface.co/Comfy-Org/Qwen-Image_ComfyUI/resolve/1f12b17be14c89b026c51a91d67c32f84bb047bc/split_files/text_encoders/qwen_2.5_vl_7b_fp8_scaled.safetensors",
+   "page": "https://huggingface.co/Comfy-Org/Qwen-Image_ComfyUI",
+   "repo": "Comfy-Org/Qwen-Image_ComfyUI",
+   "revision": "1f12b17be14c89b026c51a91d67c32f84bb047bc",
+   "licence": "Apache-2.0",
+   "licenceUrl": "https://huggingface.co/Comfy-Org/Qwen-Image_ComfyUI",
+   "upstream": "Qwen/Qwen2.5-VL-7B-Instruct"
+  },
+  {
+   "id": "qwen-image-vae",
+   "name": "Qwen-Image VAE",
+   "file": "qwen_image_vae.safetensors",
+   "folder": "vae",
+   "bytes": 253806246,
+   "sha256": "a70580f0213e67967ee9c95f05bb400e8fb08307e017a924bf3441223e023d1f",
+   "url": "https://huggingface.co/Comfy-Org/Qwen-Image_ComfyUI/resolve/1f12b17be14c89b026c51a91d67c32f84bb047bc/split_files/vae/qwen_image_vae.safetensors",
+   "page": "https://huggingface.co/Comfy-Org/Qwen-Image_ComfyUI",
+   "repo": "Comfy-Org/Qwen-Image_ComfyUI",
+   "revision": "1f12b17be14c89b026c51a91d67c32f84bb047bc",
+   "licence": "Apache-2.0",
+   "licenceUrl": "https://huggingface.co/Qwen/Qwen-Image-2512",
+   "upstream": "Qwen/Qwen-Image"
+  },
+  {
+   "id": "birefnet",
+   "name": "BiRefNet (background remover)",
+   "file": "birefnet.safetensors",
+   "folder": "background_removal",
+   "bytes": 444473596,
+   "sha256": "9ab37426bf4de0567af6b5d21b16151357149139362e6e8992021b8ce356a154",
+   "url": "https://huggingface.co/Comfy-Org/BiRefNet/resolve/25511f8787e51912e1480706b4e47b8f467fbf72/background_removal/birefnet.safetensors",
+   "page": "https://huggingface.co/Comfy-Org/BiRefNet",
+   "repo": "Comfy-Org/BiRefNet",
+   "revision": "25511f8787e51912e1480706b4e47b8f467fbf72",
+   "licence": "MIT",
+   "licenceUrl": "https://huggingface.co/ZhengPeng7/BiRefNet",
+   "upstream": "ZhengPeng7/BiRefNet (same SHA-256 as its model.safetensors)"
+  }
+ ],
+ "customNodes": [],
+ "downloadBytes": 31363237962,
+ "inputs": [
+  {
+   "node": "1",
+   "kind": "image",
+   "what": "Your avatar (a studio picture)",
+   "default": "vtp_avatar.png"
+  },
+  {
+   "node": "7",
+   "kind": "text",
+   "what": "Your prompt: describe the picture",
+   "default": "YouTube thumbnail background: a cozy neon arcade at night, vibrant colours, high contrast. Big bold title text \"LATE NIGHT GAMES\" on the left side."
+  }
+ ],
+ "outputs": [
+  {
+   "node": "19",
+   "what": "Thumbnail",
+   "size": "1280x720",
+   "format": "PNG"
+  }
+ ],
+ "settings": "1664x928, 4 steps (Lightning), CFG 1; avatar cut out with BiRefNet.",
+ "forWhat": "A 16:9 thumbnail: a generated background, a big title, and your avatar cut out on top.",
+ "output": "1280x720 PNG (YouTube and Twitch size).",
+ "vtp": "Take a picture of your avatar in the studio (a clean background helps), load it as \"Your avatar\", run, upload the result.",
+ "ask": "Set up the VTube Pro thumbnail workflow in ComfyUI",
+ "steps": [
+  "Load a picture of your avatar in \"Your avatar\".",
+  "Change the theme and the title words in \"Your prompt\".",
+  "Press Run. Your avatar is cut out and placed on the right."
+ ],
+ "tips": [
+  "3-4 big words at most. Strong contrast.",
+  "Your avatar's face should be large.",
+  "Don't use other creators' art or game key art."
+ ],
+ "licenceSummary": "Commercial use OK by default: Apache-2.0, MIT.",
+ "files": {
+  "api": "stream-thumbnail/large.api.json",
+  "ui": "stream-thumbnail/large.workflow.json",
+  "manifest": "stream-thumbnail/large.manifest.json"
+ }
+}

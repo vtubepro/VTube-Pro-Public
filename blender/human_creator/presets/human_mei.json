@@ -1,0 +1,10 @@
+{
+ "id": "human_mei", "name": "Mei (realistic)", "sex": "female",
+ "body": {"age": 31, "muscle": 0.45, "weight": 0.4, "height": 0.4, "proportions": 0.6, "cupsize": 0.45,
+          "race": {"asian": 1.0}},
+ "face": {"eye-scale": 0.05, "mouth-scale-horiz": -0.05, "head-oval": 0.4},
+ "skin": {"texture": "young_asian_female", "smooth": 0.3, "makeup": {"lips": 0.3, "lipColor": "#c0505a"}},
+ "eyes": {"color": "brown"},
+ "hair": {"style": "bob01", "color": "black"},
+ "outfit": {"clothes": ["female_casualsuit02"], "shoes": "shoes03"}
+}

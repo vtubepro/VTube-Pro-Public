@@ -1,0 +1,41 @@
+{
+ "format": "vtp.to3d-bases/1",
+ "bases": {
+  "mirelle": {
+   "gender": "female",
+   "sha256": "432ebf1c4cb3b64966d02eaf0d1ab3c2d1b9d6ade6c1305593c9e2a427f47713",
+   "metrics": {
+    "eye_w": 0.0549,
+    "eye_h": 0.042,
+    "ipd": 0.0901,
+    "eye_chin": 0.089,
+    "brow_gap": 0.0392,
+    "eye_tilt": 0.153,
+    "iris_ratio": 0.621,
+    "iris_aspect": 1.291,
+    "fw_mid": 1.637,
+    "fw_low": 0.853
+   },
+   "aspect": 0.765,
+   "col_aspect": 0.711
+  },
+  "kairo": {
+   "gender": "male",
+   "sha256": "afb7629befd758613bb142c8d69c5f83593e8e1e26344134e77e585f2acc50bc",
+   "metrics": {
+    "eye_w": 0.0437,
+    "eye_h": 0.0289,
+    "ipd": 0.0882,
+    "eye_chin": 0.1012,
+    "brow_gap": 0.0288,
+    "eye_tilt": 0.086,
+    "iris_ratio": 0.556,
+    "iris_aspect": 1.11,
+    "fw_mid": 1.473,
+    "fw_low": 0.887
+   },
+   "aspect": 0.661,
+   "col_aspect": 0.615
+  }
+ }
+}

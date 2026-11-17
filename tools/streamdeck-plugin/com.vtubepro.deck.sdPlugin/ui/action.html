@@ -1,0 +1,46 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="pi.css"><script src="pi.js"></script></head>
+<body>
+  <p id="st" class="warn">Connecting…</p>
+  <div class="sdpi-item"><div class="sdpi-item-label">Action</div><select class="sdpi-item-value" id="act"></select></div>
+  <p class="hint" id="hint"></p>
+  <div id="params"></div>
+  <div class="sdpi-item"><div class="sdpi-item-label">Title</div><input class="sdpi-item-value" id="title" placeholder="(action name)"></div>
+  <div id="portrow"></div>
+<script>
+  const $ = (id) => document.getElementById(id), esc = PI.esc;
+  let defs = [];
+  function renderParams() {
+    const d = defs.find((x) => x.id === $('act').value), p = PI.settings.params || {};
+    $('hint').textContent = d ? d.hint : '';
+    $('params').innerHTML = '';
+    for (const q of (d && d.params) || []) {
+      const row = document.createElement('div'); row.className = 'sdpi-item';
+      const v = p[q.key] != null ? p[q.key] : (q.default != null ? q.default : '');
+      let field;
+      if (q.type === 'select') field = '<select class="sdpi-item-value" data-k="' + q.key + '">' + q.options.map((o) => '<option value="' + esc(o.value) + '"' + (String(o.value) === String(v) ? ' selected' : '') + '>' + esc(o.label) + '</option>').join('') + '</select>';
+      else field = '<input class="sdpi-item-value" data-k="' + q.key + '" type="' + (q.type === 'number' ? 'number' : 'text') + '" value="' + esc(v) + '" placeholder="' + (q.type === 'room' ? 'room id (empty = Classic)' : '') + '">';
+      row.innerHTML = '<div class="sdpi-item-label">' + esc(q.label) + '</div>' + field;
+      $('params').append(row);
+    }
+    for (const el of $('params').querySelectorAll('[data-k]')) el.onchange = save;
+  }
+  function save() {
+    const params = {};
+    for (const el of $('params').querySelectorAll('[data-k]')) params[el.dataset.k] = el.type === 'number' ? +el.value : el.value;
+    PI.save({ action: $('act').value, params, title: $('title').value.trim() });
+  }
+  PI.onPlugin = (m) => {
+    if (m.t !== 'actions') return;
+    PI.status($('st'), m); PI.portRow($('portrow'), m);
+    defs = (m.actions || []).filter((a) => !a.local);
+    const groups = [...new Set(defs.map((a) => a.group))];
+    $('act').innerHTML = '<option value="">— pick —</option>' + groups.map((g) => '<optgroup label="' + esc(g) + '">' + defs.filter((a) => a.group === g).map((a) => '<option value="' + a.id + '">' + esc(a.icon + ' ' + a.label) + '</option>').join('') + '</optgroup>').join('');
+    $('act').value = PI.settings.action || '';
+    renderParams();
+  };
+  PI.onSettings = (s) => { $('act').value = s.action || ''; $('title').value = s.title || ''; renderParams(); };
+  $('act').onchange = () => { PI.settings = Object.assign({}, PI.settings, { action: $('act').value, params: {} }); renderParams(); save(); };
+  $('title').onchange = save;
+</script>
+</body></html>

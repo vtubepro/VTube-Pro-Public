@@ -1,0 +1,620 @@
+{
+ "format": "vtp.to3d-overrides/1",
+ "keys": [
+  {
+   "path": "sex",
+   "type": "enum",
+   "min": null,
+   "max": null,
+   "values": [
+    "female",
+    "male"
+   ],
+   "stage": "full"
+  },
+  {
+   "path": "creator.base",
+   "type": "enum",
+   "min": null,
+   "max": null,
+   "values": [
+    "mirelle",
+    "kairo",
+    "user"
+   ],
+   "stage": "full"
+  },
+  {
+   "path": "creator.colors.hair",
+   "type": "hex",
+   "min": null,
+   "max": null,
+   "values": null,
+   "stage": "full"
+  },
+  {
+   "path": "creator.colors.hairTip",
+   "type": "hex",
+   "min": null,
+   "max": null,
+   "values": null,
+   "stage": "full"
+  },
+  {
+   "path": "creator.colors.eyes",
+   "type": "hex",
+   "min": null,
+   "max": null,
+   "values": null,
+   "stage": "full"
+  },
+  {
+   "path": "creator.colors.brows",
+   "type": "hex",
+   "min": null,
+   "max": null,
+   "values": null,
+   "stage": "full"
+  },
+  {
+   "path": "creator.colors.skin",
+   "type": "hex",
+   "min": null,
+   "max": null,
+   "values": null,
+   "stage": "full"
+  },
+  {
+   "path": "creator.face.eyeSize",
+   "type": "number",
+   "min": 0.85,
+   "max": 1.35,
+   "values": null,
+   "stage": "full"
+  },
+  {
+   "path": "creator.face.chin",
+   "type": "number",
+   "min": -1,
+   "max": 1,
+   "values": null,
+   "stage": "full"
+  },
+  {
+   "path": "creator.face.faceWidth",
+   "type": "number",
+   "min": 0.9,
+   "max": 1.1,
+   "values": null,
+   "stage": "full"
+  },
+  {
+   "path": "creator.face.jaw",
+   "type": "number",
+   "min": 0.85,
+   "max": 1.3,
+   "values": null,
+   "stage": "full"
+  },
+  {
+   "path": "creator.face.eyeTilt",
+   "type": "number",
+   "min": -8,
+   "max": 8,
+   "values": null,
+   "stage": "full"
+  },
+  {
+   "path": "creator.body.height",
+   "type": "number",
+   "min": 0.85,
+   "max": 1.15,
+   "values": null,
+   "stage": "full"
+  },
+  {
+   "path": "creator.body.head",
+   "type": "number",
+   "min": 0.85,
+   "max": 1.15,
+   "values": null,
+   "stage": "full"
+  },
+  {
+   "path": "creator.body.shoulders",
+   "type": "number",
+   "min": 0.85,
+   "max": 1.15,
+   "values": null,
+   "stage": "full"
+  },
+  {
+   "path": "creator.body.bust",
+   "type": "number",
+   "min": 0.85,
+   "max": 1.15,
+   "values": null,
+   "stage": "full"
+  },
+  {
+   "path": "creator.body.waist",
+   "type": "number",
+   "min": 0.85,
+   "max": 1.15,
+   "values": null,
+   "stage": "full"
+  },
+  {
+   "path": "creator.body.hips",
+   "type": "number",
+   "min": 0.85,
+   "max": 1.15,
+   "values": null,
+   "stage": "full"
+  },
+  {
+   "path": "creator.body.legs",
+   "type": "number",
+   "min": 0.85,
+   "max": 1.15,
+   "values": null,
+   "stage": "full"
+  },
+  {
+   "path": "creator.body.arms",
+   "type": "number",
+   "min": 0.85,
+   "max": 1.15,
+   "values": null,
+   "stage": "full"
+  },
+  {
+   "path": "creator.body.neck",
+   "type": "number",
+   "min": 0.85,
+   "max": 1.15,
+   "values": null,
+   "stage": "full"
+  },
+  {
+   "path": "creator.body.build",
+   "type": "number",
+   "min": 0.85,
+   "max": 1.15,
+   "values": null,
+   "stage": "full"
+  },
+  {
+   "path": "creator.outfit.tops.color",
+   "type": "hex",
+   "min": null,
+   "max": null,
+   "values": null,
+   "stage": "full"
+  },
+  {
+   "path": "creator.outfit.bottoms.color",
+   "type": "hex",
+   "min": null,
+   "max": null,
+   "values": null,
+   "stage": "full"
+  },
+  {
+   "path": "creator.outfit.shoes.color",
+   "type": "hex",
+   "min": null,
+   "max": null,
+   "values": null,
+   "stage": "full"
+  },
+  {
+   "path": "face.iris.color",
+   "type": "hex",
+   "min": null,
+   "max": null,
+   "values": null,
+   "stage": "full"
+  },
+  {
+   "path": "face.iris.top",
+   "type": "hex",
+   "min": null,
+   "max": null,
+   "values": null,
+   "stage": "full"
+  },
+  {
+   "path": "face.iris.bottom",
+   "type": "hex",
+   "min": null,
+   "max": null,
+   "values": null,
+   "stage": "full"
+  },
+  {
+   "path": "face.iris.ring",
+   "type": "hex",
+   "min": null,
+   "max": null,
+   "values": null,
+   "stage": "full"
+  },
+  {
+   "path": "face.iris.pupilColor",
+   "type": "hex",
+   "min": null,
+   "max": null,
+   "values": null,
+   "stage": "full"
+  },
+  {
+   "path": "face.iris.pupil",
+   "type": "number",
+   "min": 0.2,
+   "max": 0.5,
+   "values": null,
+   "stage": "full"
+  },
+  {
+   "path": "face.iris.scale",
+   "type": "number",
+   "min": 0.8,
+   "max": 1.35,
+   "values": null,
+   "stage": "full"
+  },
+  {
+   "path": "face.iris.scaleY",
+   "type": "number",
+   "min": 0.85,
+   "max": 1.2,
+   "values": null,
+   "stage": "full"
+  },
+  {
+   "path": "face.iris.dy",
+   "type": "number",
+   "min": -0.3,
+   "max": 0.3,
+   "values": null,
+   "stage": "full"
+  },
+  {
+   "path": "face.eye.line",
+   "type": "hex",
+   "min": null,
+   "max": null,
+   "values": null,
+   "stage": "full"
+  },
+  {
+   "path": "face.eye.line2",
+   "type": "hex",
+   "min": null,
+   "max": null,
+   "values": null,
+   "stage": "full"
+  },
+  {
+   "path": "face.eye.white",
+   "type": "hex",
+   "min": null,
+   "max": null,
+   "values": null,
+   "stage": "full"
+  },
+  {
+   "path": "face.eye.whiteShadow",
+   "type": "hex",
+   "min": null,
+   "max": null,
+   "values": null,
+   "stage": "full"
+  },
+  {
+   "path": "face.eye.lineMax",
+   "type": "number",
+   "min": 0.1,
+   "max": 0.35,
+   "values": null,
+   "stage": "full"
+  },
+  {
+   "path": "face.eye.wing",
+   "type": "number",
+   "min": 0,
+   "max": 0.45,
+   "values": null,
+   "stage": "full"
+  },
+  {
+   "path": "face.eye.spikes",
+   "type": "int",
+   "min": 0,
+   "max": 5,
+   "values": null,
+   "stage": "full"
+  },
+  {
+   "path": "face.hl.sparkles",
+   "type": "int",
+   "min": 0,
+   "max": 4,
+   "values": null,
+   "stage": "full"
+  },
+  {
+   "path": "face.brow.color",
+   "type": "hex",
+   "min": null,
+   "max": null,
+   "values": null,
+   "stage": "full"
+  },
+  {
+   "path": "face.brow.height",
+   "type": "number",
+   "min": 1.2,
+   "max": 3,
+   "values": null,
+   "stage": "full"
+  },
+  {
+   "path": "face.brow.width",
+   "type": "number",
+   "min": 0.08,
+   "max": 0.3,
+   "values": null,
+   "stage": "full"
+  },
+  {
+   "path": "face.brow.tilt",
+   "type": "number",
+   "min": -0.5,
+   "max": 0.5,
+   "values": null,
+   "stage": "full"
+  },
+  {
+   "path": "face.brow.shape",
+   "type": "enum",
+   "min": null,
+   "max": null,
+   "values": [
+    "female",
+    "male"
+   ],
+   "stage": "full"
+  },
+  {
+   "path": "face.skin.blush",
+   "type": "hex",
+   "min": null,
+   "max": null,
+   "values": null,
+   "stage": "full"
+  },
+  {
+   "path": "face.skin.blushAlpha",
+   "type": "number",
+   "min": 0,
+   "max": 0.6,
+   "values": null,
+   "stage": "full"
+  },
+  {
+   "path": "face.skin.nose",
+   "type": "enum",
+   "min": null,
+   "max": null,
+   "values": [
+    "tick",
+    "dot",
+    "wedge",
+    "none"
+   ],
+   "stage": "full"
+  },
+  {
+   "path": "face.skin.mouthLine",
+   "type": "hex",
+   "min": null,
+   "max": null,
+   "values": null,
+   "stage": "full"
+  },
+  {
+   "path": "face.skin.lowerLash",
+   "type": "number",
+   "min": 0,
+   "max": 1,
+   "values": null,
+   "stage": "full"
+  },
+  {
+   "path": "eyes.lidBake",
+   "type": "number",
+   "min": 0,
+   "max": 0.4,
+   "values": null,
+   "stage": "full"
+  },
+  {
+   "path": "eyes.drawnLid",
+   "type": "bool",
+   "min": null,
+   "max": null,
+   "values": null,
+   "stage": "full"
+  },
+  {
+   "path": "mouth.restSmile",
+   "type": "number",
+   "min": 0,
+   "max": 0.55,
+   "values": null,
+   "stage": "full"
+  },
+  {
+   "path": "mouth.teeth",
+   "type": "enum",
+   "min": null,
+   "max": null,
+   "values": [
+    "flat",
+    "shark"
+   ],
+   "stage": "full"
+  },
+  {
+   "path": "hair.mode",
+   "type": "enum",
+   "min": null,
+   "max": null,
+   "values": [
+    "auto",
+    "down",
+    "ponytail",
+    "twintails"
+   ],
+   "stage": "hair"
+  },
+  {
+   "path": "hair.backLengthScale",
+   "type": "number",
+   "min": 0.5,
+   "max": 1.6,
+   "values": null,
+   "stage": "hair"
+  },
+  {
+   "path": "hair.ink",
+   "type": "number",
+   "min": 0.0002,
+   "max": 0.0015,
+   "values": null,
+   "stage": "hair"
+  },
+  {
+   "path": "hair.silfit",
+   "type": "bool",
+   "min": null,
+   "max": null,
+   "values": null,
+   "stage": "hair"
+  },
+  {
+   "path": "hair.seed",
+   "type": "int",
+   "min": 0,
+   "max": 9999,
+   "values": null,
+   "stage": "hair"
+  },
+  {
+   "path": "springs.fringe.stiffness",
+   "type": "number",
+   "min": 0.2,
+   "max": 6,
+   "values": null,
+   "stage": "springs"
+  },
+  {
+   "path": "springs.fringe.gravity",
+   "type": "number",
+   "min": 0,
+   "max": 0.3,
+   "values": null,
+   "stage": "springs"
+  },
+  {
+   "path": "springs.fringe.drag",
+   "type": "number",
+   "min": 0.1,
+   "max": 1,
+   "values": null,
+   "stage": "springs"
+  },
+  {
+   "path": "springs.side.stiffness",
+   "type": "number",
+   "min": 0.2,
+   "max": 6,
+   "values": null,
+   "stage": "springs"
+  },
+  {
+   "path": "springs.side.gravity",
+   "type": "number",
+   "min": 0,
+   "max": 0.3,
+   "values": null,
+   "stage": "springs"
+  },
+  {
+   "path": "springs.side.drag",
+   "type": "number",
+   "min": 0.1,
+   "max": 1,
+   "values": null,
+   "stage": "springs"
+  },
+  {
+   "path": "springs.back.stiffness",
+   "type": "number",
+   "min": 0.2,
+   "max": 6,
+   "values": null,
+   "stage": "springs"
+  },
+  {
+   "path": "springs.back.gravity",
+   "type": "number",
+   "min": 0,
+   "max": 0.3,
+   "values": null,
+   "stage": "springs"
+  },
+  {
+   "path": "springs.back.drag",
+   "type": "number",
+   "min": 0.1,
+   "max": 1,
+   "values": null,
+   "stage": "springs"
+  },
+  {
+   "path": "springs.ahoge.stiffness",
+   "type": "number",
+   "min": 0.2,
+   "max": 6,
+   "values": null,
+   "stage": "springs"
+  },
+  {
+   "path": "springs.ahoge.gravity",
+   "type": "number",
+   "min": 0,
+   "max": 0.3,
+   "values": null,
+   "stage": "springs"
+  },
+  {
+   "path": "springs.ahoge.drag",
+   "type": "number",
+   "min": 0.1,
+   "max": 1,
+   "values": null,
+   "stage": "springs"
+  },
+  {
+   "path": "look.vrmExposure",
+   "type": "number",
+   "min": 0.5,
+   "max": 1,
+   "values": null,
+   "stage": "profile"
+  }
+ ]
+}

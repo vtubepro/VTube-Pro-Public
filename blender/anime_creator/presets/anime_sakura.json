@@ -1,0 +1,8 @@
+{"id":"anime_sakura","name":"Sakura","prompt":"cheerful schoolgirl: long straight cherry-pink hair fading to peach, bright green eyes, navy sailor-style vest, pleated skirt, knee socks",
+ "base":"shibu",
+ "hair":{"style":"shino"},
+ "colors":{"hair":"#f28bb0","hairTip":"#ffd1b8","hairTipRange":[0.5,1.0],"eyes":"#35b86b","brows":"#b8577a"},
+ "body":{"legs":1.02},
+ "face":{"eyeSize":1.04},
+ "outfit":{"accessory":{"color":"#e2456f"}}
+}

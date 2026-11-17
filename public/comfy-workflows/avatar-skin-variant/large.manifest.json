@@ -1,0 +1,126 @@
+{
+ "schema": "vtubepro.comfy-workflow/1",
+ "id": "avatar-skin-variant",
+ "tier": "large",
+ "key": "avatar-skin-variant/large",
+ "title": "New outfit colours or a skin variant",
+ "short": "Outfit or skin variant",
+ "task": "avatar-skin",
+ "version": "2026.10.01",
+ "checked": "2026-10-01",
+ "vram": {
+  "minGB": 20,
+  "recommendedGB": 24,
+  "label": "24 GB"
+ },
+ "comfyui": {
+  "tested": "0.22.3",
+  "note": "Uses only built-in ComfyUI nodes (plus the custom node listed, if any). Update ComfyUI if a node shows red."
+ },
+ "models": [
+  {
+   "id": "qwen-image-edit-2511",
+   "name": "Qwen-Image-Edit-2511 (fp8 mixed)",
+   "file": "qwen_image_edit_2511_fp8mixed.safetensors",
+   "folder": "diffusion_models",
+   "bytes": 20533762817,
+   "sha256": "c9fdc158e46d3b61ef75f21ae866ca2fe808bf4a53643120d1c1e87c19280a4e",
+   "url": "https://huggingface.co/Comfy-Org/Qwen-Image-Edit_ComfyUI/resolve/f68ace85e60b4a02a323e394253731947657b7d2/split_files/diffusion_models/qwen_image_edit_2511_fp8mixed.safetensors",
+   "page": "https://huggingface.co/Comfy-Org/Qwen-Image-Edit_ComfyUI",
+   "repo": "Comfy-Org/Qwen-Image-Edit_ComfyUI",
+   "revision": "f68ace85e60b4a02a323e394253731947657b7d2",
+   "licence": "Apache-2.0",
+   "licenceUrl": "https://huggingface.co/Qwen/Qwen-Image-Edit-2511",
+   "upstream": "Qwen/Qwen-Image-Edit-2511"
+  },
+  {
+   "id": "qwen-image-edit-2511-lightning",
+   "name": "Qwen-Image-Edit-2511 Lightning 4-step LoRA",
+   "file": "Qwen-Image-Edit-2511-Lightning-4steps-V1.0-bf16.safetensors",
+   "folder": "loras",
+   "bytes": 849608296,
+   "sha256": "22226e8d05d354bb356627d428809f5afd7819399b077238a2b70a82883a904f",
+   "url": "https://huggingface.co/lightx2v/Qwen-Image-Edit-2511-Lightning/resolve/d74eba145674fd7e31b949324e148e21e7118abd/Qwen-Image-Edit-2511-Lightning-4steps-V1.0-bf16.safetensors",
+   "page": "https://huggingface.co/lightx2v/Qwen-Image-Edit-2511-Lightning",
+   "repo": "lightx2v/Qwen-Image-Edit-2511-Lightning",
+   "revision": "d74eba145674fd7e31b949324e148e21e7118abd",
+   "licence": "Apache-2.0",
+   "licenceUrl": "https://huggingface.co/lightx2v/Qwen-Image-Edit-2511-Lightning",
+   "upstream": "lightx2v/Qwen-Image-Edit-2511-Lightning"
+  },
+  {
+   "id": "qwen25-vl-7b-te",
+   "name": "Qwen2.5-VL 7B text encoder (fp8)",
+   "file": "qwen_2.5_vl_7b_fp8_scaled.safetensors",
+   "folder": "text_encoders",
+   "bytes": 9384670680,
+   "sha256": "cb5636d852a0ea6a9075ab1bef496c0db7aef13c02350571e388aea959c5c0b4",
+   "url": "https://huggingface.co/Comfy-Org/Qwen-Image_ComfyUI/resolve/1f12b17be14c89b026c51a91d67c32f84bb047bc/split_files/text_encoders/qwen_2.5_vl_7b_fp8_scaled.safetensors",
+   "page": "https://huggingface.co/Comfy-Org/Qwen-Image_ComfyUI",
+   "repo": "Comfy-Org/Qwen-Image_ComfyUI",
+   "revision": "1f12b17be14c89b026c51a91d67c32f84bb047bc",
+   "licence": "Apache-2.0",
+   "licenceUrl": "https://huggingface.co/Comfy-Org/Qwen-Image_ComfyUI",
+   "upstream": "Qwen/Qwen2.5-VL-7B-Instruct"
+  },
+  {
+   "id": "qwen-image-vae",
+   "name": "Qwen-Image VAE",
+   "file": "qwen_image_vae.safetensors",
+   "folder": "vae",
+   "bytes": 253806246,
+   "sha256": "a70580f0213e67967ee9c95f05bb400e8fb08307e017a924bf3441223e023d1f",
+   "url": "https://huggingface.co/Comfy-Org/Qwen-Image_ComfyUI/resolve/1f12b17be14c89b026c51a91d67c32f84bb047bc/split_files/vae/qwen_image_vae.safetensors",
+   "page": "https://huggingface.co/Comfy-Org/Qwen-Image_ComfyUI",
+   "repo": "Comfy-Org/Qwen-Image_ComfyUI",
+   "revision": "1f12b17be14c89b026c51a91d67c32f84bb047bc",
+   "licence": "Apache-2.0",
+   "licenceUrl": "https://huggingface.co/Qwen/Qwen-Image-2512",
+   "upstream": "Qwen/Qwen-Image"
+  }
+ ],
+ "customNodes": [],
+ "downloadBytes": 31021848039,
+ "inputs": [
+  {
+   "node": "1",
+   "kind": "image",
+   "what": "Your texture (from your model)",
+   "default": "vtp_texture.png"
+  },
+  {
+   "node": "9",
+   "kind": "text",
+   "what": "Your edit: say what to change",
+   "default": "Make the jacket dark green wool. Keep every seam, emblem, shape and line exactly where it is. Flat even lighting."
+  }
+ ],
+ "outputs": [
+  {
+   "node": "18",
+   "what": "New texture",
+   "size": "same as your texture",
+   "format": "PNG"
+  }
+ ],
+ "settings": "4 steps with the Lightning LoRA, CFG 1.",
+ "forWhat": "A recolour or restyle of a texture (a winter jacket, a red version) that still fits your model.",
+ "output": "A PNG the same size as the original texture.",
+ "vtp": "Add it as a new costume or texture set (the Costumes tab, or import_costume for AIs). Never overwrite the original.",
+ "ask": "Set up the VTube Pro outfit variant workflow in ComfyUI",
+ "steps": [
+  "Load the texture in \"Your texture\".",
+  "Say the change in words, like \"make the jacket dark green wool\".",
+  "Press Run. Try a few times and keep the best."
+ ],
+ "tips": [
+  "Name what must not change: \"keep the emblem and every seam\".",
+  "Picture size stays the same as the original, so it fits your model."
+ ],
+ "licenceSummary": "Commercial use OK by default: Apache-2.0.",
+ "files": {
+  "api": "avatar-skin-variant/large.api.json",
+  "ui": "avatar-skin-variant/large.workflow.json",
+  "manifest": "avatar-skin-variant/large.manifest.json"
+ }
+}

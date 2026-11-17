@@ -1,0 +1,185 @@
+{
+ "version": 1,
+ "id": "kairo",
+ "name": "Kairo",
+ "modelFile": "kairo.vrm",
+ "thumbnail": "thumb.png",
+ "source": "builtin",
+ "createdAt": "2026-09-28T23:00:55.000Z",
+ "prompt": "original anime streamer boy: tousled midnight-navy hair with teal tips, warm amber eyes, relaxed confident look",
+ "transform": {
+  "scale": 1,
+  "offset": [
+   0,
+   0,
+   0
+  ],
+  "yaw": 0
+ },
+ "eyes": {
+  "mode": "model",
+  "style": "anime",
+  "left": null,
+  "right": null,
+  "size": 0.02,
+  "protrusion": 0,
+  "scleraColor": "#ffffff",
+  "irisColor": "#e39a2e",
+  "irisSize": 0.5,
+  "pupilSize": 0.4,
+  "lidColor": null,
+  "outline": false,
+  "gazeRange": 20,
+  "restOpen": 1,
+  "highlight": true
+ },
+ "mouth": {
+  "mode": "model",
+  "style": "toon",
+  "center": null,
+  "width": 0.02,
+  "openHeight": 0.015,
+  "influence": 0.04,
+  "lipColor": "#c46a6e",
+  "interiorColor": "#4a1c22",
+  "tongueColor": "#d77a7e",
+  "teethColor": "#ffffff",
+  "showTeeth": true,
+  "showTongue": true,
+  "lineWidth": 0.0015,
+  "restCurve": 0
+ },
+ "brows": {
+  "enabled": false,
+  "color": "#333333",
+  "thickness": 0.006
+ },
+ "look": {
+  "shading": "anime",
+  "rim": 0.2,
+  "shadowTint": "#c98f86",
+  "softness": 0.5,
+  "hairShine": 0,
+  "vrmExposure": 0.66
+ },
+ "blush": {
+  "enabled": false,
+  "color": "#e88a8a",
+  "rest": 0,
+  "hatch": false
+ },
+ "rig": {
+  "kind": "vrm"
+ },
+ "physics": {
+  "enabled": true,
+  "jiggle": [],
+  "chains": [],
+  "autoChains": false,
+  "wind": 0
+ },
+ "tracking": {
+  "expressiveness": 1.0,
+  "gains": {},
+  "smoothing": 0.4,
+  "headRotationScale": 1,
+  "bodyFollow": 0.6,
+  "mirror": true,
+  "trackHands": true,
+  "trackBody": true,
+  "audioLipSync": false,
+  "facialHair": 0,
+  "translate": [
+   1,
+   0.7,
+   1.2
+  ],
+  "armExaggeration": 1.0,
+  "armBounce": 0.25,
+  "gestureFx": true,
+  "gestureReactions": true,
+  "expressionBoost": 1,
+  "cartoon": 0.0,
+  "enunciation": 1.1
+ },
+ "costumes": [
+  {
+   "id": "kairo_streamer",
+   "name": "Streamer hoodie",
+   "file": "costumes/kairo_streamer.glb",
+   "thumbnail": "costumes/kairo_streamer_thumb.png",
+   "hides": [
+    "Outfit_Tops",
+    "Outfit_Bottoms",
+    "Outfit_Shoes"
+   ],
+   "source": "builtin",
+   "prompt": "charcoal hoodie with a teal hood lining, dark joggers, sneakers (wear with the headset)",
+   "kind": "outfit"
+  },
+  {
+   "id": "kairo_formal",
+   "name": "Formal waistcoat",
+   "file": "costumes/kairo_formal.glb",
+   "thumbnail": "costumes/kairo_formal_thumb.png",
+   "hides": [
+    "Outfit_Tops",
+    "Outfit_Bottoms",
+    "Outfit_Shoes"
+   ],
+   "source": "builtin",
+   "prompt": "black waistcoat over a crisp white shirt, crimson tie, black trousers, polished shoes",
+   "kind": "outfit"
+  },
+  {
+   "id": "kairo_street",
+   "name": "Street casual",
+   "file": "costumes/kairo_street.glb",
+   "thumbnail": "costumes/kairo_street_thumb.png",
+   "hides": [
+    "Outfit_Tops",
+    "Outfit_Bottoms",
+    "Outfit_Shoes"
+   ],
+   "source": "builtin",
+   "prompt": "white hoodie with an orange hood, slate cargo-style trousers, white sneakers",
+   "kind": "outfit"
+  },
+  {
+   "id": "kairo_cyber",
+   "name": "Neon runner",
+   "file": "costumes/kairo_cyber.glb",
+   "thumbnail": "costumes/kairo_cyber_thumb.png",
+   "hides": [
+    "Outfit_Tops",
+    "Outfit_Bottoms",
+    "Outfit_Shoes"
+   ],
+   "source": "builtin",
+   "prompt": "black tech hoodie with glowing cyan trim, black trousers, dark boots (wear with the visor)",
+   "kind": "outfit"
+  },
+  {
+   "id": "kairo_headset",
+   "name": "Streamer headset",
+   "file": "costumes/kairo_headset.glb",
+   "thumbnail": "costumes/kairo_headset_thumb.png",
+   "hides": [],
+   "source": "builtin",
+   "prompt": "graphite streaming headset with teal glow rings and a boom mic",
+   "kind": "accessory"
+  },
+  {
+   "id": "kairo_visor",
+   "name": "Tech visor",
+   "file": "costumes/kairo_visor.glb",
+   "thumbnail": "costumes/kairo_visor_thumb.png",
+   "hides": [],
+   "source": "builtin",
+   "prompt": "forehead tech visor with a glowing cyan lens strip (sits above the brows)",
+   "kind": "accessory"
+  }
+ ],
+ "costume": null,
+ "accessories": []
+}

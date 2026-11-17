@@ -1,0 +1,10 @@
+{
+ "id": "human_walter", "name": "Walter (realistic)", "sex": "male",
+ "body": {"age": 63, "muscle": 0.45, "weight": 0.62, "height": 0.5, "proportions": 0.5,
+          "race": {"caucasian": 1.0}},
+ "face": {"nose-volume": 0.15},
+ "skin": {"texture": "old_caucasian_male", "smooth": 0.1},
+ "eyes": {"color": "blue"},
+ "hair": {"style": "short02", "color": "grey"},
+ "outfit": {"clothes": ["male_casualsuit06"], "shoes": "shoes05"}
+}

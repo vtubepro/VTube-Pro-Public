@@ -1,0 +1,316 @@
+{
+ "pack": "kenney_ui",
+ "name": "Kenney UI Audio",
+ "author": "Kenney",
+ "license": "CC0 1.0",
+ "url": "https://kenney.nl/assets/ui-audio",
+ "for": "UI clicks / switches / rollovers",
+ "items": [
+  {
+   "id": "click1",
+   "file": "click1.ogg",
+   "category": "click",
+   "bytes": 4983
+  },
+  {
+   "id": "click2",
+   "file": "click2.ogg",
+   "category": "click",
+   "bytes": 4656
+  },
+  {
+   "id": "click3",
+   "file": "click3.ogg",
+   "category": "click",
+   "bytes": 4880
+  },
+  {
+   "id": "click4",
+   "file": "click4.ogg",
+   "category": "click",
+   "bytes": 4558
+  },
+  {
+   "id": "click5",
+   "file": "click5.ogg",
+   "category": "click",
+   "bytes": 4532
+  },
+  {
+   "id": "mouseclick1",
+   "file": "mouseclick1.ogg",
+   "category": "mouseclick",
+   "bytes": 4686
+  },
+  {
+   "id": "mouserelease1",
+   "file": "mouserelease1.ogg",
+   "category": "mouserelease",
+   "bytes": 4775
+  },
+  {
+   "id": "rollover1",
+   "file": "rollover1.ogg",
+   "category": "rollover",
+   "bytes": 5932
+  },
+  {
+   "id": "rollover2",
+   "file": "rollover2.ogg",
+   "category": "rollover",
+   "bytes": 4701
+  },
+  {
+   "id": "rollover3",
+   "file": "rollover3.ogg",
+   "category": "rollover",
+   "bytes": 4778
+  },
+  {
+   "id": "rollover4",
+   "file": "rollover4.ogg",
+   "category": "rollover",
+   "bytes": 5188
+  },
+  {
+   "id": "rollover5",
+   "file": "rollover5.ogg",
+   "category": "rollover",
+   "bytes": 5258
+  },
+  {
+   "id": "rollover6",
+   "file": "rollover6.ogg",
+   "category": "rollover",
+   "bytes": 5385
+  },
+  {
+   "id": "switch1",
+   "file": "switch1.ogg",
+   "category": "switch",
+   "bytes": 6104
+  },
+  {
+   "id": "switch10",
+   "file": "switch10.ogg",
+   "category": "switch",
+   "bytes": 6456
+  },
+  {
+   "id": "switch11",
+   "file": "switch11.ogg",
+   "category": "switch",
+   "bytes": 6248
+  },
+  {
+   "id": "switch12",
+   "file": "switch12.ogg",
+   "category": "switch",
+   "bytes": 4588
+  },
+  {
+   "id": "switch13",
+   "file": "switch13.ogg",
+   "category": "switch",
+   "bytes": 4467
+  },
+  {
+   "id": "switch14",
+   "file": "switch14.ogg",
+   "category": "switch",
+   "bytes": 4522
+  },
+  {
+   "id": "switch15",
+   "file": "switch15.ogg",
+   "category": "switch",
+   "bytes": 6325
+  },
+  {
+   "id": "switch16",
+   "file": "switch16.ogg",
+   "category": "switch",
+   "bytes": 6991
+  },
+  {
+   "id": "switch17",
+   "file": "switch17.ogg",
+   "category": "switch",
+   "bytes": 6686
+  },
+  {
+   "id": "switch18",
+   "file": "switch18.ogg",
+   "category": "switch",
+   "bytes": 7633
+  },
+  {
+   "id": "switch19",
+   "file": "switch19.ogg",
+   "category": "switch",
+   "bytes": 7177
+  },
+  {
+   "id": "switch2",
+   "file": "switch2.ogg",
+   "category": "switch",
+   "bytes": 6042
+  },
+  {
+   "id": "switch20",
+   "file": "switch20.ogg",
+   "category": "switch",
+   "bytes": 6965
+  },
+  {
+   "id": "switch21",
+   "file": "switch21.ogg",
+   "category": "switch",
+   "bytes": 7453
+  },
+  {
+   "id": "switch22",
+   "file": "switch22.ogg",
+   "category": "switch",
+   "bytes": 7116
+  },
+  {
+   "id": "switch23",
+   "file": "switch23.ogg",
+   "category": "switch",
+   "bytes": 7177
+  },
+  {
+   "id": "switch24",
+   "file": "switch24.ogg",
+   "category": "switch",
+   "bytes": 6340
+  },
+  {
+   "id": "switch25",
+   "file": "switch25.ogg",
+   "category": "switch",
+   "bytes": 7130
+  },
+  {
+   "id": "switch26",
+   "file": "switch26.ogg",
+   "category": "switch",
+   "bytes": 6031
+  },
+  {
+   "id": "switch27",
+   "file": "switch27.ogg",
+   "category": "switch",
+   "bytes": 6445
+  },
+  {
+   "id": "switch28",
+   "file": "switch28.ogg",
+   "category": "switch",
+   "bytes": 5916
+  },
+  {
+   "id": "switch29",
+   "file": "switch29.ogg",
+   "category": "switch",
+   "bytes": 6769
+  },
+  {
+   "id": "switch3",
+   "file": "switch3.ogg",
+   "category": "switch",
+   "bytes": 6270
+  },
+  {
+   "id": "switch30",
+   "file": "switch30.ogg",
+   "category": "switch",
+   "bytes": 7151
+  },
+  {
+   "id": "switch31",
+   "file": "switch31.ogg",
+   "category": "switch",
+   "bytes": 8180
+  },
+  {
+   "id": "switch32",
+   "file": "switch32.ogg",
+   "category": "switch",
+   "bytes": 7868
+  },
+  {
+   "id": "switch33",
+   "file": "switch33.ogg",
+   "category": "switch",
+   "bytes": 8530
+  },
+  {
+   "id": "switch34",
+   "file": "switch34.ogg",
+   "category": "switch",
+   "bytes": 7910
+  },
+  {
+   "id": "switch35",
+   "file": "switch35.ogg",
+   "category": "switch",
+   "bytes": 6935
+  },
+  {
+   "id": "switch36",
+   "file": "switch36.ogg",
+   "category": "switch",
+   "bytes": 6616
+  },
+  {
+   "id": "switch37",
+   "file": "switch37.ogg",
+   "category": "switch",
+   "bytes": 6822
+  },
+  {
+   "id": "switch38",
+   "file": "switch38.ogg",
+   "category": "switch",
+   "bytes": 7303
+  },
+  {
+   "id": "switch4",
+   "file": "switch4.ogg",
+   "category": "switch",
+   "bytes": 6477
+  },
+  {
+   "id": "switch5",
+   "file": "switch5.ogg",
+   "category": "switch",
+   "bytes": 6181
+  },
+  {
+   "id": "switch6",
+   "file": "switch6.ogg",
+   "category": "switch",
+   "bytes": 6610
+  },
+  {
+   "id": "switch7",
+   "file": "switch7.ogg",
+   "category": "switch",
+   "bytes": 5707
+  },
+  {
+   "id": "switch8",
+   "file": "switch8.ogg",
+   "category": "switch",
+   "bytes": 6253
+  },
+  {
+   "id": "switch9",
+   "file": "switch9.ogg",
+   "category": "switch",
+   "bytes": 6009
+  }
+ ]
+}

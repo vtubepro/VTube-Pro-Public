@@ -1,0 +1,16 @@
+{
+ "licence": "CC0-1.0",
+ "note": "Ten starter stickers drawn for VTube Pro (see LICENSE.txt). pin = an id from shared/avatarItems.ts PIN_CHOICES.",
+ "stickers": [
+  { "id": "anger", "file": "anger.png", "name": "Anger mark", "pin": "temple", "place": { "scale": 0.6 } },
+  { "id": "sweat", "file": "sweat.png", "name": "Sweat drop", "pin": "temple", "place": { "x": -0.07, "y": 0.035, "scale": 0.5 } },
+  { "id": "tear", "file": "tear.png", "name": "Tear", "pin": "eye-l", "place": { "scale": 0.4 } },
+  { "id": "heart", "file": "heart.png", "name": "Heart", "pin": "cheek-l", "place": { "scale": 0.55 } },
+  { "id": "star", "file": "star.png", "name": "Star", "pin": "forehead", "place": { "scale": 0.6 } },
+  { "id": "sparkle", "file": "sparkle.png", "name": "Sparkles", "pin": "head-top", "place": { "x": 0.08, "y": 0.18, "scale": 1.2 } },
+  { "id": "note", "file": "note.png", "name": "Music note", "pin": "shoulder-r", "place": { "x": 0.04, "y": 0.2, "scale": 0.9 } },
+  { "id": "party-hat", "file": "party-hat.png", "name": "Party hat", "pin": "head-top", "place": { "y": 0.28, "rot": -10, "scale": 1.5 } },
+  { "id": "halo", "file": "halo.png", "name": "Halo", "pin": "head-top", "place": { "y": 0.33, "scale": 1.5 } },
+  { "id": "sign", "file": "sign.png", "name": "Held sign", "pin": "hand-r", "place": { "x": 0.05, "y": 0.12, "z": 0.06, "scale": 1.8 }, "hand": { "pose": "hold" } }
+ ]
+}

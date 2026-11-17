@@ -1,0 +1,99 @@
+# VTube Pro multiplayer relay (Cloudflare Worker + one Durable Object per party room).
+# YOU deploy this with your own Cloudflare account. Step by step, for everyone: docs/HOSTING_SETUP.md.
+# This file is the TEMPLATE and ships with VTube Pro: keep every personal value below EMPTY here.
+# Easiest: double-click "Set up my relay.cmd" (or run deploy.ps1). It asks for each value, writes them into
+# wrangler.local.toml (your own copy, git-ignored, never shipped), sets the secrets with `wrangler secret put` and
+# deploys. Secrets never go in any file: TICKET_SECRET, DISCORD_CLIENT_SECRET, TURN_KEY_API_TOKEN (+ DISCORD_BOT_TOKEN,
+# optional).
+# Everything here is yours: your Cloudflare account runs this relay and YOUR OWN Discord application signs people in.
+# Nothing is shared with anyone else's server, app or website.
+name = "vtube-pro-relay"
+main = "src/index.ts"
+compatibility_date = "2025-09-01"
+
+# The free https://vtube-pro-relay.<your-account-subdomain>.workers.dev address. Your account subdomain is part of every
+# guest link. Using your own domain instead (the [[routes]] block at the end)? Keep this true until the new address
+# works everywhere, then set it to false. docs/HOSTING_SETUP.md#private-links
+workers_dev = true
+# No extra per-version preview addresses (they would also show your account subdomain).
+preview_urls = false
+
+# No request / console logging (the relay never logs payloads anyway).
+[observability]
+enabled = false
+
+[[durable_objects.bindings]]
+name = "ROOMS"
+class_name = "Room"
+
+# The webhook inbox (beta.13, relay/src/inbox.ts, docs/SUPPORT.md): one object per streamer's inbox. It is the first
+# STORED per-user data on this relay: webhook deliveries (supporter names, amounts, messages) for at most 7 days, deleted
+# as soon as that streamer's VTube Pro picks them up. Remove this block + migration v2 to run a relay without it.
+[[durable_objects.bindings]]
+name = "INBOXES"
+class_name = "Inbox"
+
+# SQLite-backed class = works on the Workers Free plan. A running room keeps one storage record ('room', deleted when the
+# room ends; relay/HIBERNATION.md); the host-signin object stores only the claimed host's Discord id.
+[[migrations]]
+tag = "v1"
+new_sqlite_classes = ["Room"]
+
+[[migrations]]
+tag = "v2"
+new_sqlite_classes = ["Inbox"]
+
+[vars]
+# Sign-in needs YOUR OWN Discord application (discord.com/developers/applications -> New Application -> OAuth2):
+# its Client ID goes here, its client secret is the SECRET DISCORD_CLIENT_SECRET (npx wrangler secret put DISCORD_CLIENT_SECRET).
+# While either is missing, sign-in answers "not set up" in plain words. docs/HOSTING_SETUP.md#how-sign-in-works
+DISCORD_CLIENT_ID = ""
+# Who may host: normally EMPTY. The setup shows a one-time claim code; the first person who signs in with Discord and
+# types it in VTube Pro becomes the host (secret HOST_CLAIM holds only its hash). Advanced override: comma-separated
+# Discord user ids that may always host.
+HOST_USER_IDS = ""
+# Optional: the name guests see for you (guest pages, the bot's "is live" post). Empty = your Discord display name.
+PUBLIC_NAME = ""
+# Optional: Cloudflare Realtime TURN key id (the API token is a SECRET: TURN_KEY_API_TOKEN)
+TURN_KEY_ID = ""
+# Optional alternative TURN (coturn use-auth-secret): TURN_URLS = "turn:turn.example.com:3478?transport=udp,turns:turn.example.com:5349"
+# + secret TURN_SHARED_SECRET
+TURN_URLS = ""
+# TURN credential lifetime (s) and room lifetime cap (h)
+TURN_TTL = "14400"
+ROOM_TTL_H = "12"
+
+# Optional: your own address for the relay (private links: guests never see your Cloudflare account name).
+# The domain must be on your Cloudflare account (its DNS managed by Cloudflare). deploy.ps1 writes this for you.
+# [[routes]]
+# pattern = "join.example.com"
+# custom_domain = true
+
+# ------------------------------------------------------------------ TRY-OUT COPY (relay/HIBERNATION.md)
+# A SEPARATE worker to try a new relay version before your guests get it: `npx wrangler@4 deploy --env preview`, run
+# with THIS file, makes vtube-pro-relay-preview.<your-account-subdomain>.workers.dev with its own rooms and its own
+# secrets (`npx wrangler@4 secret put TICKET_SECRET --env preview`). Your live relay is not touched. Never combine
+# --env preview with an older wrangler.local.toml that has no [env.preview] block: it would reuse that file's routes.
+# deploy.ps1, "Set up my relay.cmd" and VTube Pro's "Set up my invite server" never use this block.
+[env.preview]
+name = "vtube-pro-relay-preview"
+workers_dev = true
+routes = []
+
+[[env.preview.durable_objects.bindings]]
+name = "ROOMS"
+class_name = "Room"
+
+[[env.preview.durable_objects.bindings]]
+name = "INBOXES"
+class_name = "Inbox"
+
+# Same meaning as [vars] above (environments don't inherit vars). Empty = not set.
+[env.preview.vars]
+DISCORD_CLIENT_ID = ""
+HOST_USER_IDS = ""
+PUBLIC_NAME = ""
+TURN_KEY_ID = ""
+TURN_URLS = ""
+TURN_TTL = "14400"
+ROOM_TTL_H = "12"

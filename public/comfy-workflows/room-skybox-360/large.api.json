@@ -1,0 +1,429 @@
+{
+ "1": {
+  "class_type": "UNETLoader",
+  "inputs": {
+   "unet_name": "qwen_image_2512_fp8_e4m3fn.safetensors",
+   "weight_dtype": "default"
+  },
+  "_meta": {
+   "title": "Load Diffusion Model"
+  }
+ },
+ "2": {
+  "class_type": "LoraLoaderModelOnly",
+  "inputs": {
+   "model": [
+    "1",
+    0
+   ],
+   "lora_name": "Qwen-Image-2512-Lightning-4steps-V1.0-bf16.safetensors",
+   "strength_model": 1
+  },
+  "_meta": {
+   "title": "Lightning LoRA (4 steps)"
+  }
+ },
+ "3": {
+  "class_type": "ModelSamplingAuraFlow",
+  "inputs": {
+   "model": [
+    "2",
+    0
+   ],
+   "shift": 3.1
+  },
+  "_meta": {
+   "title": "ModelSamplingAuraFlow"
+  }
+ },
+ "4": {
+  "class_type": "CLIPLoader",
+  "inputs": {
+   "clip_name": "qwen_2.5_vl_7b_fp8_scaled.safetensors",
+   "type": "qwen_image",
+   "device": "default"
+  },
+  "_meta": {
+   "title": "Load CLIP"
+  }
+ },
+ "5": {
+  "class_type": "VAELoader",
+  "inputs": {
+   "vae_name": "qwen_image_vae.safetensors"
+  },
+  "_meta": {
+   "title": "Load VAE"
+  }
+ },
+ "6": {
+  "class_type": "CLIPTextEncode",
+  "inputs": {
+   "text": "Equirectangular 360-degree panorama: sunset over a neon city skyline, horizon exactly in the middle, clear sky above, plain street below, no people.",
+   "clip": [
+    "4",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "Your prompt: describe the picture"
+  }
+ },
+ "7": {
+  "class_type": "CLIPTextEncode",
+  "inputs": {
+   "text": "blurry, low quality, distorted text, misspelled words, watermark, deformed",
+   "clip": [
+    "4",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "Things to avoid"
+  }
+ },
+ "8": {
+  "class_type": "EmptySD3LatentImage",
+  "inputs": {
+   "width": 1664,
+   "height": 832,
+   "batch_size": 1
+  },
+  "_meta": {
+   "title": "Picture size 1664x832"
+  }
+ },
+ "9": {
+  "class_type": "KSampler",
+  "inputs": {
+   "model": [
+    "3",
+    0
+   ],
+   "seed": 20261001,
+   "steps": 4,
+   "cfg": 1,
+   "sampler_name": "euler",
+   "scheduler": "simple",
+   "positive": [
+    "6",
+    0
+   ],
+   "negative": [
+    "7",
+    0
+   ],
+   "latent_image": [
+    "8",
+    0
+   ],
+   "denoise": 1
+  },
+  "_meta": {
+   "title": "KSampler"
+  }
+ },
+ "10": {
+  "class_type": "VAEDecode",
+  "inputs": {
+   "samples": [
+    "9",
+    0
+   ],
+   "vae": [
+    "5",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "VAE Decode"
+  }
+ },
+ "11": {
+  "class_type": "ImageCrop",
+  "inputs": {
+   "image": [
+    "10",
+    0
+   ],
+   "width": 832,
+   "height": 832,
+   "x": 0,
+   "y": 0
+  },
+  "_meta": {
+   "title": "Left half"
+  }
+ },
+ "12": {
+  "class_type": "ImageCrop",
+  "inputs": {
+   "image": [
+    "10",
+    0
+   ],
+   "width": 832,
+   "height": 832,
+   "x": 832,
+   "y": 0
+  },
+  "_meta": {
+   "title": "Right half"
+  }
+ },
+ "13": {
+  "class_type": "ImageStitch",
+  "inputs": {
+   "image1": [
+    "12",
+    0
+   ],
+   "direction": "right",
+   "match_image_size": false,
+   "spacing_width": 0,
+   "spacing_color": "white",
+   "image2": [
+    "11",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "Swap halves (edges meet in the middle)"
+  }
+ },
+ "14": {
+  "class_type": "SolidMask",
+  "inputs": {
+   "value": 0,
+   "width": 1664,
+   "height": 832
+  },
+  "_meta": {
+   "title": "Create Solid Mask"
+  }
+ },
+ "15": {
+  "class_type": "SolidMask",
+  "inputs": {
+   "value": 1,
+   "width": 104,
+   "height": 832
+  },
+  "_meta": {
+   "title": "Create Solid Mask"
+  }
+ },
+ "16": {
+  "class_type": "MaskComposite",
+  "inputs": {
+   "destination": [
+    "14",
+    0
+   ],
+   "source": [
+    "15",
+    0
+   ],
+   "x": 780,
+   "y": 0,
+   "operation": "add"
+  },
+  "_meta": {
+   "title": "Seam band"
+  }
+ },
+ "17": {
+  "class_type": "VAEEncode",
+  "inputs": {
+   "pixels": [
+    "13",
+    0
+   ],
+   "vae": [
+    "5",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "VAE Encode"
+  }
+ },
+ "18": {
+  "class_type": "SetLatentNoiseMask",
+  "inputs": {
+   "samples": [
+    "17",
+    0
+   ],
+   "mask": [
+    "16",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "Set Latent Noise Mask"
+  }
+ },
+ "19": {
+  "class_type": "KSampler",
+  "inputs": {
+   "model": [
+    "3",
+    0
+   ],
+   "seed": 20261001,
+   "steps": 4,
+   "cfg": 1,
+   "sampler_name": "euler",
+   "scheduler": "simple",
+   "positive": [
+    "6",
+    0
+   ],
+   "negative": [
+    "7",
+    0
+   ],
+   "latent_image": [
+    "18",
+    0
+   ],
+   "denoise": 0.7
+  },
+  "_meta": {
+   "title": "KSampler"
+  }
+ },
+ "20": {
+  "class_type": "VAEDecode",
+  "inputs": {
+   "samples": [
+    "19",
+    0
+   ],
+   "vae": [
+    "5",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "VAE Decode"
+  }
+ },
+ "21": {
+  "class_type": "MaskToImage",
+  "inputs": {
+   "mask": [
+    "16",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "Convert Mask to Image"
+  }
+ },
+ "22": {
+  "class_type": "ImageBlur",
+  "inputs": {
+   "image": [
+    "21",
+    0
+   ],
+   "blur_radius": 31,
+   "sigma": 10
+  },
+  "_meta": {
+   "title": "Soft seam edge"
+  }
+ },
+ "23": {
+  "class_type": "ImageToMask",
+  "inputs": {
+   "image": [
+    "22",
+    0
+   ],
+   "channel": "red"
+  },
+  "_meta": {
+   "title": "Convert Image to Mask"
+  }
+ },
+ "24": {
+  "class_type": "ImageCompositeMasked",
+  "inputs": {
+   "destination": [
+    "13",
+    0
+   ],
+   "source": [
+    "20",
+    0
+   ],
+   "x": 0,
+   "y": 0,
+   "resize_source": false,
+   "mask": [
+    "23",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "Seamless result"
+  }
+ },
+ "25": {
+  "class_type": "UpscaleModelLoader",
+  "inputs": {
+   "model_name": "RealESRGAN_x4plus.safetensors"
+  },
+  "_meta": {
+   "title": "Load Upscale Model"
+  }
+ },
+ "26": {
+  "class_type": "ImageUpscaleWithModel",
+  "inputs": {
+   "upscale_model": [
+    "25",
+    0
+   ],
+   "image": [
+    "24",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "Upscale Image (using Model)"
+  }
+ },
+ "27": {
+  "class_type": "ImageScale",
+  "inputs": {
+   "image": [
+    "26",
+    0
+   ],
+   "upscale_method": "lanczos",
+   "width": 4096,
+   "height": 2048,
+   "crop": "center"
+  },
+  "_meta": {
+   "title": "Final size 4096x2048"
+  }
+ },
+ "28": {
+  "class_type": "SaveImage",
+  "inputs": {
+   "images": [
+    "27",
+    0
+   ],
+   "filename_prefix": "VTubePro/sky-360"
+  },
+  "_meta": {
+   "title": "Save the picture"
+  }
+ }
+}

@@ -1,0 +1,23 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="pi.css"><script src="pi.js"></script></head>
+<body>
+  <p id="st" class="warn">Connecting…</p>
+  <p class="hint">This key shows whatever sits at the same row and column of your layout in VTube Pro → <b>Stream Deck &amp; controllers</b>
+    (title, icon, colour, lit when on). Put this action on every key, then design the buttons in VTube Pro.</p>
+  <div class="sdpi-item"><div class="sdpi-item-label">Page</div>
+    <select class="sdpi-item-value" id="page"><option value="follow">Follow page keys</option></select></div>
+  <div id="portrow"></div>
+<script>
+  const st = document.getElementById('st'), page = document.getElementById('page');
+  PI.onPlugin = (m) => {
+    if (m.t !== 'actions') return;
+    PI.status(st, m); PI.portRow(document.getElementById('portrow'), m);
+    const cur = PI.settings.page == null ? 'follow' : PI.settings.page;
+    let html = '<option value="follow">Follow page keys</option>';
+    for (let i = 1; i <= Math.max(1, m.pages); i++) html += '<option value="' + i + '">Always page ' + i + '</option>';
+    page.innerHTML = html; page.value = String(cur);
+  };
+  PI.onSettings = (s) => { page.value = String(s.page == null ? 'follow' : s.page); };
+  page.onchange = () => PI.save(Object.assign({}, PI.settings, { page: page.value === 'follow' ? 'follow' : +page.value }));
+</script>
+</body></html>

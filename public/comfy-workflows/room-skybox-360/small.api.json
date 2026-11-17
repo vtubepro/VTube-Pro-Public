@@ -1,0 +1,381 @@
+{
+ "1": {
+  "class_type": "CheckpointLoaderSimple",
+  "inputs": {
+   "ckpt_name": "sd_xl_base_1.0.safetensors"
+  },
+  "_meta": {
+   "title": "Load Checkpoint"
+  }
+ },
+ "2": {
+  "class_type": "CLIPTextEncode",
+  "inputs": {
+   "text": "equirectangular 360 panorama, sunset over a neon city skyline, horizon in the middle, clear sky above, no people, wide angle",
+   "clip": [
+    "1",
+    1
+   ]
+  },
+  "_meta": {
+   "title": "Your prompt: describe the picture"
+  }
+ },
+ "3": {
+  "class_type": "CLIPTextEncode",
+  "inputs": {
+   "text": "lowres, blurry, jpeg artifacts, watermark, signature, text, logo, deformed, bad anatomy, extra fingers, cropped",
+   "clip": [
+    "1",
+    1
+   ]
+  },
+  "_meta": {
+   "title": "Things to avoid"
+  }
+ },
+ "4": {
+  "class_type": "EmptyLatentImage",
+  "inputs": {
+   "width": 1536,
+   "height": 768,
+   "batch_size": 1
+  },
+  "_meta": {
+   "title": "Picture size 1536x768"
+  }
+ },
+ "5": {
+  "class_type": "KSampler",
+  "inputs": {
+   "model": [
+    "1",
+    0
+   ],
+   "seed": 20261001,
+   "steps": 28,
+   "cfg": 6,
+   "sampler_name": "dpmpp_2m",
+   "scheduler": "karras",
+   "positive": [
+    "2",
+    0
+   ],
+   "negative": [
+    "3",
+    0
+   ],
+   "latent_image": [
+    "4",
+    0
+   ],
+   "denoise": 1
+  },
+  "_meta": {
+   "title": "KSampler"
+  }
+ },
+ "6": {
+  "class_type": "VAEDecode",
+  "inputs": {
+   "samples": [
+    "5",
+    0
+   ],
+   "vae": [
+    "1",
+    2
+   ]
+  },
+  "_meta": {
+   "title": "VAE Decode"
+  }
+ },
+ "7": {
+  "class_type": "ImageCrop",
+  "inputs": {
+   "image": [
+    "6",
+    0
+   ],
+   "width": 768,
+   "height": 768,
+   "x": 0,
+   "y": 0
+  },
+  "_meta": {
+   "title": "Left half"
+  }
+ },
+ "8": {
+  "class_type": "ImageCrop",
+  "inputs": {
+   "image": [
+    "6",
+    0
+   ],
+   "width": 768,
+   "height": 768,
+   "x": 768,
+   "y": 0
+  },
+  "_meta": {
+   "title": "Right half"
+  }
+ },
+ "9": {
+  "class_type": "ImageStitch",
+  "inputs": {
+   "image1": [
+    "8",
+    0
+   ],
+   "direction": "right",
+   "match_image_size": false,
+   "spacing_width": 0,
+   "spacing_color": "white",
+   "image2": [
+    "7",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "Swap halves (edges meet in the middle)"
+  }
+ },
+ "10": {
+  "class_type": "SolidMask",
+  "inputs": {
+   "value": 0,
+   "width": 1536,
+   "height": 768
+  },
+  "_meta": {
+   "title": "Create Solid Mask"
+  }
+ },
+ "11": {
+  "class_type": "SolidMask",
+  "inputs": {
+   "value": 1,
+   "width": 96,
+   "height": 768
+  },
+  "_meta": {
+   "title": "Create Solid Mask"
+  }
+ },
+ "12": {
+  "class_type": "MaskComposite",
+  "inputs": {
+   "destination": [
+    "10",
+    0
+   ],
+   "source": [
+    "11",
+    0
+   ],
+   "x": 720,
+   "y": 0,
+   "operation": "add"
+  },
+  "_meta": {
+   "title": "Seam band"
+  }
+ },
+ "13": {
+  "class_type": "VAEEncode",
+  "inputs": {
+   "pixels": [
+    "9",
+    0
+   ],
+   "vae": [
+    "1",
+    2
+   ]
+  },
+  "_meta": {
+   "title": "VAE Encode"
+  }
+ },
+ "14": {
+  "class_type": "SetLatentNoiseMask",
+  "inputs": {
+   "samples": [
+    "13",
+    0
+   ],
+   "mask": [
+    "12",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "Set Latent Noise Mask"
+  }
+ },
+ "15": {
+  "class_type": "KSampler",
+  "inputs": {
+   "model": [
+    "1",
+    0
+   ],
+   "seed": 20261001,
+   "steps": 28,
+   "cfg": 6,
+   "sampler_name": "dpmpp_2m",
+   "scheduler": "karras",
+   "positive": [
+    "2",
+    0
+   ],
+   "negative": [
+    "3",
+    0
+   ],
+   "latent_image": [
+    "14",
+    0
+   ],
+   "denoise": 0.75
+  },
+  "_meta": {
+   "title": "KSampler"
+  }
+ },
+ "16": {
+  "class_type": "VAEDecode",
+  "inputs": {
+   "samples": [
+    "15",
+    0
+   ],
+   "vae": [
+    "1",
+    2
+   ]
+  },
+  "_meta": {
+   "title": "VAE Decode"
+  }
+ },
+ "17": {
+  "class_type": "MaskToImage",
+  "inputs": {
+   "mask": [
+    "12",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "Convert Mask to Image"
+  }
+ },
+ "18": {
+  "class_type": "ImageBlur",
+  "inputs": {
+   "image": [
+    "17",
+    0
+   ],
+   "blur_radius": 31,
+   "sigma": 10
+  },
+  "_meta": {
+   "title": "Soft seam edge"
+  }
+ },
+ "19": {
+  "class_type": "ImageToMask",
+  "inputs": {
+   "image": [
+    "18",
+    0
+   ],
+   "channel": "red"
+  },
+  "_meta": {
+   "title": "Convert Image to Mask"
+  }
+ },
+ "20": {
+  "class_type": "ImageCompositeMasked",
+  "inputs": {
+   "destination": [
+    "9",
+    0
+   ],
+   "source": [
+    "16",
+    0
+   ],
+   "x": 0,
+   "y": 0,
+   "resize_source": false,
+   "mask": [
+    "19",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "Seamless result"
+  }
+ },
+ "21": {
+  "class_type": "UpscaleModelLoader",
+  "inputs": {
+   "model_name": "RealESRGAN_x4plus.safetensors"
+  },
+  "_meta": {
+   "title": "Load Upscale Model"
+  }
+ },
+ "22": {
+  "class_type": "ImageUpscaleWithModel",
+  "inputs": {
+   "upscale_model": [
+    "21",
+    0
+   ],
+   "image": [
+    "20",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "Upscale Image (using Model)"
+  }
+ },
+ "23": {
+  "class_type": "ImageScale",
+  "inputs": {
+   "image": [
+    "22",
+    0
+   ],
+   "upscale_method": "lanczos",
+   "width": 4096,
+   "height": 2048,
+   "crop": "center"
+  },
+  "_meta": {
+   "title": "Final size 4096x2048"
+  }
+ },
+ "24": {
+  "class_type": "SaveImage",
+  "inputs": {
+   "images": [
+    "23",
+    0
+   ],
+   "filename_prefix": "VTubePro/sky-360"
+  },
+  "_meta": {
+   "title": "Save the picture"
+  }
+ }
+}

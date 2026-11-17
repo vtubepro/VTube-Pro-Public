@@ -1,0 +1,944 @@
+{
+  "id": "hangout_lounge",
+  "name": "VTube Pro Hangout",
+  "model": "scene.glb",
+  "version": 1,
+  "preview": "preview.png",
+  "thumbnail": "thumb.png",
+  "modes": [
+    "talk",
+    "react"
+  ],
+  "defaultCamera": "CAM_WIDE",
+  "reactCamera": "CAM_REACT",
+  "ambience": {
+    "fog": "#d8c0a8",
+    "fogNear": 140,
+    "fogFar": 4200,
+    "exposure": 1.0
+  },
+  "avatarHeight": 1.5,
+  "lights": {
+    "programs": [
+      "show",
+      "steady",
+      "swampGlow",
+      "beatPulse",
+      "party"
+    ],
+    "groups": {
+      "lamps": "#ffcf8a",
+      "accent_strip": "#ffb45a",
+      "neon_sign": "#ff5aa8",
+      "neon_bar": "#ff8a3a",
+      "neon_halo": "#ff4f9a",
+      "bottle_glow": "#ffa850",
+      "string_lights": "#ffc57a",
+      "firepit_sparks": "#ff8a2a",
+      "hearth_sparks": "#ff9a3a",
+      "screens": "#7ab0ff",
+      "warning": "#ff2a1a",
+      "downlights": "#fff0d8",
+      "lanterns": "#ffb45a",
+      "neon_brand": "#eef3ef"
+    }
+  },
+  "suggestedLooks": {
+    "show": {
+      "groups": {
+        "firepit_sparks": "flicker",
+        "hearth_sparks": "flicker",
+        "warning": "strobe:0.3:1",
+        "screens": "steady",
+        "lamps": "steady",
+        "downlights": "steady",
+        "bottle_glow": "breathe:0.4:0.6",
+        "neon_sign": "flicker",
+        "string_lights": "steady",
+        "neon_brand": "steady"
+      },
+      "house": 1.0,
+      "note": "golden-hour lounge: practicals steady, the fires flicker, the neon buzzes"
+    }
+  },
+  "spots": 12,
+  "hostSpot": "SPOT_01",
+  "brand": {
+    "official": "vtubepro",
+    "note": "VTube Pro-branded room: the lit V + VTube Pro lockup over the bar neon (EMIT_neon_brand), the TV idle card, coasters, cocktail board header, brass plaques (bar door, patio wall)"
+  },
+  "note": "The VTube Pro Hangout, a penthouse hangout lounge on top of a city tower: a warm modern living room (bouclé crescent sofa, travertine fireplace wall, a drop-down cinema screen in front of the glass), a moody bar with a backlit bottle wall and a neon sign, and a roof patio with a stone firepit under string lights, the skyline beyond. Three areas: main / bar / patio.",
+  "environment": {
+    "sky": "procedural",
+    "climate": "city",
+    "north": -62.86,
+    "sunrise": 6.2,
+    "sunset": 19.1,
+    "noonElevation": 64.0,
+    "bakedAt": 18.3,
+    "sun": 0,
+    "default": {
+      "clock": "fixed",
+      "hour": 18.3,
+      "speed": 24,
+      "weather": "clear",
+      "weatherMode": "manual"
+    },
+    "night": 0.3,
+    "exposure": 1.0,
+    "fog": {
+      "near": 140,
+      "far": 4200,
+      "tint": 0.9
+    },
+    "weathers": [
+      "clear",
+      "cloudy",
+      "overcast",
+      "rain",
+      "fog",
+      "storm"
+    ],
+    "weatherByState": {
+      "preshow": "clear",
+      "brb": "cloudy",
+      "outro": "clear"
+    },
+    "hourByState": {
+      "preshow": 21.0,
+      "brb": 19.2,
+      "outro": 18.6
+    },
+    "nightLights": {
+      "lamps": {
+        "threshold": 0.12,
+        "day": 0.75,
+        "pools": false
+      },
+      "downlights": {
+        "threshold": 0.3,
+        "day": 0.55,
+        "pools": false
+      },
+      "accent_strip": {
+        "threshold": 0.2,
+        "day": 0.6,
+        "pools": false
+      },
+      "string_lights": {
+        "threshold": 0.2,
+        "stagger": 0.08,
+        "flicker": 0.03,
+        "day": 0.35,
+        "pools": false
+      },
+      "lanterns": {
+        "threshold": 0.15,
+        "stagger": 0.1,
+        "flicker": 0.3,
+        "day": 0.4,
+        "pools": false
+      },
+      "firepit_sparks": {
+        "threshold": 0.0,
+        "day": 1.0,
+        "flicker": 0.45,
+        "pools": false
+      },
+      "hearth_sparks": {
+        "threshold": 0.0,
+        "day": 1.0,
+        "flicker": 0.35,
+        "pools": false
+      },
+      "neon_sign": {
+        "threshold": 0.0,
+        "day": 0.85,
+        "flicker": 0.05,
+        "pools": false
+      },
+      "neon_bar": {
+        "threshold": 0.1,
+        "day": 0.7,
+        "pools": false
+      },
+      "neon_halo": {
+        "threshold": 0.0,
+        "day": 0.8,
+        "flicker": 0.05,
+        "pools": false
+      },
+      "neon_brand": {
+        "threshold": 0.0,
+        "day": 0.8,
+        "pools": false
+      },
+      "bottle_glow": {
+        "threshold": 0.0,
+        "day": 0.9,
+        "pools": false
+      },
+      "warning": {
+        "threshold": 0.3,
+        "day": 0.25,
+        "pools": false
+      }
+    },
+    "windows": {
+      "windows": {
+        "mode": "world",
+        "cell": [
+          3.0,
+          3.6
+        ],
+        "frame": 0.1,
+        "lit": 0.24,
+        "late": 0.4,
+        "threshold": 0.4,
+        "spread": 0.3,
+        "tv": 0.03,
+        "colors": [
+          "#ffe2b8",
+          "#fff4e0",
+          "#ffd090",
+          "#dfe8ff"
+        ]
+      },
+      "windows_stone": {
+        "mode": "world",
+        "cell": [
+          3.0,
+          3.6
+        ],
+        "frame": 0.14,
+        "lit": 0.3,
+        "late": 0.45,
+        "threshold": 0.36,
+        "spread": 0.3,
+        "tv": 0.04,
+        "colors": [
+          "#ffd090",
+          "#ffc27a",
+          "#ffe2b8",
+          "#ffb870"
+        ]
+      }
+    },
+    "puddles": 0.25,
+    "dry": [
+      [
+        -17.25,
+        -0.1,
+        -0.25,
+        7.75,
+        3.95,
+        8.75
+      ],
+      [
+        7.75,
+        -0.1,
+        5.2,
+        11.2,
+        3.5,
+        8.5
+      ],
+      [
+        -20.2,
+        -0.1,
+        5.6,
+        -17.25,
+        3.5,
+        8.6
+      ],
+      [
+        -10.0,
+        -0.1,
+        -2.1,
+        8.6,
+        3.5,
+        -0.0
+      ]
+    ],
+    "performers": {
+      "minKey": 0.62,
+      "minFill": 0.55
+    },
+    "notes": {
+      "pools": "night-light pools are off: the night bake (COLOR_1) already carries every practical light",
+      "bake": "COLOR_0 = Cycles bake of the 18.3 h sun (low, behind-left over the skyline, into the glass wall) + sky + bounce + every practical",
+      "night": "practicals, neon, string lights, lanterns come on; the firepit + fireplace always burn; city windows light cell by cell"
+    }
+  },
+  "gfx": {
+    "hdri": {
+      "name": "belfast_sunset_puresky",
+      "intensity": 0.7,
+      "rotation": 0
+    },
+    "bloom": 0.55,
+    "threshold": 1.25,
+    "glow": 1.0,
+    "haze": {
+      "color": "#e0c0a0",
+      "density": 0.00012,
+      "glow": 0.05
+    },
+    "grade": {
+      "temp": 0.12,
+      "sat": 1.06,
+      "gamma": 1.0,
+      "curve": 0.36,
+      "shadows": "#2a3040",
+      "shadowAmt": 0.12,
+      "highlights": "#ffd8a8",
+      "highlightAmt": 0.1
+    },
+    "groups": {
+      "string_lights": 1.25,
+      "lamps": 1.1,
+      "firepit_sparks": 1.3,
+      "hearth_sparks": 1.15,
+      "neon_sign": 1.2,
+      "bottle_glow": 1.1,
+      "neon_brand": 1.0
+    },
+    "rim": {
+      "color": "#ffc890",
+      "strength": 0.32
+    },
+    "vignette": 0.2,
+    "shafts": 0.35,
+    "ao": 1.0,
+    "reflect": {
+      "strength": 0.22,
+      "maxDist": 10
+    },
+    "note": "golden hour over the city: warm highlights, cool shadows, bloom on the practicals"
+  },
+  "screenSkin": {
+    "theme": "studio"
+  },
+  "lounge": {
+    "on": true,
+    "note": "events engine opt-in (lounge-events); per-area anchors under areas.<key>.lounge.anchors"
+  },
+  "defaultArea": "main",
+  "areas": {
+    "main": {
+      "name": "VTube Pro Hangout — Lounge",
+      "label": "Lounge",
+      "icon": "🛋",
+      "bounds": [
+        -6.6,
+        0.0,
+        -0.3,
+        7.8,
+        3.82,
+        8.7
+      ],
+      "lightRig": {
+        "beams": [
+          [
+            -2.9,
+            3.45,
+            2.0
+          ],
+          [
+            0.6,
+            3.75,
+            1.4
+          ],
+          [
+            4.1,
+            3.45,
+            2.0
+          ],
+          [
+            -2.6,
+            3.45,
+            6.0
+          ],
+          [
+            3.8,
+            3.45,
+            6.0
+          ],
+          [
+            0.6,
+            3.75,
+            6.4
+          ]
+        ],
+        "lasers": [
+          [
+            -1.8,
+            3.4,
+            0.6
+          ],
+          [
+            3.0,
+            3.4,
+            0.6
+          ]
+        ],
+        "ball": [
+          0.6,
+          3.55,
+          3.6
+        ]
+      },
+      "chatMonitors": {
+        "SPOT_01": {
+          "position": [
+            -2.25,
+            0.53,
+            1.75
+          ],
+          "yaw": 24.7,
+          "width": 0.36
+        },
+        "SPOT_02": {
+          "position": [
+            3.55,
+            0.53,
+            1.75
+          ],
+          "yaw": -25.4,
+          "width": 0.36
+        }
+      },
+      "chatBoards": {
+        "SPOT_01": {
+          "position": [
+            7.44,
+            1.75,
+            5.1
+          ],
+          "yaw": -67.4,
+          "width": 1.5
+        },
+        "SPOT_02": {
+          "position": [
+            7.44,
+            1.75,
+            5.1
+          ],
+          "yaw": -67.4,
+          "width": 1.5
+        }
+      },
+      "lounge": {
+        "zone": "main",
+        "anchors": {
+          "EVT_TV": {
+            "p": [
+              0.6,
+              2.2875,
+              0.42
+            ],
+            "size": [
+              3.6,
+              2.025
+            ]
+          },
+          "EVT_CONFETTI_01": {
+            "p": [
+              -1.6,
+              3.35,
+              2.2
+            ]
+          },
+          "EVT_CONFETTI_02": {
+            "p": [
+              -0.2,
+              3.35,
+              4.4
+            ]
+          },
+          "EVT_CONFETTI_03": {
+            "p": [
+              1.4,
+              3.35,
+              2.6
+            ]
+          },
+          "EVT_CONFETTI_04": {
+            "p": [
+              2.8,
+              3.35,
+              4.2
+            ]
+          },
+          "EVT_BALLOON_NET": {
+            "p": [
+              0.6,
+              3.62,
+              3.6
+            ],
+            "size": [
+              5.0,
+              0.1,
+              3.4
+            ]
+          },
+          "EVT_CHAMPAGNE": {
+            "p": [
+              0.6,
+              0.4,
+              3.55
+            ]
+          },
+          "EVT_FLOOR_CENTRE": {
+            "p": [
+              0.6,
+              0.0,
+              5.6
+            ]
+          }
+        }
+      }
+    },
+    "bar": {
+      "name": "VTube Pro Hangout — Bar",
+      "label": "Bar",
+      "icon": "🍸",
+      "bounds": [
+        -17.3,
+        0.0,
+        -0.3,
+        -5.9,
+        3.5,
+        8.7
+      ],
+      "lightRig": {
+        "beams": [
+          [
+            -14.65,
+            3.4,
+            2.6
+          ],
+          [
+            -11.65,
+            3.4,
+            3.0
+          ],
+          [
+            -8.65,
+            3.4,
+            2.6
+          ],
+          [
+            -14.65,
+            3.4,
+            6.0
+          ],
+          [
+            -8.65,
+            3.4,
+            6.0
+          ]
+        ],
+        "lasers": [
+          [
+            -14.25,
+            3.35,
+            0.5
+          ],
+          [
+            -9.05,
+            3.35,
+            0.5
+          ]
+        ],
+        "ball": [
+          -11.65,
+          3.4,
+          4.2
+        ]
+      },
+      "chatMonitors": {
+        "SPOT_01": {
+          "position": [
+            -14.65,
+            1.06,
+            1.67
+          ],
+          "yaw": 25.4,
+          "width": 0.34
+        },
+        "SPOT_02": {
+          "position": [
+            -8.7,
+            1.06,
+            1.67
+          ],
+          "yaw": -25.0,
+          "width": 0.34
+        }
+      },
+      "chatBoards": {
+        "SPOT_01": {
+          "position": [
+            -16.94,
+            1.85,
+            2.8
+          ],
+          "yaw": 45.5,
+          "width": 1.4
+        },
+        "SPOT_02": {
+          "position": [
+            -16.94,
+            1.85,
+            2.8
+          ],
+          "yaw": 45.5,
+          "width": 1.4
+        }
+      },
+      "lounge": {
+        "zone": "bar",
+        "anchors": {
+          "EVT_COUNTER_START": {
+            "p": [
+              -14.9,
+              1.07,
+              1.75
+            ]
+          },
+          "EVT_COUNTER_END": {
+            "p": [
+              -8.55,
+              1.07,
+              1.75
+            ]
+          },
+          "EVT_BOTTLEWALL": {
+            "p": [
+              -11.65,
+              2.1,
+              0.28
+            ],
+            "size": [
+              6.699999999999999,
+              2.3
+            ]
+          },
+          "BARTENDER": {
+            "p": [
+              -11.65,
+              0.0,
+              0.92
+            ],
+            "yaw": 0.0,
+            "lane": [
+              -14.799999999999999,
+              -8.65
+            ]
+          },
+          "EVT_POUR": {
+            "p": [
+              -11.65,
+              1.07,
+              1.5
+            ]
+          },
+          "EVT_CONFETTI_01": {
+            "p": [
+              -14.05,
+              3.2,
+              3.0
+            ]
+          },
+          "EVT_CONFETTI_02": {
+            "p": [
+              -11.65,
+              3.2,
+              3.4
+            ]
+          },
+          "EVT_CONFETTI_03": {
+            "p": [
+              -9.25,
+              3.2,
+              3.0
+            ]
+          },
+          "EVT_SHOT_01": {
+            "p": [
+              -14.65,
+              1.07,
+              1.8
+            ]
+          },
+          "EVT_SHOT_02": {
+            "p": [
+              -13.8143,
+              1.07,
+              1.8
+            ]
+          },
+          "EVT_SHOT_03": {
+            "p": [
+              -12.9786,
+              1.07,
+              1.8
+            ]
+          },
+          "EVT_SHOT_04": {
+            "p": [
+              -12.1429,
+              1.07,
+              1.8
+            ]
+          },
+          "EVT_SHOT_05": {
+            "p": [
+              -11.3071,
+              1.07,
+              1.8
+            ]
+          },
+          "EVT_SHOT_06": {
+            "p": [
+              -10.4714,
+              1.07,
+              1.8
+            ]
+          },
+          "EVT_SHOT_07": {
+            "p": [
+              -9.6357,
+              1.07,
+              1.8
+            ]
+          },
+          "EVT_SHOT_08": {
+            "p": [
+              -8.8,
+              1.07,
+              1.8
+            ]
+          }
+        }
+      }
+    },
+    "patio": {
+      "name": "VTube Pro Hangout — Patio",
+      "label": "Patio",
+      "icon": "🔥",
+      "bounds": [
+        -10.3,
+        0.0,
+        -11.4,
+        8.9,
+        4.2,
+        0.4
+      ],
+      "lightRig": {
+        "beams": [
+          [
+            -3.4,
+            3.3,
+            -1.4
+          ],
+          [
+            0.6,
+            3.35,
+            -1.3
+          ],
+          [
+            4.4,
+            3.3,
+            -1.4
+          ],
+          [
+            -3.6,
+            3.2,
+            -9.6
+          ],
+          [
+            4.8,
+            3.2,
+            -9.6
+          ]
+        ],
+        "lasers": [
+          [
+            -1.8,
+            3.4,
+            -9.55
+          ],
+          [
+            3.0,
+            3.4,
+            -9.55
+          ]
+        ],
+        "ball": [
+          0.6,
+          3.6,
+          -5.2
+        ]
+      },
+      "chatMonitors": {
+        "SPOT_01": {
+          "position": [
+            -1.15,
+            0.52,
+            -7.6
+          ],
+          "yaw": 14.3,
+          "width": 0.34
+        },
+        "SPOT_02": {
+          "position": [
+            2.35,
+            0.52,
+            -7.6
+          ],
+          "yaw": -14.3,
+          "width": 0.34
+        }
+      },
+      "chatBoards": {
+        "SPOT_01": {
+          "position": [
+            -3.88,
+            1.8,
+            -3.6
+          ],
+          "yaw": 57.5,
+          "width": 1.4
+        },
+        "SPOT_02": {
+          "position": [
+            -3.88,
+            1.8,
+            -3.6
+          ],
+          "yaw": 57.5,
+          "width": 1.4
+        }
+      },
+      "lounge": {
+        "zone": "patio",
+        "anchors": {
+          "EVT_FIREPIT": {
+            "p": [
+              0.6,
+              0.5,
+              -5.2
+            ],
+            "radius": 0.55
+          },
+          "EVT_SKY": {
+            "p": [
+              0.0,
+              30.0,
+              -140.0
+            ],
+            "size": 60
+          },
+          "EVT_CONFETTI_01": {
+            "p": [
+              -1.4,
+              3.3,
+              -4.8
+            ]
+          },
+          "EVT_CONFETTI_02": {
+            "p": [
+              0.6,
+              3.3,
+              -6.4
+            ]
+          },
+          "EVT_CONFETTI_03": {
+            "p": [
+              2.6,
+              3.3,
+              -4.8
+            ]
+          },
+          "EVT_SKY_01": {
+            "p": [
+              -80,
+              28,
+              -120
+            ],
+            "size": 60
+          },
+          "EVT_SKY_02": {
+            "p": [
+              -35,
+              52,
+              -150
+            ],
+            "size": 60
+          },
+          "EVT_SKY_03": {
+            "p": [
+              10,
+              22,
+              -110
+            ],
+            "size": 60
+          },
+          "EVT_SKY_04": {
+            "p": [
+              40,
+              46,
+              -160
+            ],
+            "size": 60
+          },
+          "EVT_SKY_05": {
+            "p": [
+              78,
+              30,
+              -125
+            ],
+            "size": 60
+          },
+          "EVT_SKY_06": {
+            "p": [
+              0,
+              60,
+              -200
+            ],
+            "size": 60
+          },
+          "EVT_SPARKLER_01": {
+            "p": [
+              -0.95,
+              0.9,
+              -6.9
+            ]
+          },
+          "EVT_SPARKLER_02": {
+            "p": [
+              2.15,
+              0.9,
+              -6.9
+            ]
+          },
+          "EVT_SPARKLER_03": {
+            "p": [
+              -2.2,
+              0.9,
+              -4.35
+            ]
+          },
+          "EVT_SPARKLER_04": {
+            "p": [
+              3.4,
+              0.9,
+              -4.35
+            ]
+          }
+        }
+      }
+    }
+  }
+}

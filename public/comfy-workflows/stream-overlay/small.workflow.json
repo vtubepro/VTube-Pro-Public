@@ -1,0 +1,568 @@
+{
+ "last_node_id": 11,
+ "last_link_id": 12,
+ "nodes": [
+  {
+   "id": 1,
+   "type": "CheckpointLoaderSimple",
+   "pos": [
+    540,
+    60
+   ],
+   "size": [
+    340,
+    144
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "outputs": [
+    {
+     "name": "MODEL",
+     "type": "MODEL",
+     "links": [
+      3
+     ],
+     "slot_index": 0
+    },
+    {
+     "name": "CLIP",
+     "type": "CLIP",
+     "links": [
+      1,
+      2
+     ],
+     "slot_index": 1
+    },
+    {
+     "name": "VAE",
+     "type": "VAE",
+     "links": [
+      8
+     ],
+     "slot_index": 2
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "CheckpointLoaderSimple",
+    "models": [
+     {
+      "name": "sd_xl_base_1.0.safetensors",
+      "url": "https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0/resolve/462165984030d82259a11f4367a4eed129e94a7b/sd_xl_base_1.0.safetensors",
+      "directory": "checkpoints",
+      "hash": "31e35c80fc4829d14f90153f4c74cd59c90b779f6afe05a74cd6120b893f7e5b",
+      "hash_type": "SHA256"
+     }
+    ]
+   },
+   "widgets_values": [
+    "sd_xl_base_1.0.safetensors"
+   ]
+  },
+  {
+   "id": 2,
+   "type": "CLIPTextEncode",
+   "pos": [
+    990,
+    60
+   ],
+   "size": [
+    420,
+    206
+   ],
+   "flags": {},
+   "order": 3,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "clip",
+     "type": "CLIP",
+     "link": 1
+    }
+   ],
+   "outputs": [
+    {
+     "name": "CONDITIONING",
+     "type": "CONDITIONING",
+     "links": [
+      4
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "CLIPTextEncode"
+   },
+   "widgets_values": [
+    "cozy pixel art bedroom at night, soft fairy lights, rain on the window, calm empty centre, stream starting soon screen background"
+   ],
+   "title": "Your prompt: describe the picture",
+   "color": "#3f5f12",
+   "bgcolor": "#2b3f0c"
+  },
+  {
+   "id": 3,
+   "type": "CLIPTextEncode",
+   "pos": [
+    990,
+    306
+   ],
+   "size": [
+    420,
+    206
+   ],
+   "flags": {},
+   "order": 4,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "clip",
+     "type": "CLIP",
+     "link": 2
+    }
+   ],
+   "outputs": [
+    {
+     "name": "CONDITIONING",
+     "type": "CONDITIONING",
+     "links": [
+      5
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "CLIPTextEncode"
+   },
+   "widgets_values": [
+    "lowres, blurry, jpeg artifacts, watermark, signature, text, logo, deformed, bad anatomy, extra fingers, cropped"
+   ],
+   "title": "Things to avoid"
+  },
+  {
+   "id": 4,
+   "type": "EmptyLatentImage",
+   "pos": [
+    540,
+    244
+   ],
+   "size": [
+    340,
+    148
+   ],
+   "flags": {},
+   "order": 1,
+   "mode": 0,
+   "outputs": [
+    {
+     "name": "LATENT",
+     "type": "LATENT",
+     "links": [
+      6
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "EmptyLatentImage"
+   },
+   "widgets_values": [
+    1344,
+    768,
+    1
+   ],
+   "title": "Picture size 1344x768"
+  },
+  {
+   "id": 5,
+   "type": "KSampler",
+   "pos": [
+    1440,
+    60
+   ],
+   "size": [
+    340,
+    324
+   ],
+   "flags": {},
+   "order": 5,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "model",
+     "type": "MODEL",
+     "link": 3
+    },
+    {
+     "name": "positive",
+     "type": "CONDITIONING",
+     "link": 4
+    },
+    {
+     "name": "negative",
+     "type": "CONDITIONING",
+     "link": 5
+    },
+    {
+     "name": "latent_image",
+     "type": "LATENT",
+     "link": 6
+    }
+   ],
+   "outputs": [
+    {
+     "name": "LATENT",
+     "type": "LATENT",
+     "links": [
+      7
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "KSampler"
+   },
+   "widgets_values": [
+    20261001,
+    "randomize",
+    28,
+    6,
+    "dpmpp_2m",
+    "karras",
+    1
+   ]
+  },
+  {
+   "id": 6,
+   "type": "VAEDecode",
+   "pos": [
+    1890,
+    60
+   ],
+   "size": [
+    340,
+    94
+   ],
+   "flags": {},
+   "order": 6,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "samples",
+     "type": "LATENT",
+     "link": 7
+    },
+    {
+     "name": "vae",
+     "type": "VAE",
+     "link": 8
+    }
+   ],
+   "outputs": [
+    {
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "links": [
+      10
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "VAEDecode"
+   },
+   "widgets_values": []
+  },
+  {
+   "id": 7,
+   "type": "UpscaleModelLoader",
+   "pos": [
+    540,
+    432
+   ],
+   "size": [
+    340,
+    96
+   ],
+   "flags": {},
+   "order": 2,
+   "mode": 0,
+   "outputs": [
+    {
+     "name": "UPSCALE_MODEL",
+     "type": "UPSCALE_MODEL",
+     "links": [
+      9
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "UpscaleModelLoader",
+    "models": [
+     {
+      "name": "RealESRGAN_x4plus.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/Real-ESRGAN_repackaged/resolve/5fd49b7b278836f48af63ecd314d0f98ab336105/RealESRGAN_x4plus.safetensors",
+      "directory": "upscale_models",
+      "hash": "37f9a931c215f040aa6d50f711f2cb115f713c46df1d0d6469a8bd7bfe9a60bb",
+      "hash_type": "SHA256"
+     }
+    ]
+   },
+   "widgets_values": [
+    "RealESRGAN_x4plus.safetensors"
+   ]
+  },
+  {
+   "id": 8,
+   "type": "ImageUpscaleWithModel",
+   "pos": [
+    2340,
+    60
+   ],
+   "size": [
+    340,
+    94
+   ],
+   "flags": {},
+   "order": 7,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "upscale_model",
+     "type": "UPSCALE_MODEL",
+     "link": 9
+    },
+    {
+     "name": "image",
+     "type": "IMAGE",
+     "link": 10
+    }
+   ],
+   "outputs": [
+    {
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "links": [
+      11
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "ImageUpscaleWithModel"
+   },
+   "widgets_values": []
+  },
+  {
+   "id": 9,
+   "type": "ImageScale",
+   "pos": [
+    2790,
+    60
+   ],
+   "size": [
+    340,
+    174
+   ],
+   "flags": {},
+   "order": 8,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "image",
+     "type": "IMAGE",
+     "link": 11
+    }
+   ],
+   "outputs": [
+    {
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "links": [
+      12
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "ImageScale"
+   },
+   "widgets_values": [
+    "lanczos",
+    1920,
+    1080,
+    "center"
+   ],
+   "title": "Final size 1920x1080"
+  },
+  {
+   "id": 10,
+   "type": "SaveImage",
+   "pos": [
+    3240,
+    60
+   ],
+   "size": [
+    340,
+    96
+   ],
+   "flags": {},
+   "order": 9,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "images",
+     "type": "IMAGE",
+     "link": 12
+    }
+   ],
+   "outputs": [],
+   "properties": {
+    "Node name for S&R": "SaveImage"
+   },
+   "widgets_values": [
+    "VTubePro/overlay"
+   ],
+   "title": "Save the picture"
+  },
+  {
+   "id": 11,
+   "type": "MarkdownNote",
+   "pos": [
+    40,
+    60
+   ],
+   "size": [
+    460,
+    696
+   ],
+   "flags": {},
+   "order": 10,
+   "mode": 0,
+   "properties": {},
+   "widgets_values": [
+    "# Overlays: Starting soon, Be right back and panels\n**VTube Pro workflow, 8 GB graphics card** (SDXL). Pack 2026.10.01.\n\nA full-screen \"Starting soon\" or \"Be right back\" picture, or a panel background, in your style.\n\n## How to use it\n1. Describe the scene in \"Your prompt\" (medium and large can write the words).\n2. Press Run.\n3. Find the result in ComfyUI's **output/VTubePro** folder (or right-click the picture > Save Image).\n\nThe **green boxes** are the ones to change.\n\n**You get:** 1920x1080 PNG.\n\n**In VTube Pro:** Add it in OBS as an Image source, or use it as the in-room screen picture.\n\n**Settings:** 1344x768, 28 steps, CFG 6, Real-ESRGAN to 1920x1080. Add the words in any editor.\n\n## Models (all allow commercial use)\n- [sd_xl_base_1.0.safetensors](https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0) (6.9 GB) in `models/checkpoints`: CreativeML Open RAIL++-M\n- [RealESRGAN_x4plus.safetensors](https://huggingface.co/Comfy-Org/Real-ESRGAN_repackaged) (0.1 GB) in `models/upscale_models`: BSD-3-Clause\n\nMissing a model? ComfyUI offers to download it when you open this workflow. Or ask your AI: \n*\"Set up the VTube Pro overlay workflow in ComfyUI\"*: the VTube Pro Helper downloads every file from its official page, checks it, and adds this workflow, after you say yes.\n\n## Tips\n- Keep the middle calm if your avatar or a game goes there.\n- Make pictures when you are not live: picture AI slows face tracking."
+   ],
+   "title": "Start here",
+   "color": "#432",
+   "bgcolor": "#653"
+  }
+ ],
+ "links": [
+  [
+   1,
+   1,
+   1,
+   2,
+   0,
+   "CLIP"
+  ],
+  [
+   2,
+   1,
+   1,
+   3,
+   0,
+   "CLIP"
+  ],
+  [
+   3,
+   1,
+   0,
+   5,
+   0,
+   "MODEL"
+  ],
+  [
+   4,
+   2,
+   0,
+   5,
+   1,
+   "CONDITIONING"
+  ],
+  [
+   5,
+   3,
+   0,
+   5,
+   2,
+   "CONDITIONING"
+  ],
+  [
+   6,
+   4,
+   0,
+   5,
+   3,
+   "LATENT"
+  ],
+  [
+   7,
+   5,
+   0,
+   6,
+   0,
+   "LATENT"
+  ],
+  [
+   8,
+   1,
+   2,
+   6,
+   1,
+   "VAE"
+  ],
+  [
+   9,
+   7,
+   0,
+   8,
+   0,
+   "UPSCALE_MODEL"
+  ],
+  [
+   10,
+   6,
+   0,
+   8,
+   1,
+   "IMAGE"
+  ],
+  [
+   11,
+   8,
+   0,
+   9,
+   0,
+   "IMAGE"
+  ],
+  [
+   12,
+   9,
+   0,
+   10,
+   0,
+   "IMAGE"
+  ]
+ ],
+ "groups": [],
+ "config": {},
+ "extra": {
+  "ds": {
+   "scale": 0.7,
+   "offset": [
+    0,
+    0
+   ]
+  },
+  "vtubePro": {
+   "workflow": "stream-overlay",
+   "tier": "small",
+   "version": "2026.10.01",
+   "manifest": "stream-overlay/small.manifest.json"
+  }
+ },
+ "version": 0.4
+}
